@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* GREYSCALE */
+  --color-grey-50: rgb(239, 239, 239);
+  --color-grey-100: rgb(204, 204, 204);
+  --color-grey-200: rgb(180, 180, 180);
+  --color-grey-300: rgb(146, 146, 146);
+  --color-grey-400: rgb(125, 125, 125);
+  --color-grey-500: rgb(92, 92, 92);
+  --color-grey-600: rgb(84, 84, 84);
+  --color-grey-700: rgb(65, 65, 65);
+  --color-grey-800: rgb(51, 51, 51);
+  --color-grey-900: rgb(39, 39, 39);
+
+  /* Orange */
+  --color-orange-light: rgb(254, 238, 232);
+  --color-orange-light__hover: rgb(253, 229, 221);
+  --color-orange-light__active: rgb(251, 202, 185);
+  --color-orange-normal: rgb(242, 83, 28);
+  --color-orange-normal__hover: rgb(218, 75, 25);
+  --color-orange-normal__active: rgb(194, 66, 22);
+  --color-orange-dark: rgb(182, 62, 21);
+  --color-orange-dark__hover: rgb(145, 50, 17);
+  --color-orange-dark__active: rgb(109, 37, 13);
+  --color-orange-darker: rgb(85, 29, 10);
+
+  /* Green */
+  --color-green-light: rgb(233, 241, 237);
+  --color-green-light__hover: rgb(222, 234, 228);
+  --color-green-light__active: rgb(187, 211, 200);
+  --color-green-normal: rgb(35, 112, 77);
+  --color-green-normal__hover: rgb(32, 101, 69);
+  --color-green-normal__active: rgb(28, 90, 62);
+  --color-green-dark: rgb(26, 84, 58);
+  --color-green-dark__hover: rgb(21, 67, 46);
+  --color-green-dark__active: rgb(16, 50, 35);
+  --color-green-darker: rgb(12, 39, 27);
+
+  /* Grey Green */
+  --color-grey-green-light: rgb(231, 233, 232);
+  --color-grey-green-light__hover: rgb(219, 223, 220);
+  --color-grey-green-light__active: rgb(182, 188, 183);
+  --color-grey-green-normal: rgb(18, 39, 24);
+  --color-grey-green-normal__hover: rgb(16, 35, 22);
+  --color-grey-green-normal__active: rgb(14, 31, 19);
+  --color-grey-green-dark: rgb(14, 29, 18);
+  --color-grey-green-dark__hover: rgb(11, 23, 14);
+  --color-grey-green-dark__active: rgb(8, 18, 11);
+  --color-grey-green-darker: rgb(6, 14, 8);
+
+  /* Background elevation */
+  --color-bg-elevation-white-50: rgb(255, 255, 255);
+  --color-bg-elevation-white-100: rgb(250, 250, 250);
+  --color-bg-elevation-white-300: rgb(245, 245, 245);
+  --color-bg-elevation-white-500: rgb(240, 240, 240);
+}
+
+html {
+  font-size: 1vw;
+}
+
+/* Button */
+.btn-size-l {
+  display: inline-flex;
+  height: 3.5rem;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.btn-size-m {
+  display: inline-flex;
+  height: 3rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.btn-size-s {
+  display: inline-flex;
+  height: 2.75rem;
+  padding: 0.625rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.btn-size-xs {
+  display: inline-flex;
+  height: 2.125rem;
+  padding: 0.625rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.btn-default {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-orange-normal, #e64827);
+  background: var(--color-orange-normal, #e64827);
+}
+.btn-white {
+  border-radius: 0.5rem;
+  background: var(--color-bg-elevation-white-50, #fff);
+}
+.btn-line {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-grey-900, #1a1a1a);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+.btn-line-orange {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-orange-normal, #e64827);
+}
+.btn-black {
+  border-radius: 0.5rem;
+  background: var(--color-grey-800, #222);
+}
+.btn-line-white {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-bg-elevation-white-50, #fff);
+}
+/* Web heading */
+/* h1 */
+.h1-regular {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 7.2rem */
+  letter-spacing: -0.09rem;
+}
+.h1-medium {
+  color: #000;
+  font-family: "Trip Sans", sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 7.2rem */
+  letter-spacing: -0.09rem;
+}
+.h1-semibold {
+  color: #000;
+  font-family: "Trip Sans", sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%; /* 7.2rem */
+  letter-spacing: -0.09rem;
+}
+.h1-bold {
+  color: #000;
+  /* WEB/H1/BLACK */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 6rem */
+}
+/* h2 */
+.h2-regular {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 4.8rem */
+  letter-spacing: -0.02rem;
+}
+.h2-medium {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 4.8rem */
+  letter-spacing: -0.02rem;
+}
+.h2-semibold {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 4.8rem */
+  letter-spacing: -0.02rem;
+}
+.h2-bold {
+  color: #000;
+  /* WEB/H2/BLACK */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 3.5rem */
+}
+/* h3 */
+.h3-regular {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 3.6rem */
+}
+.h3-medium {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 3.6rem */
+}
+.h3-semibold {
+  color: #000;
+  font-family: Inter;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 3.6rem */
+}
+.h3-bold {
+  color: #000;
+  /* WEB/H3/BLACK */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 2.5rem */
+}
+
+/* h4 */
+.h4-regular {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 2.4rem */
+  letter-spacing: 0.005rem;
+}
+.h4-medium {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 2.4rem */
+  letter-spacing: 0.005rem;
+}
+.h4-semibold {
+  color: #000;
+  /* WEB/H4/BLACK */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 2rem */
+}
+.h4-bold {
+  color: #000;
+  font-family: "Trip Sans", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%; /* 2.4rem */
+}
+
+/* h5 */
+.h5-regular {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.8rem */
+}
+.h5-medium {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 1.8rem */
+}
+.h5-semibold {
+  color: #000;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 1.8rem */
+}
+.h5-bold {
+  color: #000;
+  /* WEB/H5/BLACK */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 1.5rem */
+}
+
+@media only screen and (max-width: 720px) {
+  /* h1 */
+  .h1-regular {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 4.8rem */
+    letter-spacing: -0.02rem;
+  }
+  .h1-medium {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 4.8rem */
+    letter-spacing: -0.02rem;
+  }
+  .h1-semibold {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 4.8rem */
+    letter-spacing: -0.02rem;
+  }
+  .h1-bold {
+    color: #000;
+
+    /* APP/H1/Black */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 4.8rem */
+    letter-spacing: -0.02rem;
+  }
+  /* h2 */
+  .h2-regular {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 3.6rem */
+  }
+  .h2-medium {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 3.6rem */
+  }
+  .h2-semibold {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 3.6rem */
+  }
+  .h2-bold {
+    color: #000;
+    /* APP/H3/BOLD */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 3rem */
+  }
+  /* h3 */
+  .h3-regular {
+    color: #000;
+    font-family: "Trip Sans", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 2.4rem */
+    letter-spacing: 0.005rem;
+  }
+  .h3-medium {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 2.4rem */
+    letter-spacing: 0.005rem;
+  }
+  .h3-semibold {
+    color: #000;
+
+    /* APP/H4/BOLD */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 2.4rem */
+    letter-spacing: 0.005rem;
+  }
+  .h3-bold {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 2.4rem */
+  }
+
+  /* h4 */
+  .h4-regular {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 1.8rem */
+  }
+  .h4-medium {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 1.8rem */
+  }
+  .h4-semibold {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 1.8rem */
+  }
+  .h4-bold {
+    color: #000;
+    /* APP/H5/BOLD */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 1.8rem */
+    letter-spacing: 0.00375rem;
+  }
+
+  /* h5 */
+  .h5-regular {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 1.5rem */
+    letter-spacing: 0.00313rem;
+  }
+  .h5-medium {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 1.5rem */
+    letter-spacing: 0.00313rem;
+  }
+  .h5-semibold {
+    color: #000;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 1.5rem */
+    letter-spacing: 0.00313rem;
+  }
+  .h5-bold {
+    color: #000;
+    /* APP/H7/BOLD */
+    font-family: "Trip Sans", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 1.5rem */
+  }
+}
