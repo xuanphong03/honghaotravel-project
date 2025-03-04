@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
 @import "tailwindcss";
+@font-face {
+  font-family: 'tripsan-regular';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'tripsan-medium';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'tripsan-bold';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+}
 
 @theme {
   /* GREYSCALE */
+  
   --color-grey-50: rgb(239, 239, 239);
   --color-grey-100: rgb(204, 204, 204);
   --color-grey-200: rgb(180, 180, 180);
@@ -13,6 +29,16 @@
   --color-grey-700: rgb(65, 65, 65);
   --color-grey-800: rgb(51, 51, 51);
   --color-grey-900: rgb(39, 39, 39);
+  
+  /* GREYSCALE */
+  --color-greyscaletext-0:#FFF;
+  --color-greyscaletext-10: #C5C5C5;
+  --color-greyscaletext-20:#A9A9A9;
+  --color-greyscaletext-40: #6A6A6A;
+  --color-greyscaletext-80-main: #262626;
+
+  --color-Gray-Scale-80: #2E2E2E;
+  
 
   /* Orange */
   --color-orange-light: rgb(254, 238, 232);
@@ -51,15 +77,26 @@
   --color-grey-green-darker: rgb(6, 14, 8);
 
   /* Background elevation */
+  --color-bg-elevation-30: #F0F0F0;
   --color-bg-elevation-white-50: rgb(255, 255, 255);
   --color-bg-elevation-white-100: rgb(250, 250, 250);
   --color-bg-elevation-white-300: rgb(245, 245, 245);
   --color-bg-elevation-white-500: rgb(240, 240, 240);
+
+    /* Background greyscaletext */
+
+    --color-bg-greyscaletext-10: #C5C5C5;
+
+    /* font */
+    --font-tripsan-regular: "tripsan-regular";
+    --font-tripsan-bold: "tripsan-regular"
+  
 }
 
 html {
   font-size: 1vw;
 }
+
 
 /* Button */
 .btn-size-l {
@@ -125,6 +162,24 @@ html {
   border-radius: 0.5rem;
   border: 1px solid var(--color-bg-elevation-white-50, #fff);
 }
+
+/* btn fontsize */
+
+.btn-bold {
+  color: var(--greyscaletext-0);
+    text-align: center;
+  
+    /* WEB/BUTTON/BOLD */
+    font-family: "tripsan-bold";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 1.05rem */
+    text-transform: uppercase;
+}
+
+
 /* Web heading */
 /* h1 */
 .h1-regular {
@@ -307,7 +362,144 @@ html {
   line-height: 100%; /* 1.5rem */
 }
 
+/* Sub1 */
+
+.sub1-regular{
+  color: #000;
+  
+    /* WEB/SUB1/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-medium{
+  color: #000;
+  
+    /* WEB/SUB1/MEDIUM */
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-semibold{
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-bold{
+  color: #000;
+  
+    /* WEB/SUB1/BOLD */
+    font-family:"tripsan-bold";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+
+/* Sub2 */
+
+.sub2-regular {
+color: #000;
+
+  /* WEB/SUB2/REGULAR */
+  font-family: "tripsan-regular";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
+}
+
+.sub2-medium {
+  color: #000;
+  
+    /* WEB/SUB2/MEDIUM */
+    font-family: "tripsan-medium";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 1.05rem */
+    letter-spacing: 0.00875rem;
+}
+
+.sub2-semibold {
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    /* 1.05rem */
+    letter-spacing: 0.00875rem;
+}
+
+.sub2-bold {
+color: #000;
+  font-family:"tripsan-bold";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: 0.00875rem;
+}
+
+/* WEB/BODY1/REGULAR */
+.body1-regular{
+  color: #000;
+  
+    /* WEB/BODY1/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+.body1-semibold{
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+.body1-bold{
+  color: #000;
+    font-family: "tripsan-bold";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+
+
+
 @media only screen and (max-width: 720px) {
+  html {
+    font-size: 4.40421vw;
+  }
   /* h1 */
   .h1-regular {
     color: #000;
