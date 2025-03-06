@@ -3,15 +3,15 @@ import React from 'react'
 
 export default function AboutL() {
   return (
-      <div className='about-l relative px-20 '>
+      <div className='about-l relative px-5 sm:px-20 '>
           
-          <div className='w-[57.19256rem] h-[22.1875rem] shrink-0 relative z-10'>
+          <div className='w-[20.098rem] sm:w-[58.19256rem] h-[7.42925rem] sm:h-[22.1875rem] shrink-0 relative z-10'>
               <Image src={"/images/about/h1.png"} alt="" fill  />
           </div>
-          <div className="flex flex-col gap-[2.06rem] relative z-10">
-              <p className='body1-regular !text-greyscaletext-0 w-[52.3125rem]'>Ha Giang, nestled in the rugged mountains of northern Vietnam, beckons adventurers with its breathtaking scenery and vibrant cultural tapestry. From the towering peaks of the Dong Van Karst Plateau to the winding roads of the Ma Pi Leng Pass, Ha Giang offers an unforgettable journey through some of Vietnam's most awe-inspiring landscapes.</p>
-              <div className="flex items-center gap-4 ">
-                  <button className='flex items-center justify-center gap-2 btn-size-l btn-default btn-bold !text-greyscaletext-0'>
+          <div className="max-sm:mt-6 flex flex-col gap-[2.06rem] relative z-10">
+              <p className='sub2-regular sm:body1-regular !text-greyscaletext-0 w-full sm:w-[52.3125rem]'>Ha Giang, nestled in the rugged mountains of northern Vietnam, beckons adventurers with its breathtaking scenery and vibrant cultural tapestry. From the towering peaks of the Dong Van Karst Plateau to the winding roads of the Ma Pi Leng Pass, Ha Giang offers an unforgettable journey through some of Vietnam's most awe-inspiring landscapes.</p>
+              <div className="max-sm:hidden flex items-center gap-4 ">
+                  <button className='flex items-center justify-center gap-2 btn-size-l btn-default btn-bold !text-greyscaletext-0 !font-bold'>
                       <span>BOOK NOW</span>
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 12 12" fill="none" className='w-4 h-4 px-[0.125rem] py-[0.17188rem]'>
   <path d="M10.125 6H0" stroke="url(#paint0_linear_11183_20582)" strokeWidth="2"/>
@@ -36,7 +36,7 @@ export default function AboutL() {
   </defs>
                         </svg>
                   </button>
-                  <button className='flex items-center justify-center gap-2 btn-size-l  btn-bold !text-greyscaletext-0 btn-line-white'>
+                  <button className='flex items-center justify-center gap-2 btn-size-l  btn-bold !text-greyscaletext-0 btn-line-white !font-bold'>
                       <span>ALL TOUR</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className='w-4 h-4 px-[0.125rem] py-[0.17188rem]' viewBox="0 0 12 12" fill="none">
   <path d="M10.125 6H0" stroke="url(#paint0_linear_11183_20582)" strokeWidth="2"/>
