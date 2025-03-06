@@ -1,0 +1,30 @@
+.animate-cloud {
+  animation: cloud 10s linear infinite;
+}
+
+.animate-cloud2 {
+  animation: cloud2 10s linear infinite;
+}
+@keyframes cloud2 {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes cloud2 {
+  0% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(10px) translateY(-10px);
+  }
+}
