@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
 @import "tailwindcss";
+@font-face {
+  font-family: 'tripsan-regular';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'tripsan-medium';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'tripsan-bold';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+}
 
 @theme {
   /* GREYSCALE */
+  
   --color-grey-50: rgb(239, 239, 239);
   --color-grey-100: rgb(204, 204, 204);
   --color-grey-200: rgb(180, 180, 180);
@@ -13,6 +29,18 @@
   --color-grey-700: rgb(65, 65, 65);
   --color-grey-800: rgb(51, 51, 51);
   --color-grey-900: rgb(39, 39, 39);
+  
+  /* GREYSCALE */
+  --color-greyscaletext-0:#FFF;
+  --color-greyscaletext-10: #C5C5C5;
+  --color-greyscaletext-20:#A9A9A9;
+  --color-greyscaletext-30: #828282;
+  --color-greyscaletext-40: #6A6A6A;
+  --color-greyscaletext-70:#313131;
+  --color-greyscaletext-80-main: #262626;
+
+  --color-Gray-Scale-80: #2E2E2E;
+  
 
   /* Orange */
   --color-orange-light: rgb(254, 238, 232);
@@ -51,20 +79,33 @@
   --color-grey-green-darker: rgb(6, 14, 8);
 
   /* Background elevation */
+  --color-bg-elevation-30: #F0F0F0;
   --color-bg-elevation-white-50: rgb(255, 255, 255);
   --color-bg-elevation-white-100: rgb(250, 250, 250);
   --color-bg-elevation-white-300: rgb(245, 245, 245);
   --color-bg-elevation-white-500: rgb(240, 240, 240);
 
+
   /* Font */
   --font-londrina-solid: "Londrina Solid", sans-serif;
   --font-kanit: "Kanit", sans-serif;
   --font-inter: "Inter", sans-serif;
+    /* Background greyscaletext */
+
+    --color-bg-greyscaletext-10: #C5C5C5;
+
+    /* font */
+    --font-tripsan-regular: "tripsan-regular";
+    --font-tripsan-bold: "tripsan-regular"
+
+    
+  
 }
 
 html {
   font-size: 1vw;
 }
+
 
 .hidden_scrollbar::-webkit-scrollbar {
   display: none;
@@ -75,6 +116,7 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
 /* Button */
 .btn-size-l {
   display: inline-flex;
@@ -138,7 +180,26 @@ html {
 .btn-line-white {
   border-radius: 0.5rem;
   border: 1px solid var(--color-bg-elevation-white-50, #fff);
+  opacity: 0.6;
 }
+
+/* btn fontsize */
+
+.btn-bold {
+  color: var(--greyscaletext-0);
+    text-align: center;
+  
+    /* WEB/BUTTON/BOLD */
+    font-family: "tripsan-bold";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 1.05rem */
+    text-transform: uppercase;
+}
+
+
 /* Web heading */
 /* h1 */
 .h1-regular {
@@ -475,6 +536,147 @@ html {
     font-size: 4.267vw;
   }
 
+
+
+/* Sub1 */
+
+.sub1-regular{
+  color: #000;
+  
+    /* WEB/SUB1/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-medium{
+  color: #000;
+  
+    /* WEB/SUB1/MEDIUM */
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-semibold{
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+.sub1-bold{
+  color: #000;
+  
+    /* WEB/SUB1/BOLD */
+    font-family:"tripsan-bold";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 1.2rem */
+    letter-spacing: 0.0125rem;
+}
+
+/* Sub2 */
+
+.sub2-regular {
+color: #000;
+
+  /* WEB/SUB2/REGULAR */
+  font-family: "tripsan-regular";
+  font-size: 0.875rem !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 120% !important;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
+}
+
+.sub2-medium {
+  color: #000;
+  
+    /* WEB/SUB2/MEDIUM */
+    font-family: "tripsan-medium";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 1.05rem */
+    letter-spacing: 0.00875rem;
+}
+
+.sub2-semibold {
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    /* 1.05rem */
+    letter-spacing: 0.00875rem;
+}
+
+.sub2-bold {
+color: #000;
+  font-family:"tripsan-bold";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: 0.00875rem;
+}
+
+/* WEB/BODY1/REGULAR */
+.body1-regular{
+  color: #000;
+  
+    /* WEB/BODY1/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+.body1-semibold{
+  color: #000;
+    font-family: "tripsan-medium";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+.body1-bold{
+  color: #000;
+    font-family: "tripsan-bold";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+  html {
+    font-size: 4.40421vw;
+  }
+
   /* h1 */
   .h1-regular {
     color: #000;
@@ -660,10 +862,95 @@ html {
     font-weight: 700;
     line-height: 120%; /* 1.5rem */
   }
+  .h5-bold-pc {
+      color: var(--greyscaletext-70, #313131);
+      /* WEB/H5/BLACK */
+      font-family: "Londrina Solid", sans-serif;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      /* 1.5rem */
+    }
 }
 
+<<<<<<< HEAD
 @media only screen and (min-width: 1920px) {
   html {
     font-size: 19.2px;
   }
+}
+=======
+/* About */
+
+.h1-about {
+  font-family: "tripsan-bold";
+    font-size: 13.9375rem;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 100%;
+    /* 13.9375rem */
+    background: linear-gradient(180deg, #FFF 28.9%, rgba(255, 255, 255, 0.00) 83.61%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+
+.text-exp {
+  font-family: "tripsan-bold";
+    font-size: 7.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 7.5rem */
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg, #FFF 30.31%, rgba(255, 255, 255, 0.00) 87.67%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+
+.about-notice {
+  display: flex;
+    padding: 0.375rem 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 1.5rem;
+       background: rgba(255, 255, 255, 0.15);
+       backdrop-filter: blur(16px);
+
+    color: var(--greyscaletext-0, #FFF);
+        font-family: "tripsan-bold";
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700 !important;
+        line-height: 120%;
+        /* 1.35rem */
+}
+
+
+
+/* animate spin */
+
+@keyframes custom-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: custom-spin 3s linear infinite;
+  /* 3 seconds duration */
+}
+
+.animate-spin-fast {
+  animation: custom-spin 0.5s linear infinite;
+  /* 0.5 seconds duration */
+>>>>>>> 9c7ce65 (may cai banner)
 }
