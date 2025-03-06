@@ -4,16 +4,22 @@
   font-family: 'tripsan-regular';
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'tripsan-medium';
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'tripsan-bold';
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @theme {
@@ -32,6 +38,7 @@
   
   /* GREYSCALE */
   --color-greyscaletext-0:#FFF;
+  --color-greyscaletext-5:#F1F1F1;
   --color-greyscaletext-10: #C5C5C5;
   --color-greyscaletext-20:#A9A9A9;
   --color-greyscaletext-30: #828282;
@@ -65,6 +72,7 @@
   --color-green-dark__hover: rgb(21, 67, 46);
   --color-green-dark__active: rgb(16, 50, 35);
   --color-green-darker: rgb(12, 39, 27);
+  --color-green-s:rgba(19, 52, 28, 1);
 
   /* Grey Green */
   --color-grey-green-light: rgb(231, 233, 232);
@@ -531,6 +539,45 @@ html {
   line-height: 150%; /* 1.5rem */
   letter-spacing: 0.005rem;
 }
+
+/* CAPTION/ REGULAR */
+
+.caption-regular {
+  color: var(--greyscaletext-0, #FFF);
+  
+    /* APP/CAPTION/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+.caption-medium{
+  color: #000;
+    font-family: "Kanit";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+.caption-bold{
+  color: #000;
+    font-family: "Trip Sans";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+
 @media only screen and (max-width: 640px) {
   html {
     font-size: 4.267vw;
@@ -881,51 +928,53 @@ color: #000;
 }
 /* About */
 
+
+}
 .h1-about {
   font-family: "tripsan-bold";
-    font-size: 13.9375rem;
-    font-style: normal;
-    font-weight: 700 !important;
-    line-height: 100%;
-    /* 13.9375rem */
-    background: linear-gradient(180deg, #FFF 28.9%, rgba(255, 255, 255, 0.00) 83.61%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+  font-size: 13.9375rem;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 100%;
+  /* 13.9375rem */
+  background: linear-gradient(180deg, #FFF 28.9%, rgba(255, 255, 255, 0.00) 83.61%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-exp {
   font-family: "tripsan-bold";
-    font-size: 7.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    /* 7.5rem */
-    text-transform: uppercase;
+  font-size: 7.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 7.5rem */
+  text-transform: uppercase;
 
-    background: linear-gradient(180deg, #FFF 30.31%, rgba(255, 255, 255, 0.00) 87.67%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #FFF 30.31%, rgba(255, 255, 255, 0.00) 87.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-notice {
   display: flex;
-    padding: 0.375rem 0.75rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    border-radius: 1.5rem;
-       background: rgba(255, 255, 255, 0.15);
-       backdrop-filter: blur(16px);
+  padding: 0.375rem 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
 
-    color: var(--greyscaletext-0, #FFF);
-        font-family: "tripsan-bold";
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 700 !important;
-        line-height: 120%;
-        /* 1.35rem */
+  color: var(--greyscaletext-0, #FFF);
+  font-family: "tripsan-bold";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 120%;
+  /* 1.35rem */
 }
 
 
@@ -950,5 +999,4 @@ color: #000;
 .animate-spin-fast {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
-}
 }

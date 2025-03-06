@@ -1,6 +1,7 @@
 import "@/global/global.css";
 import Header from "./_components/Header";
 import AppProvider from "./context/AppProvider";
+import Footer from "../../components/section/footer/Footer";
 
 export const metadata = {
   title: "Homepage - Hong Hao Travel",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <Header />
           <main>{children}</main>
+          <Footer/>
         </AppProvider>
       </body>
     </html>

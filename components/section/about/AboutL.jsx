@@ -1,9 +1,12 @@
+
 import Image from 'next/image'
 import React from 'react'
 
-export default function AboutL() {
+
+export default function AboutL({ref}) {
+  
   return (
-      <div className='about-l relative px-5 sm:px-20 '>
+      <div ref={ref} className='about-l relative px-5 sm:px-20 translate-y-[4.6875rem] z-20 opacity-0'>
           
           <div className='w-[20.098rem] sm:w-[58.19256rem] h-[7.42925rem] sm:h-[22.1875rem] shrink-0 relative z-10'>
               <Image src={"/images/about/h1.png"} alt="" fill  />
