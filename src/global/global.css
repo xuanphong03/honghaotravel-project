@@ -874,13 +874,11 @@ color: #000;
     }
 }
 
-<<<<<<< HEAD
 @media only screen and (min-width: 1920px) {
   html {
     font-size: 19.2px;
   }
 }
-=======
 /* About */
 
 .h1-about {
@@ -952,5 +950,5 @@ color: #000;
 .animate-spin-fast {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
->>>>>>> 9c7ce65 (may cai banner)
+}
 }
