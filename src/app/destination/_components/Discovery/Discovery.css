@@ -1,0 +1,26 @@
+#discovery_item .arrow_animation {
+  animation: arrow 1s ease-in infinite;
+}
+#discovery_item .animation_skeleton {
+  animation: skeleton 1.5s ease-in infinite;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes skeleton {
+  from {
+    left: -4rem;
+  }
+  to {
+    left: 10rem;
+  }
+}
