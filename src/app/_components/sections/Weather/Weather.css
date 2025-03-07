@@ -1,0 +1,29 @@
+#weather .animation_cloud1 {
+  animation: cloud1 60s linear infinite;
+}
+#weather .animation_cloud2 {
+  animation: cloud2 60s linear infinite;
+}
+
+@keyframes cloud1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes cloud2 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

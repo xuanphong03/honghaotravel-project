@@ -80,10 +80,11 @@ function BestTrips(props) {
             <h2 className="text-[#262626] text-[2.5rem] md:text-[3.5rem] font-black font-londrina-solid leading-none w-1/2 lg:w-full">
               BEST TRIPS FOR YOU
             </h2>
-            <p className="absolute origin-bottom-right -rotate-90  right-0 bottom-full rounded-t-[0.5rem] bg-orange-normal h-[2.125rem] w-[7.9rem] lg:h-[3.4rem] lg:w-[9.4rem] flex justify-center items-center text-white text-[0.875rem] font-extrabold">
+            <p className="lg:hidden absolute origin-bottom-right -rotate-90 right-0 bottom-full rounded-t-[0.5rem] bg-orange-normal h-[2.125rem] w-[7.9rem] lg:h-[3.4rem] lg:w-[9.4rem] flex justify-center items-center text-white text-[0.875rem] font-extrabold">
               All tour
             </p>
           </div>
+
           <div className="hidden lg:block relative w-[29.29231rem] h-[28.12494rem]">
             {TRIPS.map((item, index) => {
               const isActive = currentIndex === index;
@@ -102,6 +103,22 @@ function BestTrips(props) {
             })}
           </div>
         </div>
+
+        <div className="absolute top-0 bottom-0 right-0 h-full pt-[5.63rem] pb-[4.94rem] ">
+          <div className="sticky top-[10rem] max-h-screen !z-50">
+            <div className="w-[2rem] h-[25rem] bg-transparent relative">
+              <Link
+                href="#"
+                className="w-[10rem] inline-flex h-[3.5rem] px-[2rem] py-[1rem] gap-[0.5rem] items-center justify-center rounded-t-[0.5rem] absolute right-0 bg-orange-normal origin-bottom-right -rotate-90"
+              >
+                <span className="text-white uppercase text-[0.875rem] font-bold leading-[1.2]">
+                  All tour
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div
           className="w-full lg:w-[47.3125rem] flex lg:block overflow-x-auto lg:overflow-visible hidden_scrollbar px-[0.75rem] lg:px-0 gap-[0.75rem]"
           ref={tripListRef}

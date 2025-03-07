@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
 @import "tailwindcss";
 @font-face {
-  font-family: 'tripsan-regular';
+  font-family: "tripsan-regular";
   /* Name your font */
-  src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+  src: url("/fonts/trip-sans/TripSans-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'tripsan-medium';
+  font-family: "tripsan-medium";
   /* Name your font */
-  src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+  src: url("/fonts/trip-sans/TripSans-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'tripsan-bold';
+  font-family: "tripsan-bold";
   /* Name your font */
-  src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+  src: url("/fonts/trip-sans/TripSans-Bold.ttf") format("truetype");
 }
 
 @theme {
   /* GREYSCALE */
-  
+
   --color-grey-50: rgb(239, 239, 239);
   --color-grey-100: rgb(204, 204, 204);
   --color-grey-200: rgb(180, 180, 180);
@@ -29,18 +29,17 @@
   --color-grey-700: rgb(65, 65, 65);
   --color-grey-800: rgb(51, 51, 51);
   --color-grey-900: rgb(39, 39, 39);
-  
+
   /* GREYSCALE */
-  --color-greyscaletext-0:#FFF;
-  --color-greyscaletext-10: #C5C5C5;
-  --color-greyscaletext-20:#A9A9A9;
+  --color-greyscaletext-0: #fff;
+  --color-greyscaletext-10: #c5c5c5;
+  --color-greyscaletext-20: #a9a9a9;
   --color-greyscaletext-30: #828282;
-  --color-greyscaletext-40: #6A6A6A;
-  --color-greyscaletext-70:#313131;
+  --color-greyscaletext-40: #6a6a6a;
+  --color-greyscaletext-70: #313131;
   --color-greyscaletext-80-main: #262626;
 
-  --color-Gray-Scale-80: #2E2E2E;
-  
+  --color-Gray-Scale-80: #2e2e2e;
 
   /* Orange */
   --color-orange-light: rgb(254, 238, 232);
@@ -79,33 +78,28 @@
   --color-grey-green-darker: rgb(6, 14, 8);
 
   /* Background elevation */
-  --color-bg-elevation-30: #F0F0F0;
+  --color-bg-elevation-30: #f0f0f0;
   --color-bg-elevation-white-50: rgb(255, 255, 255);
   --color-bg-elevation-white-100: rgb(250, 250, 250);
   --color-bg-elevation-white-300: rgb(245, 245, 245);
   --color-bg-elevation-white-500: rgb(240, 240, 240);
 
-
   /* Font */
   --font-londrina-solid: "Londrina Solid", sans-serif;
   --font-kanit: "Kanit", sans-serif;
   --font-inter: "Inter", sans-serif;
-    /* Background greyscaletext */
+  /* Background greyscaletext */
 
-    --color-bg-greyscaletext-10: #C5C5C5;
+  --color-bg-greyscaletext-10: #c5c5c5;
 
-    /* font */
-    --font-tripsan-regular: "tripsan-regular";
-    --font-tripsan-bold: "tripsan-regular"
-
-    
-  
+  /* font */
+  --font-tripsan-regular: "tripsan-regular";
+  --font-tripsan-bold: "tripsan-regular";
 }
 
 html {
   font-size: 1vw;
 }
-
 
 .hidden_scrollbar::-webkit-scrollbar {
   display: none;
@@ -115,6 +109,20 @@ html {
 .hidden_scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom_scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 2px;
 }
 
 /* Button */
@@ -187,18 +195,17 @@ html {
 
 .btn-bold {
   color: var(--greyscaletext-0);
-    text-align: center;
-  
-    /* WEB/BUTTON/BOLD */
-    font-family: "tripsan-bold";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 1.05rem */
-    text-transform: uppercase;
-}
+  text-align: center;
 
+  /* WEB/BUTTON/BOLD */
+  font-family: "tripsan-bold";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 1.05rem */
+  text-transform: uppercase;
+}
 
 /* Web heading */
 /* h1 */
@@ -535,62 +542,61 @@ html {
   html {
     font-size: 4.267vw;
   }
-
-
+}
 
 /* Sub1 */
 
-.sub1-regular{
+.sub1-regular {
   color: #000;
-  
-    /* WEB/SUB1/REGULAR */
-    font-family: "tripsan-regular";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
+
+  /* WEB/SUB1/REGULAR */
+  font-family: "tripsan-regular";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 1.2rem */
+  letter-spacing: 0.0125rem;
 }
-.sub1-medium{
+.sub1-medium {
   color: #000;
-  
-    /* WEB/SUB1/MEDIUM */
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
+
+  /* WEB/SUB1/MEDIUM */
+  font-family: "tripsan-medium";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  /* 1.2rem */
+  letter-spacing: 0.0125rem;
 }
-.sub1-semibold{
+.sub1-semibold {
   color: #000;
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
+  font-family: "tripsan-medium";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  /* 1.2rem */
+  letter-spacing: 0.0125rem;
 }
-.sub1-bold{
+.sub1-bold {
   color: #000;
-  
-    /* WEB/SUB1/BOLD */
-    font-family:"tripsan-bold";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
+
+  /* WEB/SUB1/BOLD */
+  font-family: "tripsan-bold";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  /* 1.2rem */
+  letter-spacing: 0.0125rem;
 }
 
 /* Sub2 */
 
 .sub2-regular {
-color: #000;
+  color: #000;
 
   /* WEB/SUB2/REGULAR */
   font-family: "tripsan-regular";
@@ -604,31 +610,31 @@ color: #000;
 
 .sub2-medium {
   color: #000;
-  
-    /* WEB/SUB2/MEDIUM */
-    font-family: "tripsan-medium";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 1.05rem */
-    letter-spacing: 0.00875rem;
+
+  /* WEB/SUB2/MEDIUM */
+  font-family: "tripsan-medium";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
 }
 
 .sub2-semibold {
   color: #000;
-    font-family: "tripsan-medium";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
-    /* 1.05rem */
-    letter-spacing: 0.00875rem;
+  font-family: "tripsan-medium";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
 }
 
 .sub2-bold {
-color: #000;
-  font-family:"tripsan-bold";
+  color: #000;
+  font-family: "tripsan-bold";
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 800;
@@ -637,40 +643,38 @@ color: #000;
 }
 
 /* WEB/BODY1/REGULAR */
-.body1-regular{
+.body1-regular {
   color: #000;
-  
-    /* WEB/BODY1/REGULAR */
-    font-family: "tripsan-regular";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
-.body1-semibold{
-  color: #000;
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
-.body1-bold{
-  color: #000;
-    font-family: "tripsan-bold";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
 
-
+  /* WEB/BODY1/REGULAR */
+  font-family: "tripsan-regular";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
+.body1-semibold {
+  color: #000;
+  font-family: "tripsan-medium";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
+.body1-bold {
+  color: #000;
+  font-family: "tripsan-bold";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
 
 @media only screen and (max-width: 640px) {
   html {
@@ -863,74 +867,78 @@ color: #000;
     line-height: 120%; /* 1.5rem */
   }
   .h5-bold-pc {
-      color: var(--greyscaletext-70, #313131);
-      /* WEB/H5/BLACK */
-      font-family: "Londrina Solid", sans-serif;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      /* 1.5rem */
-    }
+    color: var(--greyscaletext-70, #313131);
+    /* WEB/H5/BLACK */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 1.5rem */
+  }
 }
 
-<<<<<<< HEAD
 @media only screen and (min-width: 1920px) {
   html {
     font-size: 19.2px;
   }
 }
-=======
 /* About */
 
 .h1-about {
   font-family: "tripsan-bold";
-    font-size: 13.9375rem;
-    font-style: normal;
-    font-weight: 700 !important;
-    line-height: 100%;
-    /* 13.9375rem */
-    background: linear-gradient(180deg, #FFF 28.9%, rgba(255, 255, 255, 0.00) 83.61%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+  font-size: 13.9375rem;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 100%;
+  /* 13.9375rem */
+  background: linear-gradient(
+    180deg,
+    #fff 28.9%,
+    rgba(255, 255, 255, 0) 83.61%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-exp {
   font-family: "tripsan-bold";
-    font-size: 7.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    /* 7.5rem */
-    text-transform: uppercase;
+  font-size: 7.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 7.5rem */
+  text-transform: uppercase;
 
-    background: linear-gradient(180deg, #FFF 30.31%, rgba(255, 255, 255, 0.00) 87.67%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    180deg,
+    #fff 30.31%,
+    rgba(255, 255, 255, 0) 87.67%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-notice {
   display: flex;
-    padding: 0.375rem 0.75rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    border-radius: 1.5rem;
-       background: rgba(255, 255, 255, 0.15);
-       backdrop-filter: blur(16px);
+  padding: 0.375rem 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
 
-    color: var(--greyscaletext-0, #FFF);
-        font-family: "tripsan-bold";
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 700 !important;
-        line-height: 120%;
-        /* 1.35rem */
+  color: var(--greyscaletext-0, #fff);
+  font-family: "tripsan-bold";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 120%;
+  /* 1.35rem */
 }
-
-
 
 /* animate spin */
 
@@ -952,5 +960,4 @@ color: #000;
 .animate-spin-fast {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
->>>>>>> 9c7ce65 (may cai banner)
 }

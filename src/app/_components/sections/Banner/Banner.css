@@ -1,0 +1,17 @@
+.bg-custom-gradient-banner {
+  opacity: 0.09;
+  background: linear-gradient(
+      0deg,
+      rgba(15, 73, 43, 0.2) 0%,
+      rgba(15, 73, 43, 0.2) 100%
+    ),
+    url("/public/images/discover-home-bg.png") lightgray -37.28px -1532.253px /
+      103.142% 314.078% no-repeat;
+}
+
+.custom-heading-banner {
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 131.51%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
