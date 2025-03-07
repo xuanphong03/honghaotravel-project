@@ -903,7 +903,7 @@ color: #000;
   .h5-bold {
     color: #000;
     /* APP/H7/BOLD */
-    font-family: "Trip Sans", sans-serif;
+    font-family: "tripsan-bold", sans-serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
@@ -975,6 +975,28 @@ color: #000;
   font-weight: 700 !important;
   line-height: 120%;
   /* 1.35rem */
+}
+
+/* Trip for you */
+
+.time-box {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(2px);
+}
+
+.intro {
+  color: var(--greyscaletext-0, #FFF);
+    font-family: "tripsan-bold";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    /* 1.5rem */
 }
 
 

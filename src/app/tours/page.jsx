@@ -1,8 +1,8 @@
 import React from 'react'
-import AllTour from '../../../components/section/alltour/AllTour'
+import Tours from '../../../components/section/alltour/Tours'
 
 export default function page() {
   return (
-    <div><AllTour/></div>
+    <div><Tours/></div>
   )
 }

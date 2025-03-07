@@ -9,11 +9,11 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import OverlayAnimate from '../../common/OverlayAnimate'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function BannerAbout() {
-  const ab = useRef(null);
   const about = useRef(null)
   const abd1 = useRef(null)
   const abd2 = useRef(null)
@@ -45,12 +45,6 @@ export default function BannerAbout() {
       duration: 1,
     })
 
-    gsap.to(ab.current, {
-      duration: 1, // Thời gian hiệu ứng (2 giây)
-      backgroundColor: 'transparent', // Màu nền biến mất
-      ease: 'power2.out', // Hiệu ứng easing
-    });
-
     gsap.to(aboutL.current, {
       duration: 1,
       opacity: 1,
@@ -60,9 +54,7 @@ export default function BannerAbout() {
   });
   return (
     <div ref={about} className='about relative pt-[7.25rem] sm:py-[8.69rem] max-sm:min-h-[56.6963rem] overflow-hidden'>
-      <div ref={ab} className="about-ab bg-[#13341c] absolute top-0 left-0 right-0 bottom-0 z-30">
-
-      </div>
+      <OverlayAnimate/>
       <div className="w-[101.5625rem] h-full absolute top-0 left-0 right-0" >
           <div className="absolute top-0 right-0 left-0 bottom-0 z-10" style={{background:"linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)"}}></div>
           <Image src="/images/about/about-banner.png" alt="" fill className='object-cover absolute top-0 left-0 right-0 bottom-0 z-0'></Image>
