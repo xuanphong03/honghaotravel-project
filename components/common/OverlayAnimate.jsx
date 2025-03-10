@@ -10,7 +10,8 @@ export default function OverlayAnimate() {
     gsap.to(ab.current, {
       duration: 1, // Thời gian hiệu ứng (2 giây)
       backgroundColor: 'transparent', // Màu nền biến mất
-      ease: 'power2.out', // Hiệu ứng easing
+      ease: 'power2.out',
+      zIndex:0
     });
          
   });

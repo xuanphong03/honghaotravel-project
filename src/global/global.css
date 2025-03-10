@@ -43,6 +43,7 @@
   --color-greyscaletext-20:#A9A9A9;
   --color-greyscaletext-30: #828282;
   --color-greyscaletext-40: #6A6A6A;
+  --color-greyscaletext-50:"#454545";
   --color-greyscaletext-70:#313131;
   --color-greyscaletext-80-main: #262626;
 
@@ -221,7 +222,7 @@ html {
 }
 .h1-medium {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 6rem;
   font-style: normal;
   font-weight: 700;
@@ -230,7 +231,7 @@ html {
 }
 .h1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 6rem;
   font-style: normal;
   font-weight: 800;
@@ -348,7 +349,7 @@ html {
 }
 .h4-bold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: 800;
@@ -380,15 +381,7 @@ html {
   font-weight: 600;
   line-height: 120%; /* 1.8rem */
 }
-.h5-bold {
-  color: #000;
-  /* WEB/H5/BLACK */
-  font-family: "Londrina Solid", sans-serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%; /* 1.5rem */
-}
+
 /* h6 */
 .h6-regular {
   color: #000;
@@ -416,53 +409,62 @@ html {
 }
 .h6-bold {
   color: #000;
-  font-family: Inter;
+  font-family: "tripsan-bold";
   font-size: 1.25rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 120%; /* 1.5rem */
 }
 
-/* sub1 */
+/* Sub1 */
+
 .sub1-regular {
   color: #000;
 
   /* WEB/SUB1/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular";
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-medium {
   color: #000;
 
   /* WEB/SUB1/MEDIUM */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-medium";
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-medium";
   font-size: 1rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-bold {
   color: #000;
+
   /* WEB/SUB1/BOLD */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-bold";
   font-size: 1rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
 
@@ -471,7 +473,7 @@ html {
   color: #000;
 
   /* WEB/SUB2/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
@@ -482,7 +484,7 @@ html {
   color: #000;
 
   /* WEB/SUB2/MEDIUM */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -502,7 +504,7 @@ html {
   color: #000;
 
   /* WEB/SUB2/BOLD */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 800;
@@ -510,11 +512,11 @@ html {
   letter-spacing: 0.00875rem;
 }
 
-/* Body */
+/* Body1 */
 .body1-regular {
   color: #000;
   /* WEB/BODY1/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -523,22 +525,50 @@ html {
 }
 .body1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.5rem */
   letter-spacing: 0.005rem;
 }
-.body1-bold {
+/* .body1-bold {
   color: #000;
   font-family: Kanit;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 1.5rem */
-  letter-spacing: 0.005rem;
+/* letter-spacing: 0.005rem; */
+/* } * */
+
+/* Body2 */
+
+.body2-regular {
+  color: var(--greyscaletext-80-main, #262626);
+  
+    /* WEB/BODY2/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.3125rem */
+    letter-spacing: 0.00219rem;
 }
+
+.body2-bold{
+  
+    /* WEB/BODY2/BOLD */
+    font-family: "tripsan-bold";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.3125rem */
+}
+
+
 
 /* CAPTION/ REGULAR */
 
@@ -568,7 +598,7 @@ html {
 
 .caption-bold{
   color: #000;
-    font-family: "Trip Sans";
+    font-family: "tripsan-regular";
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 800;
@@ -585,54 +615,7 @@ html {
 
 
 
-/* Sub1 */
 
-.sub1-regular{
-  color: #000;
-  
-    /* WEB/SUB1/REGULAR */
-    font-family: "tripsan-regular";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
-}
-.sub1-medium{
-  color: #000;
-  
-    /* WEB/SUB1/MEDIUM */
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
-}
-.sub1-semibold{
-  color: #000;
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
-}
-.sub1-bold{
-  color: #000;
-  
-    /* WEB/SUB1/BOLD */
-    font-family:"tripsan-bold";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120%;
-    /* 1.2rem */
-    letter-spacing: 0.0125rem;
-}
 
 /* Sub2 */
 
@@ -800,7 +783,7 @@ color: #000;
   /* h3 */
   .h3-regular {
     color: #000;
-    font-family: "Trip Sans", sans-serif;
+    font-family: "tripsan-regular", sans-serif;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;

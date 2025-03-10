@@ -1,0 +1,5 @@
+.shadow-schedule {
+    border-radius: 2rem;
+        background: #FAFAFA;
+        box-shadow: -206px 319px 106px 0px rgba(13, 48, 33, 0.00), -132px 204px 97px 0px rgba(13, 48, 33, 0.01), -33px 51px 61px 0px rgba(13, 48, 33, 0.09), -8px 13px 33px 0px rgba(13, 48, 33, 0.10);
+}
