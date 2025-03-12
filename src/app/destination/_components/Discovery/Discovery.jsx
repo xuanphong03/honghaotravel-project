@@ -132,13 +132,13 @@ export default function Discovery() {
         <div className="relative inline-flex flex-col items-center gap-[2rem] max-md:mt-[1.7rem]">
           <div className="flex flex-col items-center gap-[2rem]">
             <TourList tours={tours} />
-            <div className="py-[2rem]">
+            {/* <div className="py-[2rem]">
               <PaginationWithLinks
                 page={_page}
                 pageSize={_limit}
                 totalCount={100}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

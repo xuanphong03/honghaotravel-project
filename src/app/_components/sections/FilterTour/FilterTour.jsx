@@ -202,6 +202,7 @@ export default function FilterTour() {
               name="selfDriving"
               label="Self driving"
               control={form.control}
+              unit="Pax"
             />
           </div>
 
@@ -211,6 +212,7 @@ export default function FilterTour() {
               name="localDriving"
               label="Local driving"
               control={form.control}
+              unit="Pax"
             />
           </div>
 

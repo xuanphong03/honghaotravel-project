@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import NavigationItemV1 from "./NavigationItemV1";
 import NavigationItemV2 from "./NavigationItemV2";
+import { v4 as uuidv4 } from "uuid";
 
 export default function NavigationList() {
   const [catalogList, setCatalogList] = useState([]);
@@ -10,7 +11,7 @@ export default function NavigationList() {
     return items.map((item) => {
       if (item.children) {
         return (
-          <li key={item.id} className="relative w-full">
+          <li key={uuidv4()} className="relative w-full cursor-pointer">
             <NavigationItemV2
               title={item.title}
               links={item.children.map((child) => ({
@@ -23,7 +24,7 @@ export default function NavigationList() {
         );
       }
       return (
-        <li key={item.id} className="relative w-full">
+        <li key={uuidv4()} className="relative w-full">
           <NavigationItemV1 title={item.title} to={item.to} />
         </li>
       );
@@ -32,38 +33,34 @@ export default function NavigationList() {
 
   useEffect(() => {
     setCatalogList([
-      { id: 1, title: "Home", to: "/", children: null },
-      { id: 2, title: "About Us", to: "#", children: null },
+      { title: "Home", to: "/", children: null },
+      { title: "About Us", to: "#", children: null },
       {
-        id: 3,
         title: "About Us",
         children: [
           {
-            id: 4,
             title: "Best Budget",
             to: "/tours?device=best-budget",
             children: null,
           },
           {
-            id: 5,
             title: "Standard",
             to: "/tours?device=standard",
             children: null,
           },
           {
-            id: 6,
             title: "Premium",
             to: "/tours?device=premium",
             children: null,
           },
-          { id: 7, title: "All Tours", to: "/tours", children: null },
+          { title: "All Tours", to: "/tours", children: null },
         ],
       },
-      { id: 8, title: "Activity", to: "#", children: null },
-      { id: 9, title: "Destination", to: "#", children: null },
-      { id: 10, title: "Blog", to: "#", children: null },
-      { id: 11, title: "FAQ", to: "#", children: null },
-      { id: 12, title: "Contact Us", to: "#", children: null },
+      { title: "Activity", to: "#", children: null },
+      { title: "Destination", to: "#", children: null },
+      { title: "Blog", to: "#", children: null },
+      { title: "FAQ", to: "#", children: null },
+      { title: "Contact Us", to: "#", children: null },
     ]);
   }, []);
 

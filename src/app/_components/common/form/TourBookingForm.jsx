@@ -8,7 +8,7 @@ import { z } from "zod";
 import TextareaField from "../../form-controls/TextareaField";
 import ComboboxFieldV2 from "../../form-controls/ComboboxFieldV2";
 import DatePickerField from "../../form-controls/DatePickerField";
-import { Form } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { addDays } from "date-fns";
 
 import { v4 as uuidv4 } from "uuid";
@@ -29,7 +29,6 @@ const formSchema = z.object({
     .number()
     .min(0, "Please enter quantity local driving")
     .default(0),
-  // Customer information
   customerName: z
     .string({ required_error: "Please enter your name" })
     .min(2, "Username must be at least 2 characters"),
@@ -327,23 +326,51 @@ export default function TourBookingForm() {
                   </svg>
                   <div className="flex px-[0.75rem] py-[0.375rem] items-center gap-[0.625rem] rounded-[0.25rem] bg-[#F1F1F1]">
                     <span className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                      Pax
+                      Pax:
                     </span>
-                    <div className="relative flex items-center gap-[0.25rem] leading-[1.2]">
-                      <Input
-                        readOnly
-                        type="number"
-                        defaultValue={10}
-                        className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                    <div className="relative ">
+                      <FormField
+                        name="selfDriving"
+                        control={form.control}
+                        render={({ field }) => {
+                          const handleIncrement = () => {
+                            field.onChange(field.value + 1);
+                          };
+                          const handleDecrement = () => {
+                            if (field.value > 0) {
+                              field.onChange(field.value - 1);
+                            }
+                          };
+                          return (
+                            <FormItem className="flex items-center gap-[0.25rem] leading-[1.2]">
+                              <FormControl>
+                                <Input
+                                  readOnly
+                                  {...field}
+                                  type="number"
+                                  className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                                />
+                              </FormControl>
+                              <div className="flex flex-col">
+                                <button
+                                  type="button"
+                                  onClick={handleIncrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronUp className="size-[0.875rem]" />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={handleDecrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronDown className="size-[0.875rem]" />
+                                </button>
+                              </div>
+                            </FormItem>
+                          );
+                        }}
                       />
-                      <div className="flex flex-col">
-                        <button type="button" className="cursor-pointer">
-                          <ChevronUp className="size-[0.875rem]" />
-                        </button>
-                        <button type="button" className="cursor-pointer">
-                          <ChevronDown className="size-[0.875rem]" />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -374,21 +401,49 @@ export default function TourBookingForm() {
                     <span className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
                       Pax
                     </span>
-                    <div className="relative flex items-center gap-[0.25rem] leading-[1.2]">
-                      <Input
-                        readOnly
-                        type="number"
-                        defaultValue={10}
-                        className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                    <div className="relative">
+                      <FormField
+                        name="localDriving"
+                        control={form.control}
+                        render={({ field }) => {
+                          const handleIncrement = () => {
+                            field.onChange(field.value + 1);
+                          };
+                          const handleDecrement = () => {
+                            if (field.value > 0) {
+                              field.onChange(field.value - 1);
+                            }
+                          };
+                          return (
+                            <FormItem className="flex items-center gap-[0.25rem] leading-[1.2]">
+                              <FormControl>
+                                <Input
+                                  readOnly
+                                  {...field}
+                                  type="number"
+                                  className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                                />
+                              </FormControl>
+                              <div className="flex flex-col">
+                                <button
+                                  type="button"
+                                  onClick={handleIncrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronUp className="size-[0.875rem]" />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={handleDecrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronDown className="size-[0.875rem]" />
+                                </button>
+                              </div>
+                            </FormItem>
+                          );
+                        }}
                       />
-                      <div className="flex flex-col">
-                        <button type="button" className="cursor-pointer">
-                          <ChevronUp className="size-[0.875rem]" />
-                        </button>
-                        <button type="button" className="cursor-pointer">
-                          <ChevronDown className="size-[0.875rem]" />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
