@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function OurTeamItem({ name, image, role, exp, desc }) {
   return (
-    <article className="ourteam-item relative group !w-full !h-full pb-[0.6875rem] flex flex-col gap-[0.69rem] items-center bg-white rounded-[1.5rem] overflow-hidden">
+    <article className="ourteam-item relative group !w-full !h-full pb-[0.6875rem] flex flex-col gap-[0.69rem] items-center bg-white rounded-[1.5rem] shadow-md border border-solid border-gray-200 overflow-hidden">
       <div className="size-[4rem] absolute top-[1.5rem] right-[1.5rem] z-[1] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-700">
         <Image
           alt="Hong Hao Travel"
@@ -23,7 +23,7 @@ function OurTeamItem({ name, image, role, exp, desc }) {
       </div>
       <div className="absolute top-[1.5rem] right-[1.5rem] z-[1]"></div>
       <div className="h-[24rem] w-full group-hover:h-[20rem] transition-all duration-700">
-        <div className="h-full w-full overflow-hidden rounded-[1.5rem]">
+        <div className="max-md:w-[17.7875rem] w-[17.6875rem] h-[24.125rem] max-md:h-[21.83156rem] group-hover:h-[20.3125rem] duration-500 ease-linear rounded-3xl overflow-hidden">
           <Image
             width={300}
             height={400}
@@ -34,7 +34,7 @@ function OurTeamItem({ name, image, role, exp, desc }) {
         </div>
       </div>
       <div className="flex flex-col gap-[0.25rem]">
-        <h4 className="text-center text-orange-normal leading-[1.2] text-[1rem] font-bold tracking-[0.0125rem]">
+        <h4 className="text-base not-italic leading-[120%] tracking-[0.0125rem] text-center text-orange-normal text-[1rem] font-bold">
           {name}
         </h4>
         <div className="flex flex-row items-center gap-[0.75rem] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">

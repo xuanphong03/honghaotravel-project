@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import OurTeamSlide from "./OurTeamSlide";
 import "./OurTeam.css";
+import Link from "next/link";
 
 function OurTeam({ primary = false, secondary = false }) {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -38,32 +39,20 @@ function OurTeam({ primary = false, secondary = false }) {
   };
 
   return (
-    <section id="our-team" className="relative bg-white">
-      {primary && (
-        <>
-          <Image
-            alt="Hong Hao Travel"
-            width={2000}
-            height={1000}
-            src="/images/common/bg-our-team.jpeg"
-            className="absolute inset-0 w-full h-full object-cover z-[0]"
-          />
-          <div className="absolute inset-0 h-full w-full bg-[linear-gradient(180deg,#122718_7.6%,rgba(18,39,24,0.71)_43.62%,#122718_79.64%)] z-[1]"></div>
-        </>
-      )}
-      <div className="max-w-[100rem] mx-auto h-[44.86263rem] relative z-[2]">
-        <div className="relative w-full px-[5rem] mt-[4.37rem] inline-flex gap-x-[3.875rem] justify-start">
-          <div className="flex flex-col gap-y-[2.125rem]">
-            <div className="flex flex-col gap-y-[0.75rem] text-white">
+    <section id="our-team" className="bg-white w-full h-full">
+      <div className="max-w-[100rem] mx-auto relative z-[2]">
+        <div className="relative w-full md:px-[5rem]  mt-[4.37rem] flex max-md:flex-wrap gap-x-[3.875rem] justify-start">
+          <div className="flex flex-col max-md:px-[1rem]">
+            <div className="flex flex-col text-white">
               <h3
-                className={`text-[1.125rem] font-bold uppercase 
+                className={`max-md:text-[0.875rem] text-[1.125rem] font-bold uppercase mb-[0.75rem]
                 ${primary ? "text-white/40 " : ""} 
                 ${secondary ? "text-[#262626]/40" : ""}`}
               >
                 HONG HAO TRAVEL
               </h3>
               <h2
-                className={`uppercase font-londrina-solid text-[3.5rem] font-black leading-none
+                className={`uppercase font-londrina-solid text-[3.5rem] font-black leading-none max-md:!text-[2.5rem] max-md:pb-[3rem]
                ${primary ? "text-white " : ""} 
                 ${secondary ? "text-black" : ""}
               `}
@@ -72,7 +61,7 @@ function OurTeam({ primary = false, secondary = false }) {
               </h2>
             </div>
             <p
-              className={`w-[25.0625rem] tracking-[0.00875rem] leading-[1.2] text-[0.875rem] 
+              className={` md:w-[25.0625rem] tracking-[0.00875rem] text-[0.875rem] md:mt-[2.125rem]
               ${primary ? "text-[#f1f1f1]/50" : ""} 
               ${secondary ? "text-[#6a6a6a]" : ""}
               `}
@@ -83,24 +72,28 @@ function OurTeam({ primary = false, secondary = false }) {
               knowledgeable professionals with diverse backgrounds and expertise
               in various aspects of the tourism industry.
             </p>
-            <div className="text-[0.875rem] leading-[1.2rem] font-bold flex items-center gap-[1rem]">
-              <button className="cursor-pointer px-[1.25rem] py-[0.625rem] inline-flex gap-[0.5rem] h-[2.75rem] items-center justify-center rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal text-white uppercase">
-                Join with us
-              </button>
-              <button
-                className={`cursor-pointer px-[1.25rem] py-[0.625rem] inline-flex gap-[0.5rem] h-[2.75rem] items-center justify-center rounded-[0.5rem] border border-solid bg-transparent  uppercase
+            <div className="mt-[2.125rem] text-[0.875rem] leading-[1.2rem] font-bold flex items-center gap-[1rem]">
+              <Link
+                href="/about-us"
+                className="our_team-btn flex-1 cursor-pointer  inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal text-white uppercase"
+              >
+                About us
+              </Link>
+              <Link
+                href="/tours"
+                className={`our_team-btn flex-1 cursor-pointer hover:bg-orange-normal bg-transparent inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid uppercase
                ${
                  primary ? "border-grey-green-light text-grey-green-light" : ""
                } 
               ${secondary ? "border-orange-normal text-orange-normal" : ""}
               `}
               >
-                Call us
-              </button>
+                All tour
+              </Link>
             </div>
           </div>
-          <div className="relative w-[66.0625rem] overflow-x-auto hidden_scrollbar">
-            <div className="justify-end flex gap-[0.75rem] mb-[2.125rem] pr-[6.25rem]">
+          <div className="max-md:mt-[3rem] relative w-[66.0625rem] overflow-x-auto hidden_scrollbar">
+            <div className="hidden md:flex justify-end gap-[0.75rem] mb-[2.125rem] pr-[6.25rem]">
               <label
                 aria-selected={selectedTab === 0}
                 className={`${
@@ -154,7 +147,7 @@ function OurTeam({ primary = false, secondary = false }) {
                 ></span>
               </label>
             </div>
-            <div className="">
+            <div className="max-md:px-[1rem]">
               <OurTeamSlide
                 data={dataSlide}
                 primary={primary}

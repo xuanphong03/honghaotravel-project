@@ -26,8 +26,8 @@ export default function OurTour() {
           </button>
         </div>
       </div>
-      <div className="relative w-screen overflow-hidden">
-        <div className="hidden md:block absolute right-[-50rem] top-0 left-0 pt-[5.3125rem] pb-[7.6875rem]">
+      <div className="relative w-full overflow-hidden max-md:px-[1rem] max-md:pb-0 max-md:pt-0 md:pl-[4rem] md:pb-[5rem] lg:pl-[6.75rem] lg:pb-[7.6875rem] xl:pb-[20.875rem] pt-[5.3125rem]">
+        <div className="hidden md:block absolute right-[-50rem] top-0 left-0">
           <Image
             width={500}
             height={500}
@@ -50,11 +50,11 @@ export default function OurTour() {
             className="absolute top-[2rem] left-1/2 animate-cloud2"
           />
         </div>
-        <div className="md:w-[38.8125rem] w-full px-[1rem] md:pt-[5rem] md:pl-[4rem] lg:pl-[6.75rem] pb-0 pt-0 md:pb-[5rem] lg:pb-[20.87rem] relative z-[2]">
-          <h2 className="max-md:w-3/4 font-londrina-solid text-[2.5rem] md:text-[3.5rem] font-black leading-none text-white opacity-90 mb-[2rem] md:mb-[3.5rem]">
+        <div className="md:w-[38.8125rem] w-full relative z-[2]">
+          <h2 className="max-md:w-3/4 font-londrina-solid text-[2.5rem]  md:text-[3.5px] xl:text-[56px] font-black leading-none text-white mb-[2rem] md:mb-[3.5rem]">
             HONG HAO MOTORBIKE TOUR
           </h2>
-          <p className="text-white/60 lg:text-[1rem] md:text-[1.75rem] lg:mb-[2rem] md:leading-normal md:tracking-0 text-[0.875rem] md:tracking-[0.005rem] md:mb-[1rem] mb-[1.5rem] tracking-[0.00219rem] leading-normal">
+          <p className="text-[rgb(197,197,197)] lg:text-[16px] md:text-[1.75rem] lg:mb-[2rem] md:leading-normal md:tracking-0 text-[0.875rem] md:tracking-[0.005rem] md:mb-[1rem] mb-[1.5rem] tracking-[0.00219rem] leading-normal">
             Experience the raw beauty of Hà Giang with our immersive travel
             adventures. From rugged mountain landscapes to vibrant ethnic
             cultures, Hà Giang offers a truly unique and authentic experience.
@@ -122,12 +122,30 @@ export default function OurTour() {
               </span>
             </li>
           </ul>
-          <div className="flex gap-[1rem]">
-            <button className="cursor-pointer bg-orange-normal border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
+          <div className="flex">
+            <button className="group xl:text-[16px] cursor-pointer bg-orange-normal border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
               Book now
+              <span className=" group-hover:translate-x-1/3 transition-transform duration-500 inline-flex justify-center items-center size-[1rem] px-[0.125rem] py-[0.17188rem]">
+                <Image
+                  alt="Hong Hao Travel"
+                  width={20}
+                  height={20}
+                  src="/images/arrow/arrow-right.svg"
+                  className="size-full object-contain"
+                />
+              </span>
             </button>
-            <button className="cursor-pointer hover:bg-orange-normal hover:border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
+            <button className="group xl:text-[16px] cursor-pointer hover:bg-orange-normal hover:border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
               All tour
+              <span className="group-hover:translate-x-1/3 transition-transform duration-500 inline-flex justify-center items-center size-[1rem] px-[0.125rem] py-[0.17188rem]">
+                <Image
+                  alt="Hong Hao Travel"
+                  width={20}
+                  height={20}
+                  src="/images/arrow/arrow-right.svg"
+                  className="size-full object-contain"
+                />
+              </span>
             </button>
           </div>
         </div>
@@ -152,7 +170,7 @@ export default function OurTour() {
           className="overflow-hidden"
         >
           <Image
-            alt=""
+            alt="Hong Hao Travel"
             width={200}
             height={1080}
             src="/images/motorbike-way.png"
@@ -160,7 +178,7 @@ export default function OurTour() {
           />
           <div className="absolute bottom-full left-1/2 -translate-x-1/2 animation_motorbike opacity-0">
             <Image
-              alt=""
+              alt="Hong Hao Travel"
               width={50}
               height={50}
               src="/images/xemay.png"

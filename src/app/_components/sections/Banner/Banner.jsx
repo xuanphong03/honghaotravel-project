@@ -81,7 +81,7 @@ export default function Banner() {
         <div className="size-full relative">
           <div className="bg-green-normal__hover w-full h-full shrink-0 absolute z-[1]"></div>
           <Image
-            alt=""
+            alt="Hong Hao Travel"
             width={1920}
             height={1080}
             src="/images/discover-home-bg.png"
@@ -207,19 +207,6 @@ export default function Banner() {
       <div className="xl:hidden absolute inset-0 !z-50">
         <BannerSlide data={SlideList} onChange={handleSlideChange} />
       </div>
-
-      {/* <div className="fixed inset-0 !z-[9999] flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div
-          className={`relative transition-all duration-500 ${
-            openCustomTourForm
-              ? "opacity-100 visible scale-100"
-              : "opacity-0 invisible scale-50"
-          }`}
-        >
-          <CustomTourForm />
-        </div>
-      </div> */}
     </section>
   );
 }

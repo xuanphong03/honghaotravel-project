@@ -15,19 +15,37 @@ import { Autoplay } from "swiper/modules";
 export default function ExploreTrip() {
   return (
     <section id="explore-trip" className="w-full relative bg-white">
-      <div className=" max-w-[90.375rem] mx-auto">
-        <div className="relative flex flex-col gap-[0.75rem] mb-[3.75rem]">
+      <div className="max-w-[90.375rem] mx-auto max-md:px-[1rem]">
+        <div className="relative flex flex-col gap-[0.75rem] mb-[2rem] md:mb-[3.75rem]">
           <h3 className="text-[1.125rem] font-extrabold leading-none text-green-dark__active/40 uppercase">
             Explore
           </h3>
-          <h2 className="font-londrina-solid text-green-normal__hover uppercase text-[3.5rem] leading-none font-black">
+          <h2 className="font-londrina-solid text-green-normal__hover uppercase text-[2.5rem] md:text-[3.5rem] leading-none font-black">
             Trips for you
           </h2>
         </div>
         <div>
           <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
+            slidesPerView={"auto"}
+            spaceBetween={15}
+            breakpoints={{
+              640: {
+                slidesPerView: "auto",
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 25,
+              },
+              1600: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
             loop={true}
             speed={1000}
             autoplay={{
@@ -38,10 +56,13 @@ export default function ExploreTrip() {
             className="relative"
           >
             {[...Array(10)].map((_, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide
+                key={index}
+                className="max-md:!w-[17.7875rem] !h-[23.33956rem] md:!h-[29.5625rem] "
+              >
                 <Link
                   href="#"
-                  className="relative !w-full inline-block !h-[29.5625rem] rounded-[1.5rem] overflow-hidden"
+                  className="relative w-full h-full inline-block rounded-[1.5rem] overflow-hidden"
                 >
                   <ExploreTripItem />
                 </Link>

@@ -32,12 +32,11 @@ export default function OurTeamSlide({ data = [], primary, secondary }) {
       ref={swiperRef}
       spaceBetween={15}
       slidesPerView={"auto"}
-      className="h-[28.75rem]"
     >
       {data.length > 0 &&
         data.map((item) => (
-          <SwiperSlide key={item.id} className="!w-[17.6875rem]">
-            <Link href="#" className="inline-block w-full !h-[28.5rem]">
+          <SwiperSlide key={item.id} className="!pb-[4rem] !w-[17.6875rem] ">
+            <Link href="#" className="inline-block !h-[26rem] md:!h-[28.5rem]">
               <OurTeamItem
                 image={item?.image}
                 name={item?.name}
@@ -56,22 +55,24 @@ export default function OurTeamSlide({ data = [], primary, secondary }) {
         ))}
       <div
         className={`${
-          primary
-            ? "from-[rgba(19,40,25,0)] via-[#132819] to-[#132819]"
-            : "bg-[linear-gradient(90deg,rgba(255,255,255,0.00)_1.95%,#FFF_94.2%)]"
-        } ${
-          secondary ? "" : ""
-        } bg-gradient-to-r via-[94.2%] from-[1.95%]  absolute w-[8rem] h-[28.5rem] !z-50 top-0 right-0 shrink-0`}
+          primary ? "from-[rgba(19,40,25,0)] via-[#132819] to-[#132819]" : ""
+        } 
+        ${
+          secondary
+            ? "bg-[linear-gradient(90deg,rgba(255,255,255,0.00)_1.95%,#FFF_94.2%)]"
+            : ""
+        }
+         bg-gradient-to-r via-[94.2%] from-[1.95%] absolute w-[8rem] h-[28.5rem] !z-50 top-0 right-0 shrink-0`}
       ></div>
       <div
         onClick={handleClickPrevButton}
-        className="absolute top-1/2 left-[5rem] !z-50 size-[2.5rem] rounded-full hover:bg-orange-normal__hover transition-colors cursor-pointer"
+        className="max-md:hidden absolute top-[40%] left-[2rem] !z-50 size-[2.5rem] rounded-full hover:bg-orange-normal__hover transition-colors cursor-pointer"
       >
         <ButtonPrev />
       </div>
       <div
         onClick={handleClickNextButton}
-        className="absolute top-1/2 right-[5rem] !z-50 size-[2.5rem] rounded-full  hover:bg-orange-normal__hover transition-colors cursor-pointer"
+        className="max-md:hidden absolute top-[40%] right-[2rem] !z-50 size-[2.5rem] rounded-full  hover:bg-orange-normal__hover transition-colors cursor-pointer"
       >
         <ButtonNext />
       </div>

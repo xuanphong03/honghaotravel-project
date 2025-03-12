@@ -31,10 +31,10 @@ function BannerSlide({ data, onChange }) {
       }}
       modules={[EffectFade, Navigation, Pagination, Autoplay]}
       onSlideChange={handleSlideChange}
-      className="!z-[99999]"
+      className="!z-50 !h-full !w-full"
     >
       {data.map((item) => (
-        <SwiperSlide>
+        <SwiperSlide className="!h-full !w-full">
           <Image
             width={1920}
             height={1080}

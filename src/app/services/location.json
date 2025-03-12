@@ -1,0 +1,33 @@
+{
+  "pickUpLocations": [
+    { "id": 1, "location": "Hà Nội", "addresses": null },
+    { "id": 2, "location": "Sapa", "addresses": null },
+    { "id": 3, "location": "Ninh Bình", "addresses": null }
+  ],
+  "dropOffLocations": [
+    {
+      "id": 4,
+      "location": "Hà Nội",
+      "addresses": [
+        { "id": 5, "address": "Bến xe Mỹ Đình" },
+        { "id": 6, "address": "Số 1 Chợ Gạo" },
+        { "id": 7, "address": "156 Trần Quang Khải" }
+      ]
+    },
+    {
+      "id": 8,
+      "location": "Ninh Bình",
+      "addresses": [{ "id": 9, "address": "Bến thuyền Tam Cốc" }]
+    },
+    {
+      "id": 10,
+      "location": "Cát Bà Island",
+      "addresses": [{ "id": 11, "address": "Bến xe Cát bà" }]
+    },
+    {
+      "id": 12,
+      "location": "Hạ Long",
+      "addresses": [{ "id": 13, "address": "Bến xe Hạ Long" }]
+    }
+  ]
+}
