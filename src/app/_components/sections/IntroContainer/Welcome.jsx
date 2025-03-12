@@ -6,7 +6,7 @@ export default function Welcome() {
   return (
     <section
       id="welcome"
-      className="xl:min-w-full xl:min-h-screen min-w-full min-h-0 flex flex-col items-center md:mt-0 mt-[2.63rem] lg:mt-[10rem] relative z-[1]"
+      className="xl:min-w-full xl:min-h-screen min-w-full min-h-0 flex flex-col items-center relative z-[1]"
     >
       <motion.div
         initial={{ scale: 1 }}
@@ -25,7 +25,7 @@ export default function Welcome() {
           Ha Giang Naturally
         </h2>
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={500}
           height={500}
           src="/images/beautiful-text.png"

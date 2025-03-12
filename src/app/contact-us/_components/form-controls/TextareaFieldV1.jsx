@@ -1,26 +1,41 @@
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import React from "react";
 
-export default function TextareaFieldV1({
+export default function InputFieldV1({
   name,
   placeholder,
+  control,
+  errorMessage,
   rows,
-  value,
-  onChange,
 }) {
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-    onChange && onChange({ value, name });
-  };
   return (
-    <div className="border-b border-solid border-[#BBD3C8CC]">
-      <textarea
-        name={name || ""}
-        rows={rows || 4}
-        value={value || ""}
-        onChange={handleChange}
-        placeholder={placeholder || ""}
-        className="resize-y w-full py-[0.625rem] outline-none text-white text-[0.875rem] leading-[1.2] tracking-[0.00875rem]"
-      ></textarea>
-    </div>
+    <FormField
+      control={control}
+      name={name}
+      render={({ field }) => (
+        <FormItem>
+          <FormControl>
+            <div className="border-b border-solid border-[#BBD3C8CC]">
+              <textarea
+                name={name || ""}
+                rows={rows || 4}
+                placeholder={placeholder || ""}
+                {...field}
+                className="resize-y w-full py-[0.625rem] outline-none text-white text-[0.875rem] leading-[1.2] tracking-[0.00875rem]"
+              ></textarea>
+            </div>
+          </FormControl>
+          {errorMessage && (
+            <p className="px-1 text-red-500 text-sm">{errorMessage}</p>
+          )}
+        </FormItem>
+      )}
+    />
   );
 }

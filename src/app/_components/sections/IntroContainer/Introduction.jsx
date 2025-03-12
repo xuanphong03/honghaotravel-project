@@ -9,7 +9,7 @@ export default function Introduction({ children }) {
   return (
     <div
       id="introduction"
-      className="relative w-full bg-green-normal mt-[100vh] !z-[9999]"
+      className="relative w-full bg-[#122718] mt-[100vh] !z-50"
     >
       <div className="absolute inset-0 z-[1]">
         <Image
@@ -21,7 +21,7 @@ export default function Introduction({ children }) {
         />
       </div>
 
-      <div className="relative font-londrina-solid">{children}</div>
+      <div className="relative">{children}</div>
     </div>
   );
 }

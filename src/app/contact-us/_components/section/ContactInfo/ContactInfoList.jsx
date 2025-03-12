@@ -6,7 +6,7 @@ export default function ContactInfoList() {
     <ul className="flex flex-col gap-[1rem]">
       <li className="inline-flex items-center gap-[0.5rem]">
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={16}
           height={16}
           src="/images/contact-us/icon-phone.png"
@@ -18,7 +18,7 @@ export default function ContactInfoList() {
       </li>
       <li className="inline-flex items-center gap-[0.5rem]">
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={16}
           height={16}
           src="/images/contact-us/icon-phone.png"
@@ -30,7 +30,7 @@ export default function ContactInfoList() {
       </li>
       <li className="inline-flex items-center gap-[0.5rem]">
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={16}
           height={16}
           src="/images/contact-us/icon-phone.png"
