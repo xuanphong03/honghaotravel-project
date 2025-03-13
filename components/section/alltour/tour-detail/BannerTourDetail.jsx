@@ -144,7 +144,7 @@ export default function BannerTourDetail() {
               <div className="logo-xoay w-[9.375rem] h-[7.5rem] absolute top-[41.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                   <Image src={"/images/alltour/detail/logo-xoay.png"} alt='' fill/>
               </div>
-              <div className="chu-xoay w-[8.77rem] h-[8.77831rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+              <div className="chu-xoay w-[8.77rem] h-[8.77831rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-spin-slow">
                   <Image src={"/images/alltour/detail/chu-xoay.png"} alt='' fill/>
               </div>
           </div>

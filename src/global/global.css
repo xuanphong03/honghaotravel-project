@@ -25,7 +25,7 @@
 @theme {
   /* GREYSCALE */
   
-  --color-grey-50: rgb(239, 239, 239);
+  --color-grey-50: #727272;
   --color-grey-100: rgb(204, 204, 204);
   --color-grey-200: rgb(180, 180, 180);
   --color-grey-300: rgb(146, 146, 146);
@@ -35,15 +35,19 @@
   --color-grey-700: rgb(65, 65, 65);
   --color-grey-800: rgb(51, 51, 51);
   --color-grey-900: rgb(39, 39, 39);
+
+  /* GREYSCALE2 */
+  --color-gray-scale-5 : #D9D9D9;
   
-  /* GREYSCALE */
+  /* GREYSCALE  text*/
   --color-greyscaletext-0:#FFF;
   --color-greyscaletext-5:#F1F1F1;
   --color-greyscaletext-10: #C5C5C5;
   --color-greyscaletext-20:#A9A9A9;
   --color-greyscaletext-30: #828282;
   --color-greyscaletext-40: #6A6A6A;
-  --color-greyscaletext-50:"#454545";
+  --color-greyscaletext-50:#454545;
+  --color-greyscaletext-60:#3F3F3F;
   --color-greyscaletext-70:#313131;
   --color-greyscaletext-80-main: #262626;
 
@@ -504,7 +508,7 @@ html {
   color: #000;
 
   /* WEB/SUB2/BOLD */
-  font-family: "tripsan-regular", sans-serif;
+  font-family: "tripsan-bold", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 800;

@@ -7,8 +7,8 @@ export default function Breadcrumb({data}) {
           {data.map((item) =>
               <div key={item.id} className="home flex items-center gap-2 sm:gap-1">
                   {item.icon}
-                  <Link href={item.url}>
-                      <span className={`${item.classNameTitle}`}>{ item.title}</span>
+                  <Link href={item.url} className='truncate max-sm:!max-w-[12rem]'>
+                      <span className={`${item.classNameTitle} truncate `}>{ item.title}</span>
                   </Link>
               </div>
           )}

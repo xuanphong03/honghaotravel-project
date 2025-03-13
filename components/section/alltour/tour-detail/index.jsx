@@ -2,6 +2,8 @@ import React from 'react'
 import BannerTourDetail from './BannerTourDetail'
 import Breadcrumb from '../../../common/Breadcrumb'
 import Schedule from './Schedule'
+import ImediateMb from './ImediateMb'
+import BookTour from './BookTour'
 
 
 const dataBreadcrumb = [{
@@ -35,8 +37,10 @@ export default function TourDetail() {
   return (
     <div className='tourdetail'>
       <BannerTourDetail />
+      <ImediateMb/>
       <Breadcrumb data={dataBreadcrumb} />
-      <Schedule/>
+      <Schedule />
+      <BookTour/>
     </div>
   )
 }
