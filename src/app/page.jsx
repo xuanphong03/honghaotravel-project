@@ -1,17 +1,39 @@
-
-import Footer from "../../components/section/footer/Footer";
-import Banner from "./_components/sections/Banner";
-import BestTrips from "./_components/sections/BestTrips";
-import Introduction from "./_components/sections/Introduction";
+import AboutUs from "./_components/sections/IntroContainer/AboutUs";
+import Banner from "./_components/sections/Banner/Banner";
+import BestTrips from "./_components/sections/BestTrips/BestTrips";
+import Feedback from "./_components/sections/Feedback/Feedback";
+import Introduction from "./_components/sections/IntroContainer/Introduction";
+import OurTour from "./_components/sections/IntroContainer/OurTour";
+import Welcome from "./_components/sections/IntroContainer/Welcome";
+import Moment from "./_components/sections/Moment/Moment";
+import OurTeam from "../../components/section/ourteam/OurTeam";
+import Weather from "./_components/sections/Weather/Weather";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
+    <main id="home">
       <Banner />
-      <Introduction />
+      <Introduction>
+        <AboutUs />
+        <OurTour />
+        <Welcome />
+      </Introduction>
       <BestTrips />
-    </>
-
-
+      <Moment />
+      <Feedback />
+      <div className="flex relative pb-[14.5rem] max-md:pb-[6rem] bg-[linear-gradient(180deg,#122718_7.6%,rgba(18,39,24,0.71)_43.62%,#122718_79.64%)] w-full h-fit">
+        <Image
+          alt="Hong Hao Travel"
+          width={2000}
+          height={1000}
+          src="/images/common/bg-our-team.jpeg"
+          className="absolute inset-0 w-full h-full object-cover z-[0]"
+        />
+        <div className="absolute inset-0 h-full w-full bg-[linear-gradient(180deg,#122718_7.6%,rgba(18,39,24,0.71)_43.62%,#122718_79.64%)] z-[1]"></div>
+        <OurTeam primary />
+      </div>
+      <Weather />
+    </main>
   );
 }

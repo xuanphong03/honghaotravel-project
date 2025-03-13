@@ -1,0 +1,15 @@
+#infinity_slide .banner-arrow {
+  animation: animation_arrow 1.5s linear infinite;
+}
+
+@keyframes animation_arrow {
+  from {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

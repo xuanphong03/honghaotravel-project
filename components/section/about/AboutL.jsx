@@ -67,5 +67,5 @@ export default function AboutL({ref}) {
               </div>
           </div>
     </div>
-  )
+  );
 }

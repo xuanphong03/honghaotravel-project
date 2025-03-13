@@ -1,6 +1,8 @@
 import "@/global/global.css";
-import Header from "./_components/Header";
 import AppProvider from "./context/AppProvider";
+import { fontTripSans } from "../../public/fonts/font-family";
+import Header from "./_components/common/header/Header";
+import ToolBar from "./_components/common/toolbar/ToolBar";
 import Footer from "../../components/section/footer/Footer";
 
 export const metadata = {
@@ -11,11 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`bg-white ${fontTripSans.className}`}>
         <AppProvider>
           <Header />
           <main>{children}</main>
-          <Footer/>
+          <Footer />
+          <ToolBar />
         </AppProvider>
       </body>
     </html>

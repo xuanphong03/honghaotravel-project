@@ -1,0 +1,30 @@
+#introduction .animate-cloud {
+  animation: ourtour-cloud 10s linear infinite;
+}
+
+#introduction .animate-cloud2 {
+  animation: ourtour-cloud2 10s linear infinite;
+}
+@keyframes ourtour-cloud {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes ourtour-cloud2 {
+  0% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(10px) translateY(-10px);
+  }
+}

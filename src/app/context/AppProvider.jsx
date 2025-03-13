@@ -6,6 +6,7 @@ export const AppContext = createContext();
 export default function AppProvider({ children }) {
   const [showHeader, setShowHeader] = useState(true);
   const [isPositionTop, setIsPositionTop] = useState(true);
+  const [showNavigation, setShowNavigation] = useState(false);
   const lastPositionY = useRef(0);
 
   useEffect(() => {
@@ -26,7 +27,9 @@ export default function AppProvider({ children }) {
   }, []);
 
   return (
-    <AppContext.Provider value={{ showHeader, isPositionTop }}>
+    <AppContext.Provider
+      value={{ showHeader, isPositionTop, showNavigation, setShowNavigation }}
+    >
       {children}
     </AppContext.Provider>
   );

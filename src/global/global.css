@@ -1,21 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
+
+@custom-variant dark (&:is(.dark *));
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
+
 @font-face {
-  font-family: 'tripsan-regular';
+  font-family: "tripsan-regular";
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'tripsan-medium';
+  font-family: "tripsan-medium";
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'tripsan-bold';
+  font-family: "tripsan-bold";
   /* Name your font */
   src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
   font-weight: normal;
@@ -23,6 +27,15 @@
 }
 
 @theme {
+  /* Breakpoint */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1600px;
+  --breakpoint-2xl: 1800px;
+  --breakpoint-3xl: 1950px;
+  --breakpoint-4xl: 2250px;
+
   /* GREYSCALE */
   
   --color-grey-50: #727272;
@@ -49,10 +62,16 @@
   --color-greyscaletext-50:#454545;
   --color-greyscaletext-60:#3F3F3F;
   --color-greyscaletext-70:#313131;
+  /* GREYSCALE */
+  --color-greyscaletext-0: #fff;
+  --color-greyscaletext-10: #c5c5c5;
+  --color-greyscaletext-20: #a9a9a9;
+  --color-greyscaletext-30: #828282;
+  --color-greyscaletext-40: #6a6a6a;
+  --color-greyscaletext-70: #313131;
   --color-greyscaletext-80-main: #262626;
 
-  --color-Gray-Scale-80: #2E2E2E;
-  
+  --color-Gray-Scale-80: #2e2e2e;
 
   /* Orange */
   --color-orange-light: rgb(254, 238, 232);
@@ -92,33 +111,34 @@
   --color-grey-green-darker: rgb(6, 14, 8);
 
   /* Background elevation */
-  --color-bg-elevation-30: #F0F0F0;
+  --color-bg-elevation-30: #f0f0f0;
   --color-bg-elevation-white-50: rgb(255, 255, 255);
   --color-bg-elevation-white-100: rgb(250, 250, 250);
   --color-bg-elevation-white-300: rgb(245, 245, 245);
   --color-bg-elevation-white-500: rgb(240, 240, 240);
 
-
   /* Font */
   --font-londrina-solid: "Londrina Solid", sans-serif;
   --font-kanit: "Kanit", sans-serif;
   --font-inter: "Inter", sans-serif;
-    /* Background greyscaletext */
+  /* Background greyscaletext */
 
-    --color-bg-greyscaletext-10: #C5C5C5;
+  --color-bg-greyscaletext-10: #c5c5c5;
 
-    /* font */
-    --font-tripsan-regular: "tripsan-regular";
-    --font-tripsan-bold: "tripsan-regular"
-
-    
-  
+  /* font */
+  --font-tripsan-regular: "tripsan-regular";
+  --font-tripsan-bold: "tripsan-regular";
 }
 
 html {
   font-size: 1vw;
 }
 
+html > body[data-scroll-locked] {
+  overflow: auto !important;
+  --removed-body-scroll-bar-size: 0px;
+  margin-right: 0 !important;
+}
 
 .hidden_scrollbar::-webkit-scrollbar {
   display: none;
@@ -128,6 +148,25 @@ html {
 .hidden_scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom_scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 2px;
+}
+
+/* Custom marquee slide with swiper */
+#infinity_marquee_slide .swiper-wrapper {
+  transition-timing-function: linear !important;
 }
 
 /* Button */
@@ -200,18 +239,17 @@ html {
 
 .btn-bold {
   color: var(--greyscaletext-0);
-    text-align: center;
-  
-    /* WEB/BUTTON/BOLD */
-    font-family: "tripsan-bold";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 1.05rem */
-    text-transform: uppercase;
-}
+  text-align: center;
 
+  /* WEB/BUTTON/BOLD */
+  font-family: "tripsan-bold";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 1.05rem */
+  text-transform: uppercase;
+}
 
 /* Web heading */
 /* h1 */
@@ -616,15 +654,25 @@ html {
   html {
     font-size: 4.267vw;
   }
+}
+/* Ẩn nút tăng/giảm trên Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-
+/* Ẩn nút tăng/giảm trên Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 
 
 /* Sub2 */
 
 .sub2-regular {
-color: #000;
+  color: #000;
 
   /* WEB/SUB2/REGULAR */
   font-family: "tripsan-regular";
@@ -638,31 +686,31 @@ color: #000;
 
 .sub2-medium {
   color: #000;
-  
-    /* WEB/SUB2/MEDIUM */
-    font-family: "tripsan-medium";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 1.05rem */
-    letter-spacing: 0.00875rem;
+
+  /* WEB/SUB2/MEDIUM */
+  font-family: "tripsan-medium";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
 }
 
 .sub2-semibold {
   color: #000;
-    font-family: "tripsan-medium";
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
-    /* 1.05rem */
-    letter-spacing: 0.00875rem;
+  font-family: "tripsan-medium";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  /* 1.05rem */
+  letter-spacing: 0.00875rem;
 }
 
 .sub2-bold {
-color: #000;
-  font-family:"tripsan-bold";
+  color: #000;
+  font-family: "tripsan-bold";
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 800;
@@ -671,40 +719,38 @@ color: #000;
 }
 
 /* WEB/BODY1/REGULAR */
-.body1-regular{
+.body1-regular {
   color: #000;
-  
-    /* WEB/BODY1/REGULAR */
-    font-family: "tripsan-regular";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
-.body1-semibold{
-  color: #000;
-    font-family: "tripsan-medium";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
-.body1-bold{
-  color: #000;
-    font-family: "tripsan-bold";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: 0.005rem;
-}
 
-
+  /* WEB/BODY1/REGULAR */
+  font-family: "tripsan-regular";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
+.body1-semibold {
+  color: #000;
+  font-family: "tripsan-medium";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
+.body1-bold {
+  color: #000;
+  font-family: "tripsan-bold";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  /* 1.5rem */
+  letter-spacing: 0.005rem;
+}
 
 @media only screen and (max-width: 640px) {
   html {
@@ -897,15 +943,15 @@ color: #000;
     line-height: 120%; /* 1.5rem */
   }
   .h5-bold-pc {
-      color: var(--greyscaletext-70, #313131);
-      /* WEB/H5/BLACK */
-      font-family: "Londrina Solid", sans-serif;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      /* 1.5rem */
-    }
+    color: var(--greyscaletext-70, #313131);
+    /* WEB/H5/BLACK */
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 1.5rem */
+  }
 }
 
 @media only screen and (min-width: 1920px) {
@@ -916,7 +962,7 @@ color: #000;
 /* About */
 
 
-}
+
 .h1-about {
   font-family: "tripsan-bold";
   font-size: 13.9375rem;
@@ -986,8 +1032,6 @@ color: #000;
     /* 1.5rem */
 }
 
-
-
 /* animate spin */
 
 @keyframes custom-spin {
@@ -1008,4 +1052,124 @@ color: #000;
 .animate-spin-fast {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
+}
+
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
