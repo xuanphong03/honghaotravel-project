@@ -100,8 +100,6 @@ export default function TourBookingForm() {
     formState: { errors, isSubmitting },
   } = form;
 
-  console.log("errors", errors);
-
   const tourByDay = watch("tourByDay");
   const departureDate = watch("departureDate");
   const dropOffLocation = watch("dropOffLocation");
@@ -607,7 +605,7 @@ export default function TourBookingForm() {
               >
                 BOOK NOW, PAY LATER
                 <Image
-                  alt=""
+                  alt="Hong Hao Travel"
                   width={50}
                   height={50}
                   className="size-[0.875rem]"

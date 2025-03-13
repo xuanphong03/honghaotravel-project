@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import NavigationItemV1 from "./NavigationItemV1";
 import NavigationItemV2 from "./NavigationItemV2";
-import { v4 as uuidv4 } from "uuid";
 
 export default function NavigationList() {
   const [catalogList, setCatalogList] = useState([]);
@@ -17,7 +17,7 @@ export default function NavigationList() {
         return (
           <li key={uuidv4()} className="relative w-full cursor-pointer">
             <NavigationItemV2 title={item.title} links={_items} />
-            <div className="w-[22.5rem] h-[0.0625rem] bg-white/20"></div>
+            <div className="w-full md:w-[22.5rem] h-[0.0625rem] bg-white/20"></div>
           </li>
         );
       }
@@ -55,10 +55,10 @@ export default function NavigationList() {
         ],
       },
       { title: "Activity", to: "#", children: null },
-      { title: "Destination", to: "#", children: null },
+      { title: "Destination", to: "/destination", children: null },
       { title: "Blog", to: "#", children: null },
       { title: "FAQ", to: "#", children: null },
-      { title: "Contact Us", to: "#", children: null },
+      { title: "Contact Us", to: "/contact-us", children: null },
     ]);
   }, []);
 

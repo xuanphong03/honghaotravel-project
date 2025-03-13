@@ -1,7 +1,8 @@
 "use client";
-import * as motion from "motion/react-client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import "./Banner.css";
 
 // Import Swiper styles
@@ -59,6 +60,7 @@ export default function Banner() {
       imageAlt: "Hong Hao Travel",
     },
   ];
+  const container = useRef(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const positionDotMap = useMemo(() => {
@@ -75,8 +77,23 @@ export default function Banner() {
     setCurrentIndex(index);
   };
 
+  useGSAP(
+    () => {
+      gsap.to(".scale-animation", { scale: 15, delay: 2.25, duration: 1.5 });
+      gsap.to(".opacity-fade-out", { opacity: 0, duration: 1 });
+      gsap.to(".opacity-fade-in", { opacity: 1, delay: 0.5, duration: 1 });
+      gsap.to(".heading-animation", { y: "-500%", delay: 2.25, duration: 2.5 });
+      gsap.to(".slide-animation", { scale: 1, y: 0, delay: 2, duration: 1 });
+      gsap.to(".side-panel-animation", { x: 0, delay: 3.5, duration: 0.75 });
+    },
+    { scope: container, dependencies: [] }
+  );
+
   return (
-    <section className="fixed inset-0 w-screen h-screen overflow-hidden">
+    <section
+      ref={container}
+      className="fixed inset-0 w-screen h-screen overflow-hidden"
+    >
       <div className="hidden xl:block absolute top-0 left-0 w-full h-full">
         <div className="size-full relative">
           <div className="bg-green-normal__hover w-full h-full shrink-0 absolute z-[1]"></div>
@@ -91,23 +108,8 @@ export default function Banner() {
             Hong Hao Travel
           </p>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]">
-            <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: 15 }}
-              transition={{
-                delay: 2.25,
-                duration: 1.5,
-              }}
-              className="relative w-[30.3125rem] h-[30.3125rem]"
-            >
-              <motion.div
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
-                transition={{
-                  duration: 1,
-                }}
-                className="absolute top-0 left-0 size-full"
-              >
+            <div className="scale-animation relative w-[30.3125rem] h-[30.3125rem] scale-100">
+              <div className="opacity-fade-out absolute top-0 left-0 size-full opacity-100">
                 <Image
                   alt="map"
                   width={500}
@@ -115,16 +117,8 @@ export default function Banner() {
                   src="/images/map-home.png"
                   className="w-full h-full object-cover"
                 />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: 0.5,
-                  duration: 1,
-                }}
-                className="absolute top-0 left-0 size-full"
-              >
+              </div>
+              <div className="opacity-fade-in absolute top-0 left-0 size-full opacity-0">
                 <Image
                   alt="map"
                   width={500}
@@ -132,19 +126,11 @@ export default function Banner() {
                   src="/images/map-home-black.png"
                   className="w-full h-full object-cover absolute top-0 left-0"
                 />
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ y: 0 }}
-            animate={{ y: "-500%" }}
-            transition={{
-              delay: 2.25,
-              duration: 1.25,
-            }}
-            className="custom-heading-banner absolute uppercase top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]"
-          >
+          <div className="heading-animation custom-heading-banner absolute uppercase top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]">
             <p className="text-center text-[1.125rem] font-extrabold leading-none text-white/40 mb-[0.75rem]">
               Get ready
             </p>
@@ -152,7 +138,7 @@ export default function Banner() {
               <div>Discover</div>
               <div>Ha Giang Loop</div>
             </h1>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -161,26 +147,10 @@ export default function Banner() {
       </div>
 
       <div className="hidden xl:block absolute inset-0 !z-50">
-        <motion.div
-          initial={{ scale: 0.5, y: "100%" }}
-          animate={{ scale: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 2,
-          }}
-          className="relative size-full z-[10]"
-        >
+        <div className="slide-animation relative size-full z-[10] scale-0 translate-y-full">
           <BannerSlide data={SlideList} onChange={handleSlideChange} />
-        </motion.div>
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          transition={{
-            duration: 0.75,
-            delay: 3.5,
-          }}
-          className="h-full w-[27.3975rem] absolute top-0 right-0 z-30"
-        >
+        </div>
+        <div className="side-panel-animation h-full w-[27.3975rem] absolute top-0 right-0 z-30 translate-x-full">
           <div className="w-[19.5rem] h-[24rem] absolute top-[10rem] right-[3rem] z-20">
             <Image
               width={1000}
@@ -201,7 +171,7 @@ export default function Banner() {
             </span>
           </div>
           <div className="w-full h-full absolute top-0 right-0 bg-[linear-gradient(90deg,rgba(9,42,27,0.00)_11.52%,#092A1B_89.04%)] z-10"></div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="xl:hidden absolute inset-0 !z-50">

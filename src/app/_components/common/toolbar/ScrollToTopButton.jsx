@@ -2,12 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 export default function ScrollToTopButton() {
   gsap.registerPlugin(ScrollTrigger);
   const circleRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!circleRef.current) return;
 
     const pathLength = circleRef.current.getTotalLength();

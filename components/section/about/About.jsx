@@ -70,7 +70,7 @@ export default function About() {
         </svg>
         <Image
           src="/images/about/map.png"
-          alt=""
+          alt="Hong Hao Travel"
           fill
           className="object-cover max-sm:hidden"
         />

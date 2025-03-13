@@ -61,6 +61,7 @@ export function PaginationWithLinks({
 
     if (totalPageCount <= maxVisiblePages) {
       for (let i = 1; i <= totalPageCount; i++) {
+        console.log("i=", i);
         items.push(
           <PaginationItem key={i}>
             <PaginationLink href={buildLink(i)} isActive={page === i}>
@@ -136,29 +137,7 @@ export function PaginationWithLinks({
         )}
         <Pagination className={cn({ "md:justify-end": pageSizeSelectOptions })}>
           <PaginationContent className="max-sm:gap-0">
-            <PaginationItem>
-              <PaginationPrevious
-                href={buildLink(Math.max(page - 1, 1))}
-                aria-disabled={page === 1}
-                tabIndex={page === 1 ? -1 : undefined}
-                className={
-                  page === 1 ? "pointer-events-none opacity-50" : undefined
-                }
-              />
-            </PaginationItem>
             {renderPageNumbers()}
-            <PaginationItem>
-              <PaginationNext
-                href={buildLink(Math.min(page + 1, totalPageCount))}
-                aria-disabled={page === totalPageCount}
-                tabIndex={page === totalPageCount ? -1 : undefined}
-                className={
-                  page === totalPageCount
-                    ? "pointer-events-none opacity-50"
-                    : undefined
-                }
-              />
-            </PaginationItem>
           </PaginationContent>
         </Pagination>
       </div>

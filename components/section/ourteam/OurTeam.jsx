@@ -85,7 +85,11 @@ function OurTeam({ primary = false, secondary = false }) {
                ${
                  primary ? "border-grey-green-light text-grey-green-light" : ""
                } 
-              ${secondary ? "border-orange-normal text-orange-normal" : ""}
+              ${
+                secondary
+                  ? "border-orange-normal text-orange-normal hover:text-white"
+                  : ""
+              }
               `}
               >
                 All tour

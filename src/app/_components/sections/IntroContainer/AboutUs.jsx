@@ -12,13 +12,6 @@ export default function AboutUs() {
   return (
     <section id="about-us" className="relative">
       <div className="absolute top-0 left-0 right-0 -translate-y-1/5 w-full h-[9.25406rem] shrink-0 overflow-hidden">
-        {/* <Image
-          alt="Hong Hao Travel"
-          width={1980}
-          height={200}
-          className="w-full h-full object-cover"
-          src="/images/moutain-top.svg"
-        /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1600"
@@ -75,10 +68,10 @@ export default function AboutUs() {
                 />
               </div>
               <div className="relative w-full h-[4.6rem] overflow-hidden transition-colors text-[0.5rem] md:text-[1.5rem] xl:text-[16px] leading-[1.2]">
-                <p className="absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2 group-hover:translate-y-[-5rem] transition-transform duration-500">
+                <p className="absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2 group-hover:translate-y-[-5.5rem] transition-transform duration-500">
                   {item?.title}
                 </p>
-                <p className="absolute top-1/2 left-1/2 text-center -translate-x-1/2 translate-y-[5rem] group-hover:-translate-y-1/2 transition-transform duration-300">
+                <p className="absolute top-1/2 left-1/2 text-center -translate-x-1/2 translate-y-[5.5rem] group-hover:-translate-y-1/2 transition-transform duration-300">
                   {item?.title}
                 </p>
               </div>

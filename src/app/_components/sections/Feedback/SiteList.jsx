@@ -16,7 +16,7 @@ export default function SiteList() {
             className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
           >
             <Image
-              alt=""
+              alt="Hong Hao Travel"
               width={50}
               height={50}
               src="/images/home/clients-say/site1.svg"
@@ -30,7 +30,7 @@ export default function SiteList() {
             className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
           >
             <Image
-              alt=""
+              alt="Hong Hao Travel"
               width={50}
               height={50}
               src="/images/home/clients-say/site2.svg"
@@ -44,7 +44,7 @@ export default function SiteList() {
             className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
           >
             <Image
-              alt=""
+              alt="Hong Hao Travel"
               width={50}
               height={50}
               src="/images/home/clients-say/site3.svg"
@@ -58,7 +58,7 @@ export default function SiteList() {
             className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
           >
             <Image
-              alt=""
+              alt="Hong Hao Travel"
               width={50}
               height={50}
               src="/images/home/clients-say/site4.svg"

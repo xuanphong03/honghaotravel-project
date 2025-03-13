@@ -1,23 +1,30 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-import * as motion from "motion/react-client";
-
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 export default function Welcome() {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap.to(".text-zoom-in", {
+        scale: 0.8,
+        duration: 1.5,
+      });
+      gsap.to(".box-zoom-out", {
+        scale: 1,
+        duration: 1,
+      });
+    },
+    { scope: container }
+  );
   return (
     <section
       id="welcome"
+      ref={container}
       className="xl:min-w-full xl:min-h-screen min-w-full min-h-0 flex flex-col items-center relative z-[1]"
     >
-      <motion.div
-        initial={{ scale: 1 }}
-        whileInView={{ scale: 0.9 }}
-        transition={{
-          duration: 1.5,
-          ease: "easeInOut",
-        }}
-        viewport={{ once: true }}
-        className="xl:absolute xl:top-0 xl:left-1/2 xl:-translate-x-1/2 text-center py-[1rem] z-10"
-      >
+      <div className="text-zoom-in xl:absolute xl:top-0 xl:left-1/2 xl:-translate-x-1/2 text-center py-[1rem] z-10 scale-100">
         <h3 className="lg:text-[1.125rem] text-[0.875rem] md:text-[2rem] font-bold leading-[1] text-white/40 mb-[0.5rem]">
           Welcome to...
         </h3>
@@ -31,17 +38,8 @@ export default function Welcome() {
           src="/images/beautiful-text.png"
           className="lg:w-[23.875rem] lg:h-[18.75rem] mx-auto object-contain mt-[-1rem] w-[9rem] h-[7rem] md:w-[30rem] md:h-[20rem]"
         />
-      </motion.div>
-      <motion.div
-        initial={{ scale: 0.5 }}
-        whileInView={{ scale: 1 }}
-        transition={{
-          duration: 0.75,
-          ease: "easeInOut",
-        }}
-        viewport={{ once: true }}
-        className="w-full h-full hidden lg:block"
-      >
+      </div>
+      <div className="box-zoom-out w-full h-full hidden lg:block scale-50">
         <video
           type="video/mp4"
           loop
@@ -50,7 +48,7 @@ export default function Welcome() {
           src="https://cms.honghaotravel.com/wp-content/uploads/0622.mov"
           className="w-full h-auto 2xl:h-full rounded-[1rem] overflow-hidden object-cover"
         ></video>
-      </motion.div>
+      </div>
       <video
         type="video/mp4"
         loop

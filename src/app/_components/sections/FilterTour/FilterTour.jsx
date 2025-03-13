@@ -8,6 +8,8 @@ import NumberField from "../../form-controls/NumberField";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
@@ -176,7 +178,6 @@ export default function FilterTour() {
     <Form {...form}>
       <div className="hidden md:block">
         <div className="inline-flex pl-[2rem] py-[0.75rem] pr-[0.75rem] bg-white rounded-[0.75rem] items-center">
-          {/* Tour by day */}
           <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
             <ComboboxField
               name="tourByDay"
@@ -185,8 +186,6 @@ export default function FilterTour() {
               control={form.control}
             />
           </div>
-
-          {/* Tour by type */}
           <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
             <ComboboxField
               label="Type of tour"
@@ -195,8 +194,6 @@ export default function FilterTour() {
               control={form.control}
             />
           </div>
-
-          {/* Self driving */}
           <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
             <NumberField
               name="selfDriving"
@@ -205,8 +202,6 @@ export default function FilterTour() {
               unit="Pax"
             />
           </div>
-
-          {/* Local driving */}
           <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
             <NumberField
               name="localDriving"
@@ -215,8 +210,6 @@ export default function FilterTour() {
               unit="Pax"
             />
           </div>
-
-          {/* Dialog for customizing tour */}
           <Dialog
             open={isOpenFormBookTour}
             onOpenChange={setIsOpenFormBookTour}
@@ -236,215 +229,10 @@ export default function FilterTour() {
               aria-describedby=""
               className="bg-white px-[1.5rem] py-[1.5rem] !max-w-fit"
             >
-              <DialogTitle className="hidden"></DialogTitle>
-              <form
-                onSubmit={form.handleSubmit(handleFormSubmit)}
-                className="bg-white flex gap-x-[1.5rem] !w-full"
-              >
-                <div className="!w-[34.75rem] flex flex-col gap-[1rem]">
-                  <div className="w-full">
-                    <div className="text-[#2E2E2E] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase mb-[0.5rem]">
-                      Customer information:
-                    </div>
-                    {/* Customer name */}
-                    <div className="grid grid-cols-2 gap-[0.75rem]">
-                      <div className="col-span-2">
-                        <InputField
-                          name="customerName"
-                          type="text"
-                          control={form.control}
-                          placeholder="Peter Nguyen Tuan Anh"
-                          errorMessage={
-                            form.formState.errors?.customerName?.message
-                          }
-                        />
-                      </div>
-                      {/* Phone number */}
-                      <div className="col-span-1">
-                        <InputField
-                          type="text"
-                          name="phoneNumber"
-                          placeholder="(Whatsapp) +84 *"
-                          control={form.control}
-                          errorMessage={
-                            form.formState.errors?.phoneNumber?.message
-                          }
-                        />
-                      </div>
-                      {/* Email */}
-                      <div className="col-span-1">
-                        <InputField
-                          type="email"
-                          name="email"
-                          placeholder="Email *"
-                          control={form.control}
-                          errorMessage={form.formState.errors?.email?.message}
-                        />
-                        {/* Message */}
-                      </div>
-                      <div className="col-span-2">
-                        <TextareaField
-                          rows={2}
-                          name="message"
-                          placeholder="Message"
-                          control={form.control}
-                          errorMessage={form.formState.errors?.message?.message}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full grid grid-cols-4 gap-x-[0.5rem] gap-y-[1rem]">
-                    {/* Type of tour */}
-                    <div className="col-span-2">
-                      <ComboboxFieldV2
-                        name="tourByType"
-                        label="Type of tour"
-                        options={TOURS_BY_TYPE}
-                        control={form.control}
-                        errorMessage={
-                          form.formState.errors?.tourByType?.message
-                        }
-                      />
-                    </div>
-                    {/* Tour by day */}
-                    <div className="col-span-2">
-                      <ComboboxFieldV2
-                        name="tourByDay"
-                        label="Choose days"
-                        options={TOURS_BY_DAY}
-                        control={form.control}
-                        errorMessage={form.formState.errors?.tourByDay?.message}
-                      />
-                    </div>
-                    {/* Pick up location */}
-                    <div className="col-span-1">
-                      <ComboboxFieldV2
-                        name="pickUpLocation"
-                        label="Pick up"
-                        options={PICK_UP_LOCATION}
-                        control={form.control}
-                        placeholder="Pick up"
-                        errorMessage={
-                          form.formState.errors?.pickUpLocation?.message
-                        }
-                      />
-                    </div>
-                    {/* Departure date */}
-                    <div className="col-span-1">
-                      <DatePickerField
-                        name="departureDate"
-                        label="Departure date"
-                        control={form.control}
-                        errorMessage={
-                          form.formState.errors?.departureDate?.message
-                        }
-                      />
-                    </div>
-                    {/* Address */}
-                    <div className="col-span-2">
-                      <InputField
-                        label="Address"
-                        name="departAddress"
-                        placeholder="Address"
-                        control={form.control}
-                        errorMessage={
-                          form.formState.errors?.departAddress?.message
-                        }
-                      />
-                    </div>
-                    {/* Drop off location */}
-                    <div className="col-span-1">
-                      <ComboboxFieldV2
-                        name="dropOffLocation"
-                        label="Drop off"
-                        options={DROP_OFF_LOCATION}
-                        control={form.control}
-                        placeholder="Drop off"
-                        errorMessage={
-                          form.formState.errors?.dropOffLocation?.message
-                        }
-                      />
-                    </div>
-                    {/* End date */}
-                    <div className="col-span-1">
-                      <DatePickerField
-                        name="endDate"
-                        label="End date"
-                        disabled={true}
-                        control={form.control}
-                      />
-                    </div>
-                    {/* Drop off address */}
-                    <div className="col-span-2">
-                      <ComboboxFieldV2
-                        label="Address"
-                        name="dropOffAddress"
-                        options={[{ id: 1, value: "Item" }]}
-                        control={form.control}
-                        disabled={!dropOffLocation}
-                        placeholder="Please Select Drop off"
-                        errorMessage={
-                          form.formState.errors?.dropOffAddress?.message
-                        }
-                      />
-                    </div>
-                  </div>
-                  {/* Self driving and local driver*/}
-                  <div className="w-full">
-                    <div className="flex items-center justify-between py-[0.75rem]">
-                      <div className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                        {tourDuration?.days} days of self-driving
-                      </div>
-                      <div className="flex items-center">
-                        <div className="text-[#6A6A6A] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem]">
-                          $172
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div>{tourDuration?.days} days of local driver</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="!w-[35.5rem] flex flex-col gap-[0.75rem]">
-                  <div className="text-[#262626]/40 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
-                    Confirmed tour booking
-                  </div>
-                  <div className="bg-[#F8F8F8] rounded-[0.5rem] overflow-hidden">
-                    {/* Type of tour */}
-                    <div className="flex items-center">
-                      <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                        Type of tour
-                      </div>
-                      <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                        Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
-                      </div>
-                    </div>
-                    {/* Name */}
-                    <div className="flex items-center">
-                      <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                        Name
-                      </div>
-                      <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                        <p className="text-[0.75rem] text-[#727272] line-clamp-2 text-ellipsis">
-                          <span className="text-[0.875rem] text-[#2E2E2E] font-semibold">
-                            0 px
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                    {/* Contact Info */}
-                    <div className="flex items-center">
-                      <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                        Contact Info
-                      </div>
-                      <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                        tuanminh2024@gmail.com - 0941556338
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              <DialogHeader className="hidden">
+                <DialogTitle className="hidden"></DialogTitle>
+                <DialogDescription className="hidden"></DialogDescription>
+              </DialogHeader>
             </DialogContent>
           </Dialog>
         </div>

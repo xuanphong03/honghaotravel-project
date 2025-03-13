@@ -2,83 +2,84 @@ import Image from "next/image";
 import React from "react";
 import TourList from "./TourList";
 import { PaginationWithLinks } from "@/components/ui/pagination-with-links";
+import { fetchTours } from "@/app/services/api";
 
-export default function Discovery() {
-  const tours = [
-    {
-      id: 1,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 2,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 3,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 4,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 5,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 6,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 7,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 8,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 9,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-    {
-      id: 10,
-      tag: "Best destination",
-      title: "Dong Van",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
-    },
-  ];
-  const _page = 1;
-  const _limit = 9;
-
+export default async function Discovery({ searchParams }) {
+  // const tours = [
+  //   {
+  //     id: 1,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 2,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 3,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 4,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 5,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 6,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 7,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 8,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 9,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  //   {
+  //     id: 10,
+  //     tag: "Best destination",
+  //     title: "Dong Van",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, enim eum, beatae autem veniam consequuntur sit ab ea ipsam dolorem voluptas! Aut nesciunt quibusdam qui accusantium id quidem esse fuga.",
+  //   },
+  // ];
+  const page = parseInt(searchParams.page || 1);
+  const pageSize = parseInt(searchParams.pageSize || 6);
+  const { tours, totalCount } = await fetchTours(page, pageSize);
   return (
     <section
       id="discovery"
@@ -132,13 +133,13 @@ export default function Discovery() {
         <div className="relative inline-flex flex-col items-center gap-[2rem] max-md:mt-[1.7rem]">
           <div className="flex flex-col items-center gap-[2rem]">
             <TourList tours={tours} />
-            {/* <div className="py-[2rem]">
+            <div className="py-[2rem]">
               <PaginationWithLinks
-                page={_page}
-                pageSize={_limit}
-                totalCount={100}
+                page={page}
+                pageSize={pageSize}
+                totalCount={totalCount}
               />
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,31 @@
 "use client";
-import * as motion from "motion/react-client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import { useRef } from "react";
 import "./OurTour.css";
 
 export default function OurTour() {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap.to(".fade-out-animation", {
+        opacity: 0,
+        visibility: "hidden",
+        duration: 1,
+        delay: 10,
+      });
+      gsap.to(".line-red-container", {
+        height: "100%",
+        duration: 2,
+      });
+    },
+    { scope: container }
+  );
   return (
     <section
       id="our-tour"
+      ref={container}
       className="relative mt-[6.62rem] z-[1] overflow-hidden"
     >
       <div className="relative hidden md:flex md:max-w-[100rem] mx-auto flex-col items-center">
@@ -122,7 +140,7 @@ export default function OurTour() {
               </span>
             </li>
           </ul>
-          <div className="flex">
+          <div className="flex items-center gap-4 md:gap-1">
             <button className="group xl:text-[16px] cursor-pointer bg-orange-normal border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
               Book now
               <span className=" group-hover:translate-x-1/3 transition-transform duration-500 inline-flex justify-center items-center size-[1rem] px-[0.125rem] py-[0.17188rem]">
@@ -150,25 +168,8 @@ export default function OurTour() {
           </div>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 1, visibility: "visible" }}
-        whileInView={{ opacity: 0, visibility: "hidden" }}
-        transition={{
-          duration: 1,
-          delay: 10,
-        }}
-        viewport={{ once: true }}
-        className="hidden md:block w-[11rem] h-[50rem] absolute top-1/2 left-1/2 -translate-1/2"
-      >
-        <motion.div
-          initial={{ height: 0 }}
-          whileInView={{ height: "100%" }}
-          transition={{
-            duration: 2,
-          }}
-          viewport={{ once: true }}
-          className="overflow-hidden"
-        >
+      <div className="fade-out-animation hidden md:block w-[11rem] h-[50rem] absolute top-1/2 left-1/2 -translate-1/2">
+        <div className="line-red-container overflow-hidden h-0">
           <Image
             alt="Hong Hao Travel"
             width={200}
@@ -185,8 +186,8 @@ export default function OurTour() {
               className="w-[8.12644rem] h-[6.9375rem] object-contain"
             />
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
