@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 
 export default function AccordionV2({ title, name, children }) {
   const [openItem, setOpenItem] = useState(null);
@@ -19,13 +20,18 @@ export default function AccordionV2({ title, name, children }) {
         <AccordionTrigger className="p-0 hover:no-underline w-full [&>svg]:hidden">
           <div className="group relative w-full">
             <div
-              className={`inline-flex gap-[0.5rem] items-center leading-[1.2] font-bold text-[2rem] transition-all duration-500 ${
+              className={`cursor-pointer inline-flex gap-[0.5rem] items-center leading-[1.2] font-bold text-[1.5rem] md:text-[2rem] transition-all duration-500 ${
                 openItem === name
                   ? "translate-x-[1.125rem] text-orange-normal"
                   : "group-hover:translate-x-[1.125rem] translate-x-0 text-white"
               }`}
             >
               {title}
+              <ChevronDown
+                className={`transition-transform duration-500 ${
+                  openItem === name ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +49,7 @@ export default function AccordionV2({ title, name, children }) {
             </svg>
           </div>
         </AccordionTrigger>
-        <AccordionContent>{children}</AccordionContent>
+        <AccordionContent className="">{children}</AccordionContent>
       </AccordionItem>
     </Accordion>
   );

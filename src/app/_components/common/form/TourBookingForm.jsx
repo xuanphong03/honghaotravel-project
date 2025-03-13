@@ -8,7 +8,7 @@ import { z } from "zod";
 import TextareaField from "../../form-controls/TextareaField";
 import ComboboxFieldV2 from "../../form-controls/ComboboxFieldV2";
 import DatePickerField from "../../form-controls/DatePickerField";
-import { Form } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { addDays } from "date-fns";
 
 import { v4 as uuidv4 } from "uuid";
@@ -29,7 +29,6 @@ const formSchema = z.object({
     .number()
     .min(0, "Please enter quantity local driving")
     .default(0),
-  // Customer information
   customerName: z
     .string({ required_error: "Please enter your name" })
     .min(2, "Username must be at least 2 characters"),
@@ -93,7 +92,13 @@ export default function TourBookingForm() {
       endDate: null,
     },
   });
-  const { watch, setValue } = form;
+  const {
+    control,
+    watch,
+    setValue,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = form;
 
   const tourByDay = watch("tourByDay");
   const departureDate = watch("departureDate");
@@ -179,7 +184,7 @@ export default function TourBookingForm() {
     <Form {...form}>
       <form
         id="tour-booking-form"
-        onSubmit={form.handleSubmit(handleFormSubmit)}
+        onSubmit={handleSubmit(handleFormSubmit)}
         className="relative bg-white !w-full rounded-[1.5rem]"
       >
         <div className="flex gap-[1.5rem] max-h-[85vh] overflow-y-auto w-full px-[1.5rem] py-[1.5rem] ">
@@ -193,7 +198,7 @@ export default function TourBookingForm() {
                   <InputField
                     name="customerName"
                     type="text"
-                    control={form.control}
+                    control={control}
                     placeholder="Peter Nguyen Tuan Anh"
                     errorMessage={form.formState.errors?.customerName?.message}
                   />
@@ -203,7 +208,7 @@ export default function TourBookingForm() {
                     type="text"
                     name="phoneNumber"
                     placeholder="(Whatsapp) +84 *"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.phoneNumber?.message}
                   />
                 </div>
@@ -212,7 +217,7 @@ export default function TourBookingForm() {
                     type="email"
                     name="email"
                     placeholder="Email *"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.email?.message}
                   />
                 </div>
@@ -221,7 +226,7 @@ export default function TourBookingForm() {
                     rows={2}
                     name="message"
                     placeholder="Message"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.message?.message}
                   />
                 </div>
@@ -233,7 +238,7 @@ export default function TourBookingForm() {
                   name="tourByType"
                   label="Type of tour"
                   options={tourData.typeTours}
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.tourByType?.message}
                 />
               </div>
@@ -242,7 +247,7 @@ export default function TourBookingForm() {
                   name="tourByDay"
                   label="Choose days"
                   options={tourData.durationTours}
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.tourByDay?.message}
                 />
               </div>
@@ -251,7 +256,7 @@ export default function TourBookingForm() {
                   name="pickUpLocation"
                   label="Pick up"
                   options={tourData.pickUpLocations}
-                  control={form.control}
+                  control={control}
                   placeholder="Pick up"
                   errorMessage={form.formState.errors?.pickUpLocation?.message}
                 />
@@ -260,7 +265,7 @@ export default function TourBookingForm() {
                 <DatePickerField
                   name="departureDate"
                   label="Departure date"
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.departureDate?.message}
                 />
               </div>
@@ -269,7 +274,7 @@ export default function TourBookingForm() {
                   label="Address"
                   name="departAddress"
                   placeholder="Address"
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.departAddress?.message}
                 />
               </div>
@@ -278,7 +283,7 @@ export default function TourBookingForm() {
                   name="dropOffLocation"
                   label="Drop off"
                   options={tourData.dropOffLocations}
-                  control={form.control}
+                  control={control}
                   placeholder="Drop off"
                   errorMessage={form.formState.errors?.dropOffLocation?.message}
                 />
@@ -288,14 +293,14 @@ export default function TourBookingForm() {
                   name="endDate"
                   label="End date"
                   disabled={true}
-                  control={form.control}
+                  control={control}
                 />
               </div>
               <div className="col-span-2">
                 <ComboboxFieldV2
                   label="Address"
                   name="dropOffAddress"
-                  control={form.control}
+                  control={control}
                   options={dropOffAddresses}
                   disabled={!dropOffAddresses.length}
                   placeholder=""
@@ -327,23 +332,51 @@ export default function TourBookingForm() {
                   </svg>
                   <div className="flex px-[0.75rem] py-[0.375rem] items-center gap-[0.625rem] rounded-[0.25rem] bg-[#F1F1F1]">
                     <span className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                      Pax
+                      Pax:
                     </span>
-                    <div className="relative flex items-center gap-[0.25rem] leading-[1.2]">
-                      <Input
-                        readOnly
-                        type="number"
-                        defaultValue={10}
-                        className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                    <div className="relative ">
+                      <FormField
+                        name="selfDriving"
+                        control={control}
+                        render={({ field }) => {
+                          const handleIncrement = () => {
+                            field.onChange(field.value + 1);
+                          };
+                          const handleDecrement = () => {
+                            if (field.value > 0) {
+                              field.onChange(field.value - 1);
+                            }
+                          };
+                          return (
+                            <FormItem className="flex items-center gap-[0.25rem] leading-[1.2]">
+                              <FormControl>
+                                <Input
+                                  readOnly
+                                  {...field}
+                                  type="number"
+                                  className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                                />
+                              </FormControl>
+                              <div className="flex flex-col">
+                                <button
+                                  type="button"
+                                  onClick={handleIncrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronUp className="size-[0.875rem]" />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={handleDecrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronDown className="size-[0.875rem]" />
+                                </button>
+                              </div>
+                            </FormItem>
+                          );
+                        }}
                       />
-                      <div className="flex flex-col">
-                        <button type="button" className="cursor-pointer">
-                          <ChevronUp className="size-[0.875rem]" />
-                        </button>
-                        <button type="button" className="cursor-pointer">
-                          <ChevronDown className="size-[0.875rem]" />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -374,21 +407,49 @@ export default function TourBookingForm() {
                     <span className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
                       Pax
                     </span>
-                    <div className="relative flex items-center gap-[0.25rem] leading-[1.2]">
-                      <Input
-                        readOnly
-                        type="number"
-                        defaultValue={10}
-                        className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                    <div className="relative">
+                      <FormField
+                        name="localDriving"
+                        control={control}
+                        render={({ field }) => {
+                          const handleIncrement = () => {
+                            field.onChange(field.value + 1);
+                          };
+                          const handleDecrement = () => {
+                            if (field.value > 0) {
+                              field.onChange(field.value - 1);
+                            }
+                          };
+                          return (
+                            <FormItem className="flex items-center gap-[0.25rem] leading-[1.2]">
+                              <FormControl>
+                                <Input
+                                  readOnly
+                                  {...field}
+                                  type="number"
+                                  className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
+                                />
+                              </FormControl>
+                              <div className="flex flex-col">
+                                <button
+                                  type="button"
+                                  onClick={handleIncrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronUp className="size-[0.875rem]" />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={handleDecrement}
+                                  className="cursor-pointer"
+                                >
+                                  <ChevronDown className="size-[0.875rem]" />
+                                </button>
+                              </div>
+                            </FormItem>
+                          );
+                        }}
                       />
-                      <div className="flex flex-col">
-                        <button type="button" className="cursor-pointer">
-                          <ChevronUp className="size-[0.875rem]" />
-                        </button>
-                        <button type="button" className="cursor-pointer">
-                          <ChevronDown className="size-[0.875rem]" />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -544,7 +605,7 @@ export default function TourBookingForm() {
               >
                 BOOK NOW, PAY LATER
                 <Image
-                  alt=""
+                  alt="Hong Hao Travel"
                   width={50}
                   height={50}
                   className="size-[0.875rem]"

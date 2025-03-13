@@ -6,12 +6,14 @@ import Discovery from "./_components/Discovery/Discovery";
 import OurTeam from "../../../components/section/ourteam/OurTeam";
 import ExploreTrip from "./_components/ExploreTrip/ExploreTrip";
 
-function AllDestinationsPage(props) {
+async function AllDestinationsPage({ searchParams }) {
+  const _searchParams = await searchParams;
+
   return (
     <main id="all-destinations" className="bg-white">
       <Banner />
       <Breadcrumb />
-      <Discovery />
+      <Discovery searchParams={_searchParams} />
       <OurTeam secondary />
       <ExploreTrip />
     </main>

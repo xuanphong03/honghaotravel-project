@@ -1,11 +1,11 @@
-.animate-cloud {
-  animation: cloud 10s linear infinite;
+#introduction .animate-cloud {
+  animation: ourtour-cloud 10s linear infinite;
 }
 
-.animate-cloud2 {
-  animation: cloud2 10s linear infinite;
+#introduction .animate-cloud2 {
+  animation: ourtour-cloud2 10s linear infinite;
 }
-@keyframes cloud2 {
+@keyframes ourtour-cloud {
   0% {
     transform: translateX(10px);
   }
@@ -17,7 +17,7 @@
   }
 }
 
-@keyframes cloud2 {
+@keyframes ourtour-cloud2 {
   0% {
     transform: translateX(10px) translateY(-10px);
   }

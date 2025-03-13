@@ -27,14 +27,18 @@ export default function NumberField({
             <Label className="text-[0.75rem] leading-[1.2] tracking-[0.00375rem] text-[#727272] uppercase">
               {label}
             </Label>
-            <div className=" w-full relative flex justify-between items-center">
-              <input
-                {...field}
+            <div className="w-full relative flex justify-between items-center">
+              <Input
+                hidden
                 readOnly
                 name={name}
                 type="number"
-                className="font-medium text-[1rem] leading-[1.5] w-full p-0 outline-none border-none focus-visible:ring-0"
+                className="font-medium text-[1rem] leading-[1.5] p-0 outline-none border-none focus-visible:ring-0"
+                {...field}
               />
+              <div className="font-medium text-[1rem] leading-[1.5]">
+                {field.value} {unit}
+              </div>
               <div className=" flex flex-col absolute top-1/2 right-0 -translate-y-1/2">
                 <button
                   onClick={handleIncrement}

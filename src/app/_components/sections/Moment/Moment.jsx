@@ -1,17 +1,18 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import MomentSlideItem from "./MomentSlideItem";
-import "./Moment.css";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import "./Moment.css";
+import MomentSlideItem from "./MomentSlideItem";
 
 export default function Moment() {
   const containerRef = useRef(null);
   const gsapRef = useRef(null);
   const hasAnimated = useRef(false);
 
-  useEffect(() => {
+  useGSAP(() => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -28,6 +29,10 @@ export default function Moment() {
             x: `-${scrollWidth - clientWidth}px`,
             duration: 10,
             ease: "linear",
+            scrollTrigger: {
+              trigger: container,
+              toggleActions: "play none none none",
+            },
           });
 
           container.addEventListener("mouseenter", () =>
@@ -69,7 +74,7 @@ export default function Moment() {
             loading="lazy"
             alt="Hong Hao Travel"
             src="/images/home/moment/hong-hao-travel.svg"
-            className="size-full object-cover animate-spin animate-spin-slow"
+            className="size-full object-cover animate-spin-slow !duration-[10s]"
           />
           <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[2.375rem]">
             <svg

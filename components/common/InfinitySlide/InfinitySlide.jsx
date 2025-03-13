@@ -49,9 +49,6 @@ export default function InfinitySlide() {
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSwiper={(swiper) => {
-          console.log("swiper", swiper);
-        }}
         slidesPerView={"auto"}
         direction={"vertical"}
         freeMode={true}
@@ -65,7 +62,7 @@ export default function InfinitySlide() {
         mousewheel={true}
         onSlideChange={handleChangeSlide}
         modules={[Autoplay, FreeMode, Thumbs, Navigation, Mousewheel]}
-        className="!h-full"
+        className="!h-full pointer-events-none"
       >
         {[...Array(10)].map((_, index) => (
           <SwiperSlide

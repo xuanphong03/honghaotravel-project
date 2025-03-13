@@ -6,7 +6,7 @@ import ScrollToTopButton from "./ScrollToTopButton";
 
 export default function ToolBar() {
   return (
-    <div className="fixed !z-[9999] right-[1.5em] bottom-[2.88rem] flex flex-col items-center gap-y-[1rem]">
+    <div className="fixed !z-[500] right-[0.5rem] md:right-[1.5em] bottom-[4rem] md:bottom-[2.88rem] flex flex-col items-center gap-y-[0.5rem] md:gap-y-[1rem]">
       <BookNowButton />
       <WhatsAppButton />
       <GoogleButton />

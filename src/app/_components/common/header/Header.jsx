@@ -12,19 +12,17 @@ import { AppContext } from "@/app/context/AppProvider";
 import Navigation from "../navigation/Navigation";
 
 function Header() {
-  const { showHeader, isPositionTop } = useContext(AppContext);
-  const [showMenu, setShowMenu] = useState(false);
-  const handleToggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  const { showHeader, isPositionTop, showNavigation, setShowNavigation } =
+    useContext(AppContext);
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 !z-[100] transition-all duration-500 ${
           isPositionTop ? "bg-transparent" : "bg-white shadow"
-        } ${!showHeader && !showMenu ? "-translate-y-full" : "translate-y-0"}`}
+        } ${!showHeader ? "-translate-y-full" : "translate-y-0"}`}
       >
-        <div className="flex justify-between items-center max-w-[100rem] mx-auto px-[1.25rem] py-[0.5rem] md:px-[5rem] md:py-[1.5rem]">
+        <div className="flex justify-between items-center w-full mx-auto px-[1.25rem] py-[0.5rem] md:px-[5rem] md:py-[1.5rem]">
           <Link
             href="/"
             className="relative inline-block w-[7.1875rem] h-[3.1875rem] md:w-[9.625rem] md:h-[3.1875rem] shrink-0"
@@ -33,7 +31,7 @@ function Header() {
               alt="Hong Hao Travel"
               width={200}
               height={200}
-              loading="lazy"
+              priority
               src="/images/logo-honghaohostel.png"
               className={`absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-100 ${
                 isPositionTop ? "opacity-100 visible" : "opacity-0 invisible"
@@ -50,12 +48,13 @@ function Header() {
               }`}
             />
           </Link>
-          <Sheet>
+          <Sheet open={showNavigation} onOpenChange={setShowNavigation}>
             <SheetTrigger asChild>
               <button
+                onClick={() => setShowNavigation(true)}
                 className={`${
                   !isPositionTop ? "bg-orange-normal" : "bg-transparent"
-                } border-bg-elevation-white-50 border-solid border md:border-orange-normal md:bg-orange-normal text-[1rem] leading-[120%] cursor-pointer md:text-[1.25rem] font-bold flex justify-end items-center gap-[0.4375rem] uppercase text-white pl-[0.5rem] pr-[1rem] py-[0.25rem] md:py-[0.5rem] !rounded-[1.5rem]`}
+                } border-bg-elevation-white-50 border-solid border 2xl:text-[16px] md:border-orange-normal md:bg-orange-normal text-[1rem] leading-[120%] cursor-pointer md:text-[1.25rem] font-bold flex justify-end items-center gap-[0.4375rem] uppercase text-white pl-[0.5rem] pr-[1rem] py-[0.25rem] md:py-[0.5rem] !rounded-[1.5rem]`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +83,10 @@ function Header() {
                 <span className="leading-none">Menu</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="top" className="p-0 m-0 !z-[200]">
+            <SheetContent
+              side="top"
+              className="p-0 m-0 !z-[9999] !border-0 data-[state=closed]:duration-700 data-[state=open]:duration-700"
+            >
               <SheetTitle className="hidden"></SheetTitle>
               <Navigation />
             </SheetContent>

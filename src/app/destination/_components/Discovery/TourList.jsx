@@ -12,9 +12,9 @@ export default function TourList({ tours }) {
           className="shadow inline-block col-span-1 h-[23.33775rem] w-full md:w-[29.375rem] md:h-[31.25rem] rounded-[1.25rem] overflow-hidden"
         >
           <ItemTour
-            tag={tourItem.tag}
+            tag={"Best destination"}
             title={tourItem.title}
-            content={tourItem.content}
+            content={tourItem.body}
           />
         </Link>
       ))}

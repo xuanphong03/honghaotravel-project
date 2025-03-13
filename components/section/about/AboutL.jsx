@@ -15,7 +15,7 @@ export default function AboutL() {
           winding roads of the Ma Pi Leng Pass, Ha Giang offers an unforgettable
           journey through some of Vietnam's most awe-inspiring landscapes.
         </p>
-        <div className="max-sm:hidden flex items-center gap-4 ">
+        <div className="max-sm:hidden flex items-center gap-4">
           <button className="flex items-center justify-center gap-2 btn-size-l btn-default btn-bold !text-greyscaletext-0 !font-bold">
             <span>BOOK NOW</span>
             <svg
