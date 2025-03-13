@@ -13,16 +13,13 @@ import Navigation from "../navigation/Navigation";
 
 function Header() {
   const { showHeader, isPositionTop } = useContext(AppContext);
-  const [showMenu, setShowMenu] = useState(false);
-  const handleToggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 !z-[100] transition-all duration-500 ${
           isPositionTop ? "bg-transparent" : "bg-white shadow"
-        } ${!showHeader && !showMenu ? "-translate-y-full" : "translate-y-0"}`}
+        } ${!showHeader ? "-translate-y-full" : "translate-y-0"}`}
       >
         <div className="flex justify-between items-center max-w-[100rem] mx-auto px-[1.25rem] py-[0.5rem] md:px-[5rem] md:py-[1.5rem]">
           <Link

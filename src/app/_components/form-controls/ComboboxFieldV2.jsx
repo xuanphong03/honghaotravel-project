@@ -18,7 +18,6 @@ export default function ComboboxFieldV2({
   placeholder,
   disabled,
 }) {
-  console.log("options", options);
   return (
     <FormField
       control={control}

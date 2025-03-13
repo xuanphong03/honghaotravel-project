@@ -9,16 +9,14 @@ export default function NavigationList() {
 
   const renderMenu = (items) => {
     return items.map((item) => {
-      if (item.children) {
+      if (item.children && Array.isArray(item.children)) {
+        const _items = item.children.map((children) => ({
+          title: children.title,
+          to: children.to,
+        }));
         return (
           <li key={uuidv4()} className="relative w-full cursor-pointer">
-            <NavigationItemV2
-              title={item.title}
-              links={item.children.map((child) => ({
-                title: child.title,
-                to: child.to,
-              }))}
-            />
+            <NavigationItemV2 title={item.title} links={_items} />
             <div className="w-[22.5rem] h-[0.0625rem] bg-white/20"></div>
           </li>
         );
@@ -36,7 +34,7 @@ export default function NavigationList() {
       { title: "Home", to: "/", children: null },
       { title: "About Us", to: "#", children: null },
       {
-        title: "About Us",
+        title: "Tours",
         children: [
           {
             title: "Best Budget",

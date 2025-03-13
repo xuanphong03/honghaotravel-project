@@ -92,7 +92,15 @@ export default function TourBookingForm() {
       endDate: null,
     },
   });
-  const { watch, setValue } = form;
+  const {
+    control,
+    watch,
+    setValue,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = form;
+
+  console.log("errors", errors);
 
   const tourByDay = watch("tourByDay");
   const departureDate = watch("departureDate");
@@ -178,7 +186,7 @@ export default function TourBookingForm() {
     <Form {...form}>
       <form
         id="tour-booking-form"
-        onSubmit={form.handleSubmit(handleFormSubmit)}
+        onSubmit={handleSubmit(handleFormSubmit)}
         className="relative bg-white !w-full rounded-[1.5rem]"
       >
         <div className="flex gap-[1.5rem] max-h-[85vh] overflow-y-auto w-full px-[1.5rem] py-[1.5rem] ">
@@ -192,7 +200,7 @@ export default function TourBookingForm() {
                   <InputField
                     name="customerName"
                     type="text"
-                    control={form.control}
+                    control={control}
                     placeholder="Peter Nguyen Tuan Anh"
                     errorMessage={form.formState.errors?.customerName?.message}
                   />
@@ -202,7 +210,7 @@ export default function TourBookingForm() {
                     type="text"
                     name="phoneNumber"
                     placeholder="(Whatsapp) +84 *"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.phoneNumber?.message}
                   />
                 </div>
@@ -211,7 +219,7 @@ export default function TourBookingForm() {
                     type="email"
                     name="email"
                     placeholder="Email *"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.email?.message}
                   />
                 </div>
@@ -220,7 +228,7 @@ export default function TourBookingForm() {
                     rows={2}
                     name="message"
                     placeholder="Message"
-                    control={form.control}
+                    control={control}
                     errorMessage={form.formState.errors?.message?.message}
                   />
                 </div>
@@ -232,7 +240,7 @@ export default function TourBookingForm() {
                   name="tourByType"
                   label="Type of tour"
                   options={tourData.typeTours}
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.tourByType?.message}
                 />
               </div>
@@ -241,7 +249,7 @@ export default function TourBookingForm() {
                   name="tourByDay"
                   label="Choose days"
                   options={tourData.durationTours}
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.tourByDay?.message}
                 />
               </div>
@@ -250,7 +258,7 @@ export default function TourBookingForm() {
                   name="pickUpLocation"
                   label="Pick up"
                   options={tourData.pickUpLocations}
-                  control={form.control}
+                  control={control}
                   placeholder="Pick up"
                   errorMessage={form.formState.errors?.pickUpLocation?.message}
                 />
@@ -259,7 +267,7 @@ export default function TourBookingForm() {
                 <DatePickerField
                   name="departureDate"
                   label="Departure date"
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.departureDate?.message}
                 />
               </div>
@@ -268,7 +276,7 @@ export default function TourBookingForm() {
                   label="Address"
                   name="departAddress"
                   placeholder="Address"
-                  control={form.control}
+                  control={control}
                   errorMessage={form.formState.errors?.departAddress?.message}
                 />
               </div>
@@ -277,7 +285,7 @@ export default function TourBookingForm() {
                   name="dropOffLocation"
                   label="Drop off"
                   options={tourData.dropOffLocations}
-                  control={form.control}
+                  control={control}
                   placeholder="Drop off"
                   errorMessage={form.formState.errors?.dropOffLocation?.message}
                 />
@@ -287,14 +295,14 @@ export default function TourBookingForm() {
                   name="endDate"
                   label="End date"
                   disabled={true}
-                  control={form.control}
+                  control={control}
                 />
               </div>
               <div className="col-span-2">
                 <ComboboxFieldV2
                   label="Address"
                   name="dropOffAddress"
-                  control={form.control}
+                  control={control}
                   options={dropOffAddresses}
                   disabled={!dropOffAddresses.length}
                   placeholder=""
@@ -331,7 +339,7 @@ export default function TourBookingForm() {
                     <div className="relative ">
                       <FormField
                         name="selfDriving"
-                        control={form.control}
+                        control={control}
                         render={({ field }) => {
                           const handleIncrement = () => {
                             field.onChange(field.value + 1);
@@ -404,7 +412,7 @@ export default function TourBookingForm() {
                     <div className="relative">
                       <FormField
                         name="localDriving"
-                        control={form.control}
+                        control={control}
                         render={({ field }) => {
                           const handleIncrement = () => {
                             field.onChange(field.value + 1);
