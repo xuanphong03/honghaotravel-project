@@ -29,12 +29,12 @@ export default function NumberField({
             </Label>
             <div className="w-full relative flex justify-between items-center">
               <Input
-                {...field}
+                hidden
                 readOnly
                 name={name}
                 type="number"
-                hidden
                 className="font-medium text-[1rem] leading-[1.5] p-0 outline-none border-none focus-visible:ring-0"
+                {...field}
               />
               <div className="font-medium text-[1rem] leading-[1.5]">
                 {field.value} {unit}

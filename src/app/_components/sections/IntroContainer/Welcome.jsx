@@ -10,10 +10,18 @@ export default function Welcome() {
       gsap.to(".text-zoom-in", {
         scale: 0.8,
         duration: 1.5,
+        scrollTrigger: {
+          trigger: ".box-zoom-out",
+          toggleActions: "play none none none",
+        },
       });
       gsap.to(".box-zoom-out", {
         scale: 1,
         duration: 1,
+        scrollTrigger: {
+          trigger: ".box-zoom-out",
+          toggleActions: "play none none none",
+        },
       });
     },
     { scope: container }

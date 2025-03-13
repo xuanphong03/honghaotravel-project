@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 
-function BestTrips(props) {
+function BestTrips() {
   const TRIPS = [
     {
       id: 1,
@@ -45,32 +47,55 @@ function BestTrips(props) {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const tripListRef = useRef(null);
+  const container = useRef(null);
 
-  useEffect(() => {
-    if (!tripListRef.current) return;
-    const listItems = tripListRef.current.querySelectorAll(".trip-item");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const itemIndex = entry.target.dataset.index;
-            setCurrentIndex(+itemIndex);
-          }
+  useGSAP(
+    () => {
+      if (!tripListRef.current) return;
+      gsap.registerPlugin(ScrollTrigger);
+      const tripItems = gsap.utils.toArray(".trip-item", tripListRef.current);
+      tripItems.forEach((item, index) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => setCurrentIndex(index),
+          onEnterBack: () => setCurrentIndex(index),
         });
-      },
-      {
-        threshold: [1],
-      }
-    );
+      });
+      // Cleanup function
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+      // const listItems = tripListRef.current.querySelectorAll(".trip-item");
 
-    listItems.forEach((item) => observer.observe(item));
+      // const observer = new IntersectionObserver(
+      //   (entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         const itemIndex = entry.target.dataset.index;
+      //         setCurrentIndex(+itemIndex);
+      //       }
+      //     });
+      //   },
+      //   {
+      //     threshold: [1],
+      //   }
+      // );
 
-    return () => observer.disconnect();
-  }, []);
+      // listItems.forEach((item) => observer.observe(item));
+
+      // return () => observer.disconnect();
+    },
+    { scope: container }
+  );
 
   return (
-    <section id="best-trips" className="relative w-full bg-white z-10">
+    <section
+      id="best-trips"
+      ref={container}
+      className="relative w-full bg-white z-10"
+    >
       <div className="w-full md:w-[87.5rem] mx-auto pt-[5.63rem] pb-[4.94rem] flex justify-between flex-wrap lg:flex-nowrap">
         <div className="lg:max-h-screen lg:sticky lg:top-28 h-fit w-full mb-[2rem]">
           <div className="relative md:mb-[2.44rem] pl-[0.75rem] lg:pl-[4rem] lg:w-auto">
@@ -86,21 +111,13 @@ function BestTrips(props) {
           </div>
 
           <div className="hidden lg:block relative w-[29.29231rem] h-[28.12494rem]">
-            {TRIPS.map((item, index) => {
-              const isActive = currentIndex === index;
-              return (
-                <Image
-                  width={500}
-                  height={500}
-                  key={item?.id}
-                  alt={item?.name || ""}
-                  src={item?.mapThumbnail || ""}
-                  className={`w-full h-full object-contain absolute inset-0 ${
-                    isActive ? "opacity-100 visible" : "opacity-0 invisible"
-                  }`}
-                />
-              );
-            })}
+            <Image
+              width={500}
+              height={500}
+              alt="Hong Hao Travel"
+              src={TRIPS[currentIndex]?.mapThumbnail || ""}
+              className={`w-full h-full object-contain absolute inset-0 opacity-100 visible}`}
+            />
           </div>
         </div>
 
@@ -223,7 +240,5 @@ function BestTrips(props) {
     </section>
   );
 }
-
-BestTrips.propTypes = {};
 
 export default BestTrips;

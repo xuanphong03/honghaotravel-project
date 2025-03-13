@@ -14,15 +14,27 @@ export default function Banner() {
         y: 0,
         opacity: 1,
         duration: 0.75,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
       });
       gsap.to(".fade-in-left", {
         x: 0,
         opacity: 1,
         duration: 0.75,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
       });
       gsap.to(".background-overlay", {
         opacity: 0,
         duration: 1,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
       });
     },
     { scope: container }

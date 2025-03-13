@@ -29,6 +29,10 @@ export default function Moment() {
             x: `-${scrollWidth - clientWidth}px`,
             duration: 10,
             ease: "linear",
+            scrollTrigger: {
+              trigger: container,
+              toggleActions: "play none none none",
+            },
           });
 
           container.addEventListener("mouseenter", () =>

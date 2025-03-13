@@ -79,12 +79,60 @@ export default function Banner() {
 
   useGSAP(
     () => {
-      gsap.to(".scale-animation", { scale: 15, delay: 2.25, duration: 1.5 });
-      gsap.to(".opacity-fade-out", { opacity: 0, duration: 1 });
-      gsap.to(".opacity-fade-in", { opacity: 1, delay: 0.5, duration: 1 });
-      gsap.to(".heading-animation", { y: "-500%", delay: 2.25, duration: 2.5 });
-      gsap.to(".slide-animation", { scale: 1, y: 0, delay: 2, duration: 1 });
-      gsap.to(".side-panel-animation", { x: 0, delay: 3.5, duration: 0.75 });
+      gsap.to(".scale-animation", {
+        scale: 15,
+        delay: 2.25,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.to(".opacity-fade-out", {
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.to(".opacity-fade-in", {
+        opacity: 1,
+        delay: 0.5,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.to(".heading-animation", {
+        y: "-500%",
+        delay: 2.25,
+        duration: 2.5,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.to(".slide-animation", {
+        scale: 1,
+        y: 0,
+        delay: 2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
+      gsap.to(".side-panel-animation", {
+        x: 0,
+        delay: 3.5,
+        duration: 0.75,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: "play none none none",
+        },
+      });
     },
     { scope: container, dependencies: [] }
   );
