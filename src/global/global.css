@@ -7,17 +7,23 @@
 @font-face {
   font-family: "tripsan-regular";
   /* Name your font */
-  src: url("/fonts/trip-sans/TripSans-Regular.ttf") format("truetype");
+  src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "tripsan-medium";
   /* Name your font */
-  src: url("/fonts/trip-sans/TripSans-Medium.ttf") format("truetype");
+  src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "tripsan-bold";
   /* Name your font */
-  src: url("/fonts/trip-sans/TripSans-Bold.ttf") format("truetype");
+  src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @theme {
@@ -31,8 +37,8 @@
   --breakpoint-4xl: 2250px;
 
   /* GREYSCALE */
-
-  --color-grey-50: rgb(239, 239, 239);
+  
+  --color-grey-50: #727272;
   --color-grey-100: rgb(204, 204, 204);
   --color-grey-200: rgb(180, 180, 180);
   --color-grey-300: rgb(146, 146, 146);
@@ -43,6 +49,19 @@
   --color-grey-800: rgb(51, 51, 51);
   --color-grey-900: rgb(39, 39, 39);
 
+  /* GREYSCALE2 */
+  --color-gray-scale-5 : #D9D9D9;
+  
+  /* GREYSCALE  text*/
+  --color-greyscaletext-0:#FFF;
+  --color-greyscaletext-5:#F1F1F1;
+  --color-greyscaletext-10: #C5C5C5;
+  --color-greyscaletext-20:#A9A9A9;
+  --color-greyscaletext-30: #828282;
+  --color-greyscaletext-40: #6A6A6A;
+  --color-greyscaletext-50:#454545;
+  --color-greyscaletext-60:#3F3F3F;
+  --color-greyscaletext-70:#313131;
   /* GREYSCALE */
   --color-greyscaletext-0: #fff;
   --color-greyscaletext-10: #c5c5c5;
@@ -77,6 +96,7 @@
   --color-green-dark__hover: rgb(21, 67, 46);
   --color-green-dark__active: rgb(16, 50, 35);
   --color-green-darker: rgb(12, 39, 27);
+  --color-green-s:rgba(19, 52, 28, 1);
 
   /* Grey Green */
   --color-grey-green-light: rgb(231, 233, 232);
@@ -261,7 +281,7 @@ body::-webkit-scrollbar-thumb {
 }
 .h1-medium {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 6rem;
   font-style: normal;
   font-weight: 700;
@@ -270,7 +290,7 @@ body::-webkit-scrollbar-thumb {
 }
 .h1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 6rem;
   font-style: normal;
   font-weight: 800;
@@ -388,7 +408,7 @@ body::-webkit-scrollbar-thumb {
 }
 .h4-bold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: 800;
@@ -420,15 +440,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 600;
   line-height: 120%; /* 1.8rem */
 }
-.h5-bold {
-  color: #000;
-  /* WEB/H5/BLACK */
-  font-family: "Londrina Solid", sans-serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%; /* 1.5rem */
-}
+
 /* h6 */
 .h6-regular {
   color: #000;
@@ -456,53 +468,62 @@ body::-webkit-scrollbar-thumb {
 }
 .h6-bold {
   color: #000;
-  font-family: Inter;
+  font-family: "tripsan-bold";
   font-size: 1.25rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 120%; /* 1.5rem */
 }
 
-/* sub1 */
+/* Sub1 */
+
 .sub1-regular {
   color: #000;
 
   /* WEB/SUB1/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular";
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-medium {
   color: #000;
 
   /* WEB/SUB1/MEDIUM */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-medium";
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-medium";
   font-size: 1rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
+
 .sub1-bold {
   color: #000;
+
   /* WEB/SUB1/BOLD */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-bold";
   font-size: 1rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
+  /* 1.2rem */
   letter-spacing: 0.0125rem;
 }
 
@@ -511,7 +532,7 @@ body::-webkit-scrollbar-thumb {
   color: #000;
 
   /* WEB/SUB2/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
@@ -522,7 +543,7 @@ body::-webkit-scrollbar-thumb {
   color: #000;
 
   /* WEB/SUB2/MEDIUM */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -542,7 +563,7 @@ body::-webkit-scrollbar-thumb {
   color: #000;
 
   /* WEB/SUB2/BOLD */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-bold", sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 800;
@@ -550,11 +571,11 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.00875rem;
 }
 
-/* Body */
+/* Body1 */
 .body1-regular {
   color: #000;
   /* WEB/BODY1/REGULAR */
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -563,24 +584,90 @@ body::-webkit-scrollbar-thumb {
 }
 .body1-semibold {
   color: #000;
-  font-family: "Trip Sans", sans-serif;
+  font-family: "tripsan-regular", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.5rem */
   letter-spacing: 0.005rem;
 }
-.body1-bold {
+/* .body1-bold {
   color: #000;
   font-family: Kanit;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 1.5rem */
-  letter-spacing: 0.005rem;
+/* letter-spacing: 0.005rem; */
+/* } * */
+
+/* Body2 */
+
+.body2-regular {
+  color: var(--greyscaletext-80-main, #262626);
+  
+    /* WEB/BODY2/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.3125rem */
+    letter-spacing: 0.00219rem;
 }
 
-@media only screen and (max-width: 767.98px) {
+.body2-bold{
+  
+    /* WEB/BODY2/BOLD */
+    font-family: "tripsan-bold";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.3125rem */
+}
+
+
+
+/* CAPTION/ REGULAR */
+
+.caption-regular {
+  color: var(--greyscaletext-0, #FFF);
+  
+    /* APP/CAPTION/REGULAR */
+    font-family: "tripsan-regular";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+.caption-medium{
+  color: #000;
+    font-family: "Kanit";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+.caption-bold{
+  color: #000;
+    font-family: "tripsan-regular";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    /* 0.9rem */
+    letter-spacing: 0.00375rem;
+}
+
+
+@media only screen and (max-width: 640px) {
   html {
     font-size: 4.267vw;
   }
@@ -597,54 +684,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* Sub1 */
 
-.sub1-regular {
-  color: #000;
-
-  /* WEB/SUB1/REGULAR */
-  font-family: "tripsan-regular";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  /* 1.2rem */
-  letter-spacing: 0.0125rem;
-}
-.sub1-medium {
-  color: #000;
-
-  /* WEB/SUB1/MEDIUM */
-  font-family: "tripsan-medium";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  /* 1.2rem */
-  letter-spacing: 0.0125rem;
-}
-.sub1-semibold {
-  color: #000;
-  font-family: "tripsan-medium";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 120%;
-  /* 1.2rem */
-  letter-spacing: 0.0125rem;
-}
-.sub1-bold {
-  color: #000;
-
-  /* WEB/SUB1/BOLD */
-  font-family: "tripsan-bold";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 120%;
-  /* 1.2rem */
-  letter-spacing: 0.0125rem;
-}
 
 /* Sub2 */
 
@@ -810,7 +850,7 @@ input[type="number"] {
   /* h3 */
   .h3-regular {
     color: #000;
-    font-family: "Trip Sans", sans-serif;
+    font-family: "tripsan-regular", sans-serif;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
@@ -913,7 +953,7 @@ input[type="number"] {
   .h5-bold {
     color: #000;
     /* APP/H7/BOLD */
-    font-family: "Trip Sans", sans-serif;
+    font-family: "tripsan-bold", sans-serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
@@ -938,6 +978,8 @@ input[type="number"] {
 }
 /* About */
 
+
+
 .h1-about {
   font-family: "tripsan-bold";
   font-size: 13.9375rem;
@@ -945,11 +987,7 @@ input[type="number"] {
   font-weight: 700 !important;
   line-height: 100%;
   /* 13.9375rem */
-  background: linear-gradient(
-    180deg,
-    #fff 28.9%,
-    rgba(255, 255, 255, 0) 83.61%
-  );
+  background: linear-gradient(180deg, #FFF 28.9%, rgba(255, 255, 255, 0.00) 83.61%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -964,11 +1002,7 @@ input[type="number"] {
   /* 7.5rem */
   text-transform: uppercase;
 
-  background: linear-gradient(
-    180deg,
-    #fff 30.31%,
-    rgba(255, 255, 255, 0) 87.67%
-  );
+  background: linear-gradient(180deg, #FFF 30.31%, rgba(255, 255, 255, 0.00) 87.67%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -984,13 +1018,35 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(16px);
 
-  color: var(--greyscaletext-0, #fff);
+  color: var(--greyscaletext-0, #FFF);
   font-family: "tripsan-bold";
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 700 !important;
   line-height: 120%;
   /* 1.35rem */
+}
+
+/* Trip for you */
+
+.time-box {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(2px);
+}
+
+.intro {
+  color: var(--greyscaletext-0, #FFF);
+    font-family: "tripsan-bold";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    /* 1.5rem */
 }
 
 /* animate spin */
@@ -1014,6 +1070,7 @@ input[type="number"] {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
 }
+
 
 :root {
   --background: oklch(1 0 0);

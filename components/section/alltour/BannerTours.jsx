@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
+import OverlayAnimate from '../../common/OverlayAnimate'
 
-export default function AllTour() {
+export default function BannerTours() {
   return (
       <div className='alltour py-[7.25rem] sm:py-[6.19rem] ps-[1.25rem] sm:ps-[8.13rem] flex sm:min-h-[43.75rem] items-center sm:pe-16 relative'>
+          <OverlayAnimate/>
           <div className="bg  absolute top-0 left-0 right-0 bottom-0 ">
               <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover -z-20'/>
           </div>
