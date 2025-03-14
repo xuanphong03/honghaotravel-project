@@ -51,6 +51,7 @@
 
   /* GREYSCALE2 */
   --color-gray-scale-5 : #D9D9D9;
+  --color-gray-scale-80: #2E2E2E;
   
   /* GREYSCALE  text*/
   --color-greyscaletext-0:#FFF;
@@ -1053,6 +1054,7 @@ input[type="number"] {
   animation: custom-spin 0.5s linear infinite;
   /* 0.5 seconds duration */
 }
+
 
 
 :root {

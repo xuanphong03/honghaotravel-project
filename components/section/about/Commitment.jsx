@@ -476,9 +476,10 @@ export default function Commitment() {
   
 
   return (
-    <div ref={commit} className='commitment  bg-cover bg-center  bg-no-repeat min-h-[50rem] py-[3.18rem] sm:pt-[11rem] sm:pb-24 flex  gap-[9.25rem] relative oveflow-hidden z-10'>
+    <div ref={commit} className='commitment  bg-cover bg-center  bg-no-repeat  min-h-[50rem]   max-sm:px-5   gap-[9.25rem] relative oveflow-hidden z-10'>
       <TestM commit={ commit} />
-          <div className="commitment-cont max-sm:w-full flex flex-col px-5  sm:ps-20 relative max-sm:z-10">
+      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between top-12 sm:top-[5rem]">
+        <div className="commitment-cont max-sm:w-full flex flex-col relative max-sm:z-10">
               <div ref={a0} className="title flex flex-col max-sm:w-[16.04469rem] gap-3 translate-y-[6.25rem] opacity-0">
                   <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>HONG HA TRAVEL</p>
                   <h2 className='h3-bold sm:h2-bold !text-greyscaletext-0'>ETHICAL COMMITMENTS</h2>
@@ -496,6 +497,7 @@ export default function Commitment() {
           </div>
           <div ref={a1} className="commitment-img max-sm:hidden mt-[6.5rem] w-[41.9375rem] h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
         <Image src={"/images/about/commit.jpeg"} alt="" fill className='rounded-xl object-cover'/>
+          </div>
           </div>
     </div>
   )

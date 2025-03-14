@@ -74,8 +74,10 @@ export default function Share() {
               
           </div>
       <Breadcrumb data={ dataBreadcrumb} />
-          <div ref={text} className="inf w-full sm:w-[65.8125rem] px-[1.7rem] sm:px-20 max-w-full flex justify-center opacity-0 translate-y-[4.6875rem]">
-              <p className='h2-bold max-sm:!text-[1.5rem] max-sm:tracking-[0.00375rem] max-sm:leading-[120%] sm:!font-normal !text-[#122618] mt-24 sm:mt-[6.87rem] opacity-80 text-center sm:text-left'>Explore the rugged beauty of Ha Giang on our thrilling motorcycle tours. Feel the wind in your hair as you navigate through twisting mountain roads and remote villages, soaking in the breathtaking scenery of towering peaks and lush valleys. Our experienced guides will lead you on an unforgettable adventure</p>
+      <div className='max-w-[87.5rem] mx-auto'>
+        <div ref={text} className="inf w-full sm:w-[65.8125rem] px-[1.7rem] sm:px-0 max-w-full flex justify-center opacity-0 translate-y-[4.6875rem]">
+              <p className='h2-bold max-sm:!text-[1.5rem] max-sm:tracking-[0.00375rem] max-sm:leading-[120%] sm:!font-normal !text-[#122618] mt-24 sm:mt-[6.87rem] opacity-80 text-center sm:text-left'>Hong Hao Travel is a travel company in Ha Giang, we specialize in organizing unforgettable tours to explore Ha Giang loop but still focus on the pristine nature of nature.</p>
+          </div>
           </div>
     </div>
   )

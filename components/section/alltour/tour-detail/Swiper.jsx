@@ -16,18 +16,18 @@ const MousewheelSwiper = ({handleSlideChange, activeIndex}) => {
         mousewheel={true} 
         modules={[Mousewheel]} 
         slidesPerView={2} 
-        spaceBetween={100} 
+        spaceBetween={0} 
               className="max-h-[32rem] bg-transparent rounded-lg "
               onSlideChange={handleSlideChange}
       >
-              {arrTest.map((_, index) => <SwiperSlide key={index} className="swiper-slide swiper-slide-active w-full flex h-fit cursor-pointer">
+              {arrTest.map((_, index) => <SwiperSlide key={index} className="swiper-slide swiper-slide-active w-full flex h-fit cursor-pointer mb-14">
                   <div className="flex space-x-[7.87rem] relative">
                       <div className=" relative w-[2rem] ms-6">
                           <div className={`  absolute z-[5] left-1/2 w-[0.2rem]  bg-greyscaletext-10 h-full transition-all duration-1000`}></div>
                           <div className={` ${activeIndex > index ? "bg-green-normal__active h-full":"bg-greyscaletext-10 "} absolute z-[5] left-1/2 w-[0.2rem] h-0 transition-all duration-1000 `}></div>
                           <div className={`${activeIndex === index ||  activeIndex > index? "bg-green-normal__active":"bg-greyscaletext-10"} delay-500  size-[0.675rem] rounded-full absolute top-0 left-[37%] z-50 transition-all duration-500`}></div>
                       </div>
-                      <article className="min-h-[17.875rem] scrollbar-popup-tour-detail tablet:overflow-hidden tablet:h-[10rem] 2xl:min-h-[18.875rem] 3xl:min-h-[20.875rem] 4xl:!min-h-[24.875rem] mb-[2rem] xl:border-[3px] ease-out border-[2px] flex-1 duration-1000 transition-all rounded-[1.5rem] bg-[#F5F5F5] p-[1.88rem] xlg:p-[2rem] xmd:p-[1rem] xlg:rounded-[0.75rem] relative border-transparent lg:overflow-hidden max-h-[25rem]">
+                      <article className="min-h-[17.875rem] scrollbar-popup-tour-detail tablet:overflow-hidden  mb-[2rem] xl:border-[3px] ease-out border-[2px] flex-1 duration-1000 transition-all rounded-[1.5rem] bg-[#F5F5F5] p-[1.88rem] xlg:p-[2rem] xmd:p-[1rem] xlg:rounded-[0.75rem] relative border-transparent lg:overflow-hidden max-h-[25rem]">
                           <h3 className="text-[1.25rem] md:w-[30rem] font-extrabold leading-[1.2] text-greyscale-80 xlg:text-[2rem] xmd:text-[1rem] xlg:tracking-[0.0125rem] xmd:w-[14.8125rem] xlg:w-[80%]">
                               Night 1 : Hanoi – Ha Giang city.
                           </h3>
