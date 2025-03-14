@@ -3,6 +3,7 @@ import AppProvider from "./context/AppProvider";
 import { fontTripSans } from "../../public/fonts/font-family";
 import Header from "./_components/common/header/Header";
 import ToolBar from "./_components/common/toolbar/ToolBar";
+import Footer from "../../components/section/footer/Footer";
 
 export const metadata = {
   title: "Homepage - Hong Hao Travel",
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
       <body className={`bg-white ${fontTripSans.className}`}>
         <AppProvider>
           <Header />
-          {children}
+          <main>{children}</main>
+          <Footer />
           <ToolBar />
         </AppProvider>
       </body>

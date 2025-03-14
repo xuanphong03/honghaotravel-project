@@ -1,10 +1,10 @@
 import React from 'react'
-import TourDetail from '../../../../components/section/alltour/tour-detail'
+import About from '../../../components/section/about/About'
 
 export default function page() {
   return (
     <div>
-      <TourDetail/>
+      <About/>
     </div>
   )
 }
