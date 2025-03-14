@@ -1,21 +1,21 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
-import InputField from "../../form-controls/InputField";
-import Image from "next/image";
-import { useForm } from "react-hook-form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { addDays } from "date-fns";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
-import TextareaField from "../../form-controls/TextareaField";
 import ComboboxFieldV2 from "../../form-controls/ComboboxFieldV2";
 import DatePickerField from "../../form-controls/DatePickerField";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { addDays } from "date-fns";
+import InputField from "../../form-controls/InputField";
+import TextareaField from "../../form-controls/TextareaField";
 
-import { v4 as uuidv4 } from "uuid";
 import LocationData from "@/app/services/location.json";
 import TourData from "@/app/services/tour.json";
 import { Input } from "@/components/ui/input";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { v4 as uuidv4 } from "uuid";
 
 // Define the form schema using Zod
 const formSchema = z.object({
@@ -181,14 +181,13 @@ export default function TourBookingForm() {
   }, [setValue]);
 
   return (
-    <Form {...form}>
-      <form
-        id="tour-booking-form"
-        onSubmit={handleSubmit(handleFormSubmit)}
-        className="relative bg-white !w-full rounded-[1.5rem]"
-      >
-        <div className="flex gap-[1.5rem] max-h-[85vh] overflow-y-auto w-full px-[1.5rem] py-[1.5rem] ">
-          <div className="!w-[34.75rem] flex flex-col gap-[1rem] shrink-0">
+    <div className="relative bg-white !w-full rounded-[1.5rem]">
+      <div className="flex max-h-[85vh] overflow-y-auto w-full">
+        <Form {...form}>
+          <form
+            onSubmit={handleSubmit(handleFormSubmit)}
+            className="!w-[34.75rem] flex flex-col gap-[1rem] shrink-0 py-[1.5rem] pl-[1.5rem] pr-[0.75rem]"
+          >
             <div className="w-full">
               <div className="text-[#2E2E2E] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase mb-[0.5rem]">
                 Customer information:
@@ -464,164 +463,163 @@ export default function TourBookingForm() {
                 </div>
               </div>
             </div>
+          </form>
+        </Form>
+        <div className="!w-[35.5rem] flex flex-col gap-[0.75rem] shrink-0 py-[1.5rem] pr-[1.5rem] pl-[0.75rem]">
+          <div className="text-[#262626]/40 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
+            Confirmed tour booking
           </div>
-          <div className="!w-[35.5rem] flex flex-col gap-[0.75rem] shrink-0">
-            <div className="text-[#262626]/40 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
-              Confirmed tour booking
+          <div className="bg-[#F8F8F8] rounded-[0.5rem] overflow-hidden border-[0.5px] border-solid border-[#eee]">
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Type of tour
+              </div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
+              </div>
             </div>
-            <div className="bg-[#F8F8F8] rounded-[0.5rem] overflow-hidden border-[0.5px] border-solid border-[#eee]">
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Type of tour
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
-                </div>
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Name
               </div>
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Name
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  <p className="text-[0.75rem] text-[#727272] line-clamp-2 text-ellipsis">
-                    <span className="text-[0.875rem] text-[#2E2E2E] font-semibold">
-                      0 px
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Contact Info
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  tuanminh2024@gmail.com - 0941556338
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
-                  <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
-                    Pick up
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <p className="text-[0.75rem] text-[#727272] line-clamp-2 text-ellipsis">
+                  <span className="text-[0.875rem] text-[#2E2E2E] font-semibold">
+                    0 px
                   </span>
-                </div>
-                <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
-                  <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
-                    <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      15/9/2023
-                    </span>{" "}
-                    from Hanoi at{" "}
-                    <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      20:00
-                    </span>{" "}
-                    Hong Hao Hostel No. 10 Pham Hong Thai, Minh Khai Ward, Ha
-                    Noi
-                  </p>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Tour duration
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  3 Days 4 Nights
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
-                  <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
-                    Droff off
-                  </span>
-                </div>
-                <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
-                  <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
-                    <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      18/9/2023
-                    </span>{" "}
-                    - My Dinh Station, Ha Noi
-                  </p>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Self-driving
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  <p className="flex items-center gap-[0.25rem]">
-                    <span className="text-[#2E2E2E] font-semibold">01</span>
-                    <span>x</span>
-                    <span className="text-[#2E2E2E] font-semibold">$169</span>
-                  </p>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Easy driver
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  <p className="flex items-center gap-[0.25rem]">
-                    <span className="text-[#2E2E2E] font-semibold">01</span>
-                    <span>x</span>
-                    <span className="text-[#2E2E2E] font-semibold">$169</span>
-                  </p>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="h-[3.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
-                  Message
-                </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] text-ellipsis flex flex-1 items-center h-[3.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  <p className="line-clamp-1">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Blanditiis ea cum assumenda, eum eos a dolorem doloribus
-                    esse aspernatur similique dolorum accusantium magni commodi
-                    dignissimos odit? Odit quasi nesciunt minus?
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
-            <div className="flex flex-col px-[1rem] py-[0.75rem] gap-[0.5rem] rounded-[0.5rem] bg-green-normal">
-              <div className="flex items-center justify-between text-[#F1F1F1] leading-[1.2] font-bold">
-                <div className="text-[0.875rem]tracking-[0.00875rem]">
-                  Provisional
-                </div>
-                <div className="text-[1rem] tracking-[0.0125rem]">$567</div>
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Contact Info
               </div>
-              <div className="flex items-center justify-between text-[#F1F1F1] leading-[1.2] font-bold">
-                <div className="text-[0.875rem]tracking-[0.00875rem]">
-                  Service Charge 3%:
-                </div>
-                <div className="text-[1rem] tracking-[0.0125rem]">$17,01</div>
-              </div>
-              <div className="w-full h-[0.0625rem] bg-[rgba(217,217,217,0.20)]"></div>
-              <div className="flex items-center justify-between text-white leading-[1.2] font-bold">
-                <div className="text-[1.25rem]">Provisional</div>
-                <div className="text-[1.5rem]">$567</div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                tuanminh2024@gmail.com - 0941556338
               </div>
             </div>
-            <div className="flex items-center gap-[0.5rem]">
-              <button
-                type="button"
-                className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal uppercase text-[0.875rem] font-bold leading-[1.2] text-white"
-              >
-                BOOK NOW, PAY LATER
-                <Image
-                  alt="Hong Hao Travel"
-                  width={50}
-                  height={50}
-                  className="size-[0.875rem]"
-                  src="/images/arrow/arrow-right.svg"
-                />
-              </button>
-              <button
-                type="button"
-                className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal bg-white uppercase text-[0.875rem] font-bold leading-[1.2] text-orange-normal"
-              >
-                PAY NOW
-              </button>
+            <div className="flex w-full">
+              <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
+                <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
+                  Pick up
+                </span>
+              </div>
+              <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
+                <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
+                  <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
+                    15/9/2023
+                  </span>{" "}
+                  from Hanoi at{" "}
+                  <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
+                    20:00
+                  </span>{" "}
+                  Hong Hao Hostel No. 10 Pham Hong Thai, Minh Khai Ward, Ha Noi
+                </p>
+              </div>
             </div>
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Tour duration
+              </div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                3 Days 4 Nights
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
+                <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
+                  Droff off
+                </span>
+              </div>
+              <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
+                <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
+                  <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
+                    18/9/2023
+                  </span>{" "}
+                  - My Dinh Station, Ha Noi
+                </p>
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Self-driving
+              </div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <p className="flex items-center gap-[0.25rem]">
+                  <span className="text-[#2E2E2E] font-semibold">01</span>
+                  <span>x</span>
+                  <span className="text-[#2E2E2E] font-semibold">$169</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Easy driver
+              </div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <p className="flex items-center gap-[0.25rem]">
+                  <span className="text-[#2E2E2E] font-semibold">01</span>
+                  <span>x</span>
+                  <span className="text-[#2E2E2E] font-semibold">$169</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex w-full">
+              <div className="h-[3.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                Message
+              </div>
+              <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] text-ellipsis flex flex-1 items-center h-[3.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <p className="line-clamp-1">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Blanditiis ea cum assumenda, eum eos a dolorem doloribus esse
+                  aspernatur similique dolorum accusantium magni commodi
+                  dignissimos odit? Odit quasi nesciunt minus?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col px-[1rem] py-[0.75rem] gap-[0.5rem] rounded-[0.5rem] bg-green-normal">
+            <div className="flex items-center justify-between text-[#F1F1F1] leading-[1.2] font-bold">
+              <div className="text-[0.875rem]tracking-[0.00875rem]">
+                Provisional
+              </div>
+              <div className="text-[1rem] tracking-[0.0125rem]">$567</div>
+            </div>
+            <div className="flex items-center justify-between text-[#F1F1F1] leading-[1.2] font-bold">
+              <div className="text-[0.875rem]tracking-[0.00875rem]">
+                Service Charge 3%:
+              </div>
+              <div className="text-[1rem] tracking-[0.0125rem]">$17,01</div>
+            </div>
+            <div className="w-full h-[0.0625rem] bg-[rgba(217,217,217,0.20)]"></div>
+            <div className="flex items-center justify-between text-white leading-[1.2] font-bold">
+              <div className="text-[1.25rem]">Provisional</div>
+              <div className="text-[1.5rem]">$567</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-[0.5rem]">
+            <button
+              type="submit"
+              className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal uppercase text-[0.875rem] font-bold leading-[1.2] text-white"
+            >
+              BOOK NOW, PAY LATER
+              <Image
+                alt="Hong Hao Travel"
+                width={50}
+                height={50}
+                className="size-[0.875rem]"
+                src="/images/arrow/arrow-right.svg"
+              />
+            </button>
+            <button
+              type="button"
+              className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal bg-white uppercase text-[0.875rem] font-bold leading-[1.2] text-orange-normal"
+            >
+              PAY NOW
+            </button>
           </div>
         </div>
-      </form>
-    </Form>
+      </div>
+    </div>
   );
 }
