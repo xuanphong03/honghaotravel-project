@@ -17,6 +17,7 @@ export default function ComboboxField({
   options = [],
   control,
   errorMessage,
+  placeholder,
 }) {
   return (
     <FormField
@@ -30,11 +31,13 @@ export default function ComboboxField({
                 {label}
               </Label>
               <DropdownMenuTrigger asChild>
-                <button className="flex w-full outline-none justify-between leading-[1.5] text-[1rem] text-black font-medium">
-                  {
+                <button className="flex w-full outline-none justify-between items-center leading-[1.5] text-[0.875rem] text-black font-medium">
+                  {field.value ? (
                     options.find((option) => option.value === field.value)
                       ?.value
-                  }
+                  ) : (
+                    <span>{placeholder}</span>
+                  )}
                   <ChevronDown className="w-4 h-4 text-red-500" />
                 </button>
               </DropdownMenuTrigger>

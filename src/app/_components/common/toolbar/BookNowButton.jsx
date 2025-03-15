@@ -19,7 +19,7 @@ export function BookNowButton() {
           </p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="!max-w-fit">
+      <DialogContent aria-describedby="" className="md:!max-w-fit">
         <DialogHeader className="hidden">
           <DialogTitle className="hidden"></DialogTitle>
           <DialogDescription className="hidden"></DialogDescription>
