@@ -5,7 +5,7 @@ import InfinitySlide from '../../../common/InfinitySlide/InfinitySlide'
 
 export default function BannerTourDetail() {
   return (
-     <div className='tourdetail-banner flex items-end  max-sm:ps-[1.25rem]   sm:min-h-[49.25rem]   relative '>
+     <div className='tourdetail-banner flex items-end  max-sm:ps-[1.25rem]  min-h-[20.93544rem] sm:min-h-[49.25rem]   relative '>
             <OverlayAnimate/>
             <div className="bg  absolute top-0 left-0 right-0 bottom-0 -z-10">
                   <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover -z-20'/>

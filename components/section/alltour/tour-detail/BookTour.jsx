@@ -15,8 +15,12 @@ export default function BookTour() {
   };
   return (
     <div ref={commit} className='relative h-fit w-full max-sm:px-5 flex flex-col justify-start  py-[3.18rem] sm:pt-[11rem] sm:pb-24'>
-          <TestM commit={commit} />
-          
+      <div className="max-sm:hidden ">
+        <TestM commit={commit} />
+          </div>
+      <div className='sm:hidden'>
+        
+          </div>
           <div className="form relative w-full flex justify-center max-w-[87.5rem] mx-auto">
                <FormBookTour />
           </div>

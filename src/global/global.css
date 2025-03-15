@@ -344,6 +344,16 @@ body::-webkit-scrollbar-thumb {
   font-weight: 900;
   line-height: 100%; /* 3.5rem */
 }
+.h2-bold-tripsan{
+  color: #000;
+    /* WEB/H2/BLACK */
+    font-family: "tripsan-bold", sans-serif;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 3.5rem */
+}
 /* h3 */
 .h3-regular {
   color: #000;
@@ -664,7 +674,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.00375rem;
 }
 
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 640px) {
   html {
     font-size: 4.267vw;
   }

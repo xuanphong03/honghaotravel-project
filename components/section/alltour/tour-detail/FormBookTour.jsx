@@ -1,72 +1,25 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-import { useForm } from "react-hook-form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-
-
-import { addDays } from "date-fns";
-
-import { v4 as uuidv4 } from "uuid";
+import { addDays, format } from "date-fns";
+import { useEffect, useMemo, useState } from "react";
+import { useForm } from "react-hook-form";
 import LocationData from "@/app/services/location.json";
 import TourData from "@/app/services/tour.json";
 import { Input } from "@/components/ui/input";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import TextareaField from "@/app/_components/form-controls/TextareaField";
+import { v4 as uuidv4 } from "uuid";
+import { TOUR_BOOKING_FORM } from "@/constants/schema";
+import { mapWithUuid } from "@/lib/utils";
 import ComboboxFieldV2 from "@/app/_components/form-controls/ComboboxFieldV2";
 import DatePickerField from "@/app/_components/form-controls/DatePickerField";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import InputField from "@/app/_components/form-controls/InputField";
+import TextareaField from "@/app/_components/form-controls/TextareaField";
+import SubmitButton from "@/app/_components/common/form/SubmitButton";
+import NumberFieldV2 from "@/app/_components/form-controls/NumberFieldV2";
+import Image from "next/image";
 
-// Define the form schema using Zod
-const formSchema = z.object({
-  tourByDay: z.string().nonempty("Please select tour by day"), // Use min(1) instead of nonempty
-  tourByType: z.string().nonempty("Please select tour by type"), // Use min(1) instead of nonempty
-  selfDriving: z
-    .number()
-    .min(0, "Please enter quantity self driving")
-    .default(0),
-  localDriving: z
-    .number()
-    .min(0, "Please enter quantity local driving")
-    .default(0),
-  customerName: z
-    .string({ required_error: "Please enter your name" })
-    .min(2, "Username must be at least 2 characters"),
-  phoneNumber: z
-    .string({ required_error: "Please fill out this field" })
-    .nonempty("Please fill out this field")
-    .regex(/^(0[2-9]|84[2-9])\d{8}$/, "Invalid format!"),
-  email: z
-    .string({ required_error: "Please enter your email" })
-    .nonempty("Please enter your email!")
-    .email("Enter the correct email format!"),
-  message: z.string({ required_error: "Please enter your email" }),
-
-  pickUpLocation: z
-    .string({ required_error: "Please fill out this field" })
-    .nonempty("Please fill out this field"),
-  dropOffLocation: z
-    .string({ required_error: "Please select drop off location" })
-    .nonempty("Please select drop off location"),
-
-  departureDate: z
-    .date({ required_error: "Please fill out this field" })
-    .refine((date) => date !== null, {
-      message: "Please select a departure date",
-    }),
-  departAddress: z
-    .string("Please enter depart address")
-    .nonempty("Please enter depart address"),
-
-  endDate: z.date().nullable(),
-  dropOffAddress: z
-    .string("Please fill out this field")
-    .nonempty("Please fill out this field"),
-});
-
-export default function FormBookTour() {
+export default function TourBookingForm({ defaultValues = null }) {
   const [tourData, setTourData] = useState({
     typeTours: [],
     durationTours: [],
@@ -75,9 +28,9 @@ export default function FormBookTour() {
   });
 
   const [dropOffAddresses, setDropOffAddresses] = useState([]);
-  // Initialize the form
+
   const form = useForm({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(TOUR_BOOKING_FORM),
     defaultValues: {
       tourByDay: "",
       tourByType: "",
@@ -92,6 +45,7 @@ export default function FormBookTour() {
       departAddress: "",
       dropOffAddress: "",
       endDate: null,
+      ...defaultValues,
     },
   });
   const {
@@ -102,20 +56,41 @@ export default function FormBookTour() {
     formState: { errors, isSubmitting },
   } = form;
 
-  const tourByDay = watch("tourByDay");
-  const departureDate = watch("departureDate");
-  const dropOffLocation = watch("dropOffLocation");
+  const formValues = watch();
+  const {
+    tourByDay,
+    tourByType,
+    pickUpLocation,
+    departureDate,
+    dropOffLocation,
+    selfDriving,
+    localDriving,
+  } = formValues;
+  const disabledStatus = useMemo(() => {
+    return (
+      !(selfDriving > 0 || localDriving > 0) ||
+      !tourByDay ||
+      !tourByType ||
+      !pickUpLocation ||
+      !departureDate ||
+      !dropOffLocation
+    );
+  }, [
+    tourByDay,
+    tourByType,
+    pickUpLocation,
+    departureDate,
+    dropOffLocation,
+    selfDriving,
+    localDriving,
+  ]);
 
   const tourDuration = useMemo(() => {
     if (!tourByDay) return { days: 0, nights: 0 };
     const match = tourByDay.match(/^(\d+)\s+days\s+(\d+)\s+night/);
-    if (match) {
-      return {
-        days: parseInt(match[1], 10),
-        nights: parseInt(match[2], 10),
-      };
-    }
-    return { days: 0, nights: 0 };
+    return match
+      ? { days: parseInt(match[1], 10), nights: parseInt(match[2], 10) }
+      : { days: 0, nights: 0 };
   }, [tourByDay]);
 
   const handleFormSubmit = async (data) => {
@@ -123,87 +98,95 @@ export default function FormBookTour() {
   };
 
   useEffect(() => {
-    if (departureDate && tourByDay) {
-      const days = tourDuration.days;
-      if (days > 0) {
-        const calculatedEndDate = addDays(departureDate, days);
-        setValue("endDate", calculatedEndDate);
-      }
+    if (
+      formValues?.departureDate &&
+      formValues?.tourByDay &&
+      tourDuration.days > 0
+    ) {
+      const calculatedEndDate = addDays(
+        formValues?.departureDate,
+        tourDuration.days
+      );
+      setValue("endDate", calculatedEndDate);
     }
-    if (!departureDate) {
+    if (!formValues?.departureDate) {
       form.setValue("endDate", null);
     }
-  }, [departureDate, tourByDay, setValue]);
+  }, [departureDate, tourByDay, tourDuration.days, setValue]);
 
+  // Cập nhật lại danh sách trả khách theo thành phố
   useEffect(() => {
     if (dropOffLocation) {
       const location = tourData.dropOffLocations.find(
-        ({ value }) => value === dropOffLocation
+        (loc) => loc.value === dropOffLocation
       );
       setValue("dropOffAddress", "");
-      const addresses = location?.addresses?.map(({ address }) => ({
-        id: uuidv4(),
-        value: address,
-      }));
-      setDropOffAddresses(addresses || []);
+      setDropOffAddresses(
+        location?.addresses?.map((addr) => ({
+          id: uuidv4(),
+          value: addr.address,
+        })) || []
+      );
     }
-  }, [dropOffLocation, setValue]);
+  }, [dropOffLocation, tourData.dropOffLocations, setValue]);
 
-  // Giả sử call api
+  // Khởi tạo dữ liệu mặc định cho form
   useEffect(() => {
-    const pickUpLocations = LocationData.pickUpLocations.map(
-      ({ location }) => ({
-        id: uuidv4(),
-        value: location,
-      })
+    const typeTours = mapWithUuid(TourData.typeOfTours, "type");
+    const durationTours = mapWithUuid(TourData.durationTours, "duration");
+    const pickUpLocations = mapWithUuid(
+      LocationData.pickUpLocations,
+      "location"
     );
     const dropOffLocations = LocationData.dropOffLocations.map(
       ({ location, addresses }) => ({
         id: uuidv4(),
         value: location,
-        addresses: addresses,
+        addresses,
       })
     );
-    const durationTours = TourData.durationTours.map(({ duration }) => ({
-      id: uuidv4(),
-      value: duration,
-    }));
-    const typeOfTours = TourData.typeOfTours.map(({ type }) => ({
-      id: uuidv4(),
-      value: type,
-    }));
+
     setTourData({
-      typeTours: typeOfTours,
-      durationTours: durationTours,
-      pickUpLocations: pickUpLocations,
-      dropOffLocations: dropOffLocations,
+      typeTours,
+      durationTours,
+      pickUpLocations,
+      dropOffLocations,
     });
-    setValue("tourByType", typeOfTours[0].value);
-    setValue("tourByDay", durationTours[0].value);
-  }, [setValue]);
+
+    setValue(
+      "tourByType",
+      defaultValues?.tourByType || typeTours[0]?.value || ""
+    );
+    setValue(
+      "tourByDay",
+      defaultValues?.tourByDay || durationTours[0]?.value || ""
+    );
+  }, [setValue, defaultValues]);
 
   return (
-    <Form {...form}>
-      <form
-        id="tour-booking-form"
-        onSubmit={handleSubmit(handleFormSubmit)}
-        className="relative w-fit mt-[3.25rem] flex gap-[1.5rem] "
-      >
-        <div className=" max-h-[85vh] !w-[54.1875rem]  p-6 bg-white rounded-[1.5rem] relative">
-           <div  className="title flex absolute -top-28 left-0 flex-col max-sm:w-[16.04469rem] gap-3 translate-y-0 ">
+    <div className="relative  !w-full ">
+      <Form {...form}>
+        <form
+          onSubmit={handleSubmit(handleFormSubmit)}
+          className="flex max-h-fit sm:max-h-[85vh]  w-full max-md:flex-wrap max-md:gap-y-12  sm:flex sm:gap-[1.5rem] relative"
+        >
+          <div  className="title flex absolute -top-28 left-0 flex-col max-sm:hidden gap-3 translate-y-0 ">
                             <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>EASY WITH HONG HA TRAVEL</p>
                             <h2 className='h3-bold sm:h2-bold !text-greyscaletext-0'>ONLINE BOOKING</h2>
-                    </div>
-                  <div className=" flex flex-col gap-[1rem] shrink-0 relative">
-                       
-                      <div className="w-full flex items-center gap-5 ">
+          </div>
+          <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
+              Confirmed Information : 
+            </div>
+          <div className="form-left  w-full md:w-[54rem] flex flex-col gap-[1rem] shrink-0 md:py-[1.5rem] md:pl-[1.5rem] md:pr-[0.75rem] bg-white rounded-[1.5rem]">
+            <div className="w-full">
+              <div className="w-full flex items-center gap-5 mb-3">
                           <span className="sub2-bold !text-gray-scale-80">Type of tour:</span>
                           <span className="body1-regular !text-grey-50">Ha Giang Loop tour: Itinerary in 3 Days 4 Nights</span>
                       </div>
-                      <div className="w-full flex flex-col gap-[0.75rem]">
+              <div className="w-full flex flex-col gap-[0.75rem] mb-3">
               <div className="flex items-center justify-between py-[0.75rem] h-[2.5rem]">
                 <div className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                  4 days of self-driving
+                  {tourDuration?.days} days of self-driving
                 </div>
                 <div className="flex items-center gap-[0.5rem]">
                   <div className="text-[#6A6A6A] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] w-[3.3125rem]">
@@ -222,61 +205,19 @@ export default function FormBookTour() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <div className="flex px-[0.75rem] py-[0.375rem] items-center gap-[0.625rem] rounded-[0.25rem] bg-[#F1F1F1]">
-                    <span className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                      Pax:
-                    </span>
-                    <div className="relative ">
-                      <FormField
-                        name="selfDriving"
-                        control={control}
-                        render={({ field }) => {
-                          const handleIncrement = () => {
-                            field.onChange(field.value + 1);
-                          };
-                          const handleDecrement = () => {
-                            if (field.value > 0) {
-                              field.onChange(field.value - 1);
-                            }
-                          };
-                          return (
-                            <FormItem className="flex items-center gap-[0.25rem] leading-[1.2]">
-                              <FormControl>
-                                <Input
-                                  readOnly
-                                  {...field}
-                                  type="number"
-                                  className="shadow-none shrink-0 !p-0 !outline-none !border-none focus-visible:ring-0 w-[1.25rem] text-orange-normal text-right font-bold leading-[1.2] text-[0.875rem] tracking-[0.00875rem] h-full"
-                                />
-                              </FormControl>
-                              <div className="flex flex-col">
-                                <button
-                                  type="button"
-                                  onClick={handleIncrement}
-                                  className="cursor-pointer"
-                                >
-                                  <ChevronUp className="size-[0.875rem]" />
-                                </button>
-                                <button
-                                  type="button"
-                                  onClick={handleDecrement}
-                                  className="cursor-pointer"
-                                >
-                                  <ChevronDown className="size-[0.875rem]" />
-                                </button>
-                              </div>
-                            </FormItem>
-                          );
-                        }}
-                      />
-                    </div>
-                  </div>
+                 
+                  <NumberFieldV2
+                    name="selfDriving"
+                    control={control}
+                    unit="Pax"
+                    errorMessage="Please select the number of people"
+                  />
                 </div>
               </div>
               <div className="w-full h-[0.0625rem] bg-[rgba(217,217,217,0.20)]"></div>
               <div className="flex items-center justify-between py-[0.75rem] h-[2.5rem]">
                 <div className="text-[#3F3F3F] text-[0.875rem] leading-[1.2] tracking-[0.00875rem]">
-                  4 days of self-driving
+                  {tourDuration?.days} days with local driver
                 </div>
                 <div className="flex items-center gap-[0.5rem]">
                   <div className="text-[#6A6A6A] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] w-[3.3125rem]">
@@ -356,10 +297,6 @@ export default function FormBookTour() {
                 </div>
               </div>
             </div>
-            <div className="w-full">
-              <div className="text-[#2E2E2E] text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase mb-[0.5rem]">
-                Customer information:
-              </div>
               <div className="grid grid-cols-2 gap-[0.75rem]">
                 <div className="col-span-2">
                   <InputField
@@ -400,7 +337,8 @@ export default function FormBookTour() {
               </div>
             </div>
             <div className="w-full grid grid-cols-4 gap-x-[0.5rem] gap-y-[1rem]">
-              <div className="col-span-1">
+              
+              <div className="col-span-2 md:col-span-1">
                 <ComboboxFieldV2
                   name="pickUpLocation"
                   label="Pick up"
@@ -410,7 +348,7 @@ export default function FormBookTour() {
                   errorMessage={form.formState.errors?.pickUpLocation?.message}
                 />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2 md:col-span-1">
                 <DatePickerField
                   name="departureDate"
                   label="Departure date"
@@ -418,7 +356,7 @@ export default function FormBookTour() {
                   errorMessage={form.formState.errors?.departureDate?.message}
                 />
               </div>
-              <div className="col-span-2">
+              <div className="col-span-4 md:col-span-2">
                 <InputField
                   label="Address"
                   name="departAddress"
@@ -427,7 +365,7 @@ export default function FormBookTour() {
                   errorMessage={form.formState.errors?.departAddress?.message}
                 />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2 md:col-span-1">
                 <ComboboxFieldV2
                   name="dropOffLocation"
                   label="Drop off"
@@ -437,7 +375,7 @@ export default function FormBookTour() {
                   errorMessage={form.formState.errors?.dropOffLocation?.message}
                 />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2 md:col-span-1">
                 <DatePickerField
                   name="endDate"
                   label="End date"
@@ -445,76 +383,75 @@ export default function FormBookTour() {
                   control={control}
                 />
               </div>
-              <div className="col-span-2">
+              <div className="col-span-4 md:col-span-2">
                 <ComboboxFieldV2
                   label="Address"
                   name="dropOffAddress"
                   control={control}
                   options={dropOffAddresses}
                   disabled={!dropOffAddresses.length}
-                  placeholder=""
+                  placeholder="Please Select Drop off"
                   errorMessage={form.formState.errors?.dropOffAddress?.message}
                 />
               </div>
             </div>
-            <div className="flex items-center gap-[1.88rem]">
-                          <div className="paybtn w-1/2 flex items-center gap-2">
-                              <button
-                type="button"
-                className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal  bg-orange-normal uppercase text-[0.875rem] font-bold leading-[1.2]  text-white"
-              >
-                PAY NOW
-              </button>
-                              <button
-                type="button"
-                className="h-[3.5rem] flex items-center justify-center px-[2rem] py-[1rem] gap-[0.5rem] flex-1 rounded-[0.5rem] border border-solid border-orange-normal bg-white uppercase text-[0.875rem] font-bold leading-[1.2] text-orange-normal"
-              >
-                BOOK & PAY LATER
-              </button>
-                          </div>
-                          <div className="paycard flex gap-2 items-center">
+            <div className="max-sm:hidden flex gap-3 items-center">
+               <div className="flex flex-col md:flex-row items-center gap-[0.5rem] w-[58%]">
+              <SubmitButton label="PAY NOW" disabled={disabledStatus} />
+              <SubmitButton
+                label="BOOK NOW, PAY NOW"
+                isPrimary
+                disabled={disabledStatus}
+              />
+            </div>
+             <div className="paycard flex gap-2 items-center">
                               <Image src={"/images/alltour/detail/paycard-visa.png"} alt="visa" width={35} height={21.96096} className="object-contain" />
                               <Image src={"/images/alltour/detail/paymentcard2.png"} alt=""  width={35} height={21.96096} className="object-contain"/>
                           </div>
-            </div>
+           </div>
           </div>
-         
-              </div>
-               <div className="!w-[34rem] flex flex-col gap-[0.75rem] shrink-0 relative">
-            <div className="sub1-bold absolute -top-8 !text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
-              Confirmed tour booking
+          <div className="form-right w-full md:w-[35.5rem] flex flex-col gap-[0.75rem] shrink-0   relative">
+           <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
+              Confirmed tour booking :
             </div>
             <div className="bg-[#F8F8F8] rounded-[0.5rem] overflow-hidden border-[0.5px] border-solid border-[#eee]">
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Type of tour
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <div className=" line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
                   Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Name
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <div className="line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
                   <p className="text-[0.75rem] text-[#727272] line-clamp-2 text-ellipsis">
+                    {formValues?.customerName &&
+                      formValues?.customerName + " - "}
                     <span className="text-[0.875rem] text-[#2E2E2E] font-semibold">
-                      0 px
+                      {(formValues?.selfDriving || formValues?.localDriving) &&
+                        (formValues?.selfDriving || 0) +
+                          (formValues?.localDriving || 0)}{" "}
+                      px
                     </span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Contact Info
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  tuanminh2024@gmail.com - 0941556338
+                <div className="line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                  {formValues?.email}{" "}
+                  {formValues?.email && formValues?.phoneNumber && " - "}{" "}
+                  {formValues?.phoneNumber}
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
+                <div className="flex items-center h-[3.5rem] w-[12.1875rem] max-md:w-[7.4375rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
                   <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
                     Pick up
                   </span>
@@ -522,75 +459,79 @@ export default function FormBookTour() {
                 <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
                   <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
                     <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      15/9/2023
+                      {formValues?.departureDate &&
+                        format(formValues?.departureDate, "dd/MM/yyyy")}
                     </span>{" "}
-                    from Hanoi at{" "}
+                    {formValues?.pickUpLocation && "from "}
                     <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      20:00
-                    </span>{" "}
-                    Hong Hao Hostel No. 10 Pham Hong Thai, Minh Khai Ward, Ha
-                    Noi
+                      {formValues?.pickUpLocation}
+                    </span>
+                    {formValues?.departAddress && " at "}
+                    {formValues?.departAddress}
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Tour duration
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <div className="line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
                   3 Days 4 Nights
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex items-center h-[3.5rem] w-[12.1875rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
+                <div className="flex items-center h-[3.5rem] w-[12.1875rem] max-md:w-[7.4375rem] px-[1rem] py-[0.5rem] border-[0.5px] border-solid border-[#eee]">
                   <span className="text-[#2e2e2e text-[0.875rem] font-extrabold leading-[1.2] tracking-[0.00875rem]">
-                    Droff off
+                    Drop off
                   </span>
                 </div>
                 <div className="flex items-center px-[1rem] py-[0.5rem] h-[3.5rem] border-[0.5px] border-solid border-[#eee] flex-1">
                   <p className="text-[#727272] text-[0.75rem] leading-[1.2] tracking-[0.00375rem]">
                     <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
-                      18/9/2023
+                      {formValues?.endDate &&
+                        format(formValues?.endDate, "dd/MM/yyyy")}
                     </span>{" "}
-                    - My Dinh Station, Ha Noi
+                    {formValues?.dropOffLocation && " - "}
+                    {formValues?.dropOffLocation}
+                    {formValues?.dropOffAddress && ", "}
+                    {formValues?.dropOffAddress}
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Self-driving
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <div className="line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
                   <p className="flex items-center gap-[0.25rem]">
-                    <span className="text-[#2E2E2E] font-semibold">01</span>
+                    <span className="text-[#2E2E2E] font-semibold">
+                      {formValues?.selfDriving}
+                    </span>
                     <span>x</span>
-                    <span className="text-[#2E2E2E] font-semibold">$169</span>
+                    <span className="text-[#2E2E2E] font-semibold">$200</span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[2.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[2.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Easy driver
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                <div className="line-clamp-2 text-ellipsis flex flex-1 items-center h-[2.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
                   <p className="flex items-center gap-[0.25rem]">
-                    <span className="text-[#2E2E2E] font-semibold">01</span>
+                    <span className="text-[#2E2E2E] font-semibold">
+                      {formValues?.localDriving}
+                    </span>
                     <span>x</span>
-                    <span className="text-[#2E2E2E] font-semibold">$169</span>
+                    <span className="text-[#2E2E2E] font-semibold">$200</span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="h-[3.5rem] flex items-center w-[12.1875rem] xmd:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
+                <div className="h-[3.5rem] flex items-center w-[12.1875rem] max-md:w-[7.4375rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-r-[0.5px] border-solid border-[#eee] font-extrabold text-[0.875rem] text-[#2E2E2E]">
                   Message
                 </div>
-                <div className="max-w-[20rem] xmd:max-w-[14.53125rem] w-[20rem] text-ellipsis flex flex-1 items-center h-[3.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
-                  <p className="line-clamp-1">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Blanditiis ea cum assumenda, eum eos a dolorem doloribus
-                    esse aspernatur similique dolorum accusantium magni commodi
-                    dignissimos odit? Odit quasi nesciunt minus?
-                  </p>
+                <div className="text-ellipsis flex flex-1 items-center h-[3.5rem] py-[0.5rem] px-[1rem] border-b-[0.5px] border-solid border-[#eee] text-[0.75rem] text-[#727272]">
+                  <p className="line-clamp-1">{formValues?.message}</p>
                 </div>
               </div>
             </div>
@@ -601,21 +542,33 @@ export default function FormBookTour() {
                 </div>
                 <div className="text-[1rem] tracking-[0.0125rem]">$567</div>
               </div>
-              <div className="flex items-center justify-between text-[#F1F1F1] leading-[1.2] font-bold">
-                <div className="text-[0.875rem]tracking-[0.00875rem]">
-                  Service Charge 3%:
-                </div>
-                <div className="text-[1rem] tracking-[0.0125rem]">$17,01</div>
-              </div>
+              
               <div className="w-full h-[0.0625rem] bg-[rgba(217,217,217,0.20)]"></div>
               <div className="flex items-center justify-between text-white leading-[1.2] font-bold">
                 <div className="text-[1.25rem]">Total amount:</div>
                 <div className="text-[1.5rem]">$567</div>
               </div>
             </div>
-            
+            <div className="sm:hidden grid grid-cols-2 gap-3  items-center">
+               <div className="col-span-2">
+              <SubmitButton
+                label="BOOK NOW, PAY NOW"
+                isPrimary
+                disabled={disabledStatus}
+              />
+            </div>
+              <div className="flex col-span-2 items-center gap-2">
+              <SubmitButton label="PAY NOW" disabled={disabledStatus} />
+                <div className="paycard flex gap-2 items-center ">
+                              <Image src={"/images/alltour/detail/paycard-visa.png"} alt="visa" width={35} height={21.96096} className="object-contain" />
+                              <Image src={"/images/alltour/detail/paymentcard2.png"} alt=""  width={35} height={21.96096} className="object-contain"/>
+                </div>
+                
+             </div>
+           </div>
           </div>
-      </form>
-    </Form>
+        </form>
+      </Form>
+    </div>
   );
 }
