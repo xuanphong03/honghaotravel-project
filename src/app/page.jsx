@@ -1,14 +1,14 @@
-import AboutUs from "./_components/sections/IntroContainer/AboutUs";
+import Image from "next/image";
+import OurTeam from "../../components/section/ourteam/OurTeam";
 import Banner from "./_components/sections/Banner/Banner";
 import BestTrips from "./_components/sections/BestTrips/BestTrips";
 import Feedback from "./_components/sections/Feedback/Feedback";
+import AboutUs from "./_components/sections/IntroContainer/AboutUs";
 import Introduction from "./_components/sections/IntroContainer/Introduction";
 import OurTour from "./_components/sections/IntroContainer/OurTour";
 import Welcome from "./_components/sections/IntroContainer/Welcome";
 import Moment from "./_components/sections/Moment/Moment";
-import OurTeam from "../../components/section/ourteam/OurTeam";
 import Weather from "./_components/sections/Weather/Weather";
-import Image from "next/image";
 
 export const metadata = {
   title: "Homepage - Hong Hao Travel",
@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main id="home">
+    <>
       <Banner />
       <Introduction>
         <AboutUs />
@@ -39,6 +39,6 @@ export default function Home() {
         <OurTeam primary />
       </div>
       <Weather />
-    </main>
+    </>
   );
 }

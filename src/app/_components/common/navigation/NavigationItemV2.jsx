@@ -13,13 +13,16 @@ export default function NavigationItemV2({ title, links }) {
   return (
     <div className="py-[1rem] md:py-[0.5rem]">
       <AccordionV2 title={title} name="tours">
-        <ul>
+        <ul className="flex flex-col gap-[0.75rem]">
           {links.map(({ title, to }) => (
-            <li key={uuidv4()} className="capitalize">
+            <li
+              key={uuidv4()}
+              className="capitalize not-last:border-b not-last:border-solid not-last:border-white/20 w-fit"
+            >
               <Link
                 href={to}
                 onClick={handleCloseNavigation}
-                className="inline-flex px-0 py-[0.5rem] text-[1.25rem] font-medium leading-[1.2] text-white/80"
+                className="inline-flex px-0 py-[0.5rem] text-[1.25rem] font-medium leading-[1.2] text-white/80 "
               >
                 {title}
               </Link>

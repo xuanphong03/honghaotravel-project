@@ -80,6 +80,29 @@ export default function Welcome() {
           <SwiperSlide>
             <video
               loop
+              muted
+              autoPlay
+              playsInline
+              type="video/mp4"
+              src="https://cms.honghaotravel.com/wp-content/uploads/0622.mov"
+              className="w-full min-h-full rounded-[1rem] overflow-hidden object-cover"
+            ></video>
+          </SwiperSlide>
+          <SwiperSlide>
+            <video
+              loop
+              muted
+              autoPlay
+              playsInline
+              type="video/mp4"
+              src="https://cms.honghaotravel.com/wp-content/uploads/0622.mov"
+              className="w-full min-h-full rounded-[1rem] overflow-hidden object-cover"
+            ></video>
+          </SwiperSlide>
+          <SwiperSlide>
+            <video
+              loop
+              muted
               autoPlay
               playsInline
               type="video/mp4"

@@ -144,10 +144,9 @@ html > body[data-scroll-locked] {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hidden_scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .custom_scrollbar::-webkit-scrollbar-track {

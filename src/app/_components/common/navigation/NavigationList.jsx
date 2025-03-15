@@ -17,7 +17,7 @@ export default function NavigationList() {
         return (
           <li key={uuidv4()} className="relative w-full cursor-pointer">
             <NavigationItemV2 title={item.title} links={_items} />
-            <div className="w-full md:w-[22.5rem] h-[0.0625rem] bg-white/20"></div>
+            <div className="w-full md:w-[22.5rem] xl:w-full h-[0.0625rem] bg-white/20"></div>
           </li>
         );
       }
@@ -63,7 +63,7 @@ export default function NavigationList() {
   }, []);
 
   return (
-    <ul className="flex flex-col gap-[0.5rem] h-full overflow-y-auto hidden_scrollbar">
+    <ul className="w-full flex flex-col gap-[1rem] h-full overflow-y-auto hidden_scrollbar">
       {renderMenu(catalogList)}
     </ul>
   );
