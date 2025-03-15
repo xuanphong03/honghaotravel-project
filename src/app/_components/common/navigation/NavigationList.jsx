@@ -32,7 +32,7 @@ export default function NavigationList() {
   useEffect(() => {
     setCatalogList([
       { title: "Home", to: "/", children: null },
-      { title: "About Us", to: "#", children: null },
+      { title: "About Us", to: "/about-us", children: null },
       {
         title: "Tours",
         children: [

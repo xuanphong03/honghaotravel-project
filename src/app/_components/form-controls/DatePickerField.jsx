@@ -29,7 +29,7 @@ function DatePickerField({ label, name, control, errorMessage, disabled }) {
                 <button
                   disabled={disabled}
                   className={cn(
-                    `inline-flex w-full justify-between items-center border-2 border-solid  rounded-[0.5rem] px-[1rem] py-[0.75rem] text-left text-[0.875rem] leading-[1.2] tracking-[0.00875rem] ${
+                    `inline-flex w-full justify-between items-center border-2 border-solid rounded-[0.5rem] px-[0.5rem] py-[0.75rem] text-left text-[0.875rem] leading-[1.2] tracking-[0.00875rem] ${
                       disabled
                         ? "opacity-30 bg-gray-200 border-gray-200"
                         : "opacity-100 border-[#C5C5C5]"
@@ -40,7 +40,7 @@ function DatePickerField({ label, name, control, errorMessage, disabled }) {
                   {field?.value ? (
                     format(field?.value, "dd/M/yyyy")
                   ) : (
-                    <span>Pick a date</span>
+                    <span className="text-[#262626]">Pick a date</span>
                   )}
                   <CalendarIcon className="h-4 w-4 text-orange-normal" />
                 </button>

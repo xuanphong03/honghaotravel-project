@@ -96,9 +96,9 @@ function BestTrips() {
       ref={container}
       className="relative w-full bg-white z-10"
     >
-      <div className="w-full md:w-[87.5rem] mx-auto pt-[5.63rem] pb-[4.94rem] flex justify-between flex-wrap lg:flex-nowrap">
+      <div className="w-full md:w-[87.5rem] mx-auto pt-[3rem] md:pt-[5.63rem] pb-[4.94rem] flex justify-between flex-wrap lg:flex-nowrap">
         <div className="lg:max-h-screen lg:sticky lg:top-28 h-fit w-full mb-[2rem]">
-          <div className="relative md:mb-[2.44rem] pl-[0.75rem] lg:pl-[4rem] lg:w-auto">
+          <div className="relative md:mb-[2.44rem] max-md:pl-[0.75rem] lg:w-auto">
             <h3 className="text-[#262626]/40 text-[1.125rem] font-extrabold leading-none mb-[0.75rem]">
               EXPLORE
             </h3>

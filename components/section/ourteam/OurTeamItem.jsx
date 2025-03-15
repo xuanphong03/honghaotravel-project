@@ -43,7 +43,7 @@ function OurTeamItem({ name, image, role, exp, desc }) {
           <p>{exp}</p>
         </div>
       </div>
-      <p className="custom_scrollbar w-[15.75rem] mx-auto h-[4rem] overflow-y-auto text-xs text-center leading-[1.2] translate-y-[2rem] group-hover:translate-y-0 transition-all duration-700">
+      <p className="custom_scrollbar_v2 w-[15.75rem] mx-auto h-[4rem] overflow-y-auto text-xs text-center leading-[1.2] translate-y-[2rem] group-hover:translate-y-0 transition-all duration-700">
         {desc}
       </p>
     </article>

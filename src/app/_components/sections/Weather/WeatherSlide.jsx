@@ -15,18 +15,18 @@ import ButtonNext from "../../../../../components/common/Button/ButtonNext";
 export default function WeatherSlide() {
   const swiperRef = useRef(null);
   const MONTHS = [
-    { id: 1, name: "Jan" },
-    { id: 2, name: "Feb" },
-    { id: 3, name: "Mar" },
-    { id: 4, name: "Apr" },
-    { id: 5, name: "May" },
-    { id: 6, name: "Jun" },
-    { id: 7, name: "July" },
-    { id: 8, name: "Aug" },
-    { id: 9, name: "Sep" },
-    { id: 10, name: "Oct" },
-    { id: 11, name: "Nov" },
-    { id: 12, name: "Dec" },
+    { id: 1, name: "Jan", bannerUrl: "/images/home/weather/january.png" },
+    { id: 2, name: "Feb", bannerUrl: "/images/home/weather/february.png" },
+    { id: 3, name: "Mar", bannerUrl: "/images/home/weather/march.png" },
+    { id: 4, name: "Apr", bannerUrl: "/images/home/weather/april.png" },
+    { id: 5, name: "May", bannerUrl: "/images/home/weather/may.png" },
+    { id: 6, name: "Jun", bannerUrl: "/images/home/weather/june.png" },
+    { id: 7, name: "July", bannerUrl: "/images/home/weather/july.png" },
+    { id: 8, name: "Aug", bannerUrl: "/images/home/weather/august.png" },
+    { id: 9, name: "Sep", bannerUrl: "/images/home/weather/september.png" },
+    { id: 10, name: "Oct", bannerUrl: "/images/home/weather/october.png" },
+    { id: 11, name: "Nov", bannerUrl: "/images/home/weather/november.png" },
+    { id: 12, name: "Dec", bannerUrl: "/images/home/weather/november.png" },
   ];
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const positionLeft = useMemo(() => {
@@ -59,13 +59,13 @@ export default function WeatherSlide() {
         modules={[]}
         className="!relative !w-full !h-[12rem] md:!h-[44rem] max-md:rounded-[0.5rem] rounded-[1.5rem]"
       >
-        {[...Array(12)].map((_, index) => (
+        {MONTHS.map(({ bannerUrl }, index) => (
           <SwiperSlide key={index} className="!w-full !h-full">
             <Image
               width={2000}
               height={1000}
               alt="Hong Ha Travel"
-              src="/images/home/weather/weather-item1.png"
+              src={bannerUrl}
               className="!w-full !h-full object-cover"
             />
           </SwiperSlide>

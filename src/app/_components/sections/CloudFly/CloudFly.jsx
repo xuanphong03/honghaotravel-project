@@ -6,7 +6,7 @@ export default function CloudFly() {
   return (
     <div
       id="cloud_fly"
-      className="w-full h-[4rem] md:h-[13.5rem] z-10 relative bg-transparent  overflow-hidden "
+      className="w-full h-[4rem] md:h-[13.5rem] z-10 relative bg-transparent overflow-hidden"
     >
       <Image
         width={1920}

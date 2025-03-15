@@ -1,15 +1,10 @@
-import React from "react";
-import WeatherSlide from "./WeatherSlide";
-import Image from "next/image";
-import "./Weather.css";
 import CloudFly from "../CloudFly/CloudFly";
+import WeatherSlide from "./WeatherSlide";
+import "./Weather.css";
 // import required modules
 export default function Weather() {
   return (
-    <section
-      id="weather"
-      className="relative z-10 -mb-12 md:-mb-[13.5rem] bg-white pb-[2rem]"
-    >
+    <section id="weather" className="relative z-10 bg-white pb-[2rem]">
       <div className="absolute top-0 left-0 right-0 -translate-y-[100%] overflow-hidden">
         <CloudFly />
       </div>
