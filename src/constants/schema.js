@@ -34,13 +34,9 @@ export const TOUR_BOOKING_FORM = z.object({
     .refine((date) => date !== null, {
       message: "Please select a departure date",
     }),
-  departAddress: z
-    .string("Please enter depart address")
-    .nonempty("Please enter depart address"),
+  departAddress: z.string("Please enter depart address"),
   endDate: z.date().nullable(),
-  dropOffAddress: z
-    .string("Please fill out this field")
-    .nonempty("Please fill out this field"),
+  dropOffAddress: z.string("Please fill out this field"),
 });
 
 export const QUICK_TOUR_BOOKING_FORM = z.object({

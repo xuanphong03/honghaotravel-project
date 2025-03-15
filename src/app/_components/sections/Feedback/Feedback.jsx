@@ -24,14 +24,14 @@ export default function Feedback() {
           src="/images/home/clients-say/bg-clients-say.jpeg"
         />
         <div className="absolute inset-0 z-[1] w-full h-full custom-bg-gradient"></div>
-        <div className="relative md:absolute inset-0 px-[1rem] pt-[4.54rem] lg:p-0 z-[2]">
-          <h5 className="lg:hidden mb-3 text-[0.875rem] leading-[1.2] font-extrabold text-white/40 uppercase">
+        <div className="relative md:absolute inset-0 px-[1rem] pt-[4.54rem] md:p-0 z-[2]">
+          <h5 className="md:hidden mb-3 text-[0.875rem] leading-[1.2] font-extrabold text-white/40 uppercase">
             Read what our recent
           </h5>
-          <h2 className="uppercase lg:mt-[8.125rem] lg:w-fit lg:mx-auto font-londrina-solid text-[2rem] lg:text-[3.5rem] font-black leading-none mb-[2rem] lg:mb-[5.6125rem]">
+          <h2 className="uppercase md:mt-[8.125rem] md:w-fit md:mx-auto font-londrina-solid text-[2rem] md:text-[3.5rem] font-black leading-none mb-[2rem] md:mb-[5.6125rem]">
             Clients say
           </h2>
-          <ul className="lg:hidden flex flex-row overflow-x-auto hidden_scrollbar gap-x-[0.75rem]">
+          <ul className="md:hidden flex flex-row overflow-x-auto hidden_scrollbar gap-x-[0.75rem]">
             {[...Array(5)].map((_, index) => (
               <li key={index} className="w-[18rem] md:w-[22rem] shrink-0">
                 <FeedbackItem

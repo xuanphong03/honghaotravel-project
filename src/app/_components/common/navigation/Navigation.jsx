@@ -1,17 +1,25 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
 import NavigationList from "./NavigationList";
 import { AppContext } from "@/app/context/AppProvider";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Navigation({ onClose }) {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper/modules";
+
+export default function Navigation() {
   const { setShowNavigation } = useContext(AppContext);
+
   const handleCloseNavigation = () => {
     setShowNavigation(false);
   };
 
   return (
-    <div className="bg-green-dark w-full relative">
+    <div className="bg-green-dark w-full relative md:h-[40.125rem]">
       <div className="absolute inset-0">
         <Image
           alt="Hong Hao Travel"
@@ -23,7 +31,7 @@ export default function Navigation({ onClose }) {
       </div>
       <div className="absolute flex items-center justify-between left-0 right-0 md:px-[5rem] py-[1.5rem] z-[10] max-md:px-[1.25rem]">
         <Link
-          href="#"
+          href="/"
           className="inline-block lg:w-[7.5625rem] lg:h-[3.375rem] w-[12rem] h-[5rem]"
         >
           <Image
@@ -62,14 +70,47 @@ export default function Navigation({ onClose }) {
             <NavigationList />
           </nav>
         </div>
-        <div className="hidden md:block md:w-[51.875rem] h-full shrink-0">
-          <Image
-            alt="Hong Hao Travel"
-            width={600}
-            height={400}
-            src="/images/navigation/bg-mountain2.svg"
-            className="w-full h-full object-cover"
-          />
+        <div className="relative hidden md:block md:w-[51.875rem] h-full shrink-0">
+          <div className="hidden size-full">
+            <Image
+              alt="Hong Hao Travel"
+              width={600}
+              height={400}
+              src="/images/navigation/bg-mountain2.svg"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="size-full  flex flex-col justify-center z-10">
+            <div className="text-[1.5rem] text-white font-bold mb-[1.91rem]">
+              Find your tour:
+            </div>
+            <div className="w-full h-[28rem]">
+              <Swiper
+                scrollbar={{
+                  hide: true,
+                }}
+                slidesPerView="auto"
+                modules={[Scrollbar]}
+                spaceBetween="30"
+                className="!w-full !h-full"
+              >
+                {[...Array(5)].map((_, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className="!w-[22rem] max-md:!h-[15rem] rounded-[1.5rem] relative overflow-hidden cursor-pointer !h-[26rem] group bg-yellow-500"
+                  >
+                    <Image
+                      alt="Hong Hao Travel"
+                      width={300}
+                      height={400}
+                      className="size-full object-cover pointer-events-none"
+                      src="/images/navigation/card-item.png"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
         </div>
       </div>
     </div>

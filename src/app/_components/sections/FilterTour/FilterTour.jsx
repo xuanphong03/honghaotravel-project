@@ -36,8 +36,10 @@ export default function FilterTour() {
     durationTours: [],
   });
 
+  const [initialFormData, setInitialFormData] = useState(null);
+
   const handleSubmitForm = (data) => {
-    console.log("Customize data", data);
+    setInitialFormData(data);
   };
 
   useEffect(() => {
@@ -61,10 +63,10 @@ export default function FilterTour() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmitForm)}
-        className="hidden md:block"
+        className="hidden lg:block"
       >
         <div className="inline-flex pl-[2rem] py-[0.75rem] pr-[0.75rem] bg-white rounded-[0.75rem] items-center">
-          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
+          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 min-w-[8.75rem]">
             <ComboboxField
               label="Days"
               name="tourByDay"
@@ -73,7 +75,7 @@ export default function FilterTour() {
               placeholder="Select tour by day"
             />
           </div>
-          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
+          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 min-w-[8.75rem]">
             <ComboboxField
               name="tourByType"
               label="Type of tour"
@@ -82,7 +84,7 @@ export default function FilterTour() {
               placeholder="Select tour by type"
             />
           </div>
-          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
+          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 min-w-[8.75rem]">
             <NumberField
               unit="Pax"
               name="selfDriving"
@@ -90,7 +92,7 @@ export default function FilterTour() {
               control={form.control}
             />
           </div>
-          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 w-[12rem]">
+          <div className="mr-[1.5rem] pr-[1.5rem] border-r border-solid border-gray-200 min-w-[8.75rem]">
             <NumberField
               unit="Pax"
               name="localDriving"
@@ -113,12 +115,15 @@ export default function FilterTour() {
               </button>
             </DialogTrigger>
 
-            <DialogContent className="bg-white px-[1.5rem] py-[1.5rem] !max-w-fit">
+            <DialogContent
+              aria-describedby=""
+              className="bg-white px-[1.5rem] py-[1.5rem] !max-w-fit"
+            >
               <DialogHeader className="hidden">
                 <DialogTitle className="hidden"></DialogTitle>
                 <DialogDescription className="hidden"></DialogDescription>
               </DialogHeader>
-              <TourBookingForm />
+              <TourBookingForm defaultValues={initialFormData} />
             </DialogContent>
           </Dialog>
         </div>

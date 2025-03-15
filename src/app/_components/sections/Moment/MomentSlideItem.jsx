@@ -12,16 +12,15 @@ export default function MomentSlideItem() {
         height={400}
         alt="Hong Hao Travel"
         src="/images/home/moment/moment-item1.svg"
-        className="size-full object-cover"
+        className="size-full object-cover select-none pointer-events-none"
       />
-      <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[6.5625rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+      <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[6.5625rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 pointer-events-none">
         <Image
           width={100}
           height={100}
-          loading="lazy"
           alt="Hong Hao Travel"
           src="/images/home/moment/hong-hao-travel-white.svg"
-          className="size-full object-cover animate-spin animate-spin-slow"
+          className="size-full object-cover animate-spin animate-spin-slow select-none"
         />
         <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[2.375rem]">
           <svg

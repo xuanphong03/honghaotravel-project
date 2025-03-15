@@ -107,7 +107,7 @@ export default function OurTour() {
           />
         </div>
         <div className="md:w-[38.8125rem] w-full relative z-[2]">
-          <h2 className="max-md:w-3/4 font-londrina-solid text-[2.5rem]  md:text-[3.5px] xl:text-[56px] font-black leading-none text-white mb-[2rem] md:mb-[3.5rem]">
+          <h2 className="max-md:w-3/4 font-londrina-solid text-[2.5rem] md:text-[3.5rem] xl:text-[56px] font-black leading-none text-white mb-[2rem] md:mb-[3.5rem]">
             HONG HAO MOTORBIKE TOUR
           </h2>
           <p className="text-[rgb(197,197,197)] lg:text-[16px] md:text-[1.75rem] lg:mb-[2rem] md:leading-normal md:tracking-0 text-[0.875rem] md:tracking-[0.005rem] md:mb-[1rem] mb-[1.5rem] tracking-[0.00219rem] leading-normal">

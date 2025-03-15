@@ -71,7 +71,6 @@ export default function Moment() {
           <Image
             width={100}
             height={100}
-            loading="lazy"
             alt="Hong Hao Travel"
             src="/images/home/moment/hong-hao-travel.svg"
             className="size-full object-cover animate-spin-slow !duration-[10s]"
@@ -98,68 +97,9 @@ export default function Moment() {
           </p>
         </div>
       </div>
-      <div className="relative w-full h-fit">
-        <Image
-          alt="Hong Hao Travel"
-          width={100}
-          height={800}
-          src="/images/home/moment/our-gallery-text.svg"
-          className="absolute top-[20.435rem] left-[8.3325rem] -translate-y-full -translate-x-1/2 w-[5rem] h-[33.8125rem] object-cover z-[100]"
-        />
-        <div className="absolute top-0 left-0 h-[21.125rem] w-[21.5rem] flex z-[99]">
-          <div className="w-full bg-white"></div>
-          <div className="h-full w-[6.5rem] bg-[linear-gradient(270deg,rgba(255,255,255,0.00)_36.51%,#FFF_92.5%)]"></div>
-        </div>
-        <div
-          ref={containerRef}
-          className="relative w-full overflow-hidden flex flex-col gap-3 container_slide cursor-grab"
-        >
-          <div className="relative flex items-center gap-3 translate-x-[17.75rem]">
-            {[...Array(6)].map((_, index) => (
-              <MomentSlideItem key={index} />
-            ))}
-            <div
-              id="slide-item"
-              className="slide-item shrink-0 w-[10rem] h-[21.125rem] flex justify-center items-center"
-            >
-              <Link
-                href="#"
-                className="select-none size-[7.625rem] relative group rounded-full lg:hover:bg-[#E64828] transition-all duration-200 flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="172"
-                  height="172"
-                  viewBox="0 0 172 172"
-                  fill="none"
-                  className="absolute top-0 left-0 animate-spin size-full"
-                >
-                  <circle
-                    cx="86"
-                    cy="86"
-                    r="85.25"
-                    className="stroke-orange-normal"
-                    strokeWidth="1.5"
-                    strokeDasharray="4 4"
-                  />
-                </svg>
-                <div className="text-transparent text-[0.875rem] font-bold leading-[1.2] uppercase relative overflow-hidden">
-                  DISCOVERY
-                  <span className="text-orange-normal text-[0.875rem] font-bold leading-[1.2] uppercase absolute top-0 left-0 group-hover:-translate-y-full transition-all duration-300">
-                    DISCOVERY
-                  </span>
-                  <span className="text-white text-[0.875rem] font-bold leading-[1.2] uppercase absolute bottom-0 left-0 translate-y-full group-hover:translate-y-0 transition-all duration-300">
-                    DISCOVERY
-                  </span>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div className="relative flex items-center gap-3">
-            {[...Array(8)].map((_, index) => (
-              <MomentSlideItem key={index} />
-            ))}
-          </div>
+      <div className="relative w-full overflow-hidden h-[43rem] slide_container">
+        <div className="flex flex-col h-full absolute top-0 left-0 space-y-[0.75rem] select-none cursor-grab touch-pan-y">
+          <div className="flex "></div>
         </div>
       </div>
     </section>

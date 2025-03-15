@@ -203,7 +203,6 @@ export default function Banner() {
             <Image
               width={1000}
               height={1000}
-              loading="lazy"
               alt="hong hao travel"
               src="/images/bannerSlideMap.svg"
               className="object-contain size-full"

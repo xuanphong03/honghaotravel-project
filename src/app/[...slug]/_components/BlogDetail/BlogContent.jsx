@@ -62,7 +62,6 @@ export default function BlogContent() {
               <Image
                 width={1000}
                 height={1000}
-                loading="lazy"
                 alt="Hong Hao Travel"
                 src="/images/blog-detail/blog-image-1.png"
                 className="w-full object-cover rounded-[0.75rem]"
@@ -90,7 +89,6 @@ export default function BlogContent() {
               <Image
                 width={1000}
                 height={1000}
-                loading="lazy"
                 alt="Hong Hao Travel"
                 src="/images/blog-detail/blog-image-2.png"
                 className="w-full object-cover rounded-[0.75rem]"

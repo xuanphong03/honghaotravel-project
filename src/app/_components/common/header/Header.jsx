@@ -18,7 +18,7 @@ function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 !z-[100] transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 !z-[500] transition-all duration-500 ${
           isPositionTop ? "bg-transparent" : "bg-white shadow"
         } ${!showHeader ? "-translate-y-full" : "translate-y-0"}`}
       >
@@ -41,7 +41,6 @@ function Header() {
               alt="Hong Hao Travel"
               width={200}
               height={200}
-              loading="lazy"
               src="/images/logo-honghaohostel2.png"
               className={`absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-100 ${
                 !isPositionTop ? "opacity-100 visible" : "opacity-0 invisible"

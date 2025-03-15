@@ -31,7 +31,7 @@ export default function ComboboxField({
                 {label}
               </Label>
               <DropdownMenuTrigger asChild>
-                <button className="flex w-full outline-none justify-between items-center leading-[1.5] text-[1rem] text-black font-medium">
+                <button className="flex w-full outline-none justify-between items-center leading-[1.5] text-[0.875rem] text-black font-medium">
                   {field.value ? (
                     options.find((option) => option.value === field.value)
                       ?.value
