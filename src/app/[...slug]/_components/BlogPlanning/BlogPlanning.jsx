@@ -45,12 +45,19 @@ export default function BlogPlanning() {
                 Experience the raw beauty of Hà Giang with our immersive travel
                 adventu a truly unique and authentic experience.
               </div>
-              <div className="w-full inline-flex items-start max-md:px-[1rem] gap-x-[0.5625rem]">
+              <div className="w-full inline-flex justify-center items-start max-md:px-[1rem] gap-x-[0.5625rem]">
                 <button className="blog_planning_btn blog_planning_btn-primary">
                   Our tours
                 </button>
-                <button className="blog_planning_btn blog_planning_btn-secondary">
-                  Call us
+                <button className="blog_planning_btn blog_planning_btn-secondary group">
+                  <span>Call us</span>
+                  <Image
+                    alt=""
+                    width={20}
+                    height={20}
+                    src="/images/arrow/arrow-right.svg"
+                    className="size-[0.875rem] object-contain group-hover:translate-x-[0.5rem] ease-linear duration-300"
+                  />
                 </button>
               </div>
             </div>

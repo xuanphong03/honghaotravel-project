@@ -1,7 +1,6 @@
 import Image from "next/image";
-import React from "react";
 
-export default function MomentSlideItem() {
+export default function CarouselItem() {
   return (
     <article
       id="slide-item"

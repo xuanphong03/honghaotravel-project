@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState } from "react";
 
 function BestTrips() {
   const TRIPS = [
@@ -67,25 +67,6 @@ function BestTrips() {
       return () => {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
-      // const listItems = tripListRef.current.querySelectorAll(".trip-item");
-
-      // const observer = new IntersectionObserver(
-      //   (entries) => {
-      //     entries.forEach((entry) => {
-      //       if (entry.isIntersecting) {
-      //         const itemIndex = entry.target.dataset.index;
-      //         setCurrentIndex(+itemIndex);
-      //       }
-      //     });
-      //   },
-      //   {
-      //     threshold: [1],
-      //   }
-      // );
-
-      // listItems.forEach((item) => observer.observe(item));
-
-      // return () => observer.disconnect();
     },
     { scope: container }
   );
@@ -105,9 +86,12 @@ function BestTrips() {
             <h2 className="text-[#262626] text-[2.5rem] md:text-[3.5rem] font-black font-londrina-solid leading-none w-1/2 lg:w-full">
               BEST TRIPS FOR YOU
             </h2>
-            <p className="lg:hidden absolute origin-bottom-right -rotate-90 right-0 bottom-full rounded-t-[0.5rem] bg-orange-normal h-[2.125rem] w-[7.9rem] lg:h-[3.4rem] lg:w-[9.4rem] flex justify-center items-center text-white text-[0.875rem] font-extrabold">
+            <Link
+              href="/tours"
+              className="lg:hidden absolute origin-bottom-right -rotate-90 right-0 bottom-full rounded-t-[0.5rem] bg-orange-normal h-[2.125rem] w-[7.9rem] lg:h-[3.4rem] lg:w-[9.4rem] flex justify-center items-center text-white text-[0.875rem] font-extrabold"
+            >
               All tour
-            </p>
+            </Link>
           </div>
 
           <div className="hidden lg:block relative w-[29.29231rem] h-[28.12494rem]">
@@ -125,12 +109,19 @@ function BestTrips() {
           <div className="sticky top-[10rem] max-h-screen !z-50">
             <div className="w-[2rem] h-[25rem] bg-transparent relative">
               <Link
-                href="#"
+                href="/tours"
                 className="w-[10rem] inline-flex h-[3.5rem] px-[2rem] py-[1rem] gap-[0.5rem] items-center justify-center rounded-t-[0.5rem] absolute right-0 bg-orange-normal origin-bottom-right -rotate-90"
               >
                 <span className="text-white uppercase text-[0.875rem] font-bold leading-[1.2]">
                   All tour
                 </span>
+                <Image
+                  alt=""
+                  width={50}
+                  height={50}
+                  src="/images/arrow/arrow-right.svg"
+                  className="size-[0.875rem] object-contain rotate-90 "
+                />
               </Link>
             </div>
           </div>

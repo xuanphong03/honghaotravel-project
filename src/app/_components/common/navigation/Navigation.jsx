@@ -1,15 +1,17 @@
 "use client";
+import { AppContext } from "@/app/context/AppProvider";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
-import NavigationList from "./NavigationList";
-import { AppContext } from "@/app/context/AppProvider";
+import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import NavigationList from "./NavigationList";
 
 // Import Swiper styles
+import CardVertical from "@/components/common/card/CardVertical";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
+import "./Navigation.scss";
 
 export default function Navigation() {
   const { setShowNavigation } = useContext(AppContext);
@@ -19,7 +21,10 @@ export default function Navigation() {
   };
 
   return (
-    <div className="bg-green-dark w-full relative md:h-[40.125rem]">
+    <div
+      id="navigation_container"
+      className="bg-green-dark w-full relative md:h-[40.125rem]"
+    >
       <div className="absolute inset-0">
         <Image
           alt="Hong Hao Travel"
@@ -66,7 +71,7 @@ export default function Navigation() {
       </div>
       <div className="relative flex h-full w-full bg-[linear-gradient(180deg,#122718_0%,rgba(18,39,24,0.00)_35%,rgba(18,39,24,0)_70%,#122718_100%)] ">
         <div className="px-[1.25rem] md:pl-[5rem] max-md:mt-[8.31rem] pt-[1.5rem] md:pt-[9.31rem] pb-[3.81rem] flex-1 h-full">
-          <nav className="w-full md:w-[22.5rem] h-[27rem] flex flex-col">
+          <nav className="w-full md:w-[22.5rem] xl:w-[30rem] h-[27rem] flex flex-col">
             <NavigationList />
           </nav>
         </div>
@@ -87,25 +92,19 @@ export default function Navigation() {
             <div className="w-full h-[28rem]">
               <Swiper
                 scrollbar={{
-                  hide: true,
+                  hide: false,
                 }}
                 slidesPerView="auto"
                 modules={[Scrollbar]}
                 spaceBetween="30"
-                className="!w-full !h-full"
+                className="!w-full !h-full navigation_swiper"
               >
                 {[...Array(5)].map((_, index) => (
                   <SwiperSlide
                     key={index}
-                    className="!w-[22rem] max-md:!h-[15rem] rounded-[1.5rem] relative overflow-hidden cursor-pointer !h-[26rem] group bg-yellow-500"
+                    className="!w-[22rem] max-md:!h-[15rem] rounded-[1.5rem] relative overflow-hidden cursor-pointer !h-[26rem]"
                   >
-                    <Image
-                      alt="Hong Hao Travel"
-                      width={300}
-                      height={400}
-                      className="size-full object-cover pointer-events-none"
-                      src="/images/navigation/card-item.png"
-                    />
+                    <CardVertical />
                   </SwiperSlide>
                 ))}
               </Swiper>

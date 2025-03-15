@@ -75,13 +75,20 @@ function OurTeam({ primary = false, secondary = false }) {
             <div className="mt-[2.125rem] text-[0.875rem] leading-[1.2rem] font-bold flex items-center gap-[1rem]">
               <Link
                 href="/about-us"
-                className="our_team-btn flex-1 cursor-pointer  inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal text-white uppercase"
+                className="group our_team-btn flex-1 cursor-pointer inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid border-orange-normal bg-orange-normal text-white uppercase"
               >
                 About us
+                <Image
+                  alt=""
+                  width={50}
+                  height={50}
+                  src="/images/arrow/arrow-right.svg"
+                  className="size-[0.875rem] object-contain group-hover:translate-x-[0.25rem] ease-in-out duration-300"
+                />
               </Link>
               <Link
                 href="/tours"
-                className={`our_team-btn flex-1 cursor-pointer hover:bg-orange-normal bg-transparent inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid uppercase
+                className={`group our_team-btn flex-1 cursor-pointer hover:bg-orange-normal bg-transparent inline-flex gap-[0.5rem] items-center justify-center rounded-[0.5rem] border border-solid uppercase
                ${
                  primary ? "border-grey-green-light text-grey-green-light" : ""
                } 
@@ -93,6 +100,13 @@ function OurTeam({ primary = false, secondary = false }) {
               `}
               >
                 All tour
+                <Image
+                  alt=""
+                  width={50}
+                  height={50}
+                  src="/images/arrow/arrow-right.svg"
+                  className="size-[0.875rem] object-contain group-hover:translate-x-[0.25rem] ease-in-out duration-300"
+                />
               </Link>
             </div>
           </div>
