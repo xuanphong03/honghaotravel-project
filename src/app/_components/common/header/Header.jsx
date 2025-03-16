@@ -1,14 +1,17 @@
 "use client";
-import React, { useContext, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { AppContext } from "@/app/context/AppProvider";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
+  SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { AppContext } from "@/app/context/AppProvider";
+} from "@/components/ui/sheet-v2";
+import Image from "next/image";
+import Link from "next/link";
+import { useContext } from "react";
 import Navigation from "../navigation/Navigation";
 
 function Header() {
@@ -47,10 +50,9 @@ function Header() {
               }`}
             />
           </Link>
-          <Sheet open={showNavigation} onOpenChange={setShowNavigation}>
+          <Sheet>
             <SheetTrigger asChild>
               <button
-                onClick={() => setShowNavigation(true)}
                 className={`${
                   !isPositionTop ? "bg-orange-normal" : "bg-transparent"
                 } border-bg-elevation-white-50 border-solid border md:border-orange-normal md:bg-orange-normal cursor-pointer flex justify-end items-center pl-[0.5rem] pr-[1rem] py-[0.25rem] md:py-[0.5rem] !rounded-[1.5rem]`}
@@ -71,7 +73,10 @@ function Header() {
               side="top"
               className="p-0 m-0 !z-[9999] !border-0 data-[state=closed]:duration-700 data-[state=open]:duration-700"
             >
-              <SheetTitle className="hidden"></SheetTitle>
+              <SheetHeader className="hidden">
+                <SheetTitle></SheetTitle>
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
               <Navigation />
             </SheetContent>
           </Sheet>

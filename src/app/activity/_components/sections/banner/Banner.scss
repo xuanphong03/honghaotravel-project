@@ -1,0 +1,54 @@
+#banner {
+  .button_default {
+    @apply text-[0.875rem] uppercase py-[1rem] px-[2rem] h-[3.5rem] flex justify-center items-center gap-[0.5rem] rounded-[0.5rem] cursor-pointer;
+  }
+  .text-gradient {
+    background: linear-gradient(
+      180deg,
+      #fff 37.06%,
+      rgba(255, 255, 255, 0) 107.22%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 39, 24, 0) 13.77%,
+      #122718 78.44%
+    );
+  }
+
+  .circle {
+    animation: activity_circle_zoom 1.5s linear infinite;
+  }
+
+  .activity_scrollbar_custom {
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #19543a;
+    }
+  }
+}
+
+@keyframes activity_circle_zoom {
+  from {
+    scale: 0.75;
+  }
+  50% {
+    scale: 1;
+  }
+  to {
+    scale: 0.75;
+  }
+}

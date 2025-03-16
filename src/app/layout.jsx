@@ -1,17 +1,20 @@
-import "@/global/global.css";
-import AppProvider from "./context/AppProvider";
-import { fontTripSans } from "../../public/fonts/font-family";
-import Header from "./_components/common/header/Header";
-import ToolBar from "./_components/common/toolbar/ToolBar";
-import Footer from "../../components/section/footer/Footer";
+import '@/global/global.css';
+import AppProvider from './context/AppProvider';
+import { fontTripSans } from '../../public/fonts/font-family';
+import Header from './_components/common/header/Header';
+import ToolBar from './_components/common/toolbar/ToolBar';
+import Footer from '../../components/section/footer/Footer';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-white ${fontTripSans.className}`}>
+      <body
+        className={`bg-white ${fontTripSans.className}`}
+        cz-shortcut-listen="true"
+      >
         <AppProvider>
           <Header />
-          <main>{children}</main>
+          <main className="bg-white">{children}</main>
           <Footer />
           <ToolBar />
         </AppProvider>

@@ -2,8 +2,9 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import NavigationItemV1 from "./NavigationItemV1";
-import NavigationItemV2 from "./NavigationItemV2";
 
+import { ChevronDown } from "lucide-react";
+import NavigationItemV2 from "./NavigationItemV2";
 export default function NavigationList() {
   const [catalogList, setCatalogList] = useState([]);
 
