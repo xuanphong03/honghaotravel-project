@@ -26,11 +26,11 @@ export default function AboutUs() {
         </svg>
       </div>
       <Image
-        alt="Hong Hao Travel"
         width={2000}
         height={500}
-        className="max-md:hidden absolute bottom-0 left-0 w-full object-contain z-0"
+        alt="Hong Hao Travel"
         src="/images/bg-overlay-mountain.svg"
+        className="max-md:hidden absolute bottom-0 left-0 w-full h-auto object-contain z-0"
       />
       <Image
         alt="Hong"

@@ -1,8 +1,6 @@
 "use client";
-import { AppContext } from "@/app/context/AppProvider";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import NavigationList from "./NavigationList";
 
@@ -12,14 +10,10 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
 import "./Navigation.scss";
+import { SheetClose } from "@/components/ui/sheet-v2";
+import { X } from "lucide-react";
 
 export default function Navigation() {
-  const { setShowNavigation } = useContext(AppContext);
-
-  const handleCloseNavigation = () => {
-    setShowNavigation(false);
-  };
-
   return (
     <div
       id="navigation_container"
@@ -47,27 +41,10 @@ export default function Navigation() {
             className="size-full object-contain"
           />
         </Link>
-        <button
-          onClick={handleCloseNavigation}
-          className="cursor-pointer inline-flex items-center justify-center size-[2.75rem] shrink-0 bg-white/20 rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            className="size-[1.5rem] shrink-0"
-          >
-            <path
-              d="M18 18.5L12 12.5M12 12.5L6 6.5M12 12.5L18 6.5M12 12.5L6 18.5"
-              stroke="#A9A9A9"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+
+        <SheetClose className="bg-white/20 cursor-pointer inline-flex items-center justify-center size-[2.75rem] absolute top-[3.38rem] md:top-[1.5rem] right-[1.25rem] md:right-[2.25rem] rounded-full opacity-70 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none">
+          <X className="text-white" />
+        </SheetClose>
       </div>
       <div className="relative flex h-full w-full bg-[linear-gradient(180deg,#122718_0%,rgba(18,39,24,0.00)_35%,rgba(18,39,24,0)_70%,#122718_100%)] ">
         <div className="px-[1.25rem] md:pl-[5rem] max-md:mt-[8.31rem] pt-[1.5rem] md:pt-[9.31rem] pb-[3.81rem] flex-1 h-full">
