@@ -56,7 +56,7 @@ export default function NavigationList() {
       },
       { title: 'Activity', to: '/activity', children: null },
       { title: 'Destination', to: '/destination', children: null },
-      { title: 'Blog', to: '#', children: null },
+      { title: 'Blog', to: '/blog', children: null },
       { title: 'FAQ', to: '#', children: null },
       { title: 'Contact Us', to: '/contact-us', children: null },
     ]);
