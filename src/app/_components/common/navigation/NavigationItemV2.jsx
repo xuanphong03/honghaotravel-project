@@ -8,8 +8,12 @@ import {
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
+import { HeaderContext } from '../header/Header';
+import { useContext } from 'react';
 
 export default function NavigationItemV2({ title, links }) {
+  const { handleCloseSheet } = useContext(HeaderContext);
+
   return (
     <div className="py-[1rem] md:py-[0.5rem]">
       <Accordion type="single" collapsible className="w-full p-0">
@@ -44,6 +48,7 @@ export default function NavigationItemV2({ title, links }) {
                 >
                   <Link
                     href={to || '#'}
+                    onClick={handleCloseSheet}
                     className="inline-flex px-0 py-[0.5rem] text-[1.25rem] leading-[1.2] font-medium text-white/80"
                   >
                     {title}

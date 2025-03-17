@@ -10,14 +10,21 @@ import {
 } from '@/components/ui/sheet-v2';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import Navigation from '../navigation/Navigation';
+
+export const HeaderContext = createContext();
 
 function Header() {
   const { showHeader, isPositionTop } = useContext(AppContext);
+  const [openSheet, setOpenSheet] = useState(false);
+
+  const handleCloseSheet = () => {
+    setOpenSheet(false);
+  };
 
   return (
-    <>
+    <HeaderContext.Provider value={{ handleCloseSheet }}>
       <header
         className={`fixed top-0 right-0 left-0 !z-[500] transition-all duration-500 ${
           isPositionTop ? 'bg-transparent' : 'bg-white shadow'
@@ -49,7 +56,7 @@ function Header() {
               }`}
             />
           </Link>
-          <Sheet>
+          <Sheet open={openSheet} onOpenChange={setOpenSheet}>
             <SheetTrigger asChild>
               <button
                 className={`${
@@ -81,7 +88,7 @@ function Header() {
           </Sheet>
         </div>
       </header>
-    </>
+    </HeaderContext.Provider>
   );
 }
 

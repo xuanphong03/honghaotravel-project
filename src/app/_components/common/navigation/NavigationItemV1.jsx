@@ -1,12 +1,16 @@
 'use client';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { HeaderContext } from '../header/Header';
 
 export default function NavigationItemV1({ title, to }) {
+  const { handleCloseSheet } = useContext(HeaderContext);
   return (
     <>
       <div className="group relative w-fit py-[1rem] md:py-[0.5rem]">
         <Link
           href={to || '#'}
+          onClick={handleCloseSheet}
           className="inline-flex translate-x-0 items-center gap-[0.5rem] text-[1.5rem] leading-[1.2] font-bold text-white transition-all duration-500 group-hover:translate-x-[1.125rem] md:text-[2rem]"
         >
           {title}

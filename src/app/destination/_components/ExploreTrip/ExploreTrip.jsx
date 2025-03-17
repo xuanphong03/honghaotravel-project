@@ -7,9 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
+import CardVertical from '@/components/common/card/CardVertical';
 import Link from 'next/link';
 import { Autoplay } from 'swiper/modules';
-import ExploreTripItem from './ExploreTripItem';
 
 export default function ExploreTrip() {
   return (
@@ -63,7 +63,7 @@ export default function ExploreTrip() {
                   href="#"
                   className="relative inline-block h-full w-full overflow-hidden rounded-[1.5rem]"
                 >
-                  <ExploreTripItem />
+                  <CardVertical />
                 </Link>
               </SwiperSlide>
             ))}
