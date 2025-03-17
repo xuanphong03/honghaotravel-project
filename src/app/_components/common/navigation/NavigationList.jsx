@@ -1,11 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import NavigationItemV1 from "./NavigationItemV1";
+'use client';
+import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import NavigationItemV1 from './NavigationItemV1';
+import NavigationItemV2 from './NavigationItemV2';
 
-import { ChevronDown } from "lucide-react";
-import NavigationItemV2 from "./NavigationItemV2";
-export default function NavigationList() {
+export default function NavigationList({ onClose }) {
   const [catalogList, setCatalogList] = useState([]);
 
   const renderMenu = (items) => {
@@ -18,7 +17,7 @@ export default function NavigationList() {
         return (
           <li key={uuidv4()} className="relative w-full cursor-pointer">
             <NavigationItemV2 title={item.title} links={_items} />
-            <div className="w-full md:w-[22.5rem] xl:w-full h-[0.0625rem] bg-white/20"></div>
+            <div className="h-[0.0625rem] w-full bg-white/20 md:w-[22.5rem] xl:w-full"></div>
           </li>
         );
       }
@@ -32,39 +31,39 @@ export default function NavigationList() {
 
   useEffect(() => {
     setCatalogList([
-      { title: "Home", to: "/", children: null },
-      { title: "About Us", to: "/about-us", children: null },
+      { title: 'Home', to: '/', children: null },
+      { title: 'About Us', to: '/about-us', children: null },
       {
-        title: "Tours",
+        title: 'Tours',
         children: [
           {
-            title: "Best Budget",
-            to: "/tours?device=best-budget",
+            title: 'Best Budget',
+            to: '/tours?device=best-budget',
             children: null,
           },
           {
-            title: "Standard",
-            to: "/tours?device=standard",
+            title: 'Standard',
+            to: '/tours?device=standard',
             children: null,
           },
           {
-            title: "Premium",
-            to: "/tours?device=premium",
+            title: 'Premium',
+            to: '/tours?device=premium',
             children: null,
           },
-          { title: "All Tours", to: "/tours", children: null },
+          { title: 'All Tours', to: '/tours', children: null },
         ],
       },
-      { title: "Activity", to: "#", children: null },
-      { title: "Destination", to: "/destination", children: null },
-      { title: "Blog", to: "#", children: null },
-      { title: "FAQ", to: "#", children: null },
-      { title: "Contact Us", to: "/contact-us", children: null },
+      { title: 'Activity', to: '#', children: null },
+      { title: 'Destination', to: '/destination', children: null },
+      { title: 'Blog', to: '#', children: null },
+      { title: 'FAQ', to: '#', children: null },
+      { title: 'Contact Us', to: '/contact-us', children: null },
     ]);
   }, []);
 
   return (
-    <ul className="w-full flex flex-col gap-[1rem] h-full overflow-y-auto hidden_scrollbar">
+    <ul className="hidden_scrollbar flex h-full w-full flex-col gap-[1rem] overflow-y-auto">
       {renderMenu(catalogList)}
     </ul>
   );

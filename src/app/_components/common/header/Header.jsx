@@ -59,7 +59,7 @@ function Header() {
                 <Image
                   width={50}
                   height={50}
-                  alt=""
+                  alt="Hong Hao Travel"
                   src="/images/header/menu.svg"
                   className="mr-[0.44rem] size-[2.0625rem] object-contain md:size-[4rem] lg:size-[2.0625rem]"
                 />

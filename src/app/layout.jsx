@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`bg-white ${fontTripSans.className}`}
-        cz-shortcut-listen="true"
+        suppressHydrationWarning={true}
       >
         <AppProvider>
           <Header />

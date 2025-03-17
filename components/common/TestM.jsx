@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import Image from "next/image";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import Image from 'next/image';
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -17,15 +17,15 @@ const TestM = ({ commit }) => {
 
     if (motoRef.current && nuiRef.current) {
       const path = isMobile
-        ? nuiRef2.current.querySelector("path")
-        : nuiRef.current.querySelector("path");
+        ? nuiRef2.current.querySelector('path')
+        : nuiRef.current.querySelector('path');
 
       if (path) {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: commit.current,
-            start: "-40% center",
-            end: "70% center",
+            start: '-40% center',
+            end: '70% center',
             end: false,
             markers: false,
             once: true, // Hiệu ứng chỉ chạy một lần
@@ -43,25 +43,29 @@ const TestM = ({ commit }) => {
           duration: isMobile ? 4 : 7,
         });
       } else {
-        console.error("Không tìm thấy đường dẫn trong #nui");
+        console.error('Không tìm thấy đường dẫn trong #nui');
       }
     } else {
-      console.error("Không tìm thấy #moto hoặc #nui");
+      console.error('Không tìm thấy #moto hoặc #nui');
     }
   }, [isMobile]);
 
   return (
     <div
-      style={{ position: "absolute", width: "100%", height: "100%" }}
-      className="test-m top-0 left-0 right-0 bottom-0 "
+      style={{ position: 'absolute', width: '100%', height: '100%' }}
+      className="test-m top-0 right-0 bottom-0 left-0"
     >
-      <div className="bg-nui w-full h-[11.42575rem] absolute top-[4.5rem] left-0 right-0 sm:hidden ">
-        <Image src="/images/about/commit-mmb3.png" alt="" fill></Image>
+      <div className="bg-nui absolute top-[4.5rem] right-0 left-0 h-[11.42575rem] w-full sm:hidden">
+        <Image
+          src="/images/about/commit-mmb3.png"
+          alt="Hong Hao Travel"
+          fill
+        ></Image>
       </div>
       <svg
         ref={motoRef}
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute -top-[2.6rem] left-0 sm:-top-[1.5rem] sm:left-[13rem] w-[4.0625rem] h-[3.3125rem]"
+        className="absolute -top-[2.6rem] left-0 h-[3.3125rem] w-[4.0625rem] sm:-top-[1.5rem] sm:left-[13rem]"
         viewBox="0 0 71 60"
         fill="none"
       >
@@ -89,7 +93,7 @@ const TestM = ({ commit }) => {
       <svg
         ref={nuiRef}
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full max-sm:hidden"
+        className="h-full w-full max-sm:hidden"
         fill="none"
       >
         <path
@@ -102,7 +106,7 @@ const TestM = ({ commit }) => {
       <svg
         ref={nuiRef2}
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full sm:hidden  bg-[url(/images/about/commit-mmb2.png)]"
+        className="h-full w-full bg-[url(/images/about/commit-mmb2.png)] sm:hidden"
         fill="none"
       >
         <path

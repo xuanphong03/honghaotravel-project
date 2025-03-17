@@ -9,7 +9,6 @@ export default function Banner() {
   useGSAP(
     () => {
       gsap.to('.background-overlay', {
-        delay: 0.5,
         opacity: 0,
         duration: 1,
         scrollTrigger: {
@@ -35,6 +34,7 @@ export default function Banner() {
       />
       <div className="absolute top-[35%] left-[1.25rem] brightness-125 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
         <Image
+          data-aos="fade-up"
           alt="Hong Hao Travel"
           width={2000}
           height={1000}

@@ -1,20 +1,13 @@
-"use client";
-import { AppContext } from "@/app/context/AppProvider";
-import Link from "next/link";
-import React, { useContext } from "react";
+'use client';
+import Link from 'next/link';
 
 export default function NavigationItemV1({ title, to }) {
-  const { setShowNavigation } = useContext(AppContext);
-  const handleCloseNavigation = () => {
-    setShowNavigation(false);
-  };
   return (
     <>
       <div className="group relative w-fit py-[1rem] md:py-[0.5rem]">
         <Link
-          href={to || "#"}
-          onClick={handleCloseNavigation}
-          className="inline-flex gap-[0.5rem] items-center text-white leading-[1.2] font-bold text-[1.5rem] md:text-[2rem] group-hover:translate-x-[1.125rem] translate-x-0 transition-all duration-500"
+          href={to || '#'}
+          className="inline-flex translate-x-0 items-center gap-[0.5rem] text-[1.5rem] leading-[1.2] font-bold text-white transition-all duration-500 group-hover:translate-x-[1.125rem] md:text-[2rem]"
         >
           {title}
         </Link>
@@ -24,12 +17,12 @@ export default function NavigationItemV1({ title, to }) {
           height="14"
           viewBox="0 0 12 14"
           fill="none"
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-[0.75rem] h-[0.875rem] invisible opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-500"
+          className="invisible absolute top-1/2 left-0 h-[0.875rem] w-[0.75rem] -translate-y-1/2 opacity-0 transition-all duration-500 group-hover:visible group-hover:opacity-100"
         >
           <path d="M12 7L8.17435e-07 14L4.82759 7L0 0L12 7Z" fill="#FFF" />
         </svg>
       </div>
-      <div className="w-full md:w-[22.5rem] xl:w-full h-[0.0625rem] bg-white/20"></div>
+      <div className="h-[0.0625rem] w-full bg-white/20 md:w-[22.5rem] xl:w-full"></div>
     </>
   );
 }
