@@ -5,7 +5,7 @@ import TourList from './TourList';
 
 export default async function Discovery({ searchParams }) {
   const page = parseInt(searchParams.page || 1);
-  const pageSize = parseInt(searchParams.pageSize || 4);
+  const pageSize = parseInt(searchParams.pageSize || 6);
   const { tours, totalCount } = await fetchTours(page, pageSize);
   return (
     <section

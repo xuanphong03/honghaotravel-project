@@ -13,7 +13,7 @@ export default function Content() {
       <div className="flex w-full items-center justify-center">
         <Tabs
           defaultValue="people"
-          className="flex w-full items-center justify-center gap-y-[4.56rem]"
+          className="flex w-full items-center justify-center gap-y-[1rem] md:gap-y-[4.56rem]"
         >
           <TabsList className="flex items-center gap-[2.25rem] bg-transparent">
             <TabsTrigger value="people">PEOPLE</TabsTrigger>
