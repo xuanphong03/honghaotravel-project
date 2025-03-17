@@ -21,9 +21,8 @@ export default function Banner() {
   useGSAP(
     () => {
       gsap.to('.background-overlay', {
-        delay: 0.5,
         opacity: 0,
-        duration: 1,
+        duration: 1.5,
         scrollTrigger: {
           trigger: container.current,
           toggleActions: 'play none none none',
@@ -117,7 +116,7 @@ export default function Banner() {
         <div className="top-[32rem] left-[0rem] flex-col items-start space-y-[2.0625rem] md:absolute md:left-[5rem] lg:left-[0rem]">
           <p
             data-aos="fade-up"
-            className="max-md:tracking-0.00219 text-base leading-[150%] font-normal tracking-[0.005rem] text-white max-md:max-h-[9rem] max-md:overflow-y-auto max-md:text-[0.875rem] md:w-[52.3125rem]"
+            className="max-md:tracking-0.00219 text-base leading-[150%] font-normal tracking-[0.005rem] text-white max-md:overflow-y-auto max-md:text-[0.875rem] md:w-[52.3125rem]"
           >
             Ha Giang, nestled in the rugged mountains of northern Vietnam,
             beckons adventurers with its breathtaking scenery and vibrant
@@ -218,10 +217,10 @@ export default function Banner() {
           </p>
         </div>
       </div>
-      {/* <div
+      <div
         style={{ background: 'conic-gradient(#064e3b, #065f46, #064e3b)' }}
         className="background-overlay pointer-events-none absolute inset-0 z-[500] opacity-100 contrast-125"
-      ></div> */}
+      ></div>
     </section>
   );
 }
