@@ -109,7 +109,7 @@ export default function OurTour() {
             width={500}
             height={500}
             alt="Hong Hao Travel"
-            src="/images/motobike-tour.png"
+            src="/images/home/intro/motorbike-tour.png"
             className="z-0 h-[44.375rem] w-screen object-contain"
           />
           <Image
