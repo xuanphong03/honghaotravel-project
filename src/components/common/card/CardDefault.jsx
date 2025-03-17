@@ -1,73 +1,73 @@
-import Image from "next/image";
-import PropTypes from "prop-types";
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 function CardDefault({ data }) {
   return (
-    <article className="group relative mb-[2rem] h-[23.33956rem] w-[16.8755rem] md:h-[43.33956rem] md:w-[36rem] lg:w-[47.3125rem] lg:h-[34.375rem] shrink-0 rounded-[0.75rem] lg:rounded-[1.5rem] text-white bg-white pb-[1.5rem] overflow-hidden">
+    <article className="group relative mb-[2rem] h-[23.33956rem] w-[16.8755rem] shrink-0 overflow-hidden rounded-[0.75rem] bg-white pb-[1.5rem] text-white md:h-[43.33956rem] md:w-[36rem] lg:h-[34.375rem] lg:w-[47.3125rem] lg:rounded-[1.5rem]">
       <Image
         width={800}
         height={550}
-        alt={data?.name || ""}
-        src={data?.background || ""}
-        className="absolute inset-0 w-full h-full object-cover"
+        alt={data?.name || ''}
+        src={data?.background || ''}
+        className="absolute inset-0 h-full w-full object-cover"
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)",
+            'linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)',
         }}
       ></div>
-      <div className="absolute left-[1rem] bottom-[1rem] lg:left-[1.5rem] lg:bottom-[1.5rem] flex flex-col gap-[0.75rem] items-start">
-        <h4 className="group-hover:underline text-[1rem] md:text-[3rem] lg:text-[1.5rem] font-black leading-[120%]">
+      <div className="absolute bottom-[1rem] left-[1rem] flex flex-col items-start gap-[0.75rem] lg:bottom-[1.5rem] lg:left-[1.5rem]">
+        <h4 className="text-[1rem] leading-[120%] font-black group-hover:underline md:text-[3rem] lg:text-[1.5rem]">
           {data?.name}
         </h4>
         <ul className="hidden lg:block">
-          <li className="text-[1rem] font-bold leading-[1.5] flex items-center gap-[0.25rem]">
-            Accommodation:{" "}
-            <span className="text-[#f1f1f1] tracking-[0.0125rem] leading-[1.2] font-normal">
+          <li className="flex items-center gap-[0.25rem] text-[1rem] leading-[1.5] font-bold">
+            Accommodation:{' '}
+            <span className="leading-[1.2] font-normal tracking-[0.0125rem] text-[#f1f1f1]">
               {data?.accommodation}
             </span>
           </li>
-          <li className="text-[1rem] font-bold leading-[1.5] flex items-center gap-[0.25rem]">
-            Motorbike:{" "}
-            <span className="text-[#f1f1f1] tracking-[0.0125rem] leading-[1.2] font-normal">
+          <li className="flex items-center gap-[0.25rem] text-[1rem] leading-[1.5] font-bold">
+            Motorbike:{' '}
+            <span className="leading-[1.2] font-normal tracking-[0.0125rem] text-[#f1f1f1]">
               {data?.motorbike}
             </span>
           </li>
-          <li className="text-[1rem] font-bold leading-[1.5] flex items-center gap-[0.25rem]">
-            Tour guide:{" "}
-            <span className="text-[#f1f1f1] tracking-[0.0125rem] leading-[1.2] font-normal">
+          <li className="flex items-center gap-[0.25rem] text-[1rem] leading-[1.5] font-bold">
+            Tour guide:{' '}
+            <span className="leading-[1.2] font-normal tracking-[0.0125rem] text-[#f1f1f1]">
               {data?.tourGuide}
             </span>
           </li>
-          <li className="text-[1rem] font-bold leading-[1.5] flex items-center gap-[0.25rem]">
-            Transport:{" "}
-            <span className="text-[#f1f1f1] tracking-[0.0125rem] leading-[1.2] font-normal">
+          <li className="flex items-center gap-[0.25rem] text-[1rem] leading-[1.5] font-bold">
+            Transport:{' '}
+            <span className="leading-[1.2] font-normal tracking-[0.0125rem] text-[#f1f1f1]">
               {data?.transport}
             </span>
           </li>
         </ul>
       </div>
-      <div className="transition-transform duration-500 group-hover:-translate-y-full absolute left-[1rem] bottom-[3rem] lg:left-auto lg:right-[1.785rem] lg:bottom-[1.875rem] text-right flex items-center gap-[0.5rem] lg:block">
-        <p className="text-white/60 tracking-[0.0125rem] leading-[1.2] text-[1rem] font-bold">
+      <div className="absolute bottom-[3rem] left-[1rem] flex items-center gap-[0.5rem] text-right transition-transform duration-500 group-hover:-translate-y-full lg:right-[1.785rem] lg:bottom-[1.875rem] lg:left-auto lg:block">
+        <p className="text-[1rem] leading-[1.2] font-bold tracking-[0.0125rem] text-white/60">
           From to
         </p>
-        <p className="lg:text-[3rem] font-bold leading-[1.2] text-[1rem]">
+        <p className="text-[1rem] leading-[1.2] font-bold lg:text-[3rem]">
           ${data?.price || 0}
         </p>
       </div>
-      <button className="inline-flex items-center cursor-pointer font-extrabold border border-solid border-[#da4b19] text-[0.875rem] px-[2rem] py-[1rem] uppercase rounded-[0.5rem] absolute right-[1.5rem] bottom-[1.875rem] bg-orange-normal transition-transform duration-500 translate-x-[200%] group-hover:translate-0">
+      <button className="bg-orange-normal absolute right-[1.5rem] bottom-[1.875rem] inline-flex translate-x-[200%] cursor-pointer items-center rounded-[0.5rem] border border-solid border-[#da4b19] px-[2rem] py-[1rem] text-[0.875rem] font-extrabold uppercase transition-transform duration-500 group-hover:translate-0">
         <span>Detail</span>
         <Image
           alt="Hong Hao Travel"
           width={20}
           height={20}
           src="/images/arrow/arrow-right.svg"
-          className="group-hover:translate-x-1/2 transition-transform duration-500 w-[0.75rem] h-[0.65625rem] shrink-0"
+          className="h-[0.65625rem] w-[0.75rem] shrink-0 transition-transform duration-500 group-hover:translate-x-1/2"
         />
       </button>
-      <button className="max-lg:left-[1rem] max-lg:bottom-[5rem] lg:top-[2rem] lg:right-[1.125rem] absolute px-[0.75rem] py-[0.25rem] md:py-[0.375rem] rounded-[1.5rem] border border-solid border-white/50 bg-white/20 backdrop-blur-[2px] inline-flex items-center gap-[0.5rem]">
+      <button className="absolute inline-flex items-center gap-[0.5rem] rounded-[1.5rem] border border-solid border-white/50 bg-white/20 px-[0.75rem] py-[0.25rem] backdrop-blur-[2px] max-lg:bottom-[5rem] max-lg:left-[1rem] md:py-[0.375rem] lg:top-[2rem] lg:right-[1.125rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

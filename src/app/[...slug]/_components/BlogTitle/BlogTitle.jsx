@@ -1,23 +1,23 @@
-import Image from "next/image";
-import React from "react";
-import BlogBreadcrumb from "../BlogDetail/BlogBreadcrumb";
+import Image from 'next/image';
+import React from 'react';
+import BlogBreadcrumb from '../BlogDetail/BlogBreadcrumb';
 
 export default function BlogTitle() {
   return (
     <section id="blog-title" className="relative bg-[#1A543A]">
       <div className="h-[25rem] md:h-[35.125rem]">
-        <div className="max-w-[100rem] mx-auto flex flex-col gap-[1.5rem] md:gap-y-[4rem] items-center pt-[7.89rem]">
-          <p className="hidden md:inline-flex px-[1.625rem] py-[0.5rem] items-center justify-center gap-[0.625rem] rounded-[6.25rem] bg-white">
-            <span className="text-[#030922] text-center text-[0.90088rem] leading-[1.625rem] tracking-[0.0625rem] uppercase">
+        <div className="mx-auto flex max-w-[100rem] flex-col items-center gap-[1.5rem] pt-[7.89rem] md:gap-y-[4rem]">
+          <p className="hidden items-center justify-center gap-[0.625rem] rounded-[6.25rem] bg-white px-[1.625rem] py-[0.5rem] md:inline-flex">
+            <span className="text-center text-[0.90088rem] leading-[1.625rem] tracking-[0.0625rem] text-[#030922] uppercase">
               Ha Giang Friends
             </span>
           </p>
-          <div className="!bg-[#1A543A] text-white relative w-full md:hidden">
+          <div className="relative w-full !bg-[#1A543A] text-white md:hidden">
             <BlogBreadcrumb />
           </div>
-          <div className="flex flex-col gap-[1.125rem] items-center">
+          <div className="flex flex-col items-center gap-[1.125rem]">
             <div className="flex items-center md:gap-x-[1.5rem]">
-              <span className="-rotate-180 inline-flex size-[1.71875rem] items-center justify-center self-start">
+              <span className="inline-flex size-[1.71875rem] -rotate-180 items-center justify-center self-start md:self-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="29"
@@ -34,7 +34,7 @@ export default function BlogTitle() {
                   />
                 </svg>
               </span>
-              <h1 className="text-white text-center font-londrina-solid text-[2rem] max-md:w-[18.75rem] md:text-[3.5rem] leading-none">
+              <h1 className="font-londrina-solid text-center text-[2rem] leading-none text-white max-md:w-[18.75rem] md:text-[3.5rem]">
                 Ha Giang Hotel Guide; Advice from the Experts
               </h1>
               <span className="inline-flex size-[1.71875rem] items-center justify-center self-start">
@@ -56,25 +56,25 @@ export default function BlogTitle() {
               </span>
             </div>
             <div className="flex items-center md:gap-[0.625rem]">
-              <div className="shrink-0 size-[2.8125rem] rounded-full overflow-hidden">
+              <div className="size-[2.8125rem] shrink-0 overflow-hidden rounded-full">
                 <Image
                   alt="Hong Hao Travel"
                   width={20}
                   height={20}
                   src="/images/blog-detail/avatar.png"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <p className="shrink-0 w-[6.0075rem] h-[1.625rem] text-[#fcf8f7] text-center text-[0.75rem] md:text-[0.8545rem] font-bold leading-[1.625rem] tracking-[0.0625rem] uppercase">
+              <p className="h-[1.625rem] w-[6.0075rem] shrink-0 text-center text-[0.75rem] leading-[1.625rem] font-bold tracking-[0.0625rem] text-[#fcf8f7] uppercase md:text-[0.8545rem]">
                 Đức híu
               </p>
             </div>
           </div>
-          <p className="text-[#D9D9D9] text-center text-[0.76175rem] leading-[1.625rem] tracking-[0.03125rem] uppercase opacity-[0.9562]">
+          <p className="text-center text-[0.76175rem] leading-[1.625rem] tracking-[0.03125rem] text-[#D9D9D9] uppercase opacity-[0.9562]">
             4 Mar
           </p>
         </div>
-        <div className="w-full h-[0.0625rem] mt-[1rem] md:mt-[2rem] bg-[rgba(217,217,217,0.60)]"></div>
+        <div className="mt-[1rem] h-[0.0625rem] w-full bg-[rgba(217,217,217,0.60)] md:mt-[2rem]"></div>
       </div>
     </section>
   );

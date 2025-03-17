@@ -44,7 +44,7 @@ export default function BreadcrumbCustom({ data = [] }) {
                 <BreadcrumbItem className="text-[0.75rem] tracking-[0.00375rem] md:text-[0.875rem] md:tracking-[0.00219rem]">
                   <BreadcrumbLink
                     href={to}
-                    className={`${
+                    className={`line-clamp-1 ${
                       isLastChild ? 'text-[#2c2c2c]' : 'text-[#C5C5C5]'
                     }`}
                   >

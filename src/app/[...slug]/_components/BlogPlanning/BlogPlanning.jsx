@@ -17,7 +17,7 @@ export default function BlogPlanning() {
           width={400}
           height={400}
           src="/images/blog-detail/blog-planning-bg-start-mobi.png"
-          className="relative z-[-500] w-full md:hidden"
+          className="relative w-full md:hidden"
         />
         <div className="absolute top-1/2 flex w-full justify-center max-md:top-[3.6rem] md:-translate-y-1/2">
           <div className="relative flex h-full w-full items-center md:mx-auto md:w-[87.5rem] md:space-x-[2.3rem]">

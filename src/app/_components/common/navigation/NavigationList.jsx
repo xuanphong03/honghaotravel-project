@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import NavigationItemV1 from './NavigationItemV1';
 import NavigationItemV2 from './NavigationItemV2';
 
-export default function NavigationList({ onClose }) {
+export default function NavigationList() {
   const [catalogList, setCatalogList] = useState([]);
 
   const renderMenu = (items) => {
@@ -54,7 +54,7 @@ export default function NavigationList({ onClose }) {
           { title: 'All Tours', to: '/tours', children: null },
         ],
       },
-      { title: 'Activity', to: '#', children: null },
+      { title: 'Activity', to: '/activity', children: null },
       { title: 'Destination', to: '/destination', children: null },
       { title: 'Blog', to: '#', children: null },
       { title: 'FAQ', to: '#', children: null },
