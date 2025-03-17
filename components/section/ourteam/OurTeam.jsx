@@ -5,7 +5,7 @@ import OurTeamSlide from './OurTeamSlide';
 import './OurTeam.css';
 import Link from 'next/link';
 
-function OurTeam({ primary = false, secondary = false }) {
+function OurTeam({ primary = false, secondary = false, className }) {
   const [selectedTab, setSelectedTab] = useState(0);
   const [tourGuideList, setTourGuideList] = useState([]);
   const [riderTeamList, setRiderTeamList] = useState([]);
@@ -39,9 +39,9 @@ function OurTeam({ primary = false, secondary = false }) {
   };
 
   return (
-    <section id="our-team" className="relative z-10 bg-white">
-      <div className="relative z-[2] mx-auto max-w-[100rem]">
-        <div className="relative mt-[4.37rem] flex w-full justify-start gap-x-[3.875rem] max-md:flex-wrap md:px-[5rem]">
+    <section id="our-team" className={`h-full w-full ${className}`}>
+      <div className="relative z-[2] mx-auto w-full md:w-[87.5rem]">
+        <div className="relative flex w-full justify-start gap-x-[3.875rem] pt-[4.37rem] max-md:flex-wrap md:px-[5rem]">
           <div className="flex flex-col max-md:px-[1rem]">
             <div className="flex flex-col text-white">
               <h3
