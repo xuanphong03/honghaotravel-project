@@ -8,18 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function PinSpacer() {
   const pinSpacer = useRef();
-  //   useGSAP(() => {
-  //     // Pin the container
-  //     gsap.to(pinSpacer.current, {
-  //       scrollTrigger: {
-  //         trigger: pinSpacer.current,
-  //         start: 'top top',
-  //         scrub: true,
-  //         pinSpacing: false,
-  //         pin: true,
-  //       },
-  //     });
-  //   });
+  useGSAP(() => {
+    // Pin the container
+    gsap.to(pinSpacer.current, {
+      scrollTrigger: {
+        trigger: pinSpacer.current,
+        start: 'top top',
+        scrub: true,
+        pinSpacing: false,
+        pin: true,
+      },
+    });
+  });
   return (
     <>
       <Image
@@ -28,7 +28,7 @@ export default function PinSpacer() {
         height={900}
         ref={pinSpacer}
         src="/images/destination/discover-bg.png"
-        className="absolute z-0 h-[100vh] w-full object-cover pb-[3rem] max-md:hidden"
+        className="absolute z-0 h-[120vh] w-full object-cover pb-[3rem] max-md:hidden"
       />
       {/* <div className="absolute top-[1.5rem] left-[1.5rem] md:hidden">
         <Image
