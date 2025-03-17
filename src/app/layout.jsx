@@ -8,10 +8,7 @@ import Footer from '../../components/section/footer/Footer';
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`bg-white ${fontTripSans.className}`}
-        cz-shortcut-listen="true"
-      >
+      <body className={`bg-white ${fontTripSans.className}`}>
         <AppProvider>
           <Header />
           <main className="bg-white">{children}</main>
