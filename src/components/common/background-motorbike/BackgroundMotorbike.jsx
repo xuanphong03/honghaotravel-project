@@ -29,7 +29,7 @@ export default function BackgroundMotorbike() {
   );
 
   return (
-    <div ref={container} className="relative">
+    <div ref={container} className="relative hidden md:block">
       <svg
         ref={rect}
         xmlns="http://www.w3.org/2000/svg"
