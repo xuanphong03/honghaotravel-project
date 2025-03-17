@@ -15,24 +15,30 @@ export default function Content() {
           defaultValue="people"
           className="flex w-full items-center justify-center gap-y-[1rem] md:gap-y-[4.56rem]"
         >
-          <TabsList className="flex items-center gap-[2.25rem] bg-transparent">
+          <TabsList
+            data-aos="fade-up"
+            data-aos-offset="300"
+            className="flex items-center gap-[2.25rem] bg-transparent"
+          >
             <TabsTrigger value="people">PEOPLE</TabsTrigger>
             <TabsTrigger value="hiking">HIKING</TabsTrigger>
             <TabsTrigger value="discovery">DISCOVERY</TabsTrigger>
             <TabsTrigger value="food">FOOD</TabsTrigger>
           </TabsList>
-          <TabsContent value="people">
-            <Album />
-          </TabsContent>
-          <TabsContent value="hiking">
-            <Album />
-          </TabsContent>
-          <TabsContent value="discovery">
-            <Album />
-          </TabsContent>
-          <TabsContent value="food">
-            <Album />
-          </TabsContent>
+          <div data-aos="fade-up" data-aos-offset="300">
+            <TabsContent value="people">
+              <Album />
+            </TabsContent>
+            <TabsContent value="hiking">
+              <Album />
+            </TabsContent>
+            <TabsContent value="discovery">
+              <Album />
+            </TabsContent>
+            <TabsContent value="food">
+              <Album />
+            </TabsContent>
+          </div>
         </Tabs>
       </div>
     </div>

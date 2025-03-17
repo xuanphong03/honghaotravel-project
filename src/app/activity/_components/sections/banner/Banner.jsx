@@ -21,9 +21,8 @@ export default function Banner() {
   useGSAP(
     () => {
       gsap.to('.background-overlay', {
-        delay: 0.5,
         opacity: 0,
-        duration: 1,
+        duration: 1.5,
         scrollTrigger: {
           trigger: container.current,
           toggleActions: 'play none none none',
@@ -76,6 +75,7 @@ export default function Banner() {
         <Image
           width={400}
           height={200}
+          data-aos="fade-up"
           alt="Activity Ha Giang"
           src="/images/activity/activity-text.svg"
           className="top-[9rem] h-[8.65rem] w-[20.9605rem] md:absolute md:left-[5rem] md:h-[22.1875rem] md:w-[52.3605rem] lg:left-[0rem]"
@@ -114,7 +114,10 @@ export default function Banner() {
           </Breadcrumb>
         </div>
         <div className="top-[32rem] left-[0rem] flex-col items-start space-y-[2.0625rem] md:absolute md:left-[5rem] lg:left-[0rem]">
-          <p className="max-md:tracking-0.00219 text-base leading-[150%] font-normal tracking-[0.005rem] text-white max-md:max-h-[9rem] max-md:overflow-y-auto max-md:text-[0.875rem] md:w-[52.3125rem]">
+          <p
+            data-aos="fade-up"
+            className="max-md:tracking-0.00219 text-base leading-[150%] font-normal tracking-[0.005rem] text-white max-md:overflow-y-auto max-md:text-[0.875rem] md:w-[52.3125rem]"
+          >
             Ha Giang, nestled in the rugged mountains of northern Vietnam,
             beckons adventurers with its breathtaking scenery and vibrant
             cultural tapestry. From the towering peaks of the Dong Van Karst
@@ -122,7 +125,10 @@ export default function Banner() {
             an unforgettable journey through some of Vietnam's most
             awe-inspiring landscapes.
           </p>
-          <div className="mt-[2.06rem] flex items-center gap-[1rem] font-bold text-white">
+          <div
+            data-aos="fade-up"
+            className="mt-[2.06rem] flex items-center gap-[1rem] font-bold text-white"
+          >
             <button className="group button_default bg-orange-normal border-orange-normal__hover border border-solid">
               <span>Book now</span>
               <Image
@@ -150,6 +156,7 @@ export default function Banner() {
           priority
           width={2000}
           height={1000}
+          data-aos="fade-up"
           src="/images/activity/map-desktop.svg"
           className="absolute bottom-0 left-[35%] h-[82rem] w-[57rem] max-md:hidden"
         />
@@ -164,26 +171,42 @@ export default function Banner() {
 
         <div className="absolute top-[43.5rem] left-[2.8rem] h-[6.25rem] w-[4.75rem] max-md:top-[43.2rem] md:left-[-1rem]">
           <div className="relative">
-            <div className="absolute inline-flex w-[8.75013rem] flex-col items-center space-y-[0] max-md:top-[7rem] max-md:left-[-1rem] md:top-[-1rem] md:left-[50.75rem]">
+            <div
+              data-aos="fade-up"
+              className="absolute inline-flex w-[8.75013rem] flex-col items-center space-y-[0] max-md:top-[7rem] max-md:left-[-1rem] md:top-[-1rem] md:left-[50.75rem]"
+            >
               <LocationPoint />
             </div>
-            <div className="absolute flex flex-col items-start space-y-[1.2rem] max-md:top-[11rem] max-md:left-[5.5rem] max-md:space-y-[0.75rem] md:top-[3rem] md:left-[58rem] lg:left-[58.7rem]">
+            <div
+              data-aos="fade-up"
+              className="absolute flex flex-col items-start space-y-[1.2rem] max-md:top-[11rem] max-md:left-[5.5rem] max-md:space-y-[0.75rem] md:top-[3rem] md:left-[58rem] lg:left-[58.7rem]"
+            >
               <MotorbikeTour />
             </div>
           </div>
         </div>
         <div className="absolute top-[63.5rem] left-[-0.7rem] h-[6.25rem] w-[4.75rem] md:left-[0.5rem] lg:left-[-3.6rem]">
           <div className="relative">
-            <div className="absolute top-[5rem] left-[13.75rem] inline-flex w-[8.75013rem] flex-col items-center md:top-[7rem] md:left-[28rem] lg:left-[32rem]">
+            <div
+              data-aos="fade-up"
+              className="absolute top-[5rem] left-[13.75rem] inline-flex w-[8.75013rem] flex-col items-center md:top-[7rem] md:left-[28rem] lg:left-[32rem]"
+            >
               <LocationPoint />
             </div>
-            <div className="absolute top-[1rem] left-[3.5rem] flex flex-col items-start space-y-[2.82rem] max-md:top-[4.5rem] max-md:left-[2rem] max-md:space-y-[0.75rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-offset="300"
+              className="absolute top-[1rem] left-[3.5rem] flex flex-col items-start space-y-[2.82rem] max-md:top-[4.5rem] max-md:left-[2rem] max-md:space-y-[0.75rem]"
+            >
               <HikingExperience />
             </div>
           </div>
         </div>
         <div className="absolute bottom-[10.5rem] max-md:bottom-[10rem] max-md:pr-[0.75rem] md:right-[8rem] md:w-[38.0625rem] lg:right-[0rem]">
-          <p className="line-clamp-[9] text-left text-[0.875rem] leading-[150%] font-normal tracking-[0.00219rem] text-white not-italic md:text-right md:text-[1rem] md:tracking-[0.005rem]">
+          <p
+            data-aos="fade-up"
+            className="line-clamp-[9] text-left text-[0.875rem] leading-[150%] font-normal tracking-[0.00219rem] text-white not-italic md:text-right md:text-[1rem] md:tracking-[0.005rem]"
+          >
             Embark on an unforgettable journey to Ha Giang, where breathtaking
             landscapes and vibrant cultures await you. Explore the majestic
             mountains, winding roads, and terraced rice fields while immersing

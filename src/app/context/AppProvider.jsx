@@ -1,6 +1,7 @@
-"use client";
-import { createContext, useCallback, useEffect, useRef, useState } from "react";
-import NextNProgress from "nextjs-progressbar";
+'use client';
+import { createContext, useCallback, useEffect, useRef, useState } from 'react';
+import NextNProgress from 'nextjs-progressbar';
+import AOSProvider from './AOSProvider';
 export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
@@ -27,22 +28,24 @@ export default function AppProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
   return (
     <AppContext.Provider
       value={{ showHeader, isPositionTop, showNavigation, setShowNavigation }}
     >
-      <NextNProgress
-        height={3}
-        color="#f2531c"
-        stopDelayMs={200}
-        startPosition={0.3}
-        showOnShallow={true}
-      />
-      {children}
+      <AOSProvider>
+        <NextNProgress
+          height={3}
+          color="#f2531c"
+          stopDelayMs={200}
+          startPosition={0.3}
+          showOnShallow={true}
+        />
+        {children}
+      </AOSProvider>
     </AppContext.Provider>
   );
 }
