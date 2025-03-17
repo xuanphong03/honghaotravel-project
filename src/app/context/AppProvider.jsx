@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useCallback, useEffect, useRef, useState } from 'react';
-import NextNProgress from 'nextjs-progressbar';
 import AOSProvider from './AOSProvider';
+
 export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
@@ -36,16 +36,7 @@ export default function AppProvider({ children }) {
     <AppContext.Provider
       value={{ showHeader, isPositionTop, showNavigation, setShowNavigation }}
     >
-      <AOSProvider>
-        <NextNProgress
-          height={3}
-          color="#f2531c"
-          stopDelayMs={200}
-          startPosition={0.3}
-          showOnShallow={true}
-        />
-        {children}
-      </AOSProvider>
+      {children}
     </AppContext.Provider>
   );
 }
