@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 export default function ScrollToTopButton() {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,11 +20,11 @@ export default function ScrollToTopButton() {
 
     gsap.to(circleRef.current, {
       strokeDashoffset: 0,
-      ease: "none",
+      ease: 'none',
       scrollTrigger: {
         trigger: document.body,
-        start: "top top",
-        end: "bottom bottom",
+        start: 'top top',
+        end: 'bottom bottom',
         scrub: 1,
       },
     });
@@ -34,14 +34,16 @@ export default function ScrollToTopButton() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
   return (
     <button
+      data-aos="fade-up"
+      data-aos-offset="0"
       onClick={handleScrollToTop}
-      className="size-[3.375rem] xmd:size-[2.3rem] z-[9] cursor-pointer"
+      className="xmd:size-[2.3rem] z-[9] size-[3.375rem] cursor-pointer"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
