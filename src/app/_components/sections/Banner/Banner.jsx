@@ -14,6 +14,9 @@ import 'swiper/css/pagination';
 // import required modules
 import FilterTour from '../FilterTour/FilterTour';
 import BannerSlide from './BannerSlide';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Banner() {
   const SlideList = [
@@ -133,6 +136,16 @@ export default function Banner() {
           toggleActions: 'play none none none',
         },
       });
+      gsap.to(container.current, {
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'bottom bottom',
+          end: '+=100%',
+          pin: true,
+          pinSpacing: false,
+          scrub: 1,
+        },
+      });
     },
     { scope: container, dependencies: [] },
   );
@@ -140,7 +153,7 @@ export default function Banner() {
   return (
     <section
       ref={container}
-      className="fixed inset-0 h-screen w-screen overflow-hidden"
+      className="relative h-[100vh] w-full overflow-hidden"
     >
       <div className="absolute top-0 left-0 hidden h-full w-full xl:block">
         <div className="relative size-full">

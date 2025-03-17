@@ -7,10 +7,7 @@ import Welcome from './Welcome';
 
 export default function Introduction({ children }) {
   return (
-    <div
-      id="introduction"
-      className="relative !z-50 mt-[100vh] w-full bg-[#122718]"
-    >
+    <div id="introduction" className="relative !z-50 w-full bg-[#122718]">
       <div className="absolute inset-0 z-[1]">
         <Image
           alt="Hong Hao Travel"
