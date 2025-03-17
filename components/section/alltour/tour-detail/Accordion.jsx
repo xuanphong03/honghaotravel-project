@@ -1,13 +1,10 @@
 "use client"
 import {
   Accordion,
-  AccordionContent,
+  AccordionContentCustom,
   AccordionItem,
-  AccordionTrigger,
   AccordionTriggerCustom,
-  AccordionTriggerCustomm,
 } from "@/components/ui/accordion"
-import { useState } from "react"
 
 const arrAccordion = [
   {
@@ -43,14 +40,13 @@ const arrAccordion = [
 ]
 
 export function AccordionDemo() {
-  const [active,setActive] = useState(null)
   return (
     <Accordion type="single" collapsible className="w-full sm:w-[42.8125rem]">
       {arrAccordion.map((item) => <AccordionItem key={item.id} value={item.id} >
-        <AccordionTriggerCustom className={` `}>{ item.title}</AccordionTriggerCustom>
-        <AccordionContent className={"!duration-1000 ease-in-out sub1-regular !text-greyscaletext-40"}>
+        <AccordionTriggerCustom className={`sub1-bold !text-greyscaletext-30`}>{ item.title}</AccordionTriggerCustom>
+        <AccordionContentCustom className={"!duration-1000 ease-in-out sub1-regular !text-greyscaletext-40"}>
           {item.content}
-        </AccordionContent>
+        </AccordionContentCustom>
       </AccordionItem>)}
     </Accordion>
   )

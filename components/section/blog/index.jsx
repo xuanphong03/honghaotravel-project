@@ -1,8 +1,8 @@
 import React from 'react'
+import BlogEnd from '../../common/BlogEnd'
 import FAQBanner from '../../common/FAQBanner'
 import Breadcrumb from '../../common/Breadcrumb'
-import FAQQuestion from './FAQQuestion'
-
+import OurBlog from './OurBlog'
 const dataBreadcrumb = [
   {
     id: 1,
@@ -18,19 +18,19 @@ const dataBreadcrumb = [
     icon:<svg xmlns="http://www.w3.org/2000/svg" className='w-3 h-3' viewBox="0 0 5 8" fill="none">
   <path d="M1 1L4 4L1 7" stroke="#E64827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>,
-    title:"FAQs",
+    title:"Blog",
      url: "",
     classNameTitle:"body2-regular !text-greyscaletext-80-main"
   },
    
 ]
 
-export default function FAQ() {
+export default function Blog() {
   return (
-    <div>
-          <FAQBanner urlTitle={"/images/alltour/title.png"}/>
-          <Breadcrumb data={dataBreadcrumb} />
-          <FAQQuestion/>
-    </div>
+    <div className=''>
+      <FAQBanner urlTitle={"/images/blog/blog-title.png"}  />
+      <div className='max-sm hidden'><Breadcrumb data={dataBreadcrumb} /></div>
+      <OurBlog/>
+      <BlogEnd /></div>
   )
 }

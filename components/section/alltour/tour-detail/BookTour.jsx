@@ -14,7 +14,7 @@ export default function BookTour() {
     console.log(data); // Handle form data
   };
   return (
-    <div ref={commit} className='relative h-fit w-full max-sm:px-5 flex flex-col justify-start  py-[3.18rem] sm:pt-[11rem] sm:pb-24'>
+    <div ref={commit} className='relative h-fit w-full max-sm:px-5 flex flex-col justify-start  py-[3.18rem] sm:pt-[15rem] sm:pb-24 sm:mb-12'>
       <div className="max-sm:hidden ">
         <TestM commit={commit} />
           </div>

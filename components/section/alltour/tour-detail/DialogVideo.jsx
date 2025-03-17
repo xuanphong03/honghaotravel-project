@@ -1,7 +1,7 @@
 import {
   Dialog,
   DialogClose,
-  DialogContent,
+  DialogContentCustom,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -21,7 +21,7 @@ export function DialogDemo() {
                   <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover z-0'/>
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[82rem] !bg-transparent !border-none">
+      <DialogContentCustom className="sm:max-w-[82rem] !bg-transparent !border-none">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           
@@ -32,7 +32,7 @@ export function DialogDemo() {
               <X className="w-6 h-6"/>
             </Button>
           </DialogClose>
-      </DialogContent>
+      </DialogContentCustom>
     </Dialog>
   )
 }

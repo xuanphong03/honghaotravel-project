@@ -126,7 +126,7 @@ export default function BlogEnd() {
           <Image src={"/images/blog/bg-nui.png"} alt="nui" fill className="" />
         </div>
       </div>
-      <div className="blogend-content max-sm:h-fit w-full sm:ps-24  sm:pe-[3.89rem] flex items-center justify-between">
+      <div className="blogend-content max-sm:h-fit w-full max-w-[87.5rem] mx-auto flex items-center justify-between">
         <div className="w-[59.625rem] h-[36.375rem] rounded-3xl  flex items-center relative max-sm:hidden">
           <Image
             src={"/images/blog/blogend-img.jpeg"}
@@ -135,7 +135,7 @@ export default function BlogEnd() {
             fill
           />
         </div>
-        <div className="blogend-cont flex flex-col items-center gap-8 sm:gap-[2.06rem] max-sm:px-[1.12rem] ">
+        <div className="blogend-cont flex flex-col items-center gap-8 sm:gap-[2.06rem] max-sm:px-[1.12rem] w-[27.5rem]">
           <h2 className=" sm:w-[27.5rem] sm:h-[7.75rem] h5-bold-pc h2-bold !text-greyscale-70 sm:!font-normal text-center">
             Start planning your journey of joy
           </h2>

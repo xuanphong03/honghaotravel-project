@@ -69,7 +69,7 @@ export default function Share() {
                   <Image src="/images/about/share-map2.png" alt="no-img" fill className='object-contain'></Image>
               </div>
               <div className='sm:hidden w-full h-[17.85356rem] absolute bottom-0 left-0 right-0'>
-                  <Image src="/images/about/share-map3.png" alt="no-img" fill  className='object-contain'></Image>
+                  <Image src="/images/about/share-nui.png" alt="no-img" fill  className='object-contain'></Image>
               </div>
               
           </div>

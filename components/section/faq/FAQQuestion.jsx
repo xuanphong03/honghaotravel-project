@@ -2,17 +2,18 @@
 import { Plus, X } from 'lucide-react'
 import React, { useState } from 'react'
 import { AccordionDemo } from '../alltour/tour-detail/Accordion'
+import FormAsk from './FormAsk'
 
 export default function FAQQuestion() {
     const [ans, setAns] = useState(false)
     const [active,setActive] = useState(0)
   return (
-    <div className='max-w-[87.5rem] mx-auto max-sm:px-5 py-16 max-sm:py-8 flex flex-col gap-[1.12rem] sm:gap-[3.56rem]'>
-           <div  className="title flex flex-col w-full  gap-3 ">
+    <div className='max-w-[87.5rem] mx-auto max-sm:px-5 py-16 max-sm:py-8 flex flex-col  sm:gap-[3.56rem] '>
+           <div  className="title flex flex-col w-full  gap-3 max-sm:mb-[1.12rem]">
                   <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-80-main opacity-40'>FAQS</p>
               <h2 className='h2-bold !text-greyscaletext-80-main max-sm:!text-[2rem]'>QUESTIONS ? LOOK HERE</h2>
               </div>
-          <p className='body1-bold !text-greyscaletext-40 w-[38.8125rem] max-w-full'>Experience the raw beauty of Hà Giang with our immersive travel adventures. From rugged mountain landscapes to vibrant ethnic cultures, Hà Giang offers a truly unique and authentic experience........</p>
+          <p className='body1-bold !text-greyscaletext-40 w-[38.8125rem] max-w-full max-sm:mb-[1.56rem]'>Experience the raw beauty of Hà Giang with our immersive travel adventures. From rugged mountain landscapes to vibrant ethnic cultures, Hà Giang offers a truly unique and authentic experience........</p>
           
           <div className="questions max-sm:flex max-sm:overflow-x-scroll sm:grid sm:grid-cols-4   gap-[1.125rem]">
               {Array.from({ length: 5 }).map((_, index) =>
@@ -46,10 +47,11 @@ export default function FAQQuestion() {
               )}
               
           </div>
-          <div className="asked">
-              <h2 className='h2-bold-tripsan !text-greyscaletext-80-main !text-[2.5rem] max-sm:!text-[1.5rem]  !font-bold'>Frequently asked Questions</h2>
-              <div className='mt-[2.81rem]'>
-                  <AccordionDemo/>
+          <div className="asked max-sm:mt-12 ">
+              <h2 className='h2-bold-tripsan !text-greyscaletext-80-main !text-[2.5rem] max-sm:!text-[1.5rem]  !font-bold max-sm:mb-6'>Frequently asked Questions</h2>
+              <div className=' sm:mt-[2.81rem] flex max-sm:flex-col max-sm:gap-[3.62rem]  sm:justify-between '>
+                  <AccordionDemo />
+                  <FormAsk/>
               </div>
           </div>
 
