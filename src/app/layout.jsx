@@ -8,7 +8,10 @@ import Footer from '../../components/section/footer/Footer';
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-white ${fontTripSans.className}`}>
+      <body
+        className={`bg-white ${fontTripSans.className}`}
+        suppressHydrationWarning={true}
+      >
         <AppProvider>
           <Header />
           <main className="bg-white">{children}</main>
