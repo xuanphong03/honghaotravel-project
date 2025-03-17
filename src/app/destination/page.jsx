@@ -17,7 +17,7 @@ export default async function DestinationPage({ searchParams }) {
       <Banner />
       <Breadcrumb />
       <Discovery searchParams={_searchParams} />
-      <OurTeam secondary />
+      <OurTeam secondary className="relative z-10 bg-white" />
       <ExploreTrip />
     </>
   );
