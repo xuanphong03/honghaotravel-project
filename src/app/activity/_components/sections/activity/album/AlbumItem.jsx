@@ -24,7 +24,7 @@ export default function AlbumItem({ thumbnailURL }) {
       <SheetTrigger asChild>
         <article className="h-full w-full">
           <Image
-            alt=""
+            alt="Hong Hao Travel"
             width={500}
             height={500}
             src={thumbnailURL}

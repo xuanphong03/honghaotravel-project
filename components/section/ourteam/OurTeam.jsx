@@ -71,7 +71,7 @@ function OurTeam({ primary = false, secondary = false, className }) {
               >
                 About us
                 <Image
-                  alt=""
+                  alt="Hong Hao Travel"
                   width={50}
                   height={50}
                   src="/images/arrow/arrow-right.svg"
@@ -90,7 +90,7 @@ function OurTeam({ primary = false, secondary = false, className }) {
               >
                 All tour
                 <Image
-                  alt=""
+                  alt="Hong Hao Travel"
                   width={50}
                   height={50}
                   src="/images/arrow/arrow-right.svg"

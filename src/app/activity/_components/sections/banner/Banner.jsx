@@ -64,7 +64,7 @@ export default function Banner() {
           className="h-[24.47356rem] w-[101.49219rem] translate-y-[2rem] object-fill max-md:hidden"
         />
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={1600}
           height={400}
           src="/images/activity/climbing-mb.svg"
@@ -132,7 +132,7 @@ export default function Banner() {
             <button className="group button_default bg-orange-normal border-orange-normal__hover border border-solid">
               <span>Book now</span>
               <Image
-                alt=""
+                alt="Hong Hao Travel"
                 width={10}
                 height={10}
                 src="/images/arrow/arrow-right.svg"
@@ -142,7 +142,7 @@ export default function Banner() {
             <button className="group button_default hover:bg-orange-normal hover:border-orange-normal border border-solid border-white bg-transparent opacity-60 duration-300 ease-linear hover:opacity-100">
               <span>All tour</span>
               <Image
-                alt=""
+                alt="Hong Hao Travel"
                 width={10}
                 height={10}
                 src="/images/arrow/arrow-right.svg"
@@ -152,7 +152,7 @@ export default function Banner() {
           </div>
         </div>
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           priority
           width={2000}
           height={1000}
@@ -161,7 +161,7 @@ export default function Banner() {
           className="absolute bottom-0 left-[35%] h-[82rem] w-[57rem] max-md:hidden"
         />
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           priority
           width={700}
           height={1500}

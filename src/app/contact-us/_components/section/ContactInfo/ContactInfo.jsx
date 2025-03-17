@@ -34,7 +34,7 @@ export default function ContactInfo() {
             </div>
             <div className="relative h-[35.25rem] bg-red-500 md:hidden">
               <Image
-                alt=""
+                alt="Hong Hao Travel"
                 width={500}
                 height={700}
                 src="/images/contact-us/bg-contact-us-mobile.jpeg"

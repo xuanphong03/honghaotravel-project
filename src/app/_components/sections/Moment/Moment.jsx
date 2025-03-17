@@ -1,31 +1,31 @@
-"use client";
-import Image from "next/image";
-import Carousel from "./_components/carousel/Carousel";
-import "./Moment.css";
-import Marquee from "react-fast-marquee";
-import TextHeaderMobile from "./_components/TextHeaderMobile";
-import CarouselMobile from "./_components/carousel/CarouselMobile";
-import MomentSlideItem from "./_components/carousel/CarouselItem";
-import CarouselMobileItem from "./_components/carousel/CarouselMobileItem";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+'use client';
+import Image from 'next/image';
+import Carousel from './_components/carousel/Carousel';
+import './Moment.css';
+import Marquee from 'react-fast-marquee';
+import TextHeaderMobile from './_components/TextHeaderMobile';
+import CarouselMobile from './_components/carousel/CarouselMobile';
+import MomentSlideItem from './_components/carousel/CarouselItem';
+import CarouselMobileItem from './_components/carousel/CarouselMobileItem';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Moment() {
   return (
-    <section id="moment" className="relative bg-white pb-[0.8rem] block z-20">
-      <div className="hidden lg:flex mb-[3rem] justify-between items-center w-[calc(100%-16.665rem)] ml-auto">
-        <h2 className="text-[3.5rem] font-black leading-[1] text-[#222] font-londrina-solid whitespace-nowrap">
+    <section id="moment" className="relative z-20 block bg-white pb-[0.8rem]">
+      <div className="mb-[3rem] ml-auto hidden w-[calc(100%-16.665rem)] items-center justify-between lg:flex">
+        <h2 className="font-londrina-solid text-[3.5rem] leading-[1] font-black whitespace-nowrap text-[#222]">
           THE GLADDEST MOMENT
         </h2>
-        <div className="size-[6.5625rem] relative">
+        <div className="relative size-[6.5625rem]">
           <Image
             width={100}
             height={100}
             alt="Hong Hao Travel"
             src="/images/home/moment/hong-hao-travel.svg"
-            className="size-full object-cover animate-spin-slow !duration-[10s]"
+            className="animate-spin-slow size-full object-cover !duration-[10s]"
           />
-          <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[2.375rem]">
+          <div className="absolute top-1/2 left-1/2 size-[2.375rem] -translate-1/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 38 38"
@@ -39,36 +39,36 @@ export default function Moment() {
             </svg>
           </div>
         </div>
-        <div className="w-[42.6875rem] h-[4.9375rem] bg-[linear-gradient(90deg,rgba(255,255,255,0.00)_-48.55%,rgba(12,140,30,0.14)_100%)] flex items-center">
-          <p className="text-[0.875rem] font-normal leading-[1.2] tracking-[0.00875rem] text-[#262626] ml-[2.13rem]">
+        <div className="flex h-[4.9375rem] w-[42.6875rem] items-center bg-[linear-gradient(90deg,rgba(255,255,255,0.00)_-48.55%,rgba(12,140,30,0.14)_100%)]">
+          <p className="ml-[2.13rem] text-[0.875rem] leading-[1.2] font-normal tracking-[0.00875rem] text-[#262626]">
             Don't hesitate to pick up your backpack and go. When you reach your
             destination and <br /> see all the beautiful things in sight, you
             will know that your efforts were worth it...
           </p>
         </div>
       </div>
-      <div className="hidden lg:block relative w-full h-[43rem]">
+      <div className="relative hidden h-[43rem] w-full lg:block">
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={100}
           height={800}
           src="/images/home/moment/our-gallery-text.svg"
-          className="hidden md:inline-block absolute top-[20.435rem] left-[8.3325rem] -translate-y-full -translate-x-1/2 w-[5rem] h-[33.8125rem] object-cover z-[100]"
+          className="absolute top-[20.435rem] left-[8.3325rem] z-[100] hidden h-[33.8125rem] w-[5rem] -translate-x-1/2 -translate-y-full object-cover md:inline-block"
         />
-        <div className="hidden md:flex absolute top-0 left-0 h-[21.125rem] w-[21.5rem]  z-[99]">
+        <div className="absolute top-0 left-0 z-[99] hidden h-[21.125rem] w-[21.5rem] md:flex">
           <div className="w-full bg-white"></div>
           <div className="h-full w-[6.5rem] bg-[linear-gradient(270deg,rgba(255,255,255,0.00)_36.51%,#FFF_92.5%)]"></div>
         </div>
         <Carousel />
       </div>
 
-      <div className="w-full h-auto lg:hidden">
+      <div className="h-auto w-full lg:hidden">
         <CarouselMobile speed={200} className="mb-[1rem]">
           {[...Array(5)].map((_, i) => (
             <TextHeaderMobile key={i} />
           ))}
         </CarouselMobile>
-        <CarouselMobile speed={200} className="pl-[10rem] mb-[0.5rem]">
+        <CarouselMobile speed={200} className="mb-[0.5rem] pl-[10rem]">
           {[...Array(10)].map((_, i) => (
             <CarouselMobileItem key={i} />
           ))}
@@ -78,16 +78,16 @@ export default function Moment() {
             <CarouselMobileItem key={i} />
           ))}
         </CarouselMobile>
-        <div className="flex justify-center mt-[0.5rem] pb-[2rem]">
+        <div className="mt-[0.5rem] flex justify-center pb-[2rem]">
           <Link href="#" className="inline-block">
-            <Button className="group cursor-pointer bg-orange-normal hover:bg-orange-normal__hover py-[0.75rem] px-[1.5rem] h-[3rem] flex items-center justify-center gap-2 uppercase text-sm leading-tight font-bold">
+            <Button className="group bg-orange-normal hover:bg-orange-normal__hover flex h-[3rem] cursor-pointer items-center justify-center gap-2 px-[1.5rem] py-[0.75rem] text-sm leading-tight font-bold uppercase">
               <span>Discovery</span>
               <Image
-                alt=""
+                alt="Hong Hao Travel"
                 width={50}
                 height={50}
                 src="/images/arrow/arrow-right.svg"
-                className="w-3 h-[0.65625rem] group-hover:translate-x-[0.4rem] duration-300 ease-linear"
+                className="h-[0.65625rem] w-3 duration-300 ease-linear group-hover:translate-x-[0.4rem]"
               />
             </Button>
           </Link>

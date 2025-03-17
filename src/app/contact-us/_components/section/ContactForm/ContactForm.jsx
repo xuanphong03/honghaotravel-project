@@ -73,7 +73,7 @@ export default function ContactForm() {
           <BackgroundMotorbikeMb />
         </div>
         <Image
-          alt=""
+          alt="Hong Hao Travel"
           width={500}
           height={500}
           src="/images/contact-us/mountain-deco-mb.png"
