@@ -12,7 +12,12 @@ export default function ActivityPage() {
   return (
     <>
       <Banner />
-      <BreadcrumbCustom data={[{ id: 1, page: 'Activity', to: '/activity' }]} />
+      <div className="hidden flex-col items-start gap-[1.25rem] pt-[1.25rem] md:flex">
+        <BreadcrumbCustom
+          data={[{ id: 1, page: 'Activity', to: '/activity' }]}
+        />
+        <div className="h-[0.0625rem] w-full bg-gray-200"></div>
+      </div>
       <Activity />
       <OurTeam secondary />
     </>

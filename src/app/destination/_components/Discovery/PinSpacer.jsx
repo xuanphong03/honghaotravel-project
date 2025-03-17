@@ -8,18 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function PinSpacer() {
   const pinSpacer = useRef();
-  useGSAP(() => {
-    // Pin the container
-    gsap.to(pinSpacer.current, {
-      scrollTrigger: {
-        trigger: pinSpacer.current,
-        start: 'top top',
-        scrub: true,
-        pinSpacing: false,
-        pin: true,
-      },
-    });
-  });
+  //   useGSAP(() => {
+  //     // Pin the container
+  //     gsap.to(pinSpacer.current, {
+  //       scrollTrigger: {
+  //         trigger: pinSpacer.current,
+  //         start: 'top top',
+  //         scrub: true,
+  //         pinSpacing: false,
+  //         pin: true,
+  //       },
+  //     });
+  //   });
   return (
     <>
       <Image

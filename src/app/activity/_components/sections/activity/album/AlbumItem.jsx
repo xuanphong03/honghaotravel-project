@@ -18,7 +18,7 @@ import Image from 'next/image';
 import Activity from './Activity';
 import { X } from 'lucide-react';
 
-export default function AlbumItem() {
+export default function AlbumItem({ thumbnailURL }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -27,7 +27,7 @@ export default function AlbumItem() {
             alt=""
             width={500}
             height={500}
-            src="/images/activity/album1.png"
+            src={thumbnailURL}
             className="size-full object-cover transition-all duration-500 hover:scale-120"
           />
         </article>

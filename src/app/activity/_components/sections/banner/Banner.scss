@@ -1,7 +1,14 @@
 #banner {
   .button_default {
-    @apply text-[0.875rem] uppercase py-[1rem] px-[2rem] h-[3.5rem] flex justify-center items-center gap-[0.5rem] rounded-[0.5rem] cursor-pointer;
+    @apply flex h-[3.5rem] cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.875rem] uppercase;
+
+    @media (max-width: 767.98px) {
+      flex: 1;
+      height: 3rem;
+      padding: 0.75rem 1.5rem;
+    }
   }
+
   .text-gradient {
     background: linear-gradient(
       180deg,
@@ -33,6 +40,9 @@
     &::-webkit-scrollbar {
       width: 4px;
       background-color: transparent;
+      @media (max-width: 1023.98px) {
+        width: 2px;
+      }
     }
 
     &::-webkit-scrollbar-thumb {
