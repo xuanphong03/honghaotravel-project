@@ -15,6 +15,13 @@ export default function BackgroundMotorbikeMb() {
     () => {
       gsap.to(rect.current, {
         duration: 5,
+        start: '50% center',
+        end: '70% center',
+        once: true,
+        scrollTrigger: {
+          trigger: container.current,
+          toggleActions: 'play none none none',
+        },
         motionPath: {
           path: path.current,
           align: 'self',
