@@ -6,7 +6,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination-v2';
 
 export function PaginationCus() {
   return (
@@ -27,9 +27,9 @@ export function PaginationCus() {
           <PaginationEllipsis />
         </PaginationItem>
         <PaginationItem>
-           <PaginationLink href="#">10</PaginationLink>
+          <PaginationLink href="#">10</PaginationLink>
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }
