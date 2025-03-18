@@ -41,9 +41,9 @@ export default function ScrollToTopButton() {
   return (
     <button
       data-aos="fade-up"
-      data-aos-offset="0"
+      data-aos-duration="500"
       onClick={handleScrollToTop}
-      className="xmd:size-[2.3rem] z-[9] size-[3.375rem] cursor-pointer"
+      className="fade_up_item xmd:size-[2.3rem] z-[9] size-[3.375rem] cursor-pointer"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,90 +1,92 @@
-"use client";
-import Image from "next/image";
-import React, { useRef, useState } from "react";
-import "./schedule.css";
-import MousewheelSwiper from "./Swiper";
+'use client';
+import Image from 'next/image';
+import React, { useRef, useState } from 'react';
+import './schedule.css';
+import MousewheelSwiper from './Swiper';
 
 const schedules = [
   {
     id: 0,
-    map: "/images/alltour/detail/Schedule-N1.png",
-    name: "",
-    title: "Night 1 : Hanoi – Ha Giang City",
-    des: "7:30pm to 8:00pm: The bus picks up from your hotel/hostel in Hanoi the sleeping bus will leave Hanoi. You will arrive to Ha Giang around 4:00am, check in stay at Hong Hao hostel for few hours before start.",
+    map: '/images/alltour/detail/Schedule-N1.png',
+    name: '',
+    title: 'Night 1 : Hanoi – Ha Giang City',
+    des: '7:30pm to 8:00pm: The bus picks up from your hotel/hostel in Hanoi the sleeping bus will leave Hanoi. You will arrive to Ha Giang around 4:00am, check in stay at Hong Hao hostel for few hours before start.',
   },
   {
     id: 1,
-    map: "/images/alltour/detail/Schedule-D1",
-    name: "TP. Ha Giang",
-    title: "Day 1 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town",
-    des: "- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.",
+    map: '/images/alltour/detail/Schedule-D1',
+    name: 'TP. Ha Giang',
+    title: 'Day 1 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town',
+    des: '- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.',
   },
   {
     id: 2,
-    map: "/images/alltour/detail/Schedule-D2",
-    name: "TP. Ha Giang",
-    title: "Day 2 : Dong Van Town - Ma Pi Leng Pass - Meo Vac - Yen Minh - Quan Ba - Ha Giang City",
-    des: "- 8:00 am : Have breakfast - 8:30 am : Continue the journey through Ma Pi Leng Pass and other scenic spots.",
+    map: '/images/alltour/detail/Schedule-D2',
+    name: 'TP. Ha Giang',
+    title:
+      'Day 2 : Dong Van Town - Ma Pi Leng Pass - Meo Vac - Yen Minh - Quan Ba - Ha Giang City',
+    des: '- 8:00 am : Have breakfast - 8:30 am : Continue the journey through Ma Pi Leng Pass and other scenic spots.',
   },
   {
     id: 3,
-    map: "/images/alltour/detail/Schedule-D3",
-    name: "TP. Ha Giang",
-    title: "Day 3 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town",
-    des: "- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.",
+    map: '/images/alltour/detail/Schedule-D3',
+    name: 'TP. Ha Giang',
+    title: 'Day 3 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town',
+    des: '- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.',
   },
   {
     id: 4,
-    map: "/images/alltour/detail/Schedule-D4",
-    name: "TP. Ha Giang",
-    title: "Day 4 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town",
-    des: "- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.",
+    map: '/images/alltour/detail/Schedule-D4',
+    name: 'TP. Ha Giang',
+    title: 'Day 4 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town',
+    des: '- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.',
   },
   {
     id: 5,
-    map: "/images/alltour/detail/Schedule-D5",
-    name: "TP. Ha Giang",
-    title: "Day 5 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town",
-    des: "- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.",
+    map: '/images/alltour/detail/Schedule-D5',
+    name: 'TP. Ha Giang',
+    title: 'Day 5 : Ha Giang City - Quan Ba - Yen Minh - Dong Van town',
+    des: '- 8:00 am : Have breakfast at Hong Hao hostel - 8:30 am : Meet up with the guide and start to go on the loop.',
   },
 ];
 
-const imgs = [{
+const imgs = [
+  {
     id: 0,
-    url:"/images/alltour/detail/Schedule-N1.png"
-},
-{
+    url: '/images/alltour/detail/Schedule-N1.png',
+  },
+  {
     id: 1,
-    url:"/images/alltour/detail/Schedule-D1.png"
-    },
-{
+    url: '/images/alltour/detail/Schedule-D1.png',
+  },
+  {
     id: 2,
-    url:"/images/alltour/detail/Schedule-D2.png"
-},
-{
+    url: '/images/alltour/detail/Schedule-D2.png',
+  },
+  {
     id: 3,
-    url:"/images/alltour/detail/Schedule-D3.png"
-    },
-{
+    url: '/images/alltour/detail/Schedule-D3.png',
+  },
+  {
     id: 4,
-    url:"/images/alltour/detail/Schedule-D4.png"
-    },
-{
+    url: '/images/alltour/detail/Schedule-D4.png',
+  },
+  {
     id: 5,
-    url:"/images/alltour/detail/Schedule-D5.png"
-}]
+    url: '/images/alltour/detail/Schedule-D5.png',
+  },
+];
 
 export default function Schedule() {
-    const [activeIndex, setActiveIndex] = useState(0); // State để lưu index của slide hiện tại
+  const [activeIndex, setActiveIndex] = useState(0); // State để lưu index của slide hiện tại
 
   const handleSlideChange = (swiper) => {
-      setActiveIndex(swiper.activeIndex); // Cập nhật index của slide hiện tại
-      
+    setActiveIndex(swiper.activeIndex); // Cập nhật index của slide hiện tại
   };
 
   return (
-    <div className="schedule flex justify-between items-center gap-12 max-w-[87.5rem] mx-auto py-20  max-md:hidden">
-      <div className="schedule-left w-[33.75rem] h-[39.38113rem] relative">
+    <div className="schedule mx-auto flex max-w-[87.5rem] items-center justify-between gap-12 py-20 max-md:hidden">
+      <div className="schedule-left relative h-[39.38113rem] w-[33.75rem]">
         <Image
           src={imgs[activeIndex].url}
           alt="map"
@@ -92,8 +94,8 @@ export default function Schedule() {
           className="object-contain"
         />
       </div>
-      <div className="schedule-right overflow-hidden w-[63.5rem] h-[49.25rem] ps-[3.2rem] pe-20 rounded-4xl shadow-schedule py-10">
-        <div className="head flex justify-between items-center">
+      <div className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] overflow-hidden rounded-4xl py-10 ps-[3.2rem] pe-20">
+        <div className="head flex items-center justify-between">
           <div className="title flex flex-col gap-[0.9rem]">
             <div className="time flex items-center gap-6">
               <div className="time-icon flex items-center gap-1.5">
@@ -117,7 +119,7 @@ export default function Schedule() {
                   Time
                 </span>
               </div>
-              <ul className="list-disc time-text sub1-regular !text-greyscaletext-20 text-ellipsis">
+              <ul className="time-text sub1-regular !text-greyscaletext-20 list-disc text-ellipsis">
                 <li>3 Days / 4 Night</li>
               </ul>
             </div>
@@ -127,7 +129,7 @@ export default function Schedule() {
           </div>
           <div className="price flex items-center gap-5">
             <div className="flex items-center gap-[0.4375rem]">
-              <span className="price-number h5-bold !text-2xl text-orange-normal">
+              <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
               <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
@@ -135,7 +137,7 @@ export default function Schedule() {
               </span>
             </div>
             <div className="flex items-center gap-[0.4375rem]">
-              <span className="price-number h5-bold !text-2xl text-orange-normal">
+              <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
               <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
@@ -145,7 +147,7 @@ export default function Schedule() {
           </div>
         </div>
         <div className="pick">
-          <div className="pick-text flex flex-col gap-2 mt-9">
+          <div className="pick-text mt-9 flex flex-col gap-2">
             <span className="sub1-bold !text-greyscaletext-80-main">
               Pick up at :
             </span>
@@ -153,8 +155,11 @@ export default function Schedule() {
               Ha Noi, Noi Bai
             </span>
           </div>
-                  <div className="pick-action mt-8 h-fit max-h-[35rem] ">
-                      <MousewheelSwiper handleSlideChange={handleSlideChange} activeIndex={ activeIndex} />
+          <div className="pick-action mt-8 h-fit max-h-[35rem]">
+            <MousewheelSwiper
+              handleSlideChange={handleSlideChange}
+              activeIndex={activeIndex}
+            />
           </div>
         </div>
       </div>

@@ -3,9 +3,9 @@ import Link from 'next/link';
 export default function WhatsAppButton() {
   return (
     <Link
-      data-aos="fade-up"
-      data-aos-offset="0"
       target="_blank"
+      data-aos="fade-up"
+      data-aos-duration="500"
       href="https://wa.me/84914556338"
       className="relative flex size-[3.125rem] cursor-pointer items-center justify-center rounded-full !bg-transparent"
     >

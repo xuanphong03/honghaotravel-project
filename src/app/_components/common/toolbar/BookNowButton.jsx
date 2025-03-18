@@ -16,7 +16,7 @@ export function BookNowButton() {
         <Button className="bg-orange-normal hover:bg-orange-normal__hover size-[3.125rem] shrink-0 animate-bounce cursor-pointer rounded-full border-none p-0 transition-all !duration-1000 duration-300">
           <span
             data-aos="fade-up"
-            data-aos-offset="0"
+            data-aos-duration="500"
             className="inline-block text-center text-[0.625rem] leading-[1.3] font-black tracking-[0.03125rem] text-white uppercase"
           >
             Book <br /> now
