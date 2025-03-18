@@ -1,17 +1,15 @@
 'use client';
-import Image from 'next/image';
-import React, { useEffect, useMemo, useState } from 'react';
-import OurTeamSlide from './OurTeamSlide';
-import './OurTeam.css';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs-v2';
-import OurTeamItem from './OurTeamItem';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import OurTeamSlide from './OurTeamSlide';
+import './OurTeam.css';
 
 function OurTeam({ primary = false, secondary = false, className }) {
   const [tourGuideList, setTourGuideList] = useState([]);
@@ -114,13 +112,21 @@ function OurTeam({ primary = false, secondary = false, className }) {
                 value="tour_guide"
                 className="w-full max-md:px-[1rem]"
               >
-                <OurTeamSlide data={tourGuideList} primary />
+                <OurTeamSlide
+                  data={tourGuideList}
+                  primary={primary}
+                  secondary={secondary}
+                />
               </TabsContent>
               <TabsContent
                 value="rider_team"
                 className="w-full max-md:px-[1rem]"
               >
-                <OurTeamSlide data={riderTeamList} primary />
+                <OurTeamSlide
+                  data={riderTeamList}
+                  primary={primary}
+                  secondary={secondary}
+                />
               </TabsContent>
             </Tabs>
           </div>
