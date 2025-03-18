@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function GoogleButton() {
   return (
     <Link
-      data-aos="fade-up"
-      data-aos-offset="0"
       target="_blank"
+      data-aos="fade-up"
+      data-aos-duration="500"
       href="mailto:honghaotravel@gmail.com"
       className="inline-block cursor-pointer"
     >
