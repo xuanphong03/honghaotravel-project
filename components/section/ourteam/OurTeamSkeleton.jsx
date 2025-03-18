@@ -1,9 +1,7 @@
-import React from "react";
-
 function OurTeamSkeleton() {
   return (
-    <article className="w-full h-full pb-[0.6875rem] bg-gray-200 rounded-[1.5rem] overflow-hidden">
-      <div className="animate-pulse w-full h-full" />
+    <article className="h-full w-full overflow-hidden rounded-[1.5rem] bg-gray-200 pb-[0.6875rem]">
+      <div className="h-full w-full animate-pulse" />
     </article>
   );
 }
