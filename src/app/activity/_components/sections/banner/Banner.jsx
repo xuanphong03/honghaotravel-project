@@ -40,6 +40,7 @@ export default function Banner() {
       <h1 className="fixed top-0 left-0 z-[-1] opacity-0">Activity Ha Giang</h1>
       <div className="absolute inset-0 h-full w-full">
         <Image
+          priority
           width={2000}
           height={1000}
           alt="Hong Hao Travel"
@@ -47,6 +48,7 @@ export default function Banner() {
           className="size-full object-cover max-md:hidden"
         />
         <Image
+          priority
           width={2000}
           height={1000}
           alt="Hong Hao Travel"
@@ -57,6 +59,7 @@ export default function Banner() {
       </div>
       <div className="absolute right-0 bottom-0 left-0">
         <Image
+          priority
           width={2000}
           height={400}
           alt="Climbing"
@@ -64,15 +67,17 @@ export default function Banner() {
           className="h-[24.47356rem] w-[101.49219rem] translate-y-[2rem] object-fill max-md:hidden"
         />
         <Image
-          alt="Hong Hao Travel"
+          priority
           width={1600}
           height={400}
+          alt="Hong Hao Travel"
           src="/images/activity/climbing-mb.svg"
           className="w-full object-cover md:hidden"
         />
       </div>
       <div className="relative z-10 mx-auto h-[100rem] w-full max-md:mt-[5.3rem] max-md:h-[105rem] max-md:px-[1rem] md:w-[87.5rem]">
         <Image
+          priority
           width={400}
           height={200}
           data-aos="fade-up"
@@ -132,9 +137,9 @@ export default function Banner() {
             <button className="group button_default bg-orange-normal border-orange-normal__hover border border-solid">
               <span>Book now</span>
               <Image
-                alt="Hong Hao Travel"
                 width={10}
                 height={10}
+                alt="Hong Hao Travel"
                 src="/images/arrow/arrow-right.svg"
                 className="size-[0.625rem] object-contain duration-200 ease-linear group-hover:translate-x-[0.5rem]"
               />

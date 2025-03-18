@@ -40,9 +40,9 @@ export default function Activity() {
         className="absolute top-0 left-0 h-[100rem] w-[100rem]"
       >
         <Image
-          alt="Hong Hao Travel"
           width={1600}
           height={1400}
+          alt="Hong Hao Travel"
           src="/images/activity/bg-activity.png"
           className="h-[49.0625rem] w-full object-cover"
         />
