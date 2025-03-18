@@ -1,7 +1,16 @@
 import React from 'react'
+<<<<<<<< HEAD:components/section/faq/index.jsx
 import FAQBanner from '../../common/FAQBanner'
 import Breadcrumb from '../../common/Breadcrumb'
 import FAQQuestion from './FAQQuestion'
+========
+import BannerTourDetail from './BannerTourDetail'
+import Breadcrumb from '../../../common/Breadcrumb'
+import Schedule from './Schedule'
+import ImediateMb from './ImediateMb'
+import BookTour from './BookTour'
+import FAQAboutTrip from './FAQAboutTrip'
+>>>>>>>> 39eda90f7e6239f86fff6f11ff8fc7d20e40754c:components/section/alltour/tour-detail/index.jsx
 
 const dataBreadcrumb = [
   {
@@ -27,10 +36,20 @@ const dataBreadcrumb = [
 
 export default function FAQ() {
   return (
+<<<<<<<< HEAD:components/section/faq/index.jsx
     <div>
           <FAQBanner urlTitle={"/images/alltour/title.png"}/>
           <Breadcrumb data={dataBreadcrumb} />
           <FAQQuestion/>
+========
+    <div className='tourdetail'>
+      <BannerTourDetail />
+      <ImediateMb/>
+      <Breadcrumb data={dataBreadcrumb} />
+      <Schedule />
+      <BookTour />
+      <FAQAboutTrip/>
+>>>>>>>> 39eda90f7e6239f86fff6f11ff8fc7d20e40754c:components/section/alltour/tour-detail/index.jsx
     </div>
   )
 }
