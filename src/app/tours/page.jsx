@@ -1,5 +1,5 @@
 import React from "react";
-import Tours from "../../../components/section/alltour/Tours";
+import Tours from "../../../components/section/alltour";
 
 export default function page() {
   return (

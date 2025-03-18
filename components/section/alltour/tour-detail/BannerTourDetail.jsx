@@ -1,17 +1,18 @@
 import React from 'react'
 import OverlayAnimate from '../../../common/OverlayAnimate'
 import Image from 'next/image'
+import InfinitySlide from '../../../common/InfinitySlide/InfinitySlide'
 
 export default function BannerTourDetail() {
   return (
-     <div className='tourdetail-banner flex items-end py-[7.25rem] sm:py-[2rem] ps-[1.25rem] sm:ps-20   sm:min-h-[49.25rem]  sm:pe-16 relative '>
+     <div className='tourdetail-banner flex items-end  max-md:ps-[1.25rem]  min-h-[20.93544rem] md:min-h-[49.25rem]   relative '>
             <OverlayAnimate/>
-            <div className="bg  absolute top-0 left-0 right-0 bottom-0 -z-10">
+            <div className="bg  absolute top-0 left-0 right-0 bottom-0 z-0">
                   <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover -z-20'/>
                 </div>
             <div className="overlay absolute top-0 left-0 right-0 bottom-0 -z-10" style={{background:"linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)"}}>
                 </div>
-            <div className="max-sm:hidden tourdetail-banner-cont w-[40rem]">
+            <div className="max-md:hidden tourdetail-banner-cont w-[87.5rem] max-w-[87.5rem] mx-auto py-[7.25rem] md:py-[2rem] relative z-10">
               <div className="top flex flex-col gap-3 ">
                   <div className="top-time flex items-center gap-6">
                       <div className="top-time-oclock flex items-center gap-1.5">
@@ -34,17 +35,17 @@ export default function BannerTourDetail() {
                   </h2>
               </div>
               <div className="mid flex  gap-12 mt-[1.56rem]">
-                  <div className="mid-special flex flex-col gap-4">
+                  <div className="mid-special w-[19rem] flex flex-col gap-4">
                       <div className="mid-special-top">
-                          <div className="mid-special-title flex items-center gap-1">
-                              <svg xmlns="http://www.w3.org/2000/svg" className='w-6 h-6' viewBox="0 0 24 24" fill="none">
+                          <div className="mid-special-title flex items-center  gap-1">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
   <path opacity="0.4" d="M5.74132 16C5.85132 15.51 5.65132 14.81 5.30132 14.46L2.87132 12.03C2.11132 11.27 1.81132 10.46 2.03132 9.76C2.26132 9.06 2.97132 8.58 4.03132 8.4L7.15132 7.88C7.60132 7.8 8.15132 7.4 8.36132 6.99L10.0813 3.54C10.5813 2.55 11.2613 2 12.0013 2C12.7413 2 13.4213 2.55 13.9213 3.54L15.6413 6.99C15.7713 7.25 16.0413 7.5 16.3313 7.67L5.56132 18.44C5.42132 18.58 5.18132 18.45 5.22132 18.25L5.74132 16Z" fill="white"/>
   <path d="M18.7008 14.4599C18.3408 14.8199 18.1408 15.5099 18.2608 15.9999L18.9508 19.0099C19.2408 20.2599 19.0608 21.1999 18.4408 21.6499C18.1908 21.8299 17.8908 21.9199 17.5408 21.9199C17.0308 21.9199 16.4308 21.7299 15.7708 21.3399L12.8408 19.5999C12.3808 19.3299 11.6208 19.3299 11.1608 19.5999L8.23078 21.3399C7.12078 21.9899 6.17078 22.0999 5.56078 21.6499C5.33078 21.4799 5.16078 21.2499 5.05078 20.9499L17.2108 8.7899C17.6708 8.3299 18.3208 8.1199 18.9508 8.2299L19.9608 8.3999C21.0208 8.5799 21.7308 9.0599 21.9608 9.7599C22.1808 10.4599 21.8808 11.2699 21.1208 12.0299L18.7008 14.4599Z" fill="white"/>
                               </svg>
                               <span className='sub1-medium !text-greyscaletext-10'>SPECIAL</span>
                       </div>
                       <div className="mid-special-hr mt-2 mb-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="274" height="2" viewBox="0 0 274 2" fill="none">
+                          <svg xmlns="http://www.w3.org/2000/svg" className='w-[17rem]' viewBox="0 0 274 2" fill="none">
   <path d="M1 1H273" stroke="url(#paint0_linear_7546_14812)" strokeLinecap="round"/>
   <defs>
     <linearGradient id="paint0_linear_7546_14812" x1="2.3399" y1="1.49976" x2="270.99" y2="1.49976" gradientUnits="userSpaceOnUse">
@@ -71,7 +72,7 @@ export default function BannerTourDetail() {
                               <span className='sub1-medium !text-greyscaletext-10'>DESTINATION:</span>
                       </div>
                       <div className="mid-special-hr mt-2 mb-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="274" height="2" viewBox="0 0 274 2" fill="none">
+                          <svg xmlns="http://www.w3.org/2000/svg" className='w-[17rem]' viewBox="0 0 274 2" fill="none">
   <path d="M1 1H273" stroke="url(#paint0_linear_7546_14812)" strokeLinecap="round"/>
   <defs>
     <linearGradient id="paint0_linear_7546_14812" x1="2.3399" y1="1.49976" x2="270.99" y2="1.49976" gradientUnits="userSpaceOnUse">
@@ -86,7 +87,7 @@ export default function BannerTourDetail() {
                       </ul>
                       </div>
                   </div>
-                  <div className="mid-accomodation flex flex-col gap-4">
+                  <div className="mid-accomodation flex flex-col gap-4 w-[19rem]">
                       <div className="mid-accomodation-top">
                            <div className="mid-accomodation-title flex items-center gap-1">
                               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
@@ -95,8 +96,8 @@ export default function BannerTourDetail() {
 </svg>
                               <span className='sub1-medium !text-greyscaletext-10'>ACCOMODATION</span>
                       </div>
-                      <div className="mid-acommodation-hr mt-2 mb-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="274" height="2" viewBox="0 0 274 2" fill="none">
+                      <div className="mid-special-hr mt-2 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" className='w-[17rem]' viewBox="0 0 274 2" fill="none">
   <path d="M1 1H273" stroke="url(#paint0_linear_7546_14812)" strokeLinecap="round"/>
   <defs>
     <linearGradient id="paint0_linear_7546_14812" x1="2.3399" y1="1.49976" x2="270.99" y2="1.49976" gradientUnits="userSpaceOnUse">
@@ -121,8 +122,8 @@ export default function BannerTourDetail() {
 </svg>
                               <span className='sub1-medium !text-greyscaletext-10'>TRANSPORT</span>
                       </div>
-                      <div className="mid-acommodation-hr mt-2 mb-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="274" height="2" viewBox="0 0 274 2" fill="none">
+                      <div className="mid-special-hr mt-2 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" className='w-[17rem]' viewBox="0 0 274 2" fill="none">
   <path d="M1 1H273" stroke="url(#paint0_linear_7546_14812)" strokeLinecap="round"/>
   <defs>
     <linearGradient id="paint0_linear_7546_14812" x1="2.3399" y1="1.49976" x2="270.99" y2="1.49976" gradientUnits="userSpaceOnUse">
@@ -140,7 +141,7 @@ export default function BannerTourDetail() {
                   </div>
               </div>
           </div>
-          <div className="max-sm:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-[3rem] left-[53%] transform -translate-x-1/2 -translate-y-1/2 -z-10">
+          <div className="max-md:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-0 left-[53%] transform -translate-x-1/2 -translate-y-1/2 z-10">
               <div className="logo-xoay w-[9.375rem] h-[7.5rem] absolute top-[41.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                   <Image src={"/images/alltour/detail/logo-xoay.png"} alt='' fill/>
               </div>
@@ -149,9 +150,12 @@ export default function BannerTourDetail() {
               </div>
           </div>
             
-            <div className="max-sm:hidden map  w-[24.4375rem] h-[24.75rem] absolute   top-[42.5%] right-[4.75rem] transform -translate-x-1/2 -translate-y-1/2  ">
+            <div className="max-md:hidden map  w-[24.4375rem] h-[24.75rem] absolute   top-[20%] right-[18rem] ">
                   <Image src={"/images/alltour/map.png"} alt="map" fill  className='object-cover'/>
-                </div>
+      </div>
+      <div className="absolute max-md:hidden right-[4.75rem] ">
+        <InfinitySlide />
+      </div>
         </div>
   )
 }

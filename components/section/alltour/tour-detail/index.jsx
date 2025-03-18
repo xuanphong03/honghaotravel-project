@@ -4,6 +4,7 @@ import Breadcrumb from '../../../common/Breadcrumb'
 import Schedule from './Schedule'
 import ImediateMb from './ImediateMb'
 import BookTour from './BookTour'
+import FAQAboutTrip from './FAQAboutTrip'
 
 
 const dataBreadcrumb = [{
@@ -40,7 +41,8 @@ export default function TourDetail() {
       <ImediateMb/>
       <Breadcrumb data={dataBreadcrumb} />
       <Schedule />
-      <BookTour/>
+      <BookTour />
+      <FAQAboutTrip/>
     </div>
   )
 }

@@ -47,12 +47,12 @@ const inf = [{
 export default function ContactFooter() {
   return (
     <div className='contact-inf-contact flex flex-col gap-4'>
-      <h5 className='sub1-bold max-sm:!text-Gray-Scale-80'>
+      <h5 className='sub1-bold max-md:!text-Gray-Scale-80'>
         CONTACT US
       </h5>
       { inf.map((item,index) => <div key={ index} className='flex items-center gap-2 cursor-pointer'>
         <div className="icon w-5 h-5">{ item.icon}</div>
-        <span className='sub1-medium sm:sub1-regular text-greyscaletext-80-main sm:!text-greyscaletext-40 '>{ item.content}</span>
+        <span className='sub1-medium md:sub1-regular text-greyscaletext-80-main md:!text-greyscaletext-40 '>{ item.content}</span>
       </div>)}
     </div>
   )

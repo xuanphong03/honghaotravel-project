@@ -9,7 +9,7 @@ export default function BlogRelatedList({ blogs }) {
         <Link
           href="#"
           key={id}
-          className="inline-block not-first:ml-[0.875rem] md:not-first:ml-[1.4rem] shrink-0 w-[18.625rem] sm:w-[21.4375rem] h-[15.3125rem] md:w-[44.25rem] md:h-[25.8125rem] "
+          className="inline-block not-first:ml-[0.875rem] md:not-first:ml-[1.4rem] shrink-0 w-[18.625rem] md:w-[21.4375rem] h-[15.3125rem] md:w-[44.25rem] md:h-[25.8125rem] "
         >
           <BlogRelatedItem
             key={id}

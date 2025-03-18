@@ -83,7 +83,7 @@ export default function Schedule() {
   };
 
   return (
-    <div className="schedule flex justify-between items-center gap-12 ps-16 py-20  max-sm:hidden">
+    <div className="schedule flex justify-between items-center gap-12 max-w-[87.5rem] mx-auto py-20  max-md:hidden">
       <div className="schedule-left w-[33.75rem] h-[39.38113rem] relative">
         <Image
           src={imgs[activeIndex].url}

@@ -11,7 +11,7 @@ export default function BlogDetail() {
       className="flex flex-col items-center bg-[#1A543A]"
     >
       <BlogThumbnail />
-      <div className="relative hidden w-full bg-white py-[1.75rem] text-[#262626] sm:block">
+      <div className="relative hidden w-full bg-white py-[1.75rem] text-[#262626] md:block">
         <BlogBreadcrumb />
       </div>
       <BlogContent />

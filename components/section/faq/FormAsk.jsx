@@ -1,0 +1,128 @@
+"use client"; // Required for client-side features
+
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { TextareaCustom } from "@/components/ui/textarea-v2";
+import { InputCustom } from "@/components/ui/input-v2";
+
+// Define the form schema using Zod
+const formSchema = z.object({
+  fullname: z.string().min(2, "Full name must be at least 2 characters"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
+});
+
+export default function FormAsk() {
+  // Initialize the form with react-hook-form and Zod resolver
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullname: "",
+      phone: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  // Handle form submission
+  function onSubmit(values) {
+    console.log(values); // Replace with your submission logic
+    form.reset(); // Optional: reset form after submission
+  }
+
+  return (
+      <div className="md:w-[35rem] mx-auto ">
+          <h4 className="h4-bold !text-[1.5rem] !text-greyscaletext-80-main mb-6 md:mb-8">Ask a different question</h4>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          {/* Row 1: Fullname and Phone */}
+          <div className="grid grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="fullname"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <InputCustom
+                      placeholder="Full Name*"
+                      {...field}
+                      className="w-full p-2 border-0 border-b-[1px] border-greyscaletext-10 sub2-regular !1text-greyscaletext-40"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <InputCustom
+                      placeholder="Phone *"
+                      {...field}
+                      className="w-full p-2 border-0 border-b-[1px] border-greyscaletext-10 sub2-regular !1text-greyscaletext-40 "
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          {/* Row 2: Email */}
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <InputCustom
+                    placeholder="Email *"
+                    {...field}
+                    className="w-full p-2 border-0 border-b-[1px] border-greyscaletext-10 sub2-regular !1text-greyscaletext-40"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Row 3: Message */}
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <TextareaCustom
+                    placeholder="Your Message *"
+                    {...field}
+                    className="w-full p-2 border-0 border-b-[1px] border-greyscaletext-10  resize-none sub2-regular !1text-greyscaletext-40"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Row 4: Submit Button */}
+          <Button type="submit" className="w-full bg-orange-normal rounded-[0.5rem] hover:bg-orange-normal__hover hover:cursor-pointer duration-500 ease-in-out btn-bold !text-greyscaletext-0">
+            Submit
+          </Button>
+        </form>
+      </Form>
+    </div>
+  );
+}
