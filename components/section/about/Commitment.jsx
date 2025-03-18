@@ -476,10 +476,10 @@ export default function Commitment() {
   
 
   return (
-    <div ref={commit} className='commitment  bg-cover bg-center  bg-no-repeat  sm:min-h-[50rem]   max-sm:px-5   gap-[9.25rem] relative sm:oveflow-hidden z-10 max-sm:py-12  sm:pt-[10rem]'>
+    <div ref={commit} className='commitment  commitment  relative h-fit w-full max-sm:px-5   max-sm:py-[3.18rem]  sm:pb-0  sm:mt-[6rem] sm:bg-[rgb(19,52,28)] '>
       <TestM commit={ commit} />
-      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between max-sm:pt-8">
-        <div className="commitment-cont max-sm:w-full flex flex-col relative max-sm:z-10">
+      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between max-sm:pt-8 gap-[9.25rem] sm:-top-[7rem]">
+        <div className="commitment-cont w-full flex flex-col relative max-sm:z-10">
               <div ref={a0} className="title flex flex-col max-sm:w-[16.04469rem] gap-3 translate-y-[6.25rem] opacity-0">
                   <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>HONG HA TRAVEL</p>
                   <h2 className='h3-bold sm:h2-bold !text-greyscaletext-0'>ETHICAL COMMITMENTS</h2>
@@ -495,7 +495,7 @@ export default function Commitment() {
           </li>)}
               </ul>
           </div>
-          <div ref={a1} className="commitment-img max-sm:hidden mt-[6.5rem] w-[41.9375rem] h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
+          <div ref={a1} className="commitment-img max-sm:hidden mt-[6.5rem] w-full h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
         <Image src={"/images/about/commit.jpeg"} alt="" fill className='rounded-xl object-cover -top-[6.5rem]'/>
           </div>
           </div>

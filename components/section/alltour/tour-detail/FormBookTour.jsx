@@ -168,7 +168,7 @@ export default function TourBookingForm({ defaultValues = null }) {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
-          className="flex max-h-fit sm:max-h-[85vh]  w-full max-md:flex-wrap max-md:gap-y-12  sm:flex sm:gap-[1.5rem] relative"
+          className="flex max-h-fit sm:max-h-[85vh]  w-full max-md:flex-wrap max-md:gap-y-12  sm:flex sm:justify-between relative"
         >
           <div  className="title flex absolute -top-28 left-0 flex-col max-sm:hidden gap-3 translate-y-0 ">
                             <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>EASY WITH HONG HA TRAVEL</p>
@@ -177,7 +177,7 @@ export default function TourBookingForm({ defaultValues = null }) {
           <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
               Confirmed Information : 
             </div>
-          <div className="form-left  w-full md:w-[54rem] flex flex-col gap-[1rem] shrink-0 md:py-[1.5rem] md:pl-[1.5rem] md:pr-[0.75rem] bg-white rounded-[1.5rem]">
+          <div className="form-left  w-full md:w-[65%] flex flex-col gap-[1rem] shrink-0 md:py-[1.5rem] md:pl-[1.5rem] md:pr-[0.75rem] bg-white rounded-[1.5rem]">
             <div className="w-full">
               <div className="w-full flex items-center gap-5 mb-3">
                           <span className="sub2-bold !text-gray-scale-80">Type of tour:</span>
@@ -410,7 +410,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                           </div>
            </div>
           </div>
-          <div className="form-right w-full md:w-[35.5rem] flex flex-col gap-[0.75rem] shrink-0   relative">
+          <div className="form-right w-full md:w-[33.5%] flex flex-col gap-[0.75rem] shrink-0   relative">
            <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
               Confirmed tour booking :
             </div>
