@@ -29,9 +29,9 @@ export default function Banner() {
     >
       <div className="absolute inset-0 h-full w-full">
         <Image
-          priority
           width={2000}
           height={1000}
+          priority
           alt="Hong Hao Travel"
           src="/images/destination/banner-bg.png"
           className="h-full w-full object-cover"
