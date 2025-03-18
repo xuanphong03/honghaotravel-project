@@ -1,0 +1,11 @@
+#navigation_container {
+  .swiper {
+    .swiper-scrollbar {
+      height: 6px;
+      background: #a5a5a5 !important;
+      .swiper-scrollbar-drag {
+        background: white !important;
+      }
+    }
+  }
+}

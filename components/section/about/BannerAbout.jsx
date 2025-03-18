@@ -1,56 +1,51 @@
-"use client"
-import Image from 'next/image'
-import React, { useRef } from 'react'
-import AboutData from './AboutData'
-import AboutL from './AboutL'
-import AboutR from './AboutR'
+'use client';
+import Image from 'next/image';
+import React, { useRef } from 'react';
+import AboutData from './AboutData';
+import AboutL from './AboutL';
+import AboutR from './AboutR';
 
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import OverlayAnimate from '../../common/OverlayAnimate'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import OverlayAnimate from '../../common/OverlayAnimate';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function BannerAbout() {
-  const about = useRef(null)
-  const abd1 = useRef(null)
-  const abd2 = useRef(null)
-  const aboutL= useRef(null)
+  const about = useRef(null);
+  const abd1 = useRef(null);
+  const abd2 = useRef(null);
+  const aboutL = useRef(null);
   useGSAP(() => {
-   
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: about.current,
-        start: "50% center",
-        end:"70% center",
-        end:false,
-       markers:false,
+        start: '50% center',
+        end: '70% center',
+        end: false,
+        markers: false,
         once: true, // Hiệu ứng chỉ chạy một lần
-      scrub: false, 
+        scrub: false,
       },
     });
-    tl.to(
-      abd1.current,
-      {
-        opacity: 1,
-        y:0,
-        duration: 1,
-      }
-    ).to(abd2.current, {
+    tl.to(abd1.current, {
       opacity: 1,
-      y:0,
+      y: 0,
       duration: 1,
-    })
+    }).to(abd2.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
 
     gsap.to(aboutL.current, {
       duration: 1,
       opacity: 1,
       y: 0,
       ease: 'power2.out',
-    })
+    });
   });
   return (
     <div ref={about} className='about relative h-[49.375rem] sm:h-[101rem] pt-[7.25rem] sm:pt-[9rem] overflow-hidden '>

@@ -1,10 +1,7 @@
+import Image from 'next/image';
+import React from 'react';
 
-import Image from 'next/image'
-import React from 'react'
-
-
-export default function AboutL({ref}) {
-  
+export default function AboutL({ ref }) {
   return (
       <div ref={ref} className='about-l relative  translate-y-[4.6875rem] z-20 opacity-0'>
           

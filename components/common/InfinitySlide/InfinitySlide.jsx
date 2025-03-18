@@ -1,8 +1,8 @@
-"use client";
-import { Swiper, SwiperSlide } from "swiper/react";
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
+import 'swiper/css';
 // import required modules
 import {
   Autoplay,
@@ -10,12 +10,12 @@ import {
   Mousewheel,
   Navigation,
   Thumbs,
-} from "swiper/modules";
-import "swiper/swiper-bundle.css";
+} from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 
-import { useRef, useState } from "react";
-import InfinitySlideItem from "./InfinitySlideItem";
-import "./InfinitySlide.css";
+import { useRef, useState } from 'react';
+import InfinitySlideItem from './InfinitySlideItem';
+import './InfinitySlide.css';
 
 export default function InfinitySlide() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -26,9 +26,9 @@ export default function InfinitySlide() {
   };
 
   return (
-    <div id="infinity_slide" className="h-full w-[10.875rem] relative">
-      <div className="absolute top-[60%] -translate-y-1/2 right-full milestone">
-        <div className="size-[3.375rem] flex items-center justify-center banner-arrow">
+    <div id="infinity_slide" className="relative h-full w-[10.875rem]">
+      <div className="milestone absolute top-[60%] right-full -translate-y-1/2">
+        <div className="banner-arrow flex size-[3.375rem] items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="54"
@@ -49,8 +49,8 @@ export default function InfinitySlide() {
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        slidesPerView={"auto"}
-        direction={"vertical"}
+        slidesPerView={'auto'}
+        direction={'vertical'}
         freeMode={true}
         autoplay={{
           delay: 0,
@@ -62,18 +62,18 @@ export default function InfinitySlide() {
         mousewheel={true}
         onSlideChange={handleChangeSlide}
         modules={[Autoplay, FreeMode, Thumbs, Navigation, Mousewheel]}
-        className="!h-full pointer-events-none"
+        className="pointer-events-none !h-full"
       >
         {[...Array(10)].map((_, index) => (
           <SwiperSlide
             key={index}
-            className={`pointer-events-none select-none relative !w-full !h-[6.35rem] rounded-[0.75rem] overflow-hidden`}
+            className={`pointer-events-none relative !h-[6.35rem] !w-full overflow-hidden rounded-[0.75rem] select-none`}
           >
             <div
-              className={`absolute inset-0 border-solid border-2 rounded-[0.75rem] !transition-colors duration-1000 ${
+              className={`absolute inset-0 rounded-[0.75rem] border-2 border-solid !transition-colors duration-1000 ${
                 activeSlideIndex === index
-                  ? "bg-transparent border-white"
-                  : "bg-black/40 border-transparent"
+                  ? 'border-white bg-transparent'
+                  : 'border-transparent bg-black/40'
               }`}
             ></div>
             <InfinitySlideItem index={index} />

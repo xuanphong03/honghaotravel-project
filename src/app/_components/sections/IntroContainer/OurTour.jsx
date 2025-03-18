@@ -1,72 +1,86 @@
-"use client";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import Image from "next/image";
-import { useRef } from "react";
-import "./OurTour.css";
-import { MotionPathPlugin } from "gsap/all";
+'use client';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import Image from 'next/image';
+import { useRef } from 'react';
+import './OurTour.css';
+import { MotionPathPlugin } from 'gsap/all';
 
 export default function OurTour() {
+  const TOUR_DESC = [
+    { id: 1, desc: 'Tours accommodate a maximum of 10 guests...' },
+    { id: 2, desc: 'Flexible cancellation policy...' },
+    { id: 3, desc: 'Book now, pay later...' },
+    { id: 4, desc: 'Fluent English-speaking guides...' },
+    {
+      id: 5,
+      desc: 'Creating job opportunities for the Vietnamese community...',
+    },
+    {
+      id: 6,
+      desc: 'Creating job opportunities for the Vietnamese community...',
+    },
+  ];
   const container = useRef(null);
   useGSAP(
     () => {
       gsap.registerPlugin(MotionPathPlugin);
 
       // Fade-out animation
-      gsap.to(".fade-out-animation", {
+      gsap.to('.fade-out-animation', {
         opacity: 0,
         duration: 1,
         delay: 12,
         scrollTrigger: {
-          trigger: ".trigger-motorbike-button",
-          toggleActions: "play none none none",
-          start: "top 50%",
+          trigger: '.trigger-motorbike-button',
+          toggleActions: 'play none none none',
+          start: 'top 50%',
         },
       });
       // Line animation
-      gsap.to(".line-red-container", {
-        height: "100%",
+      gsap.to('.line-red-container', {
+        height: '100%',
         duration: 2,
         scrollTrigger: {
-          trigger: ".trigger-motorbike-button",
-          toggleActions: "play none none none",
-          start: "top 50%",
+          trigger: '.trigger-motorbike-button',
+          toggleActions: 'play none none none',
+          start: 'top 50%',
         },
       });
       // Set initial motorbike position
-      gsap.set("#motorbike", {
+      gsap.set('#motorbike', {
         xPercent: -50, // Center horizontally
         yPercent: -50, // Center vertically
-        transformOrigin: "50% 50%", // Rotate around center
+        transformOrigin: '50% 50%', // Rotate around center
       });
 
       // Animate motorbike along the SVG path
-      gsap.to("#motorbike", {
+      gsap.to('#motorbike', {
         delay: 2,
         duration: 10, // Adjusted for smoother timing,
         opacity: 1,
         motionPath: {
-          path: "#line_path_motorbike", // The SVG path ID
-          align: "#line_path_motorbike", // Aligns motorbike to the path
+          path: '#line_path_motorbike', // The SVG path ID
+          align: '#line_path_motorbike', // Aligns motorbike to the path
           autoRotate: true, // Rotates motorbike to follow path direction
           alignOrigin: [0.5, 0.5], // Ensures proper centering on the path
         },
         scrollTrigger: {
-          trigger: ".trigger-motorbike-button", // Start when button is in view
-          toggleActions: "play none none none",
-          start: "top 50%", // Start when the trigger is 50% from the top
+          trigger: '.trigger-motorbike-button', // Start when button is in view
+          toggleActions: 'play none none none',
+          start: 'top 50%', // Start when the trigger is 50% from the top
         },
       });
     },
-    { scope: container }
+    { scope: container },
   );
   return (
     <section
       id="our-tour"
       ref={container}
-      className="relative mt-[6.62rem] z-[1] overflow-hidden"
+      className="relative z-[1] mt-[6.62rem] overflow-hidden"
     >
-      <div className="relative hidden md:flex md:max-w-[100rem] mx-auto flex-col items-center">
+      <div className="relative mx-auto hidden flex-col items-center md:flex md:max-w-[100rem]">
         <div className="mx-auto inline-flex flex-col items-center gap-[1.8125rem]">
           <h2 className="sub2-bold text-center !text-white opacity-90 md:!text-[1.75rem] lg:!text-[0.875rem]">
             EXPLORE YOUR JOURNEY WITH US
@@ -76,112 +90,66 @@ export default function OurTour() {
               width={100}
               height={100}
               alt="Hong Hao Travel"
-              src="/images/arrow-down.png"
+              src="/images/home/our-tour/arrow-down.svg"
               className="size-[3.0625rem] object-center"
             />
           </button>
         </div>
       </div>
-      <div className="relative w-full overflow-hidden max-md:px-[1rem] max-md:pb-0 max-md:pt-0 md:pl-[4rem] md:pb-[5rem] lg:pl-[6.75rem] lg:pb-[7.6875rem] xl:pb-[20.875rem] pt-[5.3125rem]">
-        <div className="hidden md:block absolute right-[-50rem] top-0 left-0">
+      <div className="relative w-full overflow-hidden pt-[5.3125rem] max-md:px-[1rem] max-md:pt-0 max-md:pb-0 md:pb-[5rem] md:pl-[4rem] lg:pb-[7.6875rem] lg:pl-[6.75rem] xl:pb-[20.875rem]">
+        <div className="absolute top-0 right-[-50rem] left-0 hidden md:block">
           <Image
             width={500}
             height={500}
             alt="Hong Hao Travel"
-            src="/images/cloud.png"
-            className="absolute top-[1rem] left-1/2 animate-cloud delay-300 opacity-30 z-[1]"
+            src="/images/home/our-tour/cloud.png"
+            className="animate-cloud absolute top-[1rem] left-1/2 z-[1] opacity-30 delay-300"
           />
           <Image
             width={500}
             height={500}
             alt="Hong Hao Travel"
-            src="/images/motobike-tour.png"
-            className="w-screen h-[44.375rem] object-contain z-0"
+            src="/images/home/intro/motorbike-tour.png"
+            className="z-0 h-[44.375rem] w-screen object-contain"
           />
           <Image
             alt="Hong Hao Travel"
             width={500}
             height={500}
-            src="/images/cloud2.png"
-            className="absolute top-[2rem] left-1/2 animate-cloud2"
+            src="/images/home/our-tour/cloud2.png"
+            className="animate-cloud2 absolute top-[2rem] left-1/2"
           />
         </div>
-        <div className="md:w-[38.8125rem] w-full relative z-[2]">
-          <h2 className="max-md:w-3/4 font-londrina-solid text-[2.5rem] md:text-[3.5rem] xl:text-[56px] font-black leading-none text-white mb-[2rem] md:mb-[3.5rem]">
+        <div className="relative z-[2] w-full md:w-[38.8125rem]">
+          <h2 className="font-londrina-solid mb-[2rem] text-[2.5rem] leading-none font-black text-white max-md:w-3/4 md:mb-[3.5rem] md:text-[3.5rem]">
             HONG HAO MOTORBIKE TOUR
           </h2>
-          <p className="text-[rgb(197,197,197)] lg:text-[16px] md:text-[1.75rem] lg:mb-[2rem] md:leading-normal md:tracking-0 text-[0.875rem] md:tracking-[0.005rem] md:mb-[1rem] mb-[1.5rem] tracking-[0.00219rem] leading-normal">
+          <p className="md:tracking-0 mb-[1.5rem] text-[0.875rem] leading-normal tracking-[0.00219rem] text-[rgb(197,197,197)] md:mb-[1rem] md:text-[1.75rem] md:leading-normal md:tracking-[0.005rem] lg:mb-[2rem] lg:text-[1rem]">
             Experience the raw beauty of Hà Giang with our immersive travel
             adventures. From rugged mountain landscapes to vibrant ethnic
             cultures, Hà Giang offers a truly unique and authentic experience.
             Explore remote villages.
           </p>
-          <ul className="flex flex-col gap-[0.75rem] mb-[2rem]">
-            <li className="flex items-center gap-[0.5rem]">
-              <Image
-                width={20}
-                height={20}
-                alt="Hong Hao Travel"
-                src="/images/tick.svg"
-                className="size-[1rem] object-cover"
-              />
-              <span className="lg:text-[1rem] md:text-[1.5rem] md:tracking-0 text-[0.875rem] md:leading-normal text-[#f1f1f1] font-bold ml-[0.5rem]">
-                Tours accommodate a maximum of 10 guests
-              </span>
-            </li>
-            <li className="flex items-center gap-[0.5rem]">
-              <Image
-                width={20}
-                height={20}
-                alt="Hong Hao Travel"
-                src="/images/tick.svg"
-                className="size-[1rem] object-cover"
-              />
-              <span className="lg:text-[1rem] md:text-[1.5rem] md:tracking-0 text-[0.875rem] md:leading-normal text-[#f1f1f1] font-bold ml-[0.5rem]">
-                Flexible cancellation policy
-              </span>
-            </li>
-            <li className="flex items-center gap-[0.5rem]">
-              <Image
-                width={20}
-                height={20}
-                alt="Hong Hao Travel"
-                src="/images/tick.svg"
-                className="size-[1rem] object-cover"
-              />
-              <span className="lg:text-[1rem] md:text-[1.5rem] md:tracking-0 text-[0.875rem] md:leading-normal text-[#f1f1f1] font-bold ml-[0.5rem]">
-                Book now, pay later
-              </span>
-            </li>
-            <li className="flex items-center gap-[0.5rem]">
-              <Image
-                width={20}
-                height={20}
-                alt="Hong Hao Travel"
-                src="/images/tick.svg"
-                className="size-[1rem] object-cover"
-              />
-              <span className="lg:text-[1rem] md:text-[1.5rem] md:tracking-0 text-[0.875rem] md:leading-normal text-[#f1f1f1] font-bold ml-[0.5rem]">
-                Fluent English-speaking guides
-              </span>
-            </li>
-            <li className="flex items-center gap-[0.5rem]">
-              <Image
-                width={20}
-                height={20}
-                alt="Hong Hao Travel"
-                src="/images/tick.svg"
-                className="size-[1rem] object-cover"
-              />
-              <span className="lg:text-[1rem] md:text-[1.5rem] md:tracking-0 text-[0.875rem] md:leading-normal text-[#f1f1f1] font-bold ml-[0.5rem]">
-                Creating job opportunities for the Vietnamese community
-              </span>
-            </li>
+          <ul className="mb-[2rem] flex flex-col gap-[0.75rem]">
+            {TOUR_DESC.map(({ id, desc }) => (
+              <li key={id} className="flex items-center gap-[0.5rem]">
+                <Image
+                  width={20}
+                  height={20}
+                  alt="Hong Hao Travel"
+                  src="/images/home/our-tour/tick.svg"
+                  className="size-[1rem] object-cover"
+                />
+                <span className="md:tracking-0 ml-[0.5rem] text-[0.875rem] font-bold text-[#f1f1f1] md:text-[1.5rem] md:leading-normal lg:text-[1rem]">
+                  {desc}
+                </span>
+              </li>
+            ))}
           </ul>
           <div className="flex items-center gap-4 md:gap-1">
-            <button className="group xl:text-[16px] cursor-pointer bg-orange-normal border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
+            <button className="group bg-orange-normal border-orange-normal group button border-orange-hover bg-orange-hover flex h-[3rem] w-[10.21875rem] cursor-pointer items-center justify-center gap-2 rounded-lg border border-solid px-[1.5rem] py-[0.75rem] text-sm font-bold whitespace-nowrap text-white uppercase ring-offset-white duration-300 ease-linear focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 md:h-[5rem] md:w-fit md:text-[1.5rem] lg:mr-[1rem] lg:h-[3.5rem] lg:px-[2rem] lg:py-[1rem] xl:text-[16px] dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300">
               Book now
-              <span className=" group-hover:translate-x-1/3 transition-transform duration-500 inline-flex justify-center items-center size-[1rem] px-[0.125rem] py-[0.17188rem]">
+              <span className="inline-flex size-[1rem] items-center justify-center px-[0.125rem] py-[0.17188rem] transition-transform duration-500 group-hover:translate-x-1/3">
                 <Image
                   alt="Hong Hao Travel"
                   width={20}
@@ -191,9 +159,9 @@ export default function OurTour() {
                 />
               </span>
             </button>
-            <button className="group xl:text-[16px] cursor-pointer hover:bg-orange-normal hover:border-orange-normal py-[0.75rem] px-[1.5rem] h-[3rem] md:h-[5rem] lg:h-[3.5rem] group whitespace-nowrap text-sm font-bold ring-offset-white ease-linear duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 md:text-[1.5rem] flex uppercase button text-white justify-center items-center gap-2 border border-orange-hover bg-orange-hover rounded-lg border-solid md:w-fit w-[10.21875rem] lg:py-[1rem] lg:px-[2rem] lg:mr-[1rem]">
+            <button className="group hover:bg-orange-normal hover:border-orange-normal group button border-orange-hover bg-orange-hover flex h-[3rem] w-[10.21875rem] cursor-pointer items-center justify-center gap-2 rounded-lg border border-solid px-[1.5rem] py-[0.75rem] text-sm font-bold whitespace-nowrap text-white uppercase ring-offset-white duration-300 ease-linear focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 md:h-[5rem] md:w-fit md:text-[1.5rem] lg:mr-[1rem] lg:h-[3.5rem] lg:px-[2rem] lg:py-[1rem] xl:text-[16px] dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300">
               All tour
-              <span className="group-hover:translate-x-1/3 transition-transform duration-500 inline-flex justify-center items-center size-[1rem] px-[0.125rem] py-[0.17188rem]">
+              <span className="inline-flex size-[1rem] items-center justify-center px-[0.125rem] py-[0.17188rem] transition-transform duration-500 group-hover:translate-x-1/3">
                 <Image
                   alt="Hong Hao Travel"
                   width={20}
@@ -207,8 +175,8 @@ export default function OurTour() {
         </div>
       </div>
 
-      <div className="fade-out-animation pointer-events-none hidden md:block w-[11rem] h-[50rem] absolute top-1/2 left-1/2 -translate-y-[45%] -translate-x-[40%]">
-        <div className="line-red-container overflow-hidden h-0">
+      <div className="fade-out-animation pointer-events-none absolute top-1/2 left-1/2 hidden h-[50rem] w-[11rem] -translate-x-[40%] -translate-y-[45%] md:block">
+        <div className="line-red-container h-0 overflow-hidden">
           <svg
             width="68"
             height="714"
@@ -225,7 +193,7 @@ export default function OurTour() {
               id="line_path_motorbike"
               style={{
                 strokeDashoffset: 0,
-                strokeDasharray: "none",
+                strokeDasharray: 'none',
               }}
             />
           </svg>
@@ -237,8 +205,8 @@ export default function OurTour() {
             height={50}
             id="motorbike"
             alt="Hong Hao Travel"
-            src="/images/xemay.png"
-            className="w-[8.12644rem] h-[6.9375rem] object-contain opacity-0"
+            src="/images/home/our-tour/motor.png"
+            className="h-[6.9375rem] w-[8.12644rem] object-contain opacity-0"
           />
         </div>
       </div>

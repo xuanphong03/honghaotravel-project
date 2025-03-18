@@ -1,22 +1,26 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import TourBookingForm from "../form/TourBookingForm";
-import { DialogDescription } from "@radix-ui/react-dialog";
+} from '@/components/ui/dialog';
+import TourBookingForm from '../form/TourBookingForm';
+import { DialogDescription } from '@radix-ui/react-dialog';
 
 export function BookNowButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="p-0 border-none animate-bounce !duration-1000 cursor-pointer bg-orange-normal hover:bg-orange-normal__hover transition-all duration-300 size-[3.125rem] rounded-full shrink-0">
-          <p className="text-white text-center text-[0.625rem] font-black leading-[1.3] tracking-[0.03125rem] uppercase">
+        <Button className="bg-orange-normal hover:bg-orange-normal__hover size-[3.125rem] shrink-0 animate-bounce cursor-pointer rounded-full border-none p-0 transition-all !duration-1000 duration-300">
+          <span
+            data-aos="fade-up"
+            data-aos-offset="0"
+            className="inline-block text-center text-[0.625rem] leading-[1.3] font-black tracking-[0.03125rem] text-white uppercase"
+          >
             Book <br /> now
-          </p>
+          </span>
         </Button>
       </DialogTrigger>
       <DialogContent aria-describedby="" className="md:!max-w-fit">

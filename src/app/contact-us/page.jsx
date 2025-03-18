@@ -10,10 +10,10 @@ export const metadata = {
 
 export default function ContactUsPage() {
   return (
-    <main id="contact-us">
+    <>
       <Banner />
       <ContactInfo />
       <ContactForm />
-    </main>
+    </>
   );
 }

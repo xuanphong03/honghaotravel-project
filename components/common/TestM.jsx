@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import Image from "next/image";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import Image from 'next/image';
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -17,15 +17,15 @@ const TestM = ({ commit }) => {
 
     if (motoRef.current && nuiRef.current) {
       const path = isMobile
-        ? nuiRef2.current.querySelector("path")
-        : nuiRef.current.querySelector("path");
+        ? nuiRef2.current.querySelector('path')
+        : nuiRef.current.querySelector('path');
 
       if (path) {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: commit.current,
-            start: "-40% center",
-            end: "70% center",
+            start: '-40% center',
+            end: '70% center',
             end: false,
             markers: false,
             once: true, // Hiệu ứng chỉ chạy một lần
@@ -43,10 +43,10 @@ const TestM = ({ commit }) => {
           duration: isMobile ? 4 : 7,
         });
       } else {
-        console.error("Không tìm thấy đường dẫn trong #nui");
+        console.error('Không tìm thấy đường dẫn trong #nui');
       }
     } else {
-      console.error("Không tìm thấy #moto hoặc #nui");
+      console.error('Không tìm thấy #moto hoặc #nui');
     }
   }, [isMobile]);
 
@@ -56,7 +56,7 @@ const TestM = ({ commit }) => {
       <svg
         ref={motoRef}
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute -top-[2.6rem] left-0 sm:-top-[1.5rem] sm:left-[13rem] w-[4.0625rem] h-[3.3125rem]"
+        className="absolute -top-[2.6rem] left-0 h-[3.3125rem] w-[4.0625rem] sm:-top-[1.5rem] sm:left-[13rem]"
         viewBox="0 0 71 60"
         fill="none"
       >
