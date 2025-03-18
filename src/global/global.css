@@ -50,8 +50,9 @@
   --color-grey-900: rgb(39, 39, 39);
 
   /* GREYSCALE2 */
-  --color-gray-scale-5: #d9d9d9;
-
+  --color-gray-scale-5 : #D9D9D9;
+  --color-gray-scale-80: #2E2E2E;
+  
   /* GREYSCALE  text*/
   --color-greyscaletext-0: #fff;
   --color-greyscaletext-5: #f1f1f1;
@@ -342,6 +343,16 @@ body::-webkit-scrollbar-thumb {
   font-weight: 900;
   line-height: 100%; /* 3.5rem */
 }
+.h2-bold-tripsan{
+  color: #000;
+    /* WEB/H2/BLACK */
+    font-family: "tripsan-bold", sans-serif;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 3.5rem */
+}
 /* h3 */
 .h3-regular {
   color: #000;
@@ -407,7 +418,7 @@ body::-webkit-scrollbar-thumb {
 }
 .h4-bold {
   color: #000;
-  font-family: 'tripsan-regular', sans-serif;
+  font-family: "tripsan-bold", sans-serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: 800;
@@ -1066,6 +1077,8 @@ input[type='number'] {
   /* 0.5 seconds duration */
 }
 
+
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -1203,4 +1216,17 @@ input[type='number'] {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

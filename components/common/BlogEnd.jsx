@@ -3,8 +3,8 @@ import React from "react";
 
 export default function BlogEnd() {
   return (
-    <div className="blogend flex justify-between max-sm:pt-[4.37rem] max-sm:min-h-[26.3125rem] sm:items-center relative sm:py-[6.25rem]">
-      <div className="blogend-rotate w-[5.51563rem] h-[5.51563rem] sm:w-48 sm:h-48 absolute -top-[2.757815rem] right-[1.42rem] sm:top-0 sm:left-0 z-10  animate-spin-slow">
+    <div className="blogend flex justify-between max-md:pt-[4.37rem] max-md:min-h-[26.3125rem] md:items-center relative md:py-[6.25rem]">
+      <div className="blogend-rotate w-[5.51563rem] h-[5.51563rem] md:w-48 md:h-48 absolute -top-[2.757815rem] right-[1.42rem] md:top-0 md:left-0 z-10  animate-spin-slow">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
@@ -120,14 +120,14 @@ export default function BlogEnd() {
           </defs>
         </svg>
       </div>
-      <div className="blogend-bg absolute w-full sm:w-[80%] h-full top-0  right-0 bottom-0 -z-10">
+      <div className="blogend-bg absolute w-full md:w-[80%] h-full top-0  right-0 bottom-0 -z-10">
         <div className="bg bg-[#FCF8F7]  absolute top-0 left-0 right-0 bottom-0 -z-20"></div>
-        <div className="absolute w-full right-0 bottom-0 -z-10 h-[14.206rem] sm:h-[31.19331rem] max-h-full">
+        <div className="absolute w-full right-0 bottom-0 -z-10 h-[14.206rem] md:h-[31.19331rem] max-h-full">
           <Image src={"/images/blog/bg-nui.png"} alt="nui" fill className="" />
         </div>
       </div>
-      <div className="blogend-content max-sm:h-fit w-full sm:ps-24  sm:pe-[3.89rem] flex items-center justify-between">
-        <div className="w-[59.625rem] h-[36.375rem] rounded-3xl  flex items-center relative max-sm:hidden">
+      <div className="blogend-content max-md:h-fit w-full max-w-[87.5rem] mx-auto flex items-center justify-between">
+        <div className="w-[59.625rem] h-[36.375rem] rounded-3xl  flex items-center relative max-md:hidden">
           <Image
             src={"/images/blog/blogend-img.jpeg"}
             alt="blogend"
@@ -135,19 +135,19 @@ export default function BlogEnd() {
             fill
           />
         </div>
-        <div className="blogend-cont flex flex-col items-center gap-8 sm:gap-[2.06rem] max-sm:px-[1.12rem] ">
-          <h2 className=" sm:w-[27.5rem] sm:h-[7.75rem] h5-bold-pc h2-bold !text-greyscale-70 sm:!font-normal text-center">
+        <div className="blogend-cont flex flex-col items-center gap-8 md:gap-[2.06rem] max-md:px-[1.12rem] w-[27.5rem]">
+          <h2 className=" md:w-[27.5rem] md:h-[7.75rem] h5-bold-pc h2-bold !text-greyscale-70 md:!font-normal text-center">
             Start planning your journey of joy
           </h2>
-          <p className="sm:w-[20.3125rem] sub2-regular sm:body1-regular !text-greyscaletext-30 sm:!text-greyscale-10  text-center">
+          <p className="md:w-[20.3125rem] sub2-regular md:body1-regular !text-greyscaletext-30 md:!text-greyscale-10  text-center">
             Experience the raw beauty of Hà Giang with our immersive travel
             adventu a truly unique and authentic experience.
           </p>
           <div className=" flex items-center gap-4 ">
-            <button className="flex items-center justify-center gap-2 btn-size-m sm:btn-size-l btn-bold btn-line-orange !text-orange-normal hover:bg-[#f2531c] hover:!text-white duration-500 ease-in-out cursor-pointer !font-bold ">
+            <button className="flex items-center justify-center gap-2 btn-size-m md:btn-size-l btn-bold btn-line-orange !text-orange-normal hover:bg-[#f2531c] hover:!text-white duration-500 ease-in-out cursor-pointer !font-bold ">
               <span>ALL TOUR</span>
             </button>
-            <button className="flex items-center justify-center gap-2 btn-size-m sm:btn-size-l btn-default btn-bold !text-greyscaletext-0 !font-bold">
+            <button className="flex items-center justify-center gap-2 btn-size-m md:btn-size-l btn-default btn-bold !text-greyscaletext-0 !font-bold">
               <span>CALL US</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

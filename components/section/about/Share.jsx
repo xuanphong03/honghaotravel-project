@@ -62,20 +62,24 @@ export default function Share() {
     )
   });
   return (
-      <div ref={share} className='about-share min-h-[31.78rem] sm:min-h-[49.0625rem] relative'>
-          <div className="bg w-full h-full absolute top-0 left-0 right-0 bottom-0">
-              <Image src="/images/about/share-map.png" alt="no-img" fill className='max-sm:hidden'></Image>
-              <div className='sm:hidden w-[15.18rem] h-[15.18rem] absolute top-[2.5rem] left-0'>
+      <div ref={share} className='about-share min-h-[31.78rem] md:min-h-[49.0625rem] relative'>
+      <div className="bg w-full h-full absolute top-0 left-0 right-0 bottom-0">
+              
+              <Image src="/images/about/share-map.png" alt="no-img" fill className='max-md:hidden'></Image>
+              <div className='md:hidden w-[15.18rem] h-[15.18rem] absolute top-[2.5rem] left-0'>
                   <Image src="/images/about/share-map2.png" alt="no-img" fill className='object-contain'></Image>
               </div>
-              <div className='sm:hidden w-full h-[17.85356rem] absolute bottom-0 left-0 right-0'>
-                  <Image src="/images/about/share-map3.png" alt="no-img" fill  className='object-contain'></Image>
+              <div className='md:hidden w-full h-[17.85356rem] absolute bottom-0 left-0 right-0'>
+                  <Image src="/images/about/share-nui.png" alt="no-img" fill  className='object-cover'></Image>
               </div>
               
           </div>
       <Breadcrumb data={ dataBreadcrumb} />
-          <div ref={text} className="inf w-full sm:w-[65.8125rem] px-[1.7rem] sm:px-20 max-w-full flex justify-center opacity-0 translate-y-[4.6875rem]">
-              <p className='h2-bold max-sm:!text-[1.5rem] max-sm:tracking-[0.00375rem] max-sm:leading-[120%] sm:!font-normal !text-[#122618] mt-24 sm:mt-[6.87rem] opacity-80 text-center sm:text-left'>Explore the rugged beauty of Ha Giang on our thrilling motorcycle tours. Feel the wind in your hair as you navigate through twisting mountain roads and remote villages, soaking in the breathtaking scenery of towering peaks and lush valleys. Our experienced guides will lead you on an unforgettable adventure</p>
+      <div className='max-w-[87.5rem] mx-auto relative'>
+        <div className='w-[12.39444rem] h-[12.39444rem] absolute top-[2.3rem] -left-4'><Image src="/images/about/share-sun.png" alt="no-img" fill className='max-md:hidden object-contain'></Image></div>
+        <div ref={text} className="inf w-full md:w-[65.8125rem] px-[1.7rem] md:px-0 max-w-full flex justify-center opacity-0 translate-y-[4.6875rem]">
+              <p className='h2-bold max-md:!text-[1.5rem] max-md:tracking-[0.00375rem] max-md:leading-[120%] md:!font-normal !text-[#122618] mt-24 md:mt-[6.87rem] opacity-80 text-center md:text-left'>Hong Hao Travel is a travel company in Ha Giang, we specialize in organizing unforgettable tours to explore Ha Giang loop but still focus on the pristine nature of nature.</p>
+          </div>
           </div>
     </div>
   )
