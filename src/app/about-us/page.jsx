@@ -1,5 +1,5 @@
-import React from "react";
-import About from "../../../components/section/about/About";
+import React from 'react';
+import About from '../../../components/section/about';
 
 export default function page() {
   return (
