@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Image from "next/image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 function FeedbackItem({ avatar, author, createdDate, vote, content }) {
   return (
-    <article className="relative px-[1rem] py-[1.5rem] flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10">
-      <div className="absolute top-[1.5rem] right-[1.5rem] size-[2.5rem] flex items-center justify-center p-[0.4rem] rounded-full bg-[#33e0a0]">
+    <article className="relative flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 px-[1rem] py-[1.5rem]">
+      <div className="absolute top-[1.5rem] right-[1.5rem] flex size-[2.5rem] items-center justify-center rounded-full bg-[#33e0a0] p-[0.4rem]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -41,18 +41,18 @@ function FeedbackItem({ avatar, author, createdDate, vote, content }) {
         </svg>
       </div>
       <div className="flex items-center gap-x-[1.25rem]">
-        <div className="size-[3rem] rounded-full overflow-hidden shrink-0">
+        <div className="size-[3rem] shrink-0 overflow-hidden rounded-full">
           <Image
             width={50}
             height={50}
             alt={author}
-            src={"/images/home/clients-say/user1.jpeg"}
-            className="w-full h-full object-cover"
+            src={'/images/home/clients-say/user1.jpeg'}
+            className="h-full w-full object-cover"
           />
         </div>
 
-        <div className="text-[#f1f1f1] leading-[1.2] font-tripsan-bold">
-          <h4 className="text-[1.25rem] m:text-[1.75rem] font-bold  mb-[0.375rem]">
+        <div className="font-tripsan-bold leading-[1.2] text-[#f1f1f1]">
+          <h4 className="m:text-[1.75rem] mb-[0.375rem] text-[1.25rem] font-bold">
             {author}
           </h4>
           <p className="text-[0.875rem] tracking-[0.00875rem]">{createdDate}</p>
@@ -70,12 +70,12 @@ function FeedbackItem({ avatar, author, createdDate, vote, content }) {
           >
             <path
               d="M8.94868 2.84605C8.64478 1.93435 7.35522 1.93435 7.05132 2.84605L6.22792 5.31623C6.09181 5.72457 5.70967 6 5.27924 6H2.85078C1.9055 6 1.48795 7.19036 2.22609 7.78087L4.45551 9.56441C4.78266 9.82613 4.91199 10.264 4.7795 10.6615L4.07082 12.7875C3.7557 13.7329 4.86606 14.5072 5.6442 13.8846L7.3753 12.4998C7.74052 12.2076 8.25948 12.2076 8.6247 12.4998L10.3558 13.8846C11.1339 14.5072 12.2443 13.7329 11.9292 12.7875L11.2205 10.6615C11.088 10.264 11.2173 9.82613 11.5445 9.56441L13.7739 7.78087C14.5121 7.19036 14.0945 6 13.1492 6H10.7208C10.2903 6 9.90819 5.72457 9.77208 5.31623L8.94868 2.84605Z"
-              className={`${index < vote ? "fill-[#E64827]" : "fill-gray-500"}`}
+              className={`${index < vote ? 'fill-[#E64827]' : 'fill-gray-500'}`}
             />
           </svg>
         ))}
       </div>
-      <p className="w-full lg:w-[20.625rem] h-[5.3125rem] overflow-y-auto leading-[1.2] tracking-[0.00875rem] text-[0.875rem]">
+      <p className="custom_scrollbar_v2 h-[5.3125rem] w-full overflow-y-auto text-[0.875rem] leading-[1.2] tracking-[0.00875rem] lg:w-[20.625rem]">
         {content}
       </p>
     </article>
