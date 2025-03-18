@@ -48,30 +48,30 @@ const arrPost = [{
 
 export default function OurBlogPost() {
   return (
-    <div className="our-blog-post sm:mt-[2.81rem] sm:border-t-[1px] sm:border-solid sm:border-gray-scale-5 max-sm:px-5">
+    <div className="our-blog-post md:mt-[2.81rem] md:border-t-[1px] md:border-solid md:border-gray-scale-5 max-md:px-5">
       <div className="max-w-[89.9375rem] mx-auto">
-        <div className="our-blog-post-pagination mt-6 sm:mt-3 sm:mb-[3.94rem] flex w-full justify-center items-center gap-[0.62rem] sm:gap-[0.94rem] overflow-x-scroll no-scrollbar">
+        <div className="our-blog-post-pagination mt-6 md:mt-3 md:mb-[3.94rem] flex w-full justify-center items-center gap-[0.62rem] md:gap-[0.94rem] overflow-x-scroll no-scrollbar">
           {arrPaginate.map((item) => (
             <Button
               className={
-                'our-blog group max-sm:!px-8 max-sm:!py-[0.69rem] !font-bold hover:cursor-pointer hover:!bg-orange-normal__hover transition-colors duration-500 ease-in-out'
+                'our-blog group max-md:!px-8 max-md:!py-[0.69rem] !font-bold hover:cursor-pointer hover:!bg-orange-normal__hover transition-colors duration-500 ease-in-out'
               }
               key={item.id}
             >
-              <span className="text-blog-bold group-hover:!text-greyscaletext-0 max-sm:!text-[0.75rem] ">
+              <span className="text-blog-bold group-hover:!text-greyscaletext-0 max-md:!text-[0.75rem] ">
                 {item.content}
               </span>
             </Button>
           ))}
         </div>
-        <div className="max-sm:hidden our-blog-post-banner w-full h-[43.6875rem] rounded-[0.375rem] overflow-hidden relative flex items-end hover:cursor-pointer">
+        <div className="max-md:hidden our-blog-post-banner w-full h-[43.6875rem] rounded-[0.375rem] overflow-hidden relative flex items-end hover:cursor-pointer">
           <Image
             src={'/images/alltour/banner.jpeg'}
             alt="anh2"
             fill
             className="object-cover opacity-[0.8457] hover:scale-110 duration-500 ease-in-out"
                   />
-                  <article className="5-min-read sm:w-[29.89381rem] sm:h-[22.17188rem] bg-green-darker p-[3.75rem] relative z-10">
+                  <article className="5-min-read md:w-[29.89381rem] md:h-[22.17188rem] bg-green-darker p-[3.75rem] relative z-10">
                       <div className='post-btn !w-fit sub2-regular !text-greyscaletext-80-main'>ARTICLE</div>
                       <p className='post-btn-p mt-[1.19rem] mb-[2.43rem] overflow-y-scroll h-[7.68rem]'>Seychelles Hotel Guide;
 Advice from the Experts</p>
@@ -79,7 +79,7 @@ Advice from the Experts</p>
                       <div className='post-btn !w-fit absolute -right-[4.109rem] top-[1.8rem] rotate-90 !rounded-md !rounded-b-none sub2-regular !text-greyscaletext-80-main'>ARTICLE</div>
             </article>
         </div>
-        <div className="our-blog-posts grid grid-cols-2 gap-4 sm:gap-[1.44rem] mt-5 sm:mt-[2.62rem]">
+        <div className="our-blog-posts grid grid-cols-2 gap-4 md:gap-[1.44rem] mt-5 md:mt-[2.62rem]">
                  {arrPost.map((item) =>  <BlogPostItem key={item.id} data={item} />)}
               </div>
               <div className="our-blog-post-pagination mt-8">

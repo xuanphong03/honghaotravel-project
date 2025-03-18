@@ -168,13 +168,13 @@ export default function TourBookingForm({ defaultValues = null }) {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
-          className="flex max-h-fit sm:max-h-[85vh]  w-full max-md:flex-wrap max-md:gap-y-12  sm:flex sm:justify-between relative"
+          className="flex max-h-fit md:max-h-[85vh]  w-full max-md:flex-wrap max-md:gap-y-12  md:flex md:justify-between relative"
         >
-          <div  className="title flex absolute -top-28 left-0 flex-col max-sm:hidden gap-3 translate-y-0 ">
-                            <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>EASY WITH HONG HA TRAVEL</p>
-                            <h2 className='h3-bold sm:h2-bold !text-greyscaletext-0'>ONLINE BOOKING</h2>
+          <div  className="title flex absolute -top-28 left-0 flex-col max-md:hidden gap-3 translate-y-0 ">
+                            <p className='sub2-regular md:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>EASY WITH HONG HA TRAVEL</p>
+                            <h2 className='h3-bold md:h2-bold !text-greyscaletext-0'>ONLINE BOOKING</h2>
           </div>
-          <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
+          <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main md:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
               Confirmed Information : 
             </div>
           <div className="form-left  w-full md:w-[65%] flex flex-col gap-[1rem] shrink-0 md:py-[1.5rem] md:pl-[1.5rem] md:pr-[0.75rem] bg-white rounded-[1.5rem]">
@@ -395,7 +395,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                 />
               </div>
             </div>
-            <div className="max-sm:hidden flex gap-3 items-center">
+            <div className="max-md:hidden flex gap-3 items-center">
                <div className="flex flex-col md:flex-row items-center gap-[0.5rem] w-[58%]">
               <SubmitButton label="PAY NOW" disabled={disabledStatus} />
               <SubmitButton
@@ -411,7 +411,7 @@ export default function TourBookingForm({ defaultValues = null }) {
            </div>
           </div>
           <div className="form-right w-full md:w-[33.5%] flex flex-col gap-[0.75rem] shrink-0   relative">
-           <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main sm:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
+           <div className="sub1-bold absolute -top-8 !text-greyscaletext-80-main md:!text-greyscaletext-0 text-[0.875rem] font-bold leading-[1.2] tracking-[0.00875rem] uppercase">
               Confirmed tour booking :
             </div>
             <div className="bg-[#F8F8F8] rounded-[0.5rem] overflow-hidden border-[0.5px] border-solid border-[#eee]">
@@ -549,7 +549,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                 <div className="text-[1.5rem]">$567</div>
               </div>
             </div>
-            <div className="sm:hidden grid grid-cols-2 gap-3  items-center">
+            <div className="md:hidden grid grid-cols-2 gap-3  items-center">
                <div className="col-span-2">
               <SubmitButton
                 label="BOOK NOW, PAY NOW"

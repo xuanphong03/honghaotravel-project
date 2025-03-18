@@ -4,7 +4,7 @@ import {
   AccordionContentCustom,
   AccordionItem,
   AccordionTriggerCustom,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion-v4"
 
 const arrAccordion = [
   {
@@ -41,7 +41,7 @@ const arrAccordion = [
 
 export function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-full sm:w-[42.8125rem]">
+    <Accordion type="single" collapsible className="w-full md:w-[42.8125rem]">
       {arrAccordion.map((item) => <AccordionItem key={item.id} value={item.id} >
         <AccordionTriggerCustom className={`sub1-bold !text-greyscaletext-30`}>{ item.title}</AccordionTriggerCustom>
         <AccordionContentCustom className={"!duration-1000 ease-in-out sub1-regular !text-greyscaletext-40"}>

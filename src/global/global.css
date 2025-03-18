@@ -673,7 +673,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.00375rem;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 767.98px) {
   html {
     font-size: 4.267vw;
   }

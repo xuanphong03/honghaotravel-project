@@ -5,14 +5,14 @@ import InfinitySlide from '../../../common/InfinitySlide/InfinitySlide'
 
 export default function BannerTourDetail() {
   return (
-     <div className='tourdetail-banner flex items-end  max-sm:ps-[1.25rem]  min-h-[20.93544rem] sm:min-h-[49.25rem]   relative '>
+     <div className='tourdetail-banner flex items-end  max-md:ps-[1.25rem]  min-h-[20.93544rem] md:min-h-[49.25rem]   relative '>
             <OverlayAnimate/>
-            <div className="bg  absolute top-0 left-0 right-0 bottom-0 -z-10">
+            <div className="bg  absolute top-0 left-0 right-0 bottom-0 z-0">
                   <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover -z-20'/>
                 </div>
             <div className="overlay absolute top-0 left-0 right-0 bottom-0 -z-10" style={{background:"linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)"}}>
                 </div>
-            <div className="max-sm:hidden tourdetail-banner-cont w-[87.5rem] max-w-[87.5rem] mx-auto py-[7.25rem] sm:py-[2rem]">
+            <div className="max-md:hidden tourdetail-banner-cont w-[87.5rem] max-w-[87.5rem] mx-auto py-[7.25rem] md:py-[2rem] relative z-10">
               <div className="top flex flex-col gap-3 ">
                   <div className="top-time flex items-center gap-6">
                       <div className="top-time-oclock flex items-center gap-1.5">
@@ -141,7 +141,7 @@ export default function BannerTourDetail() {
                   </div>
               </div>
           </div>
-          <div className="max-sm:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-0 left-[53%] transform -translate-x-1/2 -translate-y-1/2 -z-10">
+          <div className="max-md:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-0 left-[53%] transform -translate-x-1/2 -translate-y-1/2 z-10">
               <div className="logo-xoay w-[9.375rem] h-[7.5rem] absolute top-[41.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                   <Image src={"/images/alltour/detail/logo-xoay.png"} alt='' fill/>
               </div>
@@ -150,10 +150,10 @@ export default function BannerTourDetail() {
               </div>
           </div>
             
-            <div className="max-sm:hidden map  w-[24.4375rem] h-[24.75rem] absolute   top-[20%] right-[18rem] ">
+            <div className="max-md:hidden map  w-[24.4375rem] h-[24.75rem] absolute   top-[20%] right-[18rem] ">
                   <Image src={"/images/alltour/map.png"} alt="map" fill  className='object-cover'/>
       </div>
-      <div className="absolute max-sm:hidden right-[4.75rem] ">
+      <div className="absolute max-md:hidden right-[4.75rem] ">
         <InfinitySlide />
       </div>
         </div>

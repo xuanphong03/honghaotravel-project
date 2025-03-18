@@ -21,7 +21,7 @@ export function DialogDemo() {
                   <Image src={"/images/alltour/banner.jpeg"} alt="banner" fill className='object-cover z-0'/>
         </div>
       </DialogTrigger>
-      <DialogContentCustom className="sm:max-w-[82rem] !bg-transparent !border-none">
+      <DialogContentCustom className="md:max-w-[82rem] !bg-transparent !border-none">
         <DialogHeader>
           <DialogTitle></DialogTitle>
           

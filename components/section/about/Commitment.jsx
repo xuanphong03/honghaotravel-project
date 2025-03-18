@@ -1583,26 +1583,26 @@ export default function Commitment() {
   });
 
   return (
-    <div ref={commit} className='commitment  commitment  relative h-fit w-full max-sm:px-5   max-sm:py-[3.18rem]  sm:pb-0  sm:mt-[6rem] sm:bg-[rgb(19,52,28)] '>
+    <div ref={commit} className='commitment  commitment  relative h-fit w-full max-md:px-5   max-md:py-[3.18rem]  md:pb-0  md:mt-[6rem] md:bg-[rgb(19,52,28)] '>
       <TestM commit={ commit} />
-      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between max-sm:pt-8 gap-[9.25rem] sm:-top-[7rem]">
-        <div className="commitment-cont w-full flex flex-col relative max-sm:z-10">
-              <div ref={a0} className="title flex flex-col max-sm:w-[16.04469rem] gap-3 translate-y-[6.25rem] opacity-0">
-                  <p className='sub2-regular sm:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>HONG HA TRAVEL</p>
-                  <h2 className='h3-bold sm:h2-bold !text-greyscaletext-0'>ETHICAL COMMITMENTS</h2>
+      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between max-md:pt-8 gap-[9.25rem] md:-top-[7rem]">
+        <div className="commitment-cont w-full flex flex-col relative max-md:z-10">
+              <div ref={a0} className="title flex flex-col max-md:w-[16.04469rem] gap-3 translate-y-[6.25rem] opacity-0">
+                  <p className='sub2-regular md:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>HONG HA TRAVEL</p>
+                  <h2 className='h3-bold md:h2-bold !text-greyscaletext-0'>ETHICAL COMMITMENTS</h2>
               </div>
-        <p ref={a2} className='w-full body2-regular  max-sm:opacity-60 sm:body1-regular !text-greyscaletext-5 mt-8 sm:mt-14 sm:w-[38.8125rem] translate-y-[6.25rem] opacity-0'>
+        <p ref={a2} className='w-full body2-regular  max-md:opacity-60 md:body1-regular !text-greyscaletext-5 mt-8 md:mt-14 md:w-[38.8125rem] translate-y-[6.25rem] opacity-0'>
           At our Ha Giang tourism company, we adhere to a set of ethical guidelines that guide our operations and define our commitment to responsible tourism. Our foremost principle is to respect and preserve the natural environment and cultural heritage of Ha Giang. We prioritize sustainable practices to minimize our ecological footprint and actively engage in conservation efforts. Furthermore, we deeply value the communities we operate in and strive to foster positive relationships with local residents. We prioritize their well-being and economic empowerment through fair employment practices and community development initiatives. Additionally, we prioritize the safety and satisfaction of our guests, ensuring that every experience with us is both enjoyable and enriching
               </p>
                
-              <ul ref={a3} className='flex flex-col gap-3 mt-6 sm:mt-4 translate-y-[6.25rem] opacity-0'>
-          {list.map((item, index) => <li key={index} className='flex sm:items-center gap-2 h-6'>
+              <ul ref={a3} className='flex flex-col gap-3 mt-6 md:mt-4 translate-y-[6.25rem] opacity-0'>
+          {list.map((item, index) => <li key={index} className='flex md:items-center gap-2 h-6'>
             <div className="icon w-4 h-4">{ item.icon}</div>
-            <div className="text btn-bold max-sm:!text-left max-sm:!normal-case max-sm:!font-extrabold sm:body1-bold !text-greyscaletext-5">{item.title}</div>
+            <div className="text btn-bold max-md:!text-left max-md:!normal-case max-md:!font-extrabold md:body1-bold !text-greyscaletext-5">{item.title}</div>
           </li>)}
               </ul>
           </div>
-          <div ref={a1} className="commitment-img max-sm:hidden mt-[6.5rem] w-full h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
+          <div ref={a1} className="commitment-img max-md:hidden mt-[6.5rem] w-full h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
         <Image src={"/images/about/commit.jpeg"} alt="" fill className='rounded-xl object-cover -top-[6.5rem]'/>
           </div>
           </div>

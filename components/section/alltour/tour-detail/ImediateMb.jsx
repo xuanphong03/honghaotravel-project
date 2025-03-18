@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function ImediateMb() {
   return (
-    <div className='px-4 py-5 sm:hidden relative'>
-       <div className="sm:hidden tourdetail-banner-cont w-full">
+    <div className='px-4 py-5 md:hidden relative'>
+       <div className="md:hidden tourdetail-banner-cont w-full">
               <div className="top flex flex-col gap-3 ">
                   <div className="top-time flex items-center gap-6">
                       <div className="top-time-oclock flex items-center gap-1.5">
@@ -133,7 +133,7 @@ export default function ImediateMb() {
                   </div>
               </div>
           </div>
-          <div className="sm:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-5 right-4  -z-10">
+          <div className="md:hidden tourdetail-banner-xoay w-[9.375rem] h-[9.375rem] absolute bottom-5 right-4  -z-10">
                         <div className="logo-xoay w-[9.375rem] h-[7.5rem] absolute top-[41.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                             <Image src={"/images/alltour/detail/logo-xoay.png"} alt='' fill className='object-contain' />
                         </div>

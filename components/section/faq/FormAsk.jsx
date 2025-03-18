@@ -11,8 +11,8 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { TextareaCustom } from "@/components/ui/textarea";
-import { InputCustom } from "@/components/ui/input";
+import { TextareaCustom } from "@/components/ui/textarea-v2";
+import { InputCustom } from "@/components/ui/input-v2";
 
 // Define the form schema using Zod
 const formSchema = z.object({
@@ -41,8 +41,8 @@ export default function FormAsk() {
   }
 
   return (
-      <div className="sm:w-[35rem] mx-auto ">
-          <h4 className="h4-bold !text-[1.5rem] !text-greyscaletext-80-main mb-6 sm:mb-8">Ask a different question</h4>
+      <div className="md:w-[35rem] mx-auto ">
+          <h4 className="h4-bold !text-[1.5rem] !text-greyscaletext-80-main mb-6 md:mb-8">Ask a different question</h4>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           {/* Row 1: Fullname and Phone */}

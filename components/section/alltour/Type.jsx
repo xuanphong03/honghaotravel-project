@@ -3,7 +3,7 @@ import CheckboxList from './CheckboxList.'
 
 export default function Type() {
   return (
-    <div className='type bg-bg-elevation-30 rounded-3xl py-[4.19rem] max-sm:px-5 max-sm:hidden'>
+    <div className='type bg-bg-elevation-30 rounded-3xl py-[4.19rem] max-md:px-5 max-md:hidden'>
       <div className='max-w-[87.5rem] mx-auto'>
  <div className="type-box bg-greyscaletext-0 p-[1.9rem] w-[20.75rem] h-[15.8125rem] rounded-2xl">
               <div className="type-box-sub flex flex-col gap-5">
