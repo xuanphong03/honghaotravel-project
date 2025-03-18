@@ -16,7 +16,7 @@ export default function Explore() {
         start: 'top center',
         end: '70% center',
         end: false,
-        markers: true,
+        markers: false,
         once: true, // Hiệu ứng chỉ chạy một lần
         scrub: false,
       },

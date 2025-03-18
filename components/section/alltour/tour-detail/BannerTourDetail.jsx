@@ -352,7 +352,7 @@ export default function BannerTourDetail() {
       </div>
       <div
         ref={inf}
-        className="absolute right-[4.75rem] translate-x-32 transform opacity-0 max-md:hidden"
+        className="absolute top-0 right-[4.75rem] bottom-0 translate-x-32 transform opacity-0 max-md:hidden"
       >
         <InfinitySlide />
       </div>

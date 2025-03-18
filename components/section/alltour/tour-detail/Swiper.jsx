@@ -66,6 +66,19 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
             </div>
           </SwiperSlide>
         ))}
+        <SwiperSlide
+          className="swiper-slide tablet:left-[-4rem] !absolute left-12 !transition-all !duration-1000"
+          style={{ top: `${activeIndex * 19}rem` }}
+        >
+          <div className="relative h-[3.125rem] w-[2.9375rem]">
+            <Image
+              src={'/images/alltour/detail/schedule-moto.png'}
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
