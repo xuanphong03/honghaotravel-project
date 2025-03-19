@@ -1544,7 +1544,29 @@ export default function Commitment() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
+        start: '-10% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: commit.current,
         start: 'top center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: commit.current,
+        start: '10% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1560,26 +1582,26 @@ export default function Commitment() {
         duration: 1,
       },
       's',
-    )
-      .to(
-        a1.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        's',
-      )
-      .to(a2.current, {
+    );
+    tl.to(
+      a1.current,
+      {
         opacity: 1,
         y: 0,
         duration: 1,
-      })
-      .to(a3.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      });
+      },
+      's',
+    );
+    tl2.to(a2.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
+    tl3.to(a3.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
   });
 
   return (
