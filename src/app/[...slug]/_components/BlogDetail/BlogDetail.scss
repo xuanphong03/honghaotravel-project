@@ -1,0 +1,16 @@
+#blog-detail {
+  #blog-content {
+    .blog-sub-title {
+      @apply text-[2rem];
+      color: #262626;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .blog-desc {
+      @apply text-[1rem];
+      color: #262626;
+      line-height: 1.5;
+      letter-spacing: 0.005rem;
+    }
+  }
+}
