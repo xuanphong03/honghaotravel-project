@@ -38,9 +38,9 @@ function OurTeam({ primary = false, secondary = false, className }) {
 
   return (
     <section id="our-team" className={`h-full w-full ${className}`}>
-      <div className="relative z-[2] mx-auto w-full md:w-[87.5rem]">
+      <div className="relative z-[2] mx-auto w-full px-[1rem] md:pl-[4rem] lg:w-[87.5rem] lg:px-0">
         <div className="relative flex w-full justify-start gap-x-[3.875rem] pt-[4.37rem] max-md:flex-wrap">
-          <div className="flex flex-col max-md:px-[1rem]">
+          <div className="flex flex-col">
             <div className="flex flex-col text-white">
               <h3
                 className={`mb-[0.75rem] text-[1.125rem] font-bold uppercase max-md:text-[0.875rem] ${primary ? 'text-white/40' : ''} ${secondary ? 'text-[#262626]/40' : ''}`}
@@ -108,20 +108,14 @@ function OurTeam({ primary = false, secondary = false, className }) {
                   Rider team
                 </TabsTrigger>
               </TabsList>
-              <TabsContent
-                value="tour_guide"
-                className="w-full max-md:px-[1rem]"
-              >
+              <TabsContent value="tour_guide" className="w-full">
                 <OurTeamSlide
                   data={tourGuideList}
                   primary={primary}
                   secondary={secondary}
                 />
               </TabsContent>
-              <TabsContent
-                value="rider_team"
-                className="w-full max-md:px-[1rem]"
-              >
+              <TabsContent value="rider_team" className="w-full">
                 <OurTeamSlide
                   data={riderTeamList}
                   primary={primary}

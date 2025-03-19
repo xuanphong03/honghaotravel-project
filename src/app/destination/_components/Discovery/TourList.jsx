@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import React from 'react';
 import ItemTour from '../../../../../components/common/ItemTour/ItemTour';
 
 export default function TourList({ tours }) {
