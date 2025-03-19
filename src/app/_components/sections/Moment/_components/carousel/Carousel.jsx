@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import Link from "next/link";
-import { useRef, useState } from "react";
-import MomentSlideItem from "./CarouselItem";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
+import MomentSlideItem from './CarouselItem';
 
 export default function Carousel() {
   const slideContainerRef = useRef(null);
@@ -38,7 +38,7 @@ export default function Carousel() {
       tl.current.to([slideFirstRowRef.current, slideSecondRowRef.current], {
         x: `-${moveDistanceWidth}px`,
         duration: speed,
-        ease: "linear",
+        ease: 'linear',
       });
 
       return () => {
@@ -47,18 +47,17 @@ export default function Carousel() {
     },
     {
       scope: slideContainerRef,
-    }
+    },
   );
 
   // Xử lý sự kiện kéo slide
   const handlePointerDown = (e) => {
     setIsDragging(true);
-    console.log("Point down");
+    console.log('Point down');
     startX.current = e.clientX || e.touches?.[0]?.clientX;
     currentX.current = startX.current;
     velocity.current = 0;
 
-    // Tạm dừng animation tự động
     tl.current.pause();
   };
 
@@ -71,9 +70,9 @@ export default function Carousel() {
 
     const containerWidth = slideContainerRef.current.offsetWidth;
     const slideWidth = slideFirstRowRef.current.scrollWidth;
-    const maxOffset = slideWidth - containerWidth; // Giới hạn kéo tối đa
+    const maxOffset = slideWidth - containerWidth;
 
-    const currentXPos = gsap.getProperty(slideFirstRowRef.current, "x");
+    const currentXPos = gsap.getProperty(slideFirstRowRef.current, 'x');
     let newX = currentXPos + deltaX;
 
     // Giới hạn không kéo quá bên trái hoặc bên phải
@@ -83,7 +82,7 @@ export default function Carousel() {
     gsap.to([slideFirstRowRef.current, slideSecondRowRef.current], {
       x: newX,
       duration: 0.1,
-      ease: "power1.out",
+      ease: 'power1.out',
     });
   };
   const handlePointerUp = () => {
@@ -96,7 +95,7 @@ export default function Carousel() {
         gsap.to([slideFirstRowRef.current, slideSecondRowRef.current], {
           x: `+=${velocity.current}`,
           duration: 0.2,
-          ease: "power1.out",
+          ease: 'power1.out',
         });
 
         velocity.current *= friction;
@@ -113,17 +112,17 @@ export default function Carousel() {
   return (
     <div
       ref={slideContainerRef}
-      className="relative w-full overflow-hidden h-full slide_container"
+      className="slide_container relative h-full w-full overflow-hidden"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onTouchStart={handlePointerDown}
       onTouchMove={handlePointerMove}
       onTouchEnd={handlePointerUp}
-      onMouseEnter={() => tl.current.pause()} // Tạm dừng animation khi hover
-      onMouseLeave={() => tl.current.play()} // Tiếp tục animation khi rời chuột
+      onMouseEnter={() => tl.current.pause()}
+      onMouseLeave={() => tl.current.play()}
     >
-      <div className="flex flex-col h-full absolute top-0 left-0 space-y-[0.75rem] select-none cursor-grab">
+      <div className="absolute top-0 left-0 flex h-full cursor-grab flex-col space-y-[0.75rem] select-none">
         <div
           id="slide_row_1"
           ref={slideFirstRowRef}
@@ -132,10 +131,10 @@ export default function Carousel() {
           {[...Array(5)].map((_, i) => (
             <MomentSlideItem key={i} />
           ))}
-          <div className="w-[10rem] flex justify-center items-center">
+          <div className="flex w-[10rem] items-center justify-center">
             <Link
               href="#"
-              className="size-[7.625rem] relative group rounded-full lg:hover:bg-[#E64828] transition-all duration-200 flex justify-center items-center"
+              className="group relative flex size-[7.625rem] items-center justify-center rounded-full transition-all duration-200 lg:hover:bg-[#E64828]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +142,7 @@ export default function Carousel() {
                 height="122"
                 viewBox="0 0 122 122"
                 fill="none"
-                className="absolute top-0 left-0 animate-spin size-full"
+                className="absolute top-0 left-0 size-full animate-spin"
               >
                 <circle
                   cx="61"
@@ -155,12 +154,12 @@ export default function Carousel() {
                   strokeDasharray="4 4"
                 />
               </svg>
-              <div className="text-[0.875rem] font-bold leading-[1.2] uppercase relative overflow-hidden text-transparent">
+              <div className="relative overflow-hidden text-[0.875rem] leading-[1.2] font-bold text-transparent uppercase">
                 DISCOVERY
-                <span className="text-orange-normal text-[0.875rem] font-bold leading-[1.2] uppercase absolute top-0 left-0 group-hover:-translate-y-full transition-all duration-300">
+                <span className="text-orange-normal absolute top-0 left-0 text-[0.875rem] leading-[1.2] font-bold uppercase transition-all duration-300 group-hover:-translate-y-full">
                   DISCOVERY
                 </span>
-                <span className="text-white text-[0.875rem] font-bold leading-[1.2] uppercase absolute bottom-0 left-0 translate-y-full group-hover:translate-y-0 transition-all duration-300">
+                <span className="absolute bottom-0 left-0 translate-y-full text-[0.875rem] leading-[1.2] font-bold text-white uppercase transition-all duration-300 group-hover:translate-y-0">
                   DISCOVERY
                 </span>
               </div>

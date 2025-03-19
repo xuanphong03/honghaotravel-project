@@ -1,11 +1,11 @@
 'use client';
-import gsap from 'gsap';
+import CardDefault from '@/components/common/card/CardDefault';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import CardDefault from '@/components/common/card/CardDefault';
 
 function BestTrips() {
   const TRIPS = [
@@ -64,7 +64,7 @@ function BestTrips() {
           onEnterBack: () => setCurrentIndex(index),
         });
       });
-      // Cleanup function
+
       return () => {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };

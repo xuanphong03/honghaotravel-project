@@ -1,14 +1,11 @@
 'use client';
-import Image from 'next/image';
-import Carousel from './_components/carousel/Carousel';
-import './Moment.css';
-import Marquee from 'react-fast-marquee';
-import TextHeaderMobile from './_components/TextHeaderMobile';
-import CarouselMobile from './_components/carousel/CarouselMobile';
-import MomentSlideItem from './_components/carousel/CarouselItem';
-import CarouselMobileItem from './_components/carousel/CarouselMobileItem';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import Link from 'next/link';
+import Carousel from './_components/carousel/Carousel';
+import CarouselMobile from './_components/carousel/CarouselMobile';
+import CarouselMobileItem from './_components/carousel/CarouselMobileItem';
+import CarouselMobileLogo from './_components/carousel/CarouselMobileLogo';
 
 export default function Moment() {
   return (
@@ -65,7 +62,7 @@ export default function Moment() {
       <div className="h-auto w-full lg:hidden">
         <CarouselMobile speed={200} className="mb-[1rem]">
           {[...Array(5)].map((_, i) => (
-            <TextHeaderMobile key={i} />
+            <CarouselMobileLogo key={i} />
           ))}
         </CarouselMobile>
         <CarouselMobile speed={200} className="mb-[0.5rem] pl-[10rem]">

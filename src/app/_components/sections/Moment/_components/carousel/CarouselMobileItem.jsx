@@ -1,14 +1,14 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function CarouselMobileItem() {
   return (
-    <div className="mx-[0.25rem] item_slide w-[23.83063rem] flex-shrink-0 h-[14.18094rem] relative group md:w-[31.83063rem] md:h-[20.18094rem]">
+    <div className="item_slide group relative mx-[0.25rem] h-[14.18094rem] w-[23.83063rem] flex-shrink-0 md:h-[20.18094rem] md:w-[31.83063rem]">
       <Image
         alt="demo"
         width={400}
         height={300}
         src="/images/home/moment/moment-item1.svg"
-        className="object-cover size-full rounded-[0.67131rem]"
+        className="size-full rounded-[0.67131rem] object-cover"
       />
     </div>
   );
