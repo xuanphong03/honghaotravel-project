@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { useRef } from 'react';
 import InfinitySlide from '../../../../../components/common/InfinitySlide/InfinitySlide';
-import './Banner.css';
 
 export default function Banner() {
   const container = useRef(null);
@@ -37,7 +36,7 @@ export default function Banner() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="custom-bg-gradient absolute inset-0 h-full w-full"></div>
+      <div className="absolute inset-0 h-full w-full bg-[linear-gradient(180deg,rgba(18,39,24,0.00)_0%,#122718_100%)]"></div>
       <div
         data-aos="fade-up"
         className="absolute top-1/2 left-3/4 hidden -translate-x-1/2 -translate-y-1/2 md:block"

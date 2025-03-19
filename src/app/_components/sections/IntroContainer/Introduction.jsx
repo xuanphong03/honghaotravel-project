@@ -1,9 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
-import AboutUs from './AboutUs';
-import OurTour from './OurTour';
-import './Introduction.css';
-import Welcome from './Welcome';
+import './Introduction.scss';
 
 export default function Introduction({ children }) {
   return (

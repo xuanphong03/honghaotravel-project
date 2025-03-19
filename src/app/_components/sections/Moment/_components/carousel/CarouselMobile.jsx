@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Marquee from "react-fast-marquee";
+import { useState } from 'react';
+import Marquee from 'react-fast-marquee';
 
 export default function CarouselMobile({ children, ...props }) {
-  const [direction, setDirection] = useState("right");
+  const [direction, setDirection] = useState('right');
 
   const handleChangeDirection = () => {
-    setDirection(direction === "right" ? "left" : "right");
+    setDirection(direction === 'right' ? 'left' : 'right');
   };
 
   return (

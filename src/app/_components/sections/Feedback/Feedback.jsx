@@ -1,9 +1,11 @@
 'use client';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useState } from 'react';
 import FeedbackItem from './FeedbackItem';
 import FeedbackSlide from './FeedbackSlide';
 import SiteList from './SiteList';
+import './Feedback.scss';
 
 export default function Feedback() {
   const Maps = [
@@ -11,7 +13,7 @@ export default function Feedback() {
     { id: 2, path: '/images/home/clients-say/map-hg-item2.png' },
     { id: 3, path: '/images/home/clients-say/map-hg-item3.png' },
   ];
-  const [activeFeedStatus, setActiveFeedbackStatus] = useState(true);
+  const [activeFeedbackStatus, setActiveFeedbackStatus] = useState(true);
 
   return (
     <section id="feedback" className="relative bg-white text-white">
@@ -35,12 +37,10 @@ export default function Feedback() {
             {[...Array(5)].map((_, index) => (
               <li key={index} className="w-[18rem] shrink-0 md:w-[22rem]">
                 <FeedbackItem
-                  author={'Athony Ng'}
                   vote={5}
+                  author="Athony Ng"
                   createdDate={'2024-03-20'}
-                  avatar={
-                    'https://honghaotravel.com/_next/image?url=https%3A…ge-2024-07-22-at-10.56.31_9138baea.jpg&w=256&q=75'
-                  }
+                  avatar="/images/home/clients-say/user1.jpeg"
                   content={
                     'Blown away by our Tanzania safari, I never expected it to be that good — it totally exceeded my expectations and was all hassle free. Our guide was absolutely amazing too. Have re-booked and cannot wait for next year! '
                   }
@@ -62,11 +62,12 @@ export default function Feedback() {
                   <span className="size-2 rounded-full bg-white/60"></span>
                 </button>
                 <div
-                  className={`absolute top-0 right-full -translate-y-1/2 transition-all duration-700 ${
-                    activeFeedStatus
+                  className={cn(
+                    'absolute top-0 right-full -translate-y-1/2 transition-all duration-700',
+                    activeFeedbackStatus
                       ? 'pointer-events-auto visible opacity-100'
-                      : 'pointer-events-none invisible opacity-0'
-                  }`}
+                      : 'pointer-events-none invisible opacity-0',
+                  )}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,16 +83,12 @@ export default function Feedback() {
                     />
                     <circle cx="4" cy="4" r="4" fill="#D9D9D9" />
                   </svg>
-                  <div
-                    className={`absolute top-1/2 right-full -translate-y-1/2`}
-                  >
+                  <div className="absolute top-1/2 right-full -translate-y-1/2">
                     <FeedbackItem
-                      author={'Athony Ng'}
                       vote={5}
+                      author="Athony Ng"
                       createdDate={'2024-03-20'}
-                      avatar={
-                        'https://honghaotravel.com/_next/image?url=https%3A…ge-2024-07-22-at-10.56.31_9138baea.jpg&w=256&q=75'
-                      }
+                      avatar="/images/home/clients-say/user1.jpeg"
                       content={
                         'Blown away by our Tanzania safari, I never expected it to be that good — it totally exceeded my expectations and was all hassle free. Our guide was absolutely amazing too. Have re-booked and cannot wait for next year! Blown away by our Tanzania safari, I never expected it to be that good — it totally exceeded my expectations and was all hassle free. Our guide was absolutely amazing too. Have re-booked and cannot wait for next year!'
                       }
@@ -136,12 +133,10 @@ export default function Feedback() {
                   </svg>
                   <div className="absolute top-1/2 left-full -translate-y-1/2">
                     <FeedbackItem
-                      author={'Athony Ng'}
                       vote={5}
+                      author="Athony Ng"
                       createdDate={'2024-03-20'}
-                      avatar={
-                        'https://honghaotravel.com/_next/image?url=https%3A…ge-2024-07-22-at-10.56.31_9138baea.jpg&w=256&q=75'
-                      }
+                      avatar="/images/home/clients-say/user1.jpeg"
                       content={
                         'Blown away by our Tanzania safari, I never expected it to be that good — it totally exceeded my expectations and was all hassle free. Our guide was absolutely amazing too. Have re-booked and cannot wait for next year!'
                       }
@@ -159,11 +154,12 @@ export default function Feedback() {
                 </button>
                 <div className="absolute top-0 right-full h-[15rem] w-[20rem] -translate-y-1/2 bg-transparent"></div>
                 <div
-                  className={`absolute top-0 right-full -translate-y-1/2 transition-all duration-700 ${
-                    activeFeedStatus
+                  className={cn(
+                    'absolute top-0 right-full -translate-y-1/2 transition-all duration-700',
+                    activeFeedbackStatus
                       ? 'pointer-events-none invisible opacity-0'
-                      : 'pointer-events-auto visible opacity-100'
-                  }`}
+                      : 'pointer-events-auto visible opacity-100',
+                  )}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -184,9 +180,7 @@ export default function Feedback() {
                       author={'Athony Ng'}
                       vote={5}
                       createdDate={'2024-03-20'}
-                      avatar={
-                        'https://honghaotravel.com/_next/image?url=https%3A…ge-2024-07-22-at-10.56.31_9138baea.jpg&w=256&q=75'
-                      }
+                      avatar="/images/home/clients-say/user1.jpeg"
                       content={
                         'Blown away by our Tanzania safari, I never expected it to be that good — it totally exceeded my expectations and was all hassle free. Our guide was absolutely amazing too. Have re-booked and cannot wait for next year!'
                       }
@@ -199,7 +193,7 @@ export default function Feedback() {
               <FeedbackSlide data={Maps} />
             </div>
           </div>
-          <div className="flex flex-col items-center gap-2 pt-[2.75rem] md:mt-[2rem]">
+          <div className="md:mt-[2rem]">
             <SiteList />
           </div>
         </div>

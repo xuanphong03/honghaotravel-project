@@ -1,19 +1,17 @@
-"use client";
-import React from "react";
-import PropTypes from "prop-types";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-
-import "./Feedback.css";
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 // import required modules
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from 'swiper/modules';
 
 function FeedbackSlide({ data = [] }) {
   return (
@@ -24,7 +22,7 @@ function FeedbackSlide({ data = [] }) {
         delay: 3000,
         disableOnInteraction: false,
       }}
-      effect={"fade"}
+      effect={'fade'}
       modules={[EffectFade, Autoplay]}
       className=""
     >
@@ -34,8 +32,8 @@ function FeedbackSlide({ data = [] }) {
             width={500}
             height={500}
             alt="Hong Hao Travel"
-            className="w-full h-full object-contain"
-            src={item?.path || "/images/home/clients-say/map-hg-item1.png"}
+            className="h-full w-full object-contain"
+            src={item?.path || '/images/home/clients-say/map-hg-item1.png'}
           />
         </SwiperSlide>
       ))}

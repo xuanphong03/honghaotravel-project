@@ -1,15 +1,14 @@
-import React from "react";
-import BlogRelatedItem from "./BlogRelatedItem";
-import Link from "next/link";
+import Link from 'next/link';
+import BlogRelatedItem from './BlogRelatedItem';
 
 export default function BlogRelatedList({ blogs }) {
   return (
-    <div className="flex w-fit items-center overflow-auto hidden_scrollbar">
+    <div className="hidden_scrollbar flex w-fit items-center overflow-auto">
       {blogs.map(({ id, tag, title, createdDate }) => (
         <Link
           href="#"
           key={id}
-          className="inline-block not-first:ml-[0.875rem] md:not-first:ml-[1.4rem] shrink-0 w-[18.625rem] md:w-[21.4375rem] h-[15.3125rem] md:w-[44.25rem] md:h-[25.8125rem] "
+          className="inline-block h-[15.3125rem] w-[18.625rem] shrink-0 not-first:ml-[0.875rem] md:h-[25.8125rem] md:w-[44.25rem] md:not-first:ml-[1.4rem]"
         >
           <BlogRelatedItem
             key={id}
