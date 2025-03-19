@@ -12,6 +12,7 @@ import ButtonPrev from '../../common/Button/ButtonPrev';
 import OurTeamItem from './OurTeamItem';
 import OurTeamSkeleton from './OurTeamSkeleton';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export default function OurTeamSlide({ data = [], primary, secondary }) {
   const swiperRef = useRef(null);
@@ -54,13 +55,13 @@ export default function OurTeamSlide({ data = [], primary, secondary }) {
           </SwiperSlide>
         ))}
       <div
-        className={`${
-          primary ? 'from-[rgba(19,40,25,0)] via-[#132819] to-[#132819]' : ''
-        } ${
+        className={cn(
+          'pointer-events-none absolute top-0 right-0 !z-50 h-[28.5rem] w-[8rem] shrink-0 touch-none bg-gradient-to-r from-[1.95%] via-[94.2%]',
+          primary ? 'from-[rgba(19,40,25,0)] via-[#132819] to-[#132819]' : '',
           secondary
             ? 'bg-[linear-gradient(90deg,rgba(255,255,255,0.00)_1.95%,#FFF_94.2%)]'
-            : ''
-        } absolute top-0 right-0 !z-50 h-[28.5rem] w-[8rem] shrink-0 bg-gradient-to-r from-[1.95%] via-[94.2%]`}
+            : '',
+        )}
       ></div>
       <div
         onClick={handleClickPrevButton}

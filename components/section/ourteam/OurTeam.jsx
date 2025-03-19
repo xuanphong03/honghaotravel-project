@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import OurTeamSlide from './OurTeamSlide';
 import './OurTeam.css';
+import { cn } from '@/lib/utils';
 
 function OurTeam({ primary = false, secondary = false, className }) {
   const [tourGuideList, setTourGuideList] = useState([]);
@@ -43,12 +44,20 @@ function OurTeam({ primary = false, secondary = false, className }) {
           <div className="flex flex-col">
             <div className="flex flex-col text-white">
               <h3
-                className={`mb-[0.75rem] text-[1.125rem] font-bold uppercase max-md:text-[0.875rem] ${primary ? 'text-white/40' : ''} ${secondary ? 'text-[#262626]/40' : ''}`}
+                className={cn(
+                  'mb-[0.75rem] text-[1.125rem] font-bold uppercase max-md:text-[0.875rem]',
+                  primary ? 'text-white/40' : '',
+                  secondary ? 'text-[#262626]/40' : '',
+                )}
               >
                 HONG HAO TRAVEL
               </h3>
               <h2
-                className={`font-londrina-solid text-[3.5rem] leading-none font-black uppercase max-md:pb-[3rem] max-md:!text-[2.5rem] ${primary ? 'text-white' : ''} ${secondary ? 'text-black' : ''} `}
+                className={cn(
+                  'font-londrina-solid text-[3.5rem] leading-none font-black uppercase max-md:pb-[3rem] max-md:!text-[2.5rem]',
+                  primary ? 'text-white' : '',
+                  secondary ? 'text-black' : '',
+                )}
               >
                 Our team
               </h2>
@@ -72,19 +81,23 @@ function OurTeam({ primary = false, secondary = false, className }) {
               </Link>
               <Link
                 href="/tours"
-                className={`group our_team-btn hover:bg-orange-normal inline-flex flex-1 cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] border border-solid bg-transparent uppercase ${
+                className={cn(
+                  'group our_team-btn hover:bg-orange-normal inline-flex flex-1 cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] border border-solid bg-transparent uppercase',
                   primary
                     ? 'border-grey-green-light__active text-grey-green-light__active hover:border-orange-normal hover:text-white'
-                    : ''
-                } ${
+                    : '',
                   secondary
                     ? 'border-orange-normal text-orange-normal hover:text-white'
-                    : ''
-                } `}
+                    : '',
+                )}
               >
                 All tour
                 <ArrowRight
-                  className={`size-[0.875rem] duration-300 ease-in-out group-hover:translate-x-[0.25rem] group-hover:text-white ${primary ? 'text-grey-green-light__active' : ''} ${secondary ? 'text-orange-normal' : ''}`}
+                  className={cn(
+                    'size-[0.875rem] duration-300 ease-in-out group-hover:translate-x-[0.25rem] group-hover:text-white',
+                    primary ? 'text-grey-green-light__active' : '',
+                    secondary ? 'text-orange-normal' : '',
+                  )}
                 />
               </Link>
             </div>
