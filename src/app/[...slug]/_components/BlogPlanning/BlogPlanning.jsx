@@ -6,16 +6,16 @@ export default function BlogPlanning() {
     <section id="blog-planning" className="relative">
       <div className="relative mt-[3rem] w-full md:h-[48.875rem]">
         <Image
-          alt="Hong Hao Travel"
           width={2000}
           height={1000}
+          alt="Hong Hao Travel"
           src="/images/blog-detail/blog-planning-bg-start.png"
           className="relative h-full w-full max-md:hidden"
         />
         <Image
-          alt="Hong Hao Travel"
           width={400}
           height={400}
+          alt="Hong Hao Travel"
           src="/images/blog-detail/blog-planning-bg-start-mobi.png"
           className="relative w-full md:hidden"
         />

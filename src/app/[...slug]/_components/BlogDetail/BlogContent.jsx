@@ -35,10 +35,8 @@ export default function BlogContent() {
               </ul>
             </div>
             <div className="flex flex-col gap-[0.5rem] md:gap-[1.88rem]">
-              <h4 className="blog-sub-title max-md:text-[1.125rem]">
-                Music and Dance
-              </h4>
-              <p className="blog-desc max-md:text-[0.875rem]">
+              <h4 className="blog-sub-title">Music and Dance</h4>
+              <p className="blog-desc">
                 Tanzanian music, particularly Bongo Flava, is popular not only
                 within the country but also across East Africa. Traditional
                 dance forms like "Ngoma" are also cherished, often performed
@@ -70,10 +68,8 @@ export default function BlogContent() {
               />
             </div>
             <div className="flex flex-col gap-[0.5rem] md:gap-[1.88rem]">
-              <h4 className="blog-sub-title max-md:text-[1.125rem]">
-                Beach Bonfires
-              </h4>
-              <p className="blog-desc max-md:text-[0.875rem]">
+              <h4 className="blog-sub-title">Beach Bonfires</h4>
+              <p className="blog-desc">
                 Along the coastline of Tanzania, particularly in places like
                 Zanzibar and Dar es Salaam, beach bonfires are a common sight.
                 Locals and tourists gather around the fire to enjoy grilled
@@ -81,10 +77,8 @@ export default function BlogContent() {
               </p>
             </div>
             <div className="flex flex-col gap-[0.5rem] md:gap-[1.88rem]">
-              <h4 className="blog-sub-title max-md:text-[1.125rem]">
-                Beach Bonfires
-              </h4>
-              <p className="blog-desc max-md:text-[0.875rem]">
+              <h4 className="blog-sub-title">Beach Bonfires</h4>
+              <p className="blog-desc">
                 Along the coastline of Tanzania, particularly in places like
                 Zanzibar and Dar es Salaam, beach bonfires are a common sight.
                 Locals and tourists gather around the fire to enjoy grilled
@@ -101,10 +95,8 @@ export default function BlogContent() {
               />
             </div>
             <div className="flex flex-col gap-[0.5rem] md:gap-[1.88rem]">
-              <h4 className="blog-sub-title max-md:text-[1.125rem]">
-                Beach Bonfires
-              </h4>
-              <p className="blog-desc max-md:text-[0.875rem]">
+              <h4 className="blog-sub-title">Beach Bonfires</h4>
+              <p className="blog-desc">
                 Tanzanian music, particularly Bongo Flava, is popular not only
                 within the country but also across East Africa. Traditional
                 dance forms like "Ngoma" are also cherished, often performed

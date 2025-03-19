@@ -7,10 +7,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { cn } from '@/lib/utils';
 
-export default function BreadcrumbCustom({ data = [] }) {
+export default function BreadcrumbCustom({ data = [], className }) {
   return (
-    <div className="mx-auto w-[87.5rem]">
+    <div className="mx-auto w-full md:w-[87.5rem]">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem className="text-[0.875rem] tracking-[0.00219rem] text-[#C5C5C5]">
@@ -39,14 +40,15 @@ export default function BreadcrumbCustom({ data = [] }) {
             return (
               <React.Fragment key={index}>
                 <BreadcrumbSeparator
-                  className={`${isLastChild ? 'text-orange-normal' : ''}`}
+                  className={cn(isLastChild ? 'text-orange-normal' : '')}
                 />
-                <BreadcrumbItem className="text-[0.75rem] tracking-[0.00375rem] md:text-[0.875rem] md:tracking-[0.00219rem]">
+                <BreadcrumbItem className="line-clamp-1 text-[0.75rem] tracking-[0.00375rem] md:text-[0.875rem] md:tracking-[0.00219rem]">
                   <BreadcrumbLink
                     href={to}
-                    className={`line-clamp-1 ${
-                      isLastChild ? 'text-[#2c2c2c]' : 'text-[#C5C5C5]'
-                    }`}
+                    className={cn(
+                      isLastChild ? 'text-[#2c2c2c]' : 'text-[#C5C5C5]',
+                      className,
+                    )}
                   >
                     {page}
                   </BreadcrumbLink>

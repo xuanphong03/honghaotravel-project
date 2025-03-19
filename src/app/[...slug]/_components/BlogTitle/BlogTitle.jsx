@@ -1,18 +1,31 @@
 import Image from 'next/image';
-import BlogBreadcrumb from '../BlogDetail/BlogBreadcrumb';
+import BreadcrumbCustom from '@/components/common/breadcrumb/BreadcrumbCustom';
 
 export default function BlogTitle() {
+  const BreadcrumbLinks = [
+    { id: 1, page: 'Blog', to: '/blog' },
+    {
+      id: 2,
+      page: `Tanzania is known for it world-class opportunities for big game
+            spotting and stunning National Parks. But what don't you know about
+            this wonderful destination?`,
+      to: '#',
+    },
+  ];
   return (
     <section id="blog-title" className="relative bg-[#1A543A]">
       <div className="h-[25rem] md:h-[35.125rem]">
-        <div className="mx-auto flex max-w-[100rem] flex-col items-center gap-[1.5rem] pt-[7.89rem] md:gap-y-[4rem]">
+        <div className="mx-auto flex w-full flex-col items-center gap-[1.5rem] pt-[7.89rem] md:w-[87.5rem] md:gap-y-[4rem]">
           <p className="hidden items-center justify-center gap-[0.625rem] rounded-[6.25rem] bg-white px-[1.625rem] py-[0.5rem] md:inline-flex">
             <span className="text-center text-[0.90088rem] leading-[1.625rem] tracking-[0.0625rem] text-[#030922] uppercase">
               Ha Giang Friends
             </span>
           </p>
-          <div className="relative w-full !bg-[#1A543A] text-white md:hidden">
-            <BlogBreadcrumb />
+          <div className="relative w-full !bg-[#1A543A] px-[1rem] text-white md:hidden">
+            <BreadcrumbCustom
+              data={BreadcrumbLinks}
+              className="last:text-white"
+            />
           </div>
           <div className="flex flex-col items-center gap-[1.125rem]">
             <div className="flex items-center md:gap-x-[1.5rem]">
