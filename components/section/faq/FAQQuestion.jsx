@@ -124,16 +124,16 @@ export default function FAQQuestion() {
         ref={text1}
         className="title flex w-full translate-y-12 transform flex-col gap-3 opacity-0 max-md:mb-[1.12rem]"
       >
-        <p className="sub2-regular md:caption-regular !text-greyscaletext-80-main !text-xl !leading-[100%] !font-bold opacity-40">
+        <p className="sub2-regular__mb caption-regular !text-greyscaletext-80-main !text-xl !leading-[100%] !font-bold opacity-40">
           FAQS
         </p>
-        <h2 className="h2-bold !text-greyscaletext-80-main max-md:!text-[2rem]">
+        <h2 className="h2-bold__mb h2-bold !text-greyscaletext-80-main max-md:!text-[2rem]">
           QUESTIONS ? LOOK HERE
         </h2>
       </div>
       <p
         ref={text2}
-        className="body1-bold !text-greyscaletext-40 w-[38.8125rem] max-w-full translate-y-12 transform opacity-0 max-md:mb-[1.56rem]"
+        className="body1-bold__mb body1-bold !text-greyscaletext-40 w-[38.8125rem] max-w-full translate-y-12 transform opacity-0 max-md:mb-[1.56rem]"
       >
         Experience the raw beauty of Hà Giang with our immersive travel
         adventures. From rugged mountain landscapes to vibrant ethnic cultures,
@@ -170,7 +170,7 @@ export default function FAQQuestion() {
                 </div>
               </div>
               <p
-                className={`sub2-medium ${ans && active === index ? 'translate-y-14 transform opacity-0' : ''} !text-greyscaletext-80-main !text-[2.75rem] duration-500 ease-in-out max-md:!text-[2rem]`}
+                className={`sub2-medium__mb sub2-medium ${ans && active === index ? 'translate-y-14 transform opacity-0' : ''} !text-greyscaletext-80-main !text-[2.75rem] duration-500 ease-in-out max-md:!text-[2rem]`}
               >
                 What is excluded?
               </p>
@@ -187,12 +187,12 @@ export default function FAQQuestion() {
                 }}
               />
               <strong
-                className={`sub2-medium !text-greyscaletext-80-main !text-[1.125rem]`}
+                className={`sub2-medium sub2-medium__mb !text-greyscaletext-80-main !text-[1.125rem]`}
               >
                 What is excluded?
               </strong>
               <p
-                className={`body1-regular !text-greyscaletext-40 overflow-y-scroll`}
+                className={`body1-regular__mb body1-regular !text-greyscaletext-40 overflow-y-scroll`}
               >
                 Included: Experienced tour guide Bike rentals (semi-automatic or
                 manual) Fuel for the bikes Accommodation (private rooms
@@ -206,13 +206,13 @@ export default function FAQQuestion() {
       <div className="asked max-md:mt-12">
         <h2
           ref={text4}
-          className="h2-bold-tripsan !text-greyscaletext-80-main translate-y-12 transform !text-[2.5rem] !font-bold opacity-0 max-md:mb-6 max-md:!text-[1.5rem]"
+          className="h2-bold-tripsan__mb h2-bold-tripsan !text-greyscaletext-80-main translate-y-12 transform !text-[2.5rem] !font-bold opacity-0 max-md:mb-6 max-md:!text-[1.5rem]"
         >
           Frequently asked Questions
         </h2>
         <div
           ref={text5}
-          className="flex translate-y-12 transform opacity-0 max-md:flex-col max-md:gap-[3.62rem] md:mt-[2.81rem] md:justify-between"
+          className="flex translate-y-12 transform opacity-0 max-md:flex-col max-md:gap-8 md:mt-[2.81rem] md:justify-between"
         >
           <AccordionDemo />
           <FormAsk />

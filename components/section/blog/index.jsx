@@ -21,7 +21,7 @@ const dataBreadcrumb = [
     ),
     title: 'Home',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb !text-greyscaletext-10',
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const dataBreadcrumb = [
     ),
     title: 'Blog',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-80-main',
+    classNameTitle: 'body2-regular__mb !text-greyscaletext-80-main',
   },
 ];
 

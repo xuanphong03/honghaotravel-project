@@ -139,15 +139,15 @@ export default function BlogEnd() {
           <h2 className="h5-bold-pc h2-bold !text-greyscale-70 text-center md:h-[7.75rem] md:w-[27.5rem] md:!font-normal">
             Start planning your journey of joy
           </h2>
-          <p className="sub2-regular md:body1-regular !text-greyscaletext-30 md:!text-greyscale-10 text-center md:w-[20.3125rem]">
+          <p className="sub2-regular__mb body1-regular !text-greyscaletext-30 md:!text-greyscale-10 text-center md:w-[20.3125rem]">
             Experience the raw beauty of Hà Giang with our immersive travel
             adventu a truly unique and authentic experience.
           </p>
           <div className="flex items-center gap-4">
-            <button className="btn-size-m md:btn-size-l btn-bold btn-line-orange !text-orange-normal flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:bg-[#f2531c] hover:!text-white">
+            <button className="btn-size-m__mb btn-size-l btn-bold__mb btn-bold btn-line-orange__mb btn-line-orange !text-orange-normal flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:bg-[#f2531c] hover:!text-white">
               <span>ALL TOUR</span>
             </button>
-            <button className="group btn-size-m md:btn-size-l btn-default btn-bold !text-greyscaletext-0 flex items-center justify-center gap-2 !font-bold">
+            <button className="group btn-size-m__mb btn-size-l btn-default__mb btn-default btn-bold__mb btn-bold !text-greyscaletext-0 flex items-center justify-center gap-2 !font-bold">
               <span>CALL US</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

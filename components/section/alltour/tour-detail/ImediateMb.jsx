@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ImediateMb() {
   return (
-    <div className="relative px-4 py-5 md:hidden">
+    <div className="relative px-3 py-5 md:hidden">
       <div className="tourdetail-banner-cont w-full md:hidden">
         <div className="top flex flex-col gap-3">
           <div className="top-time flex items-center gap-6">
@@ -29,12 +29,12 @@ export default function ImediateMb() {
               </span>
             </div>
             <div className="top-time-letter">
-              <ul className="sub1-regular !text-greyscaletext-60 list-disc !font-normal text-ellipsis">
+              <ul className="sub1-regular__mb !text-greyscaletext-60 list-disc !font-normal text-ellipsis">
                 <li>3 Days / 4 Night</li>
               </ul>
             </div>
           </div>
-          <h2 className="top-h2 h4-semibold !text-greyscaletext-80-main">
+          <h2 className="top-h2 h4-semibold__mb !text-greyscaletext-80-main">
             Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
           </h2>
         </div>
@@ -58,7 +58,7 @@ export default function ImediateMb() {
                     fill="#E64827"
                   />
                 </svg>
-                <span className="body2-regular !text-greyscaletext-10 !text-[0.875rem] !font-normal">
+                <span className="body2-regular__mb !text-greyscaletext-10 !text-[0.875rem] !font-normal">
                   SPECIAL
                 </span>
               </div>
@@ -91,7 +91,7 @@ export default function ImediateMb() {
                   </defs>
                 </svg>
               </div>
-              <ul className="mid-special-list body2-bold !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
+              <ul className="mid-special-list body2-bold__mb !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
                 <li>Expert Local Guides good English</li>
                 <li>Book now, pay later</li>
                 <li>Flexible cancellation policy</li>
@@ -116,7 +116,7 @@ export default function ImediateMb() {
                     fill="#FEEEE8"
                   />
                 </svg>
-                <span className="body2-regular !text-greyscaletext-10 !text-[0.875rem] !font-normal">
+                <span className="body2-regular__mb !text-greyscaletext-10 !text-[0.875rem] !font-normal">
                   DESTINATION:
                 </span>
               </div>
@@ -149,7 +149,7 @@ export default function ImediateMb() {
                   </defs>
                 </svg>
               </div>
-              <ul className="mid-special-list body2-bold !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
+              <ul className="mid-special-list body2-bold__mb !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
                 <li>Hanoi - Ba Be - Meo Vac - Dong Van - Ha Giang</li>
               </ul>
             </div>
@@ -173,7 +173,7 @@ export default function ImediateMb() {
                     fill="#E64827"
                   />
                 </svg>
-                <span className="body2-regular !text-greyscaletext-10 !text-[0.875rem] !font-normal">
+                <span className="body2-regular__mb !text-greyscaletext-10 !text-[0.875rem] !font-normal">
                   ACCOMODATION
                 </span>
               </div>
@@ -206,7 +206,7 @@ export default function ImediateMb() {
                   </defs>
                 </svg>
               </div>
-              <ul className="mid-special-list body2-bold !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
+              <ul className="mid-special-list body2-bold__mb !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
                 <li>Doom Room</li>
               </ul>
             </div>
@@ -241,7 +241,7 @@ export default function ImediateMb() {
                     fill="#E64827"
                   />
                 </svg>
-                <span className="body2-regular !text-greyscaletext-10 !text-[0.875rem] !font-normal">
+                <span className="body2-regular__mb !text-greyscaletext-10 !text-[0.875rem] !font-normal">
                   TRANSPORT
                 </span>
               </div>
@@ -274,7 +274,7 @@ export default function ImediateMb() {
                   </defs>
                 </svg>
               </div>
-              <ul className="mid-special-list body2-bold !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
+              <ul className="mid-special-list body2-bold__mb !text-greyscaletext-80-main ms-4 flex list-disc flex-col gap-[0.625rem] py-2">
                 <li>Sleeper bus</li>
                 <li>Xe Wave, Vision</li>
               </ul>
@@ -282,7 +282,7 @@ export default function ImediateMb() {
           </div>
         </div>
       </div>
-      <div className="tourdetail-banner-xoay absolute right-4 bottom-5 -z-10 h-[9.375rem] w-[9.375rem] md:hidden">
+      <div className="tourdetail-banner-xoay absolute right-4 bottom-5 z-0 h-[9.375rem] w-[9.375rem] md:hidden">
         <div className="logo-xoay absolute top-[41.5%] left-1/2 h-[7.5rem] w-[9.375rem] -translate-x-1/2 -translate-y-1/2 transform">
           <Image
             src={'/images/alltour/detail/logo-xoay.png'}

@@ -129,17 +129,17 @@ export default function OurBlogPost({ ref }) {
       <Separator
         ref={text1}
         className={
-          'border-gray-scale-5 h-[1px] translate-y-20 transform border-solid opacity-0'
+          'border-gray-scale-5 h-[1px] translate-y-20 transform border-solid opacity-0 max-md:hidden'
         }
       />
       <div className="mx-auto max-w-[89.9375rem]">
         <div
           ref={text2}
-          className="our-blog-post-pagination no-scrollbar mt-6 flex w-full translate-y-20 transform items-center justify-center gap-[0.62rem] overflow-x-scroll opacity-0 md:mt-3 md:mb-[3.94rem] md:gap-[0.94rem]"
+          className="our-blog-post-pagination no-scrollbar mt-6 flex w-full translate-y-20 items-center gap-[0.62rem] opacity-0 max-md:overflow-x-scroll md:mt-3 md:mb-[3.94rem] md:transform md:justify-center md:gap-[0.94rem]"
         >
           {arrPaginate.map((item) => (
             <Button
-              className={`our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer max-md:!px-8 max-md:!py-[0.69rem]`}
+              className={`our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer max-md:!px-8 max-md:!py-[0.9rem]`}
               key={item.id}
             >
               <span

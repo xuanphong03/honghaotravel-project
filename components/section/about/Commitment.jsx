@@ -1607,25 +1607,25 @@ export default function Commitment() {
   return (
     <div
       ref={commit}
-      className="commitment commitment relative h-fit w-full max-md:px-3 max-md:py-[3.18rem] md:mt-[6rem] md:bg-[rgb(19,52,28)] md:pb-0"
+      className="commitment commitment relative h-fit w-full max-md:pt-5 md:mt-[6rem] md:bg-[rgb(19,52,28)] md:pb-0"
     >
       <TestM commit={commit} />
-      <div className="relative mx-auto flex max-w-[87.5rem] items-center justify-between gap-[9.25rem] max-md:pt-8 md:-top-[7rem]">
+      <div className="relative mx-auto flex items-center justify-between gap-[9.25rem] max-md:bg-[rgba(18,39,24,1)] max-md:px-3 max-md:pt-12 max-md:pb-16 md:-top-[7rem] md:max-w-[87.5rem]">
         <div className="commitment-cont relative flex w-full flex-col max-md:z-10">
           <div
             ref={a0}
             className="title flex translate-y-[6.25rem] flex-col gap-3 opacity-0 max-md:w-[16.04469rem]"
           >
-            <p className="sub2-regular md:caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
+            <p className="sub2-regular__mb caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
               HONG HA TRAVEL
             </p>
-            <h2 className="h3-bold md:h2-bold !text-greyscaletext-0">
+            <h2 className="h3-bold__mb h2-bold !text-greyscaletext-0">
               ETHICAL COMMITMENTS
             </h2>
           </div>
           <p
             ref={a2}
-            className="body2-regular md:body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:opacity-60 md:mt-14 md:w-[38.8125rem]"
+            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:opacity-60 md:mt-14 md:w-[38.8125rem]"
           >
             At our Ha Giang tourism company, we adhere to a set of ethical
             guidelines that guide our operations and define our commitment to
@@ -1648,7 +1648,7 @@ export default function Commitment() {
             {list.map((item, index) => (
               <li key={index} className="flex h-6 gap-2 md:items-center">
                 <div className="icon h-4 w-4">{item.icon}</div>
-                <div className="text btn-bold md:body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!font-extrabold max-md:!normal-case">
+                <div className="text body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!font-extrabold max-md:!normal-case">
                   {item.title}
                 </div>
               </li>

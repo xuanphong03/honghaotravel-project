@@ -8,7 +8,7 @@ export default function AboutL({ ref }) {
         <Image src={'/images/about/h1.png'} alt="" fill />
       </div>
       <div className="relative z-10 flex flex-col gap-[2.06rem] max-md:mt-6">
-        <p className="sub2-regular md:body1-regular !text-greyscaletext-0 w-full md:w-[52.3125rem]">
+        <p className="sub2-regular__mb body1-regular !text-greyscaletext-0 w-full md:w-[52.3125rem]">
           Ha Giang, nestled in the rugged mountains of northern Vietnam, beckons
           adventurers with its breathtaking scenery and vibrant cultural
           tapestry. From the towering peaks of the Dong Van Karst Plateau to the

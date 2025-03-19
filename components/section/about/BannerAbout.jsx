@@ -49,25 +49,15 @@ export default function BannerAbout() {
       y: 0,
       duration: 1,
     });
-    tl2
-      .to(
-        abd2.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        's',
-      )
-      .to(
-        abd3.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        's',
-      );
+    tl2.to(
+      abd2.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      },
+      's',
+    );
 
     gsap.to(aboutL.current, {
       duration: 1,
@@ -173,10 +163,7 @@ export default function BannerAbout() {
         />
 
         <AboutL ref={aboutL} />
-        <div
-          ref={abd3}
-          className="absolute top-[70%] z-10 flex w-full translate-y-12 transform justify-end opacity-0 max-md:hidden"
-        >
+        <div className="absolute top-[70%] z-10 flex w-full justify-end max-md:hidden">
           <AboutR />
         </div>
       </div>

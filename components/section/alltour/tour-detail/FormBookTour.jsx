@@ -206,10 +206,10 @@ export default function TourBookingForm({ defaultValues = null }) {
             ref={text}
             className="title absolute -top-28 left-0 flex translate-y-12 transform flex-col gap-3 opacity-0 max-md:hidden"
           >
-            <p className="sub2-regular md:caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
+            <p className="sub2-regular caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
               EASY WITH HONG HA TRAVEL
             </p>
-            <h2 className="h3-bold md:h2-bold !text-greyscaletext-0">
+            <h2 className="h3-bold__mb h2-bold !text-greyscaletext-0">
               ONLINE BOOKING
             </h2>
           </div>

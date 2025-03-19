@@ -37,7 +37,10 @@ function OurTeam({ primary = false, secondary = false, className }) {
   }, []);
 
   return (
-    <section id="our-team" className={`h-full w-full ${className}`}>
+    <section
+      id="our-team"
+      className={`h-full w-full ${className} relative bg-white`}
+    >
       <div className="relative z-[2] mx-auto w-full md:w-[87.5rem]">
         <div className="relative flex w-full justify-start gap-x-[3.875rem] pt-[4.37rem] max-md:flex-wrap">
           <div className="flex flex-col max-md:px-[1rem]">
