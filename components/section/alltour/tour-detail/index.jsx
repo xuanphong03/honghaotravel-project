@@ -5,6 +5,8 @@ import Schedule from './Schedule';
 import ImediateMb from './ImediateMb';
 import BookTour from './BookTour';
 import FAQAboutTrip from './FAQAboutTrip';
+import OurTeam from '../../ourteam/OurTeam';
+import Explore from '../../../common/Explore';
 
 const dataBreadcrumb = [
   {
@@ -81,6 +83,8 @@ export default function TourDetail() {
       <Schedule />
       <BookTour />
       <FAQAboutTrip />
+      <OurTeam secondary />
+      <Explore className={'pb-12 md:pb-16'} />
     </div>
   );
 }

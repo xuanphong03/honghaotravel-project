@@ -2,6 +2,8 @@ import React from 'react';
 import FAQBanner from '../../common/FAQBanner';
 import Breadcrumb from '../../common/Breadcrumb';
 import FAQQuestion from './FAQQuestion';
+import OurTeam from '../ourteam/OurTeam';
+import Explore from '../../common/Explore';
 
 const dataBreadcrumb = [
   {
@@ -53,6 +55,8 @@ export default function FAQ() {
       <FAQBanner urlTitle={'/images/alltour/title.png'} />
       <Breadcrumb data={dataBreadcrumb} />
       <FAQQuestion />
+      <OurTeam secondary />
+      <Explore className={'pb-16 max-md:pb-12'} />
     </div>
   );
 }

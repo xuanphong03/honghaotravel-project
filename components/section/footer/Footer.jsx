@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <div className="footer relative z-50 mx-auto h-fit items-start overflow-x-hidden bg-white px-5 md:px-[5.96rem]">
+    <div className="footer relative z-50 mx-auto h-fit items-start overflow-x-hidden bg-white px-3 md:px-[5.96rem]">
       <div className="footer-bg-l absolute top-8 -left-[3.25rem] -z-10 h-[20.89425rem] w-[58.1875rem] shrink-0 bg-[url(/images/footer/footer-mbg.png)] bg-no-repeat opacity-30 md:top-0 md:-left-7 md:h-[33.57038rem] md:w-[109.5rem] md:bg-cover md:bg-center"></div>
       <div className="footer-bg-r absolute top-20 -right-[2.8125rem] -z-10 h-[32.57038rem] w-[44.1875rem] shrink-0 bg-[url(/images/footer/ft-mountain.png)] bg-contain bg-no-repeat md:top-0 md:right-0 md:w-[70%] md:bg-cover md:bg-center"></div>
       <div className="mx-auto max-w-[87.5rem]">

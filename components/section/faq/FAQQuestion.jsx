@@ -15,6 +15,8 @@ export default function FAQQuestion() {
   const text1 = useRef(null);
   const text2 = useRef(null);
   const text3 = useRef(null);
+  const text4 = useRef(null);
+  const text5 = useRef(null);
   const container = useRef(null);
 
   useGSAP(() => {
@@ -29,34 +31,94 @@ export default function FAQQuestion() {
         scrub: false,
       },
     });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: '10% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: '65% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: '75% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
 
     tl.to(
       text1.current,
       {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         y: 0,
         ease: 'power2.out',
       },
       's',
-    )
-      .to(text2.current, {
-        duration: 0.5,
+    );
+    tl2.to(
+      text2.current,
+      {
+        duration: 1.5,
         opacity: 1,
         y: 0,
         ease: 'power2.out',
-      })
-      .to(text3.current, {
-        duration: 0.5,
-        opacity: 1,
-        y: 0,
-        ease: 'power2.out',
-      });
+      },
+      'a',
+    );
+    tl3.to(text3.current, {
+      duration: 1.5,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+    });
+    tl4.to(text4.current, {
+      duration: 1.5,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+    });
+    tl5.to(text5.current, {
+      duration: 1.5,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+    });
   });
   return (
     <div
       ref={container}
-      className="mx-auto flex max-w-[87.5rem] flex-col py-16 max-md:px-5 max-md:py-8 md:gap-[3.56rem]"
+      className="mx-auto flex max-w-[87.5rem] flex-col max-md:px-3 max-md:pt-8 md:gap-[3.56rem] md:py-16"
     >
       <div
         ref={text1}
@@ -142,10 +204,16 @@ export default function FAQQuestion() {
         ))}
       </div>
       <div className="asked max-md:mt-12">
-        <h2 className="h2-bold-tripsan !text-greyscaletext-80-main !text-[2.5rem] !font-bold max-md:mb-6 max-md:!text-[1.5rem]">
+        <h2
+          ref={text4}
+          className="h2-bold-tripsan !text-greyscaletext-80-main translate-y-12 transform !text-[2.5rem] !font-bold opacity-0 max-md:mb-6 max-md:!text-[1.5rem]"
+        >
           Frequently asked Questions
         </h2>
-        <div className="flex max-md:flex-col max-md:gap-[3.62rem] md:mt-[2.81rem] md:justify-between">
+        <div
+          ref={text5}
+          className="flex translate-y-12 transform opacity-0 max-md:flex-col max-md:gap-[3.62rem] md:mt-[2.81rem] md:justify-between"
+        >
           <AccordionDemo />
           <FormAsk />
         </div>
