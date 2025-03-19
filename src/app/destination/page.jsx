@@ -1,7 +1,6 @@
 import BreadcrumbCustom from '@/components/common/breadcrumb/BreadcrumbCustom';
 import OurTeam from '../../../components/section/ourteam/OurTeam';
 import Banner from './_components/Banner/Banner';
-import Breadcrumb from './_components/Breadcrumb/Breadcrumb';
 import Discovery from './_components/Discovery/Discovery';
 import ExploreTrip from './_components/ExploreTrip/ExploreTrip';
 
