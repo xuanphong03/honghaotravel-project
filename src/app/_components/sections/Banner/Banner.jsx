@@ -207,14 +207,14 @@ export default function Banner() {
         <div className="slide-animation relative z-[10] size-full translate-y-full scale-0">
           <BannerSlide data={SlideList} onChange={handleSlideChange} />
         </div>
-        <div className="side-panel-animation absolute top-0 right-0 z-30 h-full w-[27.3975rem] translate-x-full">
+        <div className="side-panel-animation pointer-events-none absolute top-0 right-0 z-30 h-full w-[27.3975rem] translate-x-full select-none">
           <div className="absolute top-[10rem] right-[3rem] z-20 h-[24rem] w-[19.5rem]">
             <Image
               width={1000}
               height={1000}
               alt="hong hao travel"
               src="/images/home/banner/map.svg"
-              className="size-full object-contain"
+              className="size-full object-contain select-none"
             />
             <span
               style={{
@@ -226,7 +226,7 @@ export default function Banner() {
               <span className="inline-block size-1.5 rounded-full bg-white"></span>
             </span>
           </div>
-          <div className="absolute top-0 right-0 z-10 h-full w-full bg-[linear-gradient(90deg,rgba(9,42,27,0.00)_11.52%,#092A1B_89.04%)]"></div>
+          <div className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 h-full w-full bg-[linear-gradient(90deg,rgba(9,42,27,0.00)_11.52%,#092A1B_89.04%)] select-none"></div>
         </div>
       </div>
 
