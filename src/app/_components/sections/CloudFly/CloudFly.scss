@@ -1,18 +1,18 @@
-.cloud_container {
+#cloud_fly.cloud_container {
   .animation_cloud1 {
-    animation: cloud1 60s linear infinite;
+    animation: cloud_fly1 60s linear infinite;
   }
   .animation_cloud2 {
-    animation: cloud2 60s linear infinite;
+    animation: cloud_fly2 60s linear infinite;
   }
   .animation_cloud3 {
-    animation: cloud3 60s linear infinite;
+    animation: cloud_fly3 60s linear infinite;
   }
   .animation_cloud4 {
-    animation: cloud4 60s linear infinite;
+    animation: cloud_fly4 60s linear infinite;
   }
 
-  @keyframes cloud1 {
+  @keyframes cloud_fly1 {
     0% {
       transform: translateX(0%);
     }
@@ -23,7 +23,7 @@
       transform: translateX(0%);
     }
   }
-  @keyframes cloud2 {
+  @keyframes cloud_fly2 {
     0% {
       transform: translateX(0%);
     }
@@ -34,7 +34,7 @@
       transform: translateX(0%);
     }
   }
-  @keyframes cloud3 {
+  @keyframes cloud_fly3 {
     0% {
       transform: translateX(0%);
     }
@@ -46,7 +46,7 @@
     }
   }
 
-  @keyframes cloud4 {
+  @keyframes cloud_fly4 {
     0% {
       transform: translateX(0%);
     }
