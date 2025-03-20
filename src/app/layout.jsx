@@ -5,6 +5,7 @@ import AppProvider from './context/AppProvider';
 import AOSProvider from './context/AOSProvider';
 import ProgressBarProvider from './context/ProgressBarProvider';
 import { tripSansFont } from '../../public/fonts/font-family';
+import { Toaster } from 'sonner';
 import '@/global/global.css';
 
 export default function RootLayout({ children }) {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
               <main className="bg-white">{children}</main>
               <Footer />
               <ToolBar />
+              <Toaster />
             </AppProvider>
           </AOSProvider>
         </ProgressBarProvider>
