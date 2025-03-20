@@ -81,7 +81,7 @@ export default function BannerAbout() {
           }}
         ></div>
         <Image
-          src="/images/about/about-banner.jpeg"
+          src="/images/about/about-banner.png"
           alt="banner"
           fill
           className="absolute top-0 right-0 bottom-0 left-0 z-0 object-cover"
