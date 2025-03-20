@@ -1,14 +1,21 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ShareBtn() {
-  const handleShare = () => {
-    const url = encodeURIComponent(window.location.href);
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-    window.open(facebookShareUrl, '_blank', 'width=600,height=400');
+  const handleClick = () => {
+    const url = 'https://honghaotravel.com/';
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent(
+      'Khám phá ngay tại honghaotravel.com #honghaotravel',
+    )}`;
+    window.open(
+      facebookShareUrl,
+      'targetWindow',
+      'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250',
+    );
   };
   return (
-    <button onClick={handleShare} className="cursor-pointer">
+    <button onClick={handleClick} className="cursor-pointer">
       <Image
         alt="copy"
         width={20}
