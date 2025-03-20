@@ -17,7 +17,7 @@ export default function OverlayAnimate() {
   return (
     <div
       ref={ab}
-      className="about-ab absolute top-0 right-0 left-0 z-30 h-screen"
+      className="about-ab absolute top-0 right-0 bottom-0 left-0 z-30"
       style={{
         background:
           'conic-gradient(rgb(6, 78, 59), rgb(6, 95, 70), rgb(6, 78, 59))',

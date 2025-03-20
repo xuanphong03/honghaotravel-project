@@ -139,11 +139,11 @@ export default function OurBlogPost({ ref }) {
         >
           {arrPaginate.map((item) => (
             <Button
-              className={`our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer max-md:!px-8 max-md:!py-[0.9rem]`}
+              className={`our-blog__mb our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer`}
               key={item.id}
             >
               <span
-                className={`text-blog-bold ${item.id === 1 ? '!text-greyscaletext-0' : ''} group-hover:!text-greyscaletext-0 max-md:!text-[0.75rem]`}
+                className={`text-blog-bold__mb text-blog-bold ${item.id === 1 ? '!text-greyscaletext-0' : ''} group-hover:!text-greyscaletext-0 max-md:!text-[0.75rem]`}
               >
                 {item.content}
               </span>
@@ -161,14 +161,16 @@ export default function OurBlogPost({ ref }) {
             className="object-cover opacity-[0.8457] duration-500 ease-in-out hover:scale-110"
           />
           <article className="5-min-read bg-green-darker relative z-10 p-[3.75rem] md:h-[22.17188rem] md:w-[29.89381rem]">
-            <div className="post-btn sub2-regular !text-greyscaletext-80-main !w-fit">
+            <div className="post-btn__mb post-btn sub2-regular__mb sub2-regular !text-greyscaletext-80-main !w-fit">
               ARTICLE
             </div>
-            <p className="post-btn-p mt-[1.19rem] mb-[2.43rem] h-[7.68rem] overflow-y-scroll">
+            <p className="post-btn-p__mb post-btn-p mt-[1.19rem] mb-[2.43rem] h-[7.68rem] overflow-y-scroll">
               Seychelles Hotel Guide; Advice from the Experts
             </p>
-            <span className="post-btn-span uppercase">5 min read</span>
-            <div className="post-btn sub2-regular !text-greyscaletext-80-main absolute top-[1.8rem] -right-[4.109rem] !w-fit rotate-90 !rounded-md !rounded-b-none">
+            <span className="post-btn-span__mb post-btn-span uppercase">
+              5 min read
+            </span>
+            <div className="post-btn__mb post-btn sub2-regular__mb sub2-regular !text-greyscaletext-80-main absolute top-[1.8rem] -right-[4.109rem] !w-fit rotate-90 !rounded-md !rounded-b-none">
               ARTICLE
             </div>
           </article>

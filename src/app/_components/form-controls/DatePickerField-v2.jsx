@@ -29,7 +29,7 @@ function DatePickerField({ label, name, control, errorMessage, disabled }) {
                 <button
                   disabled={disabled}
                   className={cn(
-                    `sub2-regular inline-flex w-full items-center justify-between rounded-[0.5rem] border-[1px] border-solid px-[0.5rem] py-[0.75rem] text-left ${
+                    `sub2-regular__mb sub2-regular inline-flex w-full items-center justify-between rounded-[0.5rem] border-[1px] border-solid px-[0.5rem] py-[0.75rem] text-left ${
                       disabled
                         ? 'border-gray-200 bg-gray-200 opacity-30'
                         : 'border-[#C5C5C5] opacity-100'

@@ -52,7 +52,7 @@ export default function FAQAboutTrip() {
     >
       <h2
         ref={text1}
-        className="h2-bold !text-greyscaletext-80-main translate-y-12 transform opacity-0"
+        className="h2-bold__mb h2-bold !text-greyscaletext-80-main translate-y-12 transform opacity-0"
       >
         FAQ about the trip
       </h2>

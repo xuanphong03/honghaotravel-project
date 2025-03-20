@@ -10,7 +10,7 @@ export default function About() {
       <BannerAbout />
       <Share />
       <Commitment />
-      <OurTeam secondary />
+      <OurTeam secondary className={'relative z-10 bg-white'} />
     </div>
   );
 }

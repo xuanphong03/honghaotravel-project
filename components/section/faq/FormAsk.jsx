@@ -58,7 +58,7 @@ export default function FormAsk() {
                     <InputCustom
                       placeholder="Full Name*"
                       {...field}
-                      className="border-greyscaletext-10 sub2-regular__mb sub2-regular !1text-greyscaletext-40 w-full border-0 border-b-[1px] px-0 py-2 md:py-2"
+                      className="border-greyscaletext-10 body2-regular__mb sub2-regular !1text-greyscaletext-40 w-full border-0 border-b-[1px] px-0 py-2 md:py-2"
                     />
                   </FormControl>
                   <FormMessage />

@@ -84,7 +84,7 @@ export default function TourDetail() {
       <Schedule />
       <BookTour />
       <FAQAboutTrip />
-      <OurTeam secondary />
+      <OurTeam secondary className={'relative z-10 bg-white'} />
       <Explore className={'pb-12 md:pb-16'} />
     </div>
   );

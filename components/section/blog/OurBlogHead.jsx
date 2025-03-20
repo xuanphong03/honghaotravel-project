@@ -58,8 +58,10 @@ export default function OurBlogHead({ ref }) {
             />
           </svg>
         </div>
-        <div className="our-blog w-fit max-md:!px-5 max-md:!py-2">
-          <span className="text-out-blog max-md:!text-[0.75rem]">OUR BLOG</span>
+        <div className="our-blog__mb2 our-blog w-fit max-md:!px-5 max-md:!py-2">
+          <span className="text-out-blog__mb text-out-blog max-md:!text-[0.75rem]">
+            OUR BLOG
+          </span>
         </div>
         <div className="star md:hidden">
           <svg
