@@ -14,7 +14,7 @@ import { Autoplay } from 'swiper/modules';
 export default function ExploreTrip() {
   return (
     <section id="explore-trip" className="relative w-full bg-white">
-      <div className="mx-auto max-w-[90.375rem] max-md:px-[1rem]">
+      <div className="mx-auto w-full px-[1rem] md:px-[4rem] lg:w-[87.5rem] lg:px-0">
         <div className="relative mb-[2rem] flex flex-col gap-[0.75rem] md:mb-[3.75rem]">
           <h3 className="text-green-dark__active/40 text-[1.125rem] leading-none font-extrabold uppercase">
             Explore

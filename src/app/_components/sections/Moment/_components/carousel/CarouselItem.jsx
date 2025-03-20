@@ -1,27 +1,27 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function CarouselItem() {
   return (
     <article
       id="slide-item"
-      className="slide-item group relative w-[33.33rem] h-[21.125rem] shrink-0 rounded-[1rem] overflow-hidden select-none"
+      className="slide-item group relative h-[21.125rem] w-[33.33rem] shrink-0 overflow-hidden rounded-[1rem] select-none"
     >
       <Image
         width={500}
         height={400}
         alt="Hong Hao Travel"
         src="/images/home/moment/moment-item1.svg"
-        className="size-full object-cover select-none pointer-events-none"
+        className="pointer-events-none size-full object-cover select-none"
       />
-      <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[6.5625rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 pointer-events-none">
+      <div className="pointer-events-none invisible absolute top-1/2 left-1/2 size-[6.5625rem] -translate-1/2 opacity-0 transition-all duration-500 group-hover:visible group-hover:opacity-100">
         <Image
           width={100}
           height={100}
           alt="Hong Hao Travel"
           src="/images/home/moment/hong-hao-travel-white.svg"
-          className="size-full object-cover animate-spin animate-spin-slow select-none"
+          className="animate-spin-slow size-full animate-spin object-cover select-none"
         />
-        <div className="absolute top-1/2 left-1/2 -translate-1/2 size-[2.375rem]">
+        <div className="absolute top-1/2 left-1/2 size-[2.375rem] -translate-1/2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 38 38"

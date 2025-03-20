@@ -42,8 +42,8 @@ export default function SlideImage() {
   };
 
   return (
-    <div className="h-[44.75rem] w-[86.875rem] rounded-[1.5rem] bg-white p-[1.5rem]">
-      <div className="relative h-full w-full rounded-[0.75rem]">
+    <div className="h-[16.5625rem] w-[23.4375rem] rounded-t-[0.75rem] bg-white md:h-[44.75rem] md:w-[86.875rem] md:rounded-[1.5rem] md:p-[1.5rem]">
+      <div className="relative hidden h-full w-full rounded-[0.75rem] md:block">
         <Swiper
           ref={mainSlideSwiper}
           modules={[EffectFade]}
@@ -95,6 +95,18 @@ export default function SlideImage() {
             ))}
           </Swiper>
         </div>
+      </div>
+      <div className="h-full w-full pt-[1.125rem] pl-[1rem] md:hidden">
+        <Swiper slidesPerView="auto" spaceBetween={10} className="h-full">
+          {[...Array(10)].map((_, index) => (
+            <SwiperSlide
+              key={index}
+              className="!h-[14.4375rem] !w-[19.25rem] overflow-hidden rounded-[0.5rem] bg-[linear-gradient(0deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.2)_100%)] bg-cover bg-no-repeat"
+            >
+              <div className="size-full bg-[url('https://swiperjs.com/demos/images/nature-1.jpg')] bg-cover bg-center bg-no-repeat"></div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import OurTeamSlide from './OurTeamSlide';
 import './OurTeam.css';
+import { cn } from '@/lib/utils';
 
 function OurTeam({ primary = false, secondary = false, className }) {
   const [tourGuideList, setTourGuideList] = useState([]);
@@ -37,21 +38,26 @@ function OurTeam({ primary = false, secondary = false, className }) {
   }, []);
 
   return (
-    <section
-      id="our-team"
-      className={`h-full w-full ${className} relative bg-white`}
-    >
-      <div className="relative z-[2] mx-auto w-full md:w-[87.5rem]">
+    <section id="our-team" className={`h-full w-full ${className}`}>
+      <div className="relative z-[2] mx-auto w-full px-[1rem] md:pl-[4rem] lg:w-[87.5rem] lg:px-0">
         <div className="relative flex w-full justify-start gap-x-[3.875rem] pt-[4.37rem] max-md:flex-wrap">
-          <div className="flex flex-col max-md:px-[1rem]">
+          <div className="flex flex-col">
             <div className="flex flex-col text-white">
               <h3
-                className={`mb-[0.75rem] text-[1.125rem] font-bold uppercase max-md:text-[0.875rem] ${primary ? 'text-white/40' : ''} ${secondary ? 'text-[#262626]/40' : ''}`}
+                className={cn(
+                  'mb-[0.75rem] text-[1.125rem] font-bold uppercase max-md:text-[0.875rem]',
+                  primary ? 'text-white/40' : '',
+                  secondary ? 'text-[#262626]/40' : '',
+                )}
               >
                 HONG HAO TRAVEL
               </h3>
               <h2
-                className={`font-londrina-solid text-[3.5rem] leading-none font-black uppercase max-md:pb-[3rem] max-md:!text-[2.5rem] ${primary ? 'text-white' : ''} ${secondary ? 'text-black' : ''} `}
+                className={cn(
+                  'font-londrina-solid text-[3.5rem] leading-none font-black uppercase max-md:pb-[3rem] max-md:!text-[2.5rem]',
+                  primary ? 'text-white' : '',
+                  secondary ? 'text-black' : '',
+                )}
               >
                 Our team
               </h2>
@@ -75,19 +81,23 @@ function OurTeam({ primary = false, secondary = false, className }) {
               </Link>
               <Link
                 href="/tours"
-                className={`group our_team-btn hover:bg-orange-normal inline-flex flex-1 cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] border border-solid bg-transparent uppercase ${
+                className={cn(
+                  'group our_team-btn hover:bg-orange-normal inline-flex flex-1 cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] border border-solid bg-transparent uppercase',
                   primary
                     ? 'border-grey-green-light__active text-grey-green-light__active hover:border-orange-normal hover:text-white'
-                    : ''
-                } ${
+                    : '',
                   secondary
                     ? 'border-orange-normal text-orange-normal hover:text-white'
-                    : ''
-                } `}
+                    : '',
+                )}
               >
                 All tour
                 <ArrowRight
-                  className={`size-[0.875rem] duration-300 ease-in-out group-hover:translate-x-[0.25rem] group-hover:text-white ${primary ? 'text-grey-green-light__active' : ''} ${secondary ? 'text-orange-normal' : ''}`}
+                  className={cn(
+                    'size-[0.875rem] duration-300 ease-in-out group-hover:translate-x-[0.25rem] group-hover:text-white',
+                    primary ? 'text-grey-green-light__active' : '',
+                    secondary ? 'text-orange-normal' : '',
+                  )}
                 />
               </Link>
             </div>
@@ -111,20 +121,14 @@ function OurTeam({ primary = false, secondary = false, className }) {
                   Rider team
                 </TabsTrigger>
               </TabsList>
-              <TabsContent
-                value="tour_guide"
-                className="w-full max-md:px-[1rem]"
-              >
+              <TabsContent value="tour_guide" className="w-full">
                 <OurTeamSlide
                   data={tourGuideList}
                   primary={primary}
                   secondary={secondary}
                 />
               </TabsContent>
-              <TabsContent
-                value="rider_team"
-                className="w-full max-md:px-[1rem]"
-              >
+              <TabsContent value="rider_team" className="w-full">
                 <OurTeamSlide
                   data={riderTeamList}
                   primary={primary}

@@ -1,19 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 export default function SiteList() {
   return (
-    <>
-      {" "}
-      <p className="text-[0.875rem] font-bold tracking-[0.00875rem] leading-[1.2] text-center">
+    <div className="flex flex-col items-center gap-2 pt-[2.75rem]">
+      <p className="text-center text-[0.875rem] leading-[1.2] font-bold tracking-[0.00875rem]">
         View us on:
       </p>
       <ul className="flex items-center gap-x-[0.75rem]">
         <li>
           <Link
             href="#"
-            className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
+            className="inline-flex h-[2.25rem] w-[2.5rem] items-center justify-center rounded-full"
           >
             <Image
               alt="Hong Hao Travel"
@@ -27,7 +26,7 @@ export default function SiteList() {
         <li>
           <Link
             href="#"
-            className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
+            className="inline-flex h-[2.25rem] w-[2.5rem] items-center justify-center rounded-full"
           >
             <Image
               alt="Hong Hao Travel"
@@ -41,7 +40,7 @@ export default function SiteList() {
         <li>
           <Link
             href="#"
-            className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
+            className="inline-flex h-[2.25rem] w-[2.5rem] items-center justify-center rounded-full"
           >
             <Image
               alt="Hong Hao Travel"
@@ -55,7 +54,7 @@ export default function SiteList() {
         <li>
           <Link
             href="#"
-            className="inline-flex w-[2.5rem] h-[2.25rem] items-center justify-center rounded-full"
+            className="inline-flex h-[2.25rem] w-[2.5rem] items-center justify-center rounded-full"
           >
             <Image
               alt="Hong Hao Travel"
@@ -67,6 +66,6 @@ export default function SiteList() {
           </Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

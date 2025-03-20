@@ -1,0 +1,30 @@
+$tablet-width: 767.98px;
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+#blog-detail {
+  #blog-content {
+    .blog-sub-title {
+      font-size: 2rem;
+      color: #262626;
+      font-weight: 500;
+      line-height: 1.2;
+      @include tablet {
+        font-size: 1.125rem;
+      }
+    }
+    .blog-desc {
+      font-size: 1rem;
+      color: #262626;
+      line-height: 1.5;
+      letter-spacing: 0.005rem;
+      @include tablet {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

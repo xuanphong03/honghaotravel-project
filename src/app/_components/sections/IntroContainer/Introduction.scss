@@ -1,0 +1,35 @@
+#introduction {
+  #our_tour {
+    .animation_cloud1 {
+      animation: our_tour_cloud1 10s linear infinite;
+    }
+
+    .animation_cloud2 {
+      animation: our_tour_cloud2 10s linear infinite;
+    }
+
+    @keyframes our_tour_cloud1 {
+      0% {
+        transform: translateX(10px);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes our_tour_cloud2 {
+      0% {
+        transform: translateX(10px) translateY(-10px);
+      }
+      50% {
+        transform: translateX(-10px) translateY(10px);
+      }
+      100% {
+        transform: translateX(10px) translateY(-10px);
+      }
+    }
+  }
+}

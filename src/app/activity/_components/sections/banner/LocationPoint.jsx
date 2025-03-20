@@ -30,7 +30,7 @@ export default function LocationPoint() {
             </Badge>
           </div>
         </DialogTrigger>
-        <DialogContent className="!z-[9999] p-0">
+        <DialogContent className="!z-[9999] p-0 max-md:top-auto max-md:right-0 max-md:bottom-0 max-md:left-0 max-md:translate-0">
           <DialogHeader className="hidden">
             <DialogTitle></DialogTitle>
             <DialogDescription></DialogDescription>

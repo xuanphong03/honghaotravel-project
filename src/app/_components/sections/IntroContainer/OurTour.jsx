@@ -1,10 +1,9 @@
 'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/all';
 import Image from 'next/image';
 import { useRef } from 'react';
-import './OurTour.css';
-import { MotionPathPlugin } from 'gsap/all';
 
 export default function OurTour() {
   const TOUR_DESC = [
@@ -26,7 +25,17 @@ export default function OurTour() {
     () => {
       gsap.registerPlugin(MotionPathPlugin);
 
-      // Fade-out animation
+      gsap.to('#mountain_container', {
+        opacity: 1,
+        left: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#mountain_container',
+          toggleActions: 'play none none none',
+          start: 'top top',
+        },
+      });
+
       gsap.to('.fade-out-animation', {
         opacity: 0,
         duration: 1,
@@ -37,7 +46,6 @@ export default function OurTour() {
           start: 'top 50%',
         },
       });
-      // Line animation
       gsap.to('.line-red-container', {
         height: '100%',
         duration: 2,
@@ -76,7 +84,7 @@ export default function OurTour() {
   );
   return (
     <section
-      id="our-tour"
+      id="our_tour"
       ref={container}
       className="relative z-[1] mt-[6.62rem] overflow-hidden"
     >
@@ -97,13 +105,16 @@ export default function OurTour() {
         </div>
       </div>
       <div className="relative w-full overflow-hidden pt-[5.3125rem] max-md:px-[1rem] max-md:pt-0 max-md:pb-0 md:pb-[5rem] md:pl-[4rem] lg:pb-[7.6875rem] lg:pl-[6.75rem] xl:pb-[20.875rem]">
-        <div className="absolute top-0 right-[-50rem] left-0 hidden md:block">
+        <div
+          id="mountain_container"
+          className="absolute top-0 right-[-50rem] bottom-0 hidden md:block"
+        >
           <Image
             width={500}
             height={500}
             alt="Hong Hao Travel"
             src="/images/home/our-tour/cloud.png"
-            className="animate-cloud absolute top-[1rem] left-1/2 z-[1] opacity-30 delay-300"
+            className="animation_cloud1 absolute top-[1rem] left-1/2 z-[1] opacity-30 delay-300"
           />
           <Image
             width={500}
@@ -117,7 +128,7 @@ export default function OurTour() {
             width={500}
             height={500}
             src="/images/home/our-tour/cloud2.png"
-            className="animate-cloud2 absolute top-[2rem] left-1/2"
+            className="animation_cloud2 absolute top-[2rem] left-1/2"
           />
         </div>
         <div className="relative z-[2] w-full md:w-[38.8125rem]">

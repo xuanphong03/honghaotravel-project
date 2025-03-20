@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import Image from 'next/image';
@@ -10,10 +9,10 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './Banner.css';
+import './Banner.scss';
 
 // import required modules
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 function BannerSlide({ data, onChange }) {
   const handleSlideChange = (swiper) => {
@@ -41,7 +40,7 @@ function BannerSlide({ data, onChange }) {
             height={1080}
             alt={item?.imageAlt || ''}
             src={item?.imageSrc || ''}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover select-none"
           />
         </SwiperSlide>
       ))}
