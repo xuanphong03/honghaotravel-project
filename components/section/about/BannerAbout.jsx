@@ -74,15 +74,15 @@ export default function BannerAbout() {
       <OverlayAnimate />
       <div className="absolute top-0 right-0 left-0 h-full w-full">
         <div
-          className="absolute top-0 right-0 bottom-0 left-0 z-10"
+          className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-cover bg-no-repeat"
           style={{
             background:
               'linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)',
           }}
         ></div>
         <Image
-          src="/images/about/about-banner.png"
-          alt=""
+          src="/images/about/about-banner.jpeg"
+          alt="banner"
           fill
           className="absolute top-0 right-0 bottom-0 left-0 z-0 object-cover"
         ></Image>
