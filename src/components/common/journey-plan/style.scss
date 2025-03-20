@@ -6,11 +6,11 @@ $tablet-width: 767.98px;
   }
 }
 
-#blog-planning {
+#journey_plan {
   .circular-infinity {
     animation: circular-infinity 6s linear infinite;
   }
-  .blog_planning_btn {
+  .journey_plan_btn {
     @apply text-[0.875rem];
     gap: 0.5rem;
     width: 10.625rem;
@@ -34,7 +34,7 @@ $tablet-width: 767.98px;
       flex: 1;
     }
 
-    &.blog_planning_btn-primary {
+    &.journey_plan_btn-primary {
       color: #e64827;
       background: #fff;
       border: 1px solid #e64827;
@@ -44,7 +44,7 @@ $tablet-width: 767.98px;
         border: 1px solid #e64827;
       }
     }
-    &.blog_planning_btn-secondary {
+    &.journey_plan_btn-secondary {
       color: #fff;
       background: #e64827;
       border: 1px solid #e64827;
