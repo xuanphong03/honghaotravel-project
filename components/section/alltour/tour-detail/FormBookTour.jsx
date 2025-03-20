@@ -219,7 +219,7 @@ export default function TourBookingForm({ defaultValues = null }) {
           <div className="form-left flex w-full shrink-0 flex-col gap-[1rem] rounded-[1.5rem] bg-white md:w-[65%] md:py-[1.5rem] md:pr-[0.75rem] md:pl-[1.5rem]">
             <div className="w-full">
               <div className="mb-3 flex w-full items-center gap-5">
-                <span className="sub2-bold !text-gray-scale-80">
+                <span className="sub2-bold__mb sub2-bold !text-gray-scale-80">
                   Type of tour:
                 </span>
                 <span className="body1-regular !text-grey-50">
@@ -228,11 +228,11 @@ export default function TourBookingForm({ defaultValues = null }) {
               </div>
               <div className="mb-3 flex w-full flex-col gap-[0.75rem]">
                 <div className="flex h-[2.5rem] items-center justify-between py-[0.75rem]">
-                  <div className="sub2-regular !text-greyscaletext-60">
+                  <div className="sub2-regular__mb sub2-regular !text-greyscaletext-60">
                     {tourDuration?.days} days of self-driving
                   </div>
                   <div className="flex items-center gap-[0.5rem]">
-                    <div className="sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
+                    <div className="sub2-bold__mb sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
                       $172
                     </div>
                     <svg
@@ -259,11 +259,11 @@ export default function TourBookingForm({ defaultValues = null }) {
                 </div>
                 <div className="h-[0.0625rem] w-full bg-[rgba(217,217,217,0.20)]"></div>
                 <div className="flex h-[2.5rem] items-center justify-between py-[0.75rem]">
-                  <div className="sub2-regular !text-greyscaletext-60">
+                  <div className="sub2-regular__mb sub2-regular !text-greyscaletext-60">
                     {tourDuration?.days} days with local driver
                   </div>
                   <div className="flex items-center gap-[0.5rem]">
-                    <div className="sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
+                    <div className="sub2-bold__mb sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
                       $172
                     </div>
                     <svg
@@ -280,7 +280,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                       />
                     </svg>
                     <div className="flex items-center gap-[0.625rem] rounded-[0.25rem] bg-[#F1F1F1] px-[0.75rem] py-[0.375rem]">
-                      <span className="sub2-regular !text-greyscaletext-60">
+                      <span className="sub2-regular__mb sub2-regular !text-greyscaletext-60">
                         Pax
                       </span>
                       <div className="relative">
@@ -470,15 +470,15 @@ export default function TourBookingForm({ defaultValues = null }) {
             </div>
             <div className="overflow-hidden rounded-[0.5rem] border-[0.5px] border-solid border-[#eee] bg-[#F8F8F8]">
               <div className="flex w-full">
-                <div className="sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] !font-bold max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] !font-bold max-md:w-[7.4375rem]">
                   Type of tour
                 </div>
-                <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis">
+                <div className="caption-regular__mb caption-regular line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-ellipsis">
                   Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Name
                 </div>
                 <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
