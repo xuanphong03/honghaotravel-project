@@ -24,7 +24,7 @@ export default function ImediateMb() {
                   fill="#E64827"
                 />
               </svg>
-              <span className="body1-bold !text-greyscaletext-80-main !font-bold">
+              <span className="body1-bold__mb !text-greyscaletext-80-main !font-bold">
                 Intermediate
               </span>
             </div>

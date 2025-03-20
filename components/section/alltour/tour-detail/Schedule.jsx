@@ -145,13 +145,12 @@ export default function Schedule() {
         className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] translate-y-28 transform overflow-hidden rounded-4xl py-10 ps-[3.2rem] pe-20 opacity-0"
       >
         <div className="head flex items-center justify-between">
-          <div className="title flex flex-col gap-[0.9rem]">
-            <div className="time flex items-center gap-6">
-              <div className="time-icon flex items-center gap-1.5">
+          <div className="title flex flex-col gap-3">
+            <div className="time flex items-center gap-7">
+              <div className="time-icon flex items-center gap-[0.6rem]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -181,7 +180,7 @@ export default function Schedule() {
               <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
-              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
+              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-[0.25rem]">
                 Self - Driving
               </span>
             </div>
@@ -189,7 +188,7 @@ export default function Schedule() {
               <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
-              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
+              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-[0.25rem]">
                 Self - Driving
               </span>
             </div>

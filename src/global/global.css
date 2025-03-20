@@ -255,6 +255,17 @@ body::-webkit-scrollbar-thumb {
 
   /* btn fontsize */
 
+  .btn-medium {
+    color: var(--greyscaletext-0);
+
+    /* WEB/BUTTON/MEDIUM */
+    font-family: 'tripsan-medium';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 1.05rem */
+  }
+
   .btn-bold {
     color: var(--greyscaletext-0);
     text-align: center;
@@ -463,7 +474,7 @@ body::-webkit-scrollbar-thumb {
   }
   .h6-medium {
     color: #000;
-    font-family: Inter;
+    font-family: 'tripsan-regular';
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
@@ -471,7 +482,7 @@ body::-webkit-scrollbar-thumb {
   }
   .h6-semibold {
     color: #000;
-    font-family: Inter;
+    font-family: 'tripsan-medium';
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
@@ -602,15 +613,16 @@ body::-webkit-scrollbar-thumb {
     line-height: 150%; /* 1.5rem */
     letter-spacing: 0.005rem;
   }
-  /* .body1-bold {
-  color: #000;
-  font-family: Kanit;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%; /* 1.5rem */
-  /* letter-spacing: 0.005rem; */
-  /* } * */
+  .body1-bold {
+    color: #000;
+    font-family: 'tripsan-bold';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+  }
 
   /* Body2 */
 
@@ -694,76 +706,6 @@ input[type='number'] {
 
 /* Sub2 */
 
-.sub2-regular {
-  color: #000;
-
-  /* WEB/SUB2/REGULAR */
-  font-family: 'tripsan-regular';
-  font-size: 0.875rem !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 120% !important;
-  /* 1.05rem */
-  letter-spacing: 0.00875rem;
-}
-
-.sub2-medium {
-  color: #000;
-
-  /* WEB/SUB2/MEDIUM */
-  font-family: 'tripsan-medium';
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-  /* 1.05rem */
-  letter-spacing: 0.00875rem;
-}
-
-.sub2-semibold {
-  color: #000;
-  font-family: 'tripsan-medium';
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  /* 1.05rem */
-  letter-spacing: 0.00875rem;
-}
-
-.sub2-bold {
-  color: #000;
-  font-family: 'tripsan-bold';
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 120%;
-  letter-spacing: 0.00875rem;
-}
-
-/* WEB/BODY1/REGULAR */
-.body1-regular {
-  color: #000;
-
-  /* WEB/BODY1/REGULAR */
-  font-family: 'tripsan-regular';
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  /* 1.5rem */
-  letter-spacing: 0.005rem;
-}
-.body1-semibold {
-  color: #000;
-  font-family: 'tripsan-medium';
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  /* 1.5rem */
-  letter-spacing: 0.005rem;
-}
 .body1-bold {
   color: #000;
   font-family: 'tripsan-bold';
@@ -843,6 +785,17 @@ input[type='number'] {
   }
 
   /* btn fontsize */
+
+  .btn-medium__mb {
+    color: var(--greyscaletext-0);
+
+    /* WEB/BUTTON/MEDIUM */
+    font-family: 'tripsan-medium';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 1.05rem */
+  }
 
   .btn-bold__mb {
     color: var(--greyscaletext-0);
@@ -1187,15 +1140,17 @@ input[type='number'] {
     line-height: 150%; /* 1.5rem */
     letter-spacing: 0.005rem;
   }
-  /* .body1-bold {
-  color: #000;
-  font-family: Kanit;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%; /* 1.5rem */
-  /* letter-spacing: 0.005rem; */
-  /* } * */
+
+  .body1-bold__mb {
+    color: #000;
+    font-family: 'tripsan-bold';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: 0.005rem;
+  }
 
   /* Body2 */
 

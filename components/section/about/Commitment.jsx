@@ -15,7 +15,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -319,7 +319,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -623,7 +623,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -927,7 +927,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -1231,7 +1231,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -1616,7 +1616,7 @@ export default function Commitment() {
             ref={a0}
             className="title flex translate-y-[6.25rem] flex-col gap-3 opacity-0 max-md:w-[16.04469rem]"
           >
-            <p className="sub2-regular__mb caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
+            <p className="sub2-bold__mb caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
               HONG HA TRAVEL
             </p>
             <h2 className="h3-bold__mb h2-bold !text-greyscaletext-0">
@@ -1625,7 +1625,7 @@ export default function Commitment() {
           </div>
           <p
             ref={a2}
-            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:opacity-60 md:mt-14 md:w-[38.8125rem]"
+            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:!opacity-[0.6] md:mt-14 md:w-[38.8125rem]"
           >
             At our Ha Giang tourism company, we adhere to a set of ethical
             guidelines that guide our operations and define our commitment to
@@ -1647,8 +1647,10 @@ export default function Commitment() {
           >
             {list.map((item, index) => (
               <li key={index} className="flex h-6 gap-2 md:items-center">
-                <div className="icon h-4 w-4">{item.icon}</div>
-                <div className="text body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!font-extrabold max-md:!normal-case">
+                <div className="icon h-full w-fit max-md:flex max-md:items-center max-md:justify-center">
+                  {item.icon}
+                </div>
+                <div className="text body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!text-[0.875rem] max-md:!font-extrabold max-md:!normal-case">
                   {item.title}
                 </div>
               </li>

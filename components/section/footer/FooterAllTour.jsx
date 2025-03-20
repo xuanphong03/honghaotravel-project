@@ -5,7 +5,7 @@ const inf = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4 max-md:h-5 max-md:w-5"
         viewBox="0 0 18 21"
         fill="none"
       >
@@ -77,7 +77,7 @@ const inf = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4 max-md:h-5 max-md:w-5"
         viewBox="0 0 18 21"
         fill="none"
       >
@@ -149,7 +149,7 @@ const inf = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4 max-md:h-5 max-md:w-5"
         viewBox="0 0 18 21"
         fill="none"
       >
@@ -222,11 +222,15 @@ const inf = [
 export default function FooterAllTour() {
   return (
     <div className="contact-inf-contact flex flex-col gap-4">
-      <h5 className="sub1-bold__mb max-md:!text-Gray-Scale-80">ALL TOUR</h5>
+      <h5 className="sub1-bold__mb sub1-bold max-md:!text-Gray-Scale-80 max-md:!font-bold">
+        ALL TOUR
+      </h5>
       {inf.map((item, index) => (
-        <div key={index} className="flex cursor-pointer items-center gap-2">
-          <div className="icon h-5 w-5">{item.icon}</div>
-          <span className="sub1-medium__mb sub1-bold text-greyscaletext-80-main md:!text-greyscaletext-40">
+        <div key={index} className="flex cursor-pointer gap-2 md:items-center">
+          <div className="icon flex h-full w-fit items-center justify-center">
+            {item.icon}
+          </div>
+          <span className="sub1-medium__mb sub1-regular text-greyscaletext-80-main md:!text-greyscaletext-40">
             {item.content}
           </span>
         </div>

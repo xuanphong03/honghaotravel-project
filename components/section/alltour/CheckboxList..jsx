@@ -27,7 +27,7 @@ const CheckboxList = () => {
           />
           <label
             htmlFor={item.id}
-            className={`btn-bold ${selectedId === item.id ? '!text-greyscaletext-80-main' : '!text-greyscaletext-40'}`}
+            className={`btn-medium ${selectedId === item.id ? '!text-greyscaletext-80-main' : '!text-greyscaletext-40'}`}
           >
             {item.label}
           </label>

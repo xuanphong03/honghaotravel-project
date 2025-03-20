@@ -37,7 +37,7 @@ export default function Explore({ className }) {
       <div className="title flex flex-col gap-3 max-md:w-[16.04469rem]">
         <p
           ref={text}
-          className="sub2-regular__mb caption-regular !text-greyscaletext-80-main translate-y-24 transform !text-xl !leading-[100%] !font-bold opacity-0"
+          className="sub2-bold__mb caption-bold !text-greyscaletext-80-main translate-y-24 transform !text-[1.125rem] !leading-[100%] !font-bold opacity-0"
         >
           EXPLORE
         </p>

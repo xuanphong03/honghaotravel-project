@@ -187,7 +187,9 @@ const icon = [
 export default function FollowUs() {
   return (
     <div className="contact-inf-contact flex flex-col gap-4">
-      <h5 className="sub1-bold__mb">FOLLOW US</h5>
+      <h5 className="sub1-bold__mb sub1-bold max-md:!text-Gray-Scale-80 max-md:!font-bold">
+        FOLLOW US
+      </h5>
       <div className="flex items-center gap-4">
         {icon.map((item, index) => (
           <div key={index} className="flex items-center justify-center">

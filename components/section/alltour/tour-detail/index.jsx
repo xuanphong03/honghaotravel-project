@@ -49,7 +49,7 @@ const dataBreadcrumb = [
     ),
     title: 'Tour',
     url: '',
-    classNameTitle: 'body2-regular__mb !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb body2-regular !text-greyscaletext-10',
   },
   {
     id: 3,
@@ -71,7 +71,8 @@ const dataBreadcrumb = [
     ),
     title: 'Ha Giang Loop tour: Itinerary in 3 Days 4 Nights',
     url: '',
-    classNameTitle: 'body2-regular__mb !text-greyscaletext-80-main',
+    classNameTitle:
+      'body2-regular__mb body2-regular !text-greyscaletext-80-main',
   },
 ];
 export default function TourDetail() {

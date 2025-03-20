@@ -36,11 +36,11 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
                   className={`${activeIndex === index || activeIndex > index ? 'bg-green-normal__active' : 'bg-greyscaletext-10'} absolute top-0 left-[37%] z-50 size-[0.675rem] rounded-full transition-all delay-500 duration-500`}
                 ></div>
               </div>
-              <article className="scrollbar-popup-tour-detail tablet:overflow-hidden xlg:p-[2rem] xmd:p-[1rem] xlg:rounded-[0.75rem] relative mb-[2rem] max-h-[25rem] min-h-[17.875rem] flex-1 rounded-[1.5rem] border-[2px] border-transparent bg-[#F5F5F5] p-[1.88rem] transition-all duration-1000 ease-out lg:overflow-hidden xl:border-[3px]">
-                <h3 className="text-greyscale-80 xlg:text-[2rem] xmd:text-[1rem] xlg:tracking-[0.0125rem] xmd:w-[14.8125rem] xlg:w-[80%] text-[1.25rem] leading-[1.2] font-extrabold md:w-[30rem]">
+              <article className="scrollbar-popup-tour-detail relative mb-[2rem] max-h-[25rem] min-h-[17.875rem] flex-1 overflow-hidden rounded-[1.5rem] border-[3px] border-transparent bg-[#F5F5F5] p-[1.88rem] transition-all duration-1000 ease-out">
+                <h3 className="!text-greyscaletext-50 h6-semibold font-extrabold md:w-[30rem]">
                   Night 1 : Hanoi – Ha Giang city.
                 </h3>
-                <div className="detail_sched text-greyscale-50 xlg:leading-normal xlg:tracking-[0.00219rem xlg:text-[1.5rem] xmd:text-[0.875rem] xmd:mt-[1.12rem] xlg:mt-[1.5rem] mt-[1.12rem] text-[0.875rem] leading-[1.2] font-normal tracking-[0.00875rem]">
+                <div className="detail_sched !text-greyscaletext-50 body1-regular mt-[1.12rem]">
                   <p>
                     The bus pick up from your hotel/hostel in Hanoi between
                     7:30pm and 8:00pm, you will arrive to Ha Giang City around
@@ -58,7 +58,7 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
                 <div className="text-greyscale-50 absolute top-[1rem] right-[1rem] flex h-[1.625rem] w-[4.625rem] items-center justify-center rounded-[1.5rem] bg-[#E6E6E6] text-[0.75rem] leading-[1.2] font-normal tracking-[0.00375rem] md:h-[2.5rem] md:w-[8rem] md:text-[1.3rem]">
                   300 km
                 </div>
-                <div className="text-orange-normal absolute right-[1rem] bottom-[1rem] z-[10000] text-[0.875rem] font-bold uppercase">
+                <div className="!text-orange-normal sub1-bold absolute right-[1rem] bottom-[1rem] z-[10000] !text-[0.875rem] !font-bold !uppercase">
                   Xem them
                 </div>
                 <div className="pointer-events-none absolute bottom-0 left-0 h-[4rem] w-full bg-gradient-to-t from-white to-transparent"></div>

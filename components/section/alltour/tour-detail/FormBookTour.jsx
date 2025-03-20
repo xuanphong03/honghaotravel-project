@@ -11,10 +11,10 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
 import { TOUR_BOOKING_FORM } from '@/constants/schema';
 import { mapWithUuid } from '@/lib/utils';
-import ComboboxFieldV2 from '@/app/_components/form-controls/ComboboxFieldV2';
-import DatePickerField from '@/app/_components/form-controls/DatePickerField';
-import InputField from '@/app/_components/form-controls/InputField';
-import TextareaField from '@/app/_components/form-controls/TextareaField';
+import ComboboxFieldV2 from '@/app/_components/form-controls/ComboboxField-v3';
+import DatePickerField from '@/app/_components/form-controls/DatePickerField-v2';
+import InputField from '@/app/_components/form-controls/InputField-v2';
+import TextareaField from '@/app/_components/form-controls/TextareaField-v2';
 import SubmitButton from '@/app/_components/common/form/SubmitButton';
 import NumberFieldV2 from '@/app/_components/form-controls/NumberFieldV2';
 import Image from 'next/image';
@@ -206,14 +206,14 @@ export default function TourBookingForm({ defaultValues = null }) {
             ref={text}
             className="title absolute -top-28 left-0 flex translate-y-12 transform flex-col gap-3 opacity-0 max-md:hidden"
           >
-            <p className="sub2-regular caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
+            <p className="sub2-regular__mb caption-bold !text-greyscaletext-0 !text-[1.125rem] !leading-[100%] !font-bold opacity-40">
               EASY WITH HONG HA TRAVEL
             </p>
             <h2 className="h3-bold__mb h2-bold !text-greyscaletext-0">
               ONLINE BOOKING
             </h2>
           </div>
-          <div className="sub1-bold !text-greyscaletext-80-main md:!text-greyscaletext-0 absolute -top-8 text-[0.875rem] leading-[1.2] font-bold tracking-[0.00875rem] uppercase md:hidden">
+          <div className="sub2-bold__mb sub1-bold !text-greyscaletext-80-main md:!text-greyscaletext-0 absolute -top-8 text-[0.875rem] uppercase md:hidden md:!font-bold">
             Confirmed Information :
           </div>
           <div className="form-left flex w-full shrink-0 flex-col gap-[1rem] rounded-[1.5rem] bg-white md:w-[65%] md:py-[1.5rem] md:pr-[0.75rem] md:pl-[1.5rem]">
@@ -228,11 +228,11 @@ export default function TourBookingForm({ defaultValues = null }) {
               </div>
               <div className="mb-3 flex w-full flex-col gap-[0.75rem]">
                 <div className="flex h-[2.5rem] items-center justify-between py-[0.75rem]">
-                  <div className="text-[0.875rem] leading-[1.2] tracking-[0.00875rem] text-[#3F3F3F]">
+                  <div className="sub2-regular !text-greyscaletext-60">
                     {tourDuration?.days} days of self-driving
                   </div>
                   <div className="flex items-center gap-[0.5rem]">
-                    <div className="w-[3.3125rem] text-[0.875rem] leading-[1.2] font-bold tracking-[0.00875rem] text-[#6A6A6A]">
+                    <div className="sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
                       $172
                     </div>
                     <svg
@@ -259,11 +259,11 @@ export default function TourBookingForm({ defaultValues = null }) {
                 </div>
                 <div className="h-[0.0625rem] w-full bg-[rgba(217,217,217,0.20)]"></div>
                 <div className="flex h-[2.5rem] items-center justify-between py-[0.75rem]">
-                  <div className="text-[0.875rem] leading-[1.2] tracking-[0.00875rem] text-[#3F3F3F]">
+                  <div className="sub2-regular !text-greyscaletext-60">
                     {tourDuration?.days} days with local driver
                   </div>
                   <div className="flex items-center gap-[0.5rem]">
-                    <div className="w-[3.3125rem] text-[0.875rem] leading-[1.2] font-bold tracking-[0.00875rem] text-[#6A6A6A]">
+                    <div className="sub2-bold !text-greyscaletext-40 w-[3.3125rem]">
                       $172
                     </div>
                     <svg
@@ -280,7 +280,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                       />
                     </svg>
                     <div className="flex items-center gap-[0.625rem] rounded-[0.25rem] bg-[#F1F1F1] px-[0.75rem] py-[0.375rem]">
-                      <span className="text-[0.875rem] leading-[1.2] tracking-[0.00875rem] text-[#3F3F3F]">
+                      <span className="sub2-regular !text-greyscaletext-60">
                         Pax
                       </span>
                       <div className="relative">
@@ -332,10 +332,8 @@ export default function TourBookingForm({ defaultValues = null }) {
                 </div>
                 <div className="h-[0.0625rem] w-full bg-[rgba(217,217,217,0.20)]"></div>
                 <div className="flex w-full items-center justify-between">
-                  <div className="text-[1rem] leading-[1.5] font-extrabold tracking-[0.005rem] text-[#551D0A]">
-                    TOTAL
-                  </div>
-                  <div className="flex w-[10.5625rem] items-center justify-center rounded-[0.25rem] bg-[#F1F1F1] px-[0.5rem] py-[0.25rem] text-[1.25rem] leading-[1.2] font-bold text-[#262626]">
+                  <div className="body1-bold !text-[#551D0A]">TOTAL</div>
+                  <div className="h6-bold !text-greyscaletext-80-main flex w-[10.5625rem] items-center justify-center rounded-[0.25rem] bg-[#F1F1F1] px-[0.5rem] py-[0.25rem] !font-bold">
                     $567
                   </div>
                 </div>
@@ -447,33 +445,35 @@ export default function TourBookingForm({ defaultValues = null }) {
                 />
               </div>
               <div className="paycard flex items-center gap-2">
-                <Image
-                  src={'/images/alltour/detail/paycard-visa.png'}
-                  alt="visa"
-                  width={35}
-                  height={21.96096}
-                  className="object-contain"
-                />
-                <Image
-                  src={'/images/alltour/detail/paymentcard2.png'}
-                  alt=""
-                  width={35}
-                  height={21.96096}
-                  className="object-contain"
-                />
+                <div className="relative h-[1.37256rem] w-[2.1875rem]">
+                  <Image
+                    src={'/images/alltour/detail/paycard-visa.png'}
+                    alt="visa"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative h-[1.37256rem] w-[2.1875rem]">
+                  <Image
+                    src={'/images/alltour/detail/paymentcard2.png'}
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="form-right relative flex w-full shrink-0 flex-col gap-[0.75rem] md:w-[33.5%]">
-            <div className="sub1-bold !text-greyscaletext-80-main md:!text-greyscaletext-0 absolute -top-8 text-[0.875rem] leading-[1.2] font-bold tracking-[0.00875rem] uppercase">
+            <div className="sub2-bold__mb sub1-bold !text-greyscaletext-80-main md:!text-greyscaletext-0 absolute -top-8 text-[0.875rem] uppercase opacity-70 md:!font-bold">
               Confirmed tour booking :
             </div>
             <div className="overflow-hidden rounded-[0.5rem] border-[0.5px] border-solid border-[#eee] bg-[#F8F8F8]">
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] !font-bold max-md:w-[7.4375rem]">
                   Type of tour
                 </div>
-                <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
+                <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis">
                   Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
                 </div>
               </div>

@@ -16,13 +16,13 @@ export default function AboutL({ ref }) {
           journey through some of Vietnam's most awe-inspiring landscapes.
         </p>
         <div className="flex items-center gap-4 max-md:hidden">
-          <button className="btn-size-l btn-default btn-bold !text-greyscaletext-0 flex items-center justify-center gap-2 !font-bold">
-            <span>BOOK NOW</span>
+          <button className="group btn-size-m__mb btn-size-l btn-default__mb btn-default btn-bold__mb btn-bold !text-greyscaletext-0 flex cursor-pointer items-center justify-center gap-2 !font-bold">
+            <span>BOOK TOUR</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 12 12"
               fill="none"
-              className="h-4 w-4 px-[0.125rem] py-[0.17188rem]"
+              className="h-4 w-4 px-[0.125rem] py-[0.17188rem] duration-500 ease-in-out group-hover:translate-x-[0.3rem] group-hover:scale-110 group-hover:transform"
             >
               <path
                 d="M10.125 6H0"
@@ -87,13 +87,13 @@ export default function AboutL({ ref }) {
               </defs>
             </svg>
           </button>
-          <button className="btn-size-l btn-bold !text-greyscaletext-0 btn-line-white flex items-center justify-center gap-2 !font-bold">
+          <button className="group btn-size-m__mb btn-size-l btn-line-white__mb btn-line-white btn-bold__mb btn-bold !text-greyscaletext-0 hover:!bg-orange-normal__hover hover:!border-orange-normal__hover flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:text-white hover:!opacity-100">
             <span>ALL TOUR</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 px-[0.125rem] py-[0.17188rem]"
               viewBox="0 0 12 12"
               fill="none"
+              className="h-4 w-4 px-[0.125rem] py-[0.17188rem] duration-500 ease-in-out group-hover:translate-x-[0.3rem] group-hover:scale-110 group-hover:transform"
             >
               <path
                 d="M10.125 6H0"
