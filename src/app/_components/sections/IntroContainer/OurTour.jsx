@@ -25,6 +25,17 @@ export default function OurTour() {
     () => {
       gsap.registerPlugin(MotionPathPlugin);
 
+      gsap.to('#mountain_container', {
+        opacity: 1,
+        left: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#mountain_container',
+          toggleActions: 'play none none none',
+          start: 'top top',
+        },
+      });
+
       gsap.to('.fade-out-animation', {
         opacity: 0,
         duration: 1,
@@ -94,7 +105,10 @@ export default function OurTour() {
         </div>
       </div>
       <div className="relative w-full overflow-hidden pt-[5.3125rem] max-md:px-[1rem] max-md:pt-0 max-md:pb-0 md:pb-[5rem] md:pl-[4rem] lg:pb-[7.6875rem] lg:pl-[6.75rem] xl:pb-[20.875rem]">
-        <div className="absolute top-0 right-[-50rem] left-0 hidden md:block">
+        <div
+          id="mountain_container"
+          className="absolute top-0 right-[-50rem] bottom-0 hidden md:block"
+        >
           <Image
             width={500}
             height={500}

@@ -1,6 +1,5 @@
 import CloudFly from '../CloudFly/CloudFly';
 import WeatherSlide from './WeatherSlide';
-import './Weather.scss';
 
 export default function Weather() {
   return (

@@ -1,14 +1,14 @@
 #introduction {
   #our_tour {
-    .animation-cloud1 {
-      animation: cloud1 10s linear infinite;
+    .animation_cloud1 {
+      animation: our_tour_cloud1 10s linear infinite;
     }
 
-    .animation-cloud2 {
-      animation: cloud2 10s linear infinite;
+    .animation_cloud2 {
+      animation: our_tour_cloud2 10s linear infinite;
     }
 
-    @keyframes cloud1 {
+    @keyframes our_tour_cloud1 {
       0% {
         transform: translateX(10px);
       }
@@ -20,7 +20,7 @@
       }
     }
 
-    @keyframes cloud2 {
+    @keyframes our_tour_cloud2 {
       0% {
         transform: translateX(10px) translateY(-10px);
       }
