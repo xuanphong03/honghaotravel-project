@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import './style.scss';
+// import './style.scss';
+import styles from './journey-plan.module.css';
+import { cn } from '@/lib/utils';
 export default function JourneyPlan() {
   return (
-    <section id="journey_plan" className="journey_plan relative">
+    <section id="journey_plan" className={cn('relative', styles.journeyPlan)}>
       <div className="relative mt-[3rem] w-full md:h-[48.875rem]">
         <Image
           width={2000}
@@ -25,7 +27,10 @@ export default function JourneyPlan() {
                 alt="Hong Hao Travel"
                 width={250}
                 height={250}
-                className="circular-infinity absolute top-[-4rem] z-50 size-[12rem] max-md:top-[-6.5rem] max-md:right-[1.5rem] max-md:size-[5.51563rem] md:left-[-4rem]"
+                className={cn(
+                  'absolute top-[-4rem] z-50 size-[12rem] max-md:top-[-6.5rem] max-md:right-[1.5rem] max-md:size-[5.51563rem] md:left-[-4rem]',
+                  styles.circularInfinity,
+                )}
                 src="/images/blog-detail/enquire-now.png"
               />
               <Image
@@ -45,10 +50,21 @@ export default function JourneyPlan() {
                 adventu a truly unique and authentic experience.
               </div>
               <div className="inline-flex w-full items-start justify-center gap-x-[0.5625rem] max-md:px-[1rem]">
-                <button className="journey_plan_btn journey_plan_btn-primary">
+                <button
+                  className={cn(
+                    styles.journeyPlanBtn,
+                    styles.journeyPlanBtnPrimary,
+                  )}
+                >
                   Our tours
                 </button>
-                <button className="journey_plan_btn journey_plan_btn-secondary group">
+                <button
+                  className={cn(
+                    styles.journeyPlanBtn,
+                    styles.journeyPlanBtnSecondary,
+                    'group',
+                  )}
+                >
                   <span>Call us</span>
                   <Image
                     alt="Hong Hao Travel"
