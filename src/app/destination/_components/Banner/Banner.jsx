@@ -51,7 +51,7 @@ export default function Banner() {
       </div>
       <div
         data-aos="fade-up"
-        className="absolute top-0 left-1/2 z-10 h-full w-full -translate-x-1/2 xl:max-w-[100rem]"
+        className="absolute top-0 left-1/2 z-10 mx-0 h-full w-full -translate-x-1/2 max-md:px-[1.25rem] md:w-[87.5rem] xl:w-[93rem]"
       >
         <Image
           priority
@@ -59,7 +59,7 @@ export default function Banner() {
           height={1000}
           alt="Hong Hao Travel"
           src="/images/destination/banner-text.png"
-          className="absolute top-[36%] left-[1.25rem] h-[7.55425rem] w-[18.09813rem] md:top-[9rem] md:left-[5rem] md:h-[17.50006rem] md:w-[41.10125rem]"
+          className="absolute top-[36%] h-[7.55425rem] w-[18.09813rem] md:top-[9rem] md:h-[17.50006rem] md:w-[41.10125rem]"
         />
       </div>
       <div className="absolute top-0 right-[4.75rem] bottom-0 z-20 hidden translate-x-[5%] md:block">

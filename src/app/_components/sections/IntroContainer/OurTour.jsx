@@ -30,9 +30,9 @@ export default function OurTour() {
         left: 0,
         duration: 2,
         scrollTrigger: {
-          trigger: '#mountain_container',
+          trigger: '.trigger-motorbike-button',
           toggleActions: 'play none none none',
-          start: 'top top',
+          start: 'top 50%',
         },
       });
 
@@ -88,9 +88,9 @@ export default function OurTour() {
       ref={container}
       className="relative z-[1] mt-[6.62rem] overflow-hidden"
     >
-      <div className="relative mx-auto hidden flex-col items-center md:flex md:max-w-[100rem]">
+      <div className="relative mx-auto hidden flex-col items-center md:flex md:w-[87.5rem]">
         <div className="mx-auto inline-flex flex-col items-center gap-[1.8125rem]">
-          <h2 className="sub2-bold__mb text-center !text-white opacity-90 md:!text-[1.75rem] lg:!text-[0.875rem]">
+          <h2 className="text-center leading-[1.2] font-extrabold tracking-[0.00875rem] text-white opacity-90 md:text-[0.875rem]">
             EXPLORE YOUR JOURNEY WITH US
           </h2>
           <button className="trigger-motorbike-button">
