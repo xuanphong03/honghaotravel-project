@@ -21,7 +21,7 @@ const dataBreadcrumb = [
     ),
     title: 'Home',
     url: '',
-    classNameTitle: 'body2-regular__mb !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb body2-regular !text-greyscaletext-10',
   },
   {
     id: 2,
@@ -43,7 +43,8 @@ const dataBreadcrumb = [
     ),
     title: 'Blog',
     url: '',
-    classNameTitle: 'body2-regular__mb !text-greyscaletext-80-main',
+    classNameTitle:
+      'body2-regular__mb body2-regular !text-greyscaletext-80-main',
   },
 ];
 
@@ -51,7 +52,7 @@ export default function Blog() {
   return (
     <div className="">
       <FAQBanner urlTitle={'/images/blog/blog-title.png'} />
-      <div className="max-sm hidden">
+      <div className="max-md:hidden">
         <Breadcrumb data={dataBreadcrumb} />
       </div>
       <OurBlog />

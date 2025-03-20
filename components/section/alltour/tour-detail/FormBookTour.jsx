@@ -468,42 +468,43 @@ export default function TourBookingForm({ defaultValues = null }) {
             <div className="sub2-bold__mb sub1-bold !text-greyscaletext-80-main md:!text-greyscaletext-0 absolute -top-8 text-[0.875rem] uppercase opacity-70 md:!font-bold">
               Confirmed tour booking :
             </div>
-            <div className="overflow-hidden rounded-[0.5rem] border-[0.5px] border-solid border-[#eee] bg-[#F8F8F8]">
+            <div className="overflow-hidden rounded-[0.5rem] border-[0.5px] border-solid border-[#eee] bg-[#F8F8F8] py-4">
               <div className="flex w-full">
                 <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] !font-bold max-md:w-[7.4375rem]">
                   Type of tour
                 </div>
-                <div className="caption-regular__mb caption-regular line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-ellipsis">
+                <div className="caption-regular__mb caption-regular !text-greyscaletext-50 line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-ellipsis">
                   Ha Giang Loop tour: Itinerary in 3 Days 4 Nights
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="sub2-bold__mb sub2-bold flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Name
                 </div>
                 <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
-                  <p className="line-clamp-2 text-[0.75rem] text-ellipsis text-[#727272]">
+                  <p className="caption-regular__mb caption-regular !text-greyscaletext-50 line-clamp-2 !text-[0.75rem]">
                     {formValues?.customerName &&
                       formValues?.customerName + ' - '}
-                    <span className="text-[0.875rem] font-semibold text-[#2E2E2E]">
+                    <span className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 !text-[0.75rem]">
                       {(formValues?.selfDriving || formValues?.localDriving) &&
                         (formValues?.selfDriving || 0) +
                           (formValues?.localDriving || 0)}{' '}
-                      px
+                      pax
                     </span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Contact Info
                 </div>
-                <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
+                <div className="caption-regular__mb caption-regular !text-greyscaletext-50 line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-ellipsis">
                   {formValues?.email}{' '}
                   {formValues?.email && formValues?.phoneNumber && ' - '}{' '}
                   {formValues?.phoneNumber}
                 </div>
               </div>
+              {/*  */}
               <div className="flex w-full">
                 <div className="flex h-[3.5rem] w-[12.1875rem] items-center border-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   <span className="text-[#2e2e2e text-[0.875rem] leading-[1.2] font-extrabold tracking-[0.00875rem]">
@@ -511,7 +512,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                   </span>
                 </div>
                 <div className="flex h-[3.5rem] flex-1 items-center border-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem]">
-                  <p className="text-[0.75rem] leading-[1.2] tracking-[0.00375rem] text-[#727272]">
+                  <p className="caption-regular__mb caption-regular !text-greyscaletext-50">
                     <span className="text-[0.875rem] font-semibold text-[#2E2E2E]">
                       {formValues?.departureDate &&
                         format(formValues?.departureDate, 'dd/MM/yyyy')}
@@ -526,10 +527,10 @@ export default function TourBookingForm({ defaultValues = null }) {
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Tour duration
                 </div>
-                <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
+                <div className="caption-regular__mb caption-regular !text-greyscaletext-50 line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-ellipsis">
                   3 Days 4 Nights
                 </div>
               </div>
@@ -540,7 +541,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                   </span>
                 </div>
                 <div className="flex h-[3.5rem] flex-1 items-center border-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem]">
-                  <p className="text-[0.75rem] leading-[1.2] tracking-[0.00375rem] text-[#727272]">
+                  <p className="caption-regular__mb caption-regular !text-greyscaletext-50">
                     <span className="text-[0.875rem] font-semibold text-[#2E2E2E]">
                       {formValues?.endDate &&
                         format(formValues?.endDate, 'dd/MM/yyyy')}
@@ -553,7 +554,7 @@ export default function TourBookingForm({ defaultValues = null }) {
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Self-driving
                 </div>
                 <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
@@ -561,13 +562,15 @@ export default function TourBookingForm({ defaultValues = null }) {
                     <span className="font-semibold text-[#2E2E2E]">
                       {formValues?.selfDriving}
                     </span>
-                    <span>x</span>
+                    <span className="caption-regular__mb caption-regular !text-greyscaletext-50">
+                      x
+                    </span>
                     <span className="font-semibold text-[#2E2E2E]">$200</span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[2.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Easy driver
                 </div>
                 <div className="line-clamp-2 flex h-[2.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
@@ -575,13 +578,15 @@ export default function TourBookingForm({ defaultValues = null }) {
                     <span className="font-semibold text-[#2E2E2E]">
                       {formValues?.localDriving}
                     </span>
-                    <span>x</span>
+                    <span className="caption-regular__mb caption-regular !text-greyscaletext-50">
+                      x
+                    </span>
                     <span className="font-semibold text-[#2E2E2E]">$200</span>
                   </p>
                 </div>
               </div>
               <div className="flex w-full">
-                <div className="flex h-[3.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.875rem] font-extrabold text-[#2E2E2E] max-md:w-[7.4375rem]">
+                <div className="sub2-bold__mb sub2-bold !text-Gray-Scale-80 flex h-[3.5rem] w-[12.1875rem] items-center border-r-[0.5px] border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] max-md:w-[7.4375rem]">
                   Message
                 </div>
                 <div className="flex h-[3.5rem] flex-1 items-center border-b-[0.5px] border-solid border-[#eee] px-[1rem] py-[0.5rem] text-[0.75rem] text-ellipsis text-[#727272]">
@@ -591,16 +596,22 @@ export default function TourBookingForm({ defaultValues = null }) {
             </div>
             <div className="bg-green-normal flex flex-col gap-[0.5rem] rounded-[0.5rem] px-[1rem] py-[0.75rem]">
               <div className="flex items-center justify-between leading-[1.2] font-bold text-[#F1F1F1]">
-                <div className="text-[0.875rem]tracking-[0.00875rem]">
+                <div className="sub2-bold__mb sub2-bold !text-greyscaletext-5">
                   Provisional
                 </div>
-                <div className="text-[1rem] tracking-[0.0125rem]">$567</div>
+                <div className="sub1-bold__mb sub1-bold !text-greyscaletext-5 !text-[1rem]">
+                  $567
+                </div>
               </div>
 
               <div className="h-[0.0625rem] w-full bg-[rgba(217,217,217,0.20)]"></div>
               <div className="flex items-center justify-between leading-[1.2] font-bold text-white">
-                <div className="text-[1.25rem]">Total amount:</div>
-                <div className="text-[1.5rem]">$567</div>
+                <div className="h6-bold__mb h6-bold !text-greyscaletext-5 !text-[1.25rem]">
+                  Total amount:
+                </div>
+                <div className="h6-bold__mb h6-bold !text-greyscaletext-5 !text-[1.5rem]">
+                  $567
+                </div>
               </div>
             </div>
             <div className="grid grid-cols-2 items-center gap-3 md:hidden">

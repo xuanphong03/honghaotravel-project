@@ -26,12 +26,14 @@ export default function ComboboxFieldV2({
         <FormItem className="gap-[0.5rem]">
           <FormControl>
             <DropdownMenu>
-              <Label className="sub2-bold !text-Gray-Scale-80">{label}</Label>
+              <Label className="sub2-bold__mb sub2-bold !text-Gray-Scale-80">
+                {label}
+              </Label>
               <DropdownMenuTrigger asChild>
                 <button
                   type="button"
                   disabled={disabled}
-                  className={`sub2-regular !text-greyscaletext-60 inline-flex w-full items-center justify-between rounded-[0.5rem] border-[1px] border-solid border-[#C5C5C5] px-[1rem] py-[0.75rem] !text-left ${
+                  className={`sub2-regular__mb sub2-regular !text-greyscaletext-60 inline-flex w-full items-center justify-between rounded-[0.5rem] border-[1px] border-solid border-[#C5C5C5] px-[1rem] py-[0.75rem] !text-left ${
                     disabled
                       ? 'pointer-events-none cursor-not-allowed border-gray-300 opacity-50'
                       : 'opacity-100'

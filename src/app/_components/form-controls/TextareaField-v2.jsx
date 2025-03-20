@@ -20,7 +20,7 @@ function TextareaField({ name, control, placeholder, rows = 2 }) {
               rows={rows}
               {...field}
               placeholder={placeholder}
-              className="focus-visible:border-orange-normal sub2-regular placeholder:text-greyscaletext-10 h-auto border-[1px] border-solid border-[#c5c5c5] px-[1rem] py-[0.75rem] leading-[1.2] outline-none focus-visible:ring-0"
+              className="focus-visible:border-orange-normal sub2-regular__mb sub2-regular placeholder:text-greyscaletext-10 h-auto border-[1px] border-solid border-[#c5c5c5] px-[1rem] py-[0.75rem] leading-[1.2] outline-none focus-visible:ring-0"
             />
           </FormControl>
         </FormItem>

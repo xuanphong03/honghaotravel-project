@@ -1614,7 +1614,7 @@ export default function Commitment() {
         <div className="commitment-cont relative flex w-full flex-col max-md:z-10">
           <div
             ref={a0}
-            className="title flex translate-y-[6.25rem] flex-col gap-3 opacity-0 max-md:w-[16.04469rem]"
+            className="title flex translate-y-16 flex-col gap-3 opacity-0 max-md:w-[16.04469rem]"
           >
             <p className="sub2-bold__mb caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
               HONG HA TRAVEL
@@ -1625,7 +1625,7 @@ export default function Commitment() {
           </div>
           <p
             ref={a2}
-            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:!opacity-[0.6] md:mt-14 md:w-[38.8125rem]"
+            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-16 opacity-0 max-md:!opacity-[0.6] md:mt-14 md:w-[38.8125rem]"
           >
             At our Ha Giang tourism company, we adhere to a set of ethical
             guidelines that guide our operations and define our commitment to
@@ -1643,7 +1643,7 @@ export default function Commitment() {
 
           <ul
             ref={a3}
-            className="mt-6 flex translate-y-[6.25rem] flex-col gap-3 opacity-0 md:mt-4"
+            className="mt-6 flex translate-y-16 flex-col gap-3 opacity-0 md:mt-4"
           >
             {list.map((item, index) => (
               <li key={index} className="flex h-6 gap-2 md:items-center">
@@ -1659,7 +1659,7 @@ export default function Commitment() {
         </div>
         <div
           ref={a1}
-          className="commitment-img relative mt-[6.5rem] h-[26.375rem] w-full translate-y-[6.25rem] opacity-0 max-md:hidden"
+          className="commitment-img relative mt-[8.5rem] h-[26.375rem] w-full translate-y-16 opacity-0 max-md:hidden"
           style={{
             boxShadow:
               '90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)',

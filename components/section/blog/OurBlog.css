@@ -1,88 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&display=swap');
 @font-face {
-    font-family: "tripsan-regular";
-    /* Name your font */
-    src: url("/fonts/trip-sans/TripSans-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'tripsan-regular';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "tripsan-medium";
-    /* Name your font */
-    src: url("/fonts/trip-sans/TripSans-Medium.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'tripsan-medium';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "tripsan-bold";
-    /* Name your font */
-    src: url("/fonts/trip-sans/TripSans-Bold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'tripsan-bold';
+  /* Name your font */
+  src: url('/fonts/trip-sans/TripSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-.our-blog {
+@media only screen and (min-width: 767.98px) {
+  .our-blog {
     display: flex;
-        padding: 0.8125rem 2.125rem;
-        justify-content: center;
-        align-items: center;
-        gap: 0.625rem;
-        border-radius: 62.5rem;
-            background: #FCF8F7;
-}
+    padding: 0.8125rem 2.125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 62.5rem;
+    background: #fcf8f7;
+  }
 
-.text-blog-bold {
+  .text-blog-bold {
     color: #030922;
-        text-align: center;
-        font-family: "tripsan-medium";
-        font-size: 0.78906rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1rem;
-        /* 126.733% */
-        letter-spacing: 0.03125rem;
-        text-transform: uppercase;
-}
+    text-align: center;
+    font-family: 'tripsan-medium';
+    font-size: 0.78906rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1rem;
+    /* 126.733% */
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+  }
 
-.text-out-blog{
+  .text-out-blog {
     color: #030922;
-        text-align: center;
-        font-family: "tripsan-regular";
-        font-size: 0.78906rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1rem;
-        /* 126.733% */
-        letter-spacing: 0.03125rem;
-        text-transform: uppercase;
-}
+    text-align: center;
+    font-family: 'tripsan-regular';
+    font-size: 0.78906rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    /* 126.733% */
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+  }
 
-.post-btn{
+  .post-btn {
     display: flex;
-        padding:0.625rem 1.1875rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.625rem;
-        border-radius: 2.0625rem;
-            background: #FAF1EE;
-}
+    padding: 0.625rem 1.1875rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 2.0625rem;
+    background: #faf1ee;
+  }
 
-.post-btn-p {
-    color: #FCF8F7;
-    
-        /* WEB/H3/BLACK */
-        font-family: "Londrina Solid";
-        font-size: 2.5rem;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 100%;
-        /* 2.5rem */
-}
+  .post-btn-p {
+    color: #fcf8f7;
 
-.post-btn-span {
-color: #787878;
+    /* WEB/H3/BLACK */
+    font-family: 'Londrina Solid';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 2.5rem */
+  }
+
+  .post-btn-span {
+    color: #787878;
     font-family: Inter;
     font-size: 0.9155rem;
     font-style: normal;
@@ -91,5 +91,85 @@ color: #787878;
     /* 177.493% */
     letter-spacing: 0.03125rem;
     text-transform: uppercase;
-        
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .our-blog__mb {
+    display: flex;
+    padding: 1.15rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 62.5rem;
+    background: #fcf8f7;
+  }
+  .our-blog__mb2 {
+    display: flex;
+    padding: 0.5rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 62.5rem;
+    background: #fcf8f7;
+  }
+
+  .text-blog-bold__mb {
+    color: #030922;
+    text-align: center;
+    font-family: 'tripsan-medium';
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1rem; /* 133.333% */
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+  }
+
+  .text-out-blog__mb {
+    color: #030922;
+    text-align: center;
+    font-family: 'tripsan-regular';
+    font-size: 0.78906rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    /* 126.733% */
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+  }
+
+  .post-btn__mb {
+    display: flex;
+    padding: 0.625rem 1.1875rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 2.0625rem;
+    background: #faf1ee;
+  }
+
+  .post-btn-p__mb {
+    color: #fcf8f7;
+
+    /* WEB/H3/BLACK */
+    font-family: 'Londrina Solid';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    /* 2.5rem */
+  }
+
+  .post-btn-span__mb {
+    color: #787878;
+    font-family: Inter;
+    font-size: 0.9155rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.625rem;
+    /* 177.493% */
+    letter-spacing: 0.03125rem;
+    text-transform: uppercase;
+  }
 }

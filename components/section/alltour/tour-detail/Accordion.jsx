@@ -47,17 +47,21 @@ const arrAccordion = [
 
 export function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-full md:w-[42.8125rem]">
+    <Accordion
+      type="single"
+      collapsible
+      className="flex w-full flex-col md:w-[42.8125rem] md:gap-5"
+    >
       {arrAccordion.map((item) => (
         <AccordionItem key={item.id} value={item.id}>
           <AccordionTriggerCustom
-            className={`sub1-bold sub1-bold__mb !text-greyscaletext-30`}
+            className={`body2-bold sub1-bold__mb !text-greyscaletext-30`}
           >
             {item.title}
           </AccordionTriggerCustom>
           <AccordionContentCustom
             className={
-              'sub1-regular sub1-regular__mb !text-greyscaletext-40 !duration-1000 ease-in-out'
+              'body2-regular sub1-regular__mb !text-greyscaletext-40 !duration-1000 ease-in-out'
             }
           >
             {item.content}
