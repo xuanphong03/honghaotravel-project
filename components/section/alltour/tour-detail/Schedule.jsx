@@ -3,6 +3,10 @@ import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import './schedule.css';
 import MousewheelSwiper from './Swiper';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 const schedules = [
   {
@@ -79,14 +83,56 @@ const imgs = [
 
 export default function Schedule() {
   const [activeIndex, setActiveIndex] = useState(0); // State để lưu index của slide hiện tại
+  const schedule = useRef(null);
+  const scheduleR = useRef(null);
+  const scheduleL = useRef(null);
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex); // Cập nhật index của slide hiện tại
   };
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: schedule.current,
+        start: '-10% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+
+    tl.to(
+      scheduleL.current,
+      {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+      },
+      's',
+    ).to(
+      scheduleR.current,
+      {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+      },
+      's',
+    );
+  });
 
   return (
-    <div className="schedule mx-auto flex max-w-[87.5rem] items-center justify-between gap-12 py-20 max-md:hidden">
-      <div className="schedule-left relative h-[39.38113rem] w-[33.75rem]">
+    <div
+      ref={schedule}
+      className="schedule mx-auto flex max-w-[87.5rem] items-center justify-between gap-12 pt-16 pb-12 max-md:hidden"
+    >
+      <div
+        ref={scheduleL}
+        className="schedule-left relative h-[39.38113rem] w-[33.75rem] translate-y-28 transform opacity-0"
+      >
         <Image
           src={imgs[activeIndex].url}
           alt="map"
@@ -94,15 +140,17 @@ export default function Schedule() {
           className="object-contain"
         />
       </div>
-      <div className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] overflow-hidden rounded-4xl py-10 ps-[3.2rem] pe-20">
+      <div
+        ref={scheduleR}
+        className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] translate-y-28 transform overflow-hidden rounded-4xl py-10 ps-[3.2rem] pe-20 opacity-0"
+      >
         <div className="head flex items-center justify-between">
-          <div className="title flex flex-col gap-[0.9rem]">
-            <div className="time flex items-center gap-6">
-              <div className="time-icon flex items-center gap-1.5">
+          <div className="title flex flex-col gap-3">
+            <div className="time flex items-center gap-7">
+              <div className="time-icon flex items-center gap-[0.6rem]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -132,7 +180,7 @@ export default function Schedule() {
               <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
-              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
+              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-[0.25rem]">
                 Self - Driving
               </span>
             </div>
@@ -140,7 +188,7 @@ export default function Schedule() {
               <span className="price-number h5-bold text-orange-normal !text-2xl">
                 $169
               </span>
-              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-8">
+              <span className="price-text body2-regular !text-greyscaletext-80-main underline underline-offset-[0.25rem]">
                 Self - Driving
               </span>
             </div>

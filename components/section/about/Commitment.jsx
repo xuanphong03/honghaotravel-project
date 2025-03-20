@@ -15,7 +15,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -319,7 +319,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -623,7 +623,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -927,7 +927,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -1231,7 +1231,7 @@ const list = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
+        className="h-4 w-4"
         viewBox="0 0 15 14"
         fill="none"
       >
@@ -1544,7 +1544,29 @@ export default function Commitment() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
+        start: '-10% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: commit.current,
         start: 'top center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: commit.current,
+        start: '10% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1560,52 +1582,97 @@ export default function Commitment() {
         duration: 1,
       },
       's',
-    )
-      .to(
-        a1.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-        },
-        's',
-      )
-      .to(a2.current, {
+    );
+    tl.to(
+      a1.current,
+      {
         opacity: 1,
         y: 0,
         duration: 1,
-      })
-      .to(a3.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      });
+      },
+      's',
+    );
+    tl2.to(a2.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
+    tl3.to(a3.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
   });
 
   return (
-    <div ref={commit} className='commitment  commitment  relative h-fit w-full max-md:px-5   max-md:py-[3.18rem]  md:pb-0  md:mt-[6rem] md:bg-[rgb(19,52,28)] '>
-      <TestM commit={ commit} />
-      <div className="max-w-[87.5rem] mx-auto relative flex items-center justify-between max-md:pt-8 gap-[9.25rem] md:-top-[7rem]">
-        <div className="commitment-cont w-full flex flex-col relative max-md:z-10">
-              <div ref={a0} className="title flex flex-col max-md:w-[16.04469rem] gap-3 translate-y-[6.25rem] opacity-0">
-                  <p className='sub2-regular md:caption-regular !text-xl !font-bold !leading-[100%] !text-greyscaletext-0 opacity-40'>HONG HA TRAVEL</p>
-                  <h2 className='h3-bold md:h2-bold !text-greyscaletext-0'>ETHICAL COMMITMENTS</h2>
-              </div>
-        <p ref={a2} className='w-full body2-regular  max-md:opacity-60 md:body1-regular !text-greyscaletext-5 mt-8 md:mt-14 md:w-[38.8125rem] translate-y-[6.25rem] opacity-0'>
-          At our Ha Giang tourism company, we adhere to a set of ethical guidelines that guide our operations and define our commitment to responsible tourism. Our foremost principle is to respect and preserve the natural environment and cultural heritage of Ha Giang. We prioritize sustainable practices to minimize our ecological footprint and actively engage in conservation efforts. Furthermore, we deeply value the communities we operate in and strive to foster positive relationships with local residents. We prioritize their well-being and economic empowerment through fair employment practices and community development initiatives. Additionally, we prioritize the safety and satisfaction of our guests, ensuring that every experience with us is both enjoyable and enriching
-              </p>
-               
-              <ul ref={a3} className='flex flex-col gap-3 mt-6 md:mt-4 translate-y-[6.25rem] opacity-0'>
-          {list.map((item, index) => <li key={index} className='flex md:items-center gap-2 h-6'>
-            <div className="icon w-4 h-4">{ item.icon}</div>
-            <div className="text btn-bold max-md:!text-left max-md:!normal-case max-md:!font-extrabold md:body1-bold !text-greyscaletext-5">{item.title}</div>
-          </li>)}
-              </ul>
+    <div
+      ref={commit}
+      className="commitment commitment relative h-fit w-full max-md:pt-5 md:mt-[6rem] md:bg-[rgb(19,52,28)] md:pb-0"
+    >
+      <TestM commit={commit} />
+      <div className="relative mx-auto flex items-center justify-between gap-[9.25rem] max-md:bg-[rgba(18,39,24,1)] max-md:px-3 max-md:pt-12 max-md:pb-16 md:-top-[7rem] md:max-w-[87.5rem]">
+        <div className="commitment-cont relative flex w-full flex-col max-md:z-10">
+          <div
+            ref={a0}
+            className="title flex translate-y-[6.25rem] flex-col gap-3 opacity-0 max-md:w-[16.04469rem]"
+          >
+            <p className="sub2-bold__mb caption-regular !text-greyscaletext-0 !text-xl !leading-[100%] !font-bold opacity-40">
+              HONG HA TRAVEL
+            </p>
+            <h2 className="h3-bold__mb h2-bold !text-greyscaletext-0">
+              ETHICAL COMMITMENTS
+            </h2>
           </div>
-          <div ref={a1} className="commitment-img max-md:hidden mt-[6.5rem] w-full h-[26.375rem] translate-y-[6.25rem] opacity-0 relative" style={{boxShadow: "90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)"}}>
-        <Image src={"/images/about/commit.jpeg"} alt="" fill className='rounded-xl object-cover -top-[6.5rem]'/>
-          </div>
-          </div>
+          <p
+            ref={a2}
+            className="body2-regular__mb body1-regular !text-greyscaletext-5 mt-8 w-full translate-y-[6.25rem] opacity-0 max-md:!opacity-[0.6] md:mt-14 md:w-[38.8125rem]"
+          >
+            At our Ha Giang tourism company, we adhere to a set of ethical
+            guidelines that guide our operations and define our commitment to
+            responsible tourism. Our foremost principle is to respect and
+            preserve the natural environment and cultural heritage of Ha Giang.
+            We prioritize sustainable practices to minimize our ecological
+            footprint and actively engage in conservation efforts. Furthermore,
+            we deeply value the communities we operate in and strive to foster
+            positive relationships with local residents. We prioritize their
+            well-being and economic empowerment through fair employment
+            practices and community development initiatives. Additionally, we
+            prioritize the safety and satisfaction of our guests, ensuring that
+            every experience with us is both enjoyable and enriching
+          </p>
+
+          <ul
+            ref={a3}
+            className="mt-6 flex translate-y-[6.25rem] flex-col gap-3 opacity-0 md:mt-4"
+          >
+            {list.map((item, index) => (
+              <li key={index} className="flex h-6 gap-2 md:items-center">
+                <div className="icon h-full w-fit max-md:flex max-md:items-center max-md:justify-center">
+                  {item.icon}
+                </div>
+                <div className="text body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!text-[0.875rem] max-md:!font-extrabold max-md:!normal-case">
+                  {item.title}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          ref={a1}
+          className="commitment-img relative mt-[6.5rem] h-[26.375rem] w-full translate-y-[6.25rem] opacity-0 max-md:hidden"
+          style={{
+            boxShadow:
+              '90px 128px 44px 0px rgba(66, 72, 66, 0.00), 57px 82px 40px 0px rgba(66, 72, 66, 0.01), 32px 46px 34px 0px rgba(66, 72, 66, 0.05), 14px 20px 25px 0px rgba(66, 72, 66, 0.09), 4px 5px 14px 0px rgba(66, 72, 66, 0.10)',
+          }}
+        >
+          <Image
+            src={'/images/about/commit.jpeg'}
+            alt=""
+            fill
+            className="-top-[6.5rem] rounded-xl object-cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }
