@@ -40,7 +40,7 @@ function BannerSlide({ data, onChange }) {
             height={1080}
             alt={item?.imageAlt || ''}
             src={item?.imageSrc || ''}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover select-none"
           />
         </SwiperSlide>
       ))}

@@ -12,6 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { createContext, useContext, useState } from 'react';
 import Navigation from '../navigation/Navigation';
+import { cn } from '@/lib/utils';
 
 export const HeaderContext = createContext();
 
@@ -26,9 +27,11 @@ function Header() {
   return (
     <HeaderContext.Provider value={{ handleCloseSheet }}>
       <header
-        className={`fixed top-0 right-0 left-0 !z-[500] transition-all duration-500 ${
-          isPositionTop ? 'bg-transparent' : 'bg-white shadow'
-        } ${!showHeader ? '-translate-y-full' : 'translate-y-0'}`}
+        className={cn(
+          'fixed top-0 right-0 left-0 !z-[500] transition-all duration-500',
+          isPositionTop ? 'bg-transparent' : 'bg-white shadow',
+          !showHeader ? '-translate-y-full' : 'translate-y-0',
+        )}
       >
         <div className="mx-auto flex w-full items-center justify-between px-[1.25rem] py-[0.5rem] md:px-[5rem] md:py-[1.5rem]">
           <Link
@@ -41,9 +44,10 @@ function Header() {
               height={200}
               alt="Hong Hao Travel"
               src="/images/header/logo.svg"
-              className={`absolute top-0 left-0 h-full w-full object-contain transition-opacity duration-100 ${
-                isPositionTop ? 'visible opacity-100' : 'invisible opacity-0'
-              }`}
+              className={cn(
+                'absolute top-0 left-0 h-full w-full object-contain transition-opacity duration-100 select-none',
+                isPositionTop ? 'visible opacity-100' : 'invisible opacity-0',
+              )}
             />
             <Image
               priority
@@ -68,9 +72,9 @@ function Header() {
                   height={50}
                   alt="Hong Hao Travel"
                   src="/images/header/menu.svg"
-                  className="mr-[0.44rem] size-[2.0625rem] object-contain md:size-[4rem] lg:size-[2.0625rem]"
+                  className="mr-[0.44rem] size-[2.0625rem] object-contain select-none md:size-[4rem] lg:size-[2.0625rem]"
                 />
-                <span className="3xl:text-[16px] text-[1rem] leading-[1.5] font-bold text-white uppercase md:text-[1.75rem] lg:text-[1rem]">
+                <span className="3xl:text-[16px] text-[1rem] leading-[1.5] font-bold text-white uppercase select-none md:text-[1.75rem] lg:text-[1rem]">
                   Menu
                 </span>
               </button>
