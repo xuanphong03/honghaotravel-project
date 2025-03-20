@@ -2,6 +2,8 @@ import React from 'react';
 import FAQBanner from '../../common/FAQBanner';
 import Breadcrumb from '../../common/Breadcrumb';
 import FAQQuestion from './FAQQuestion';
+import OurTeam from '../ourteam/OurTeam';
+import Explore from '../../common/Explore';
 
 const dataBreadcrumb = [
   {
@@ -21,7 +23,7 @@ const dataBreadcrumb = [
     ),
     title: 'Home',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb !text-greyscaletext-10',
   },
   {
     id: 2,
@@ -43,7 +45,7 @@ const dataBreadcrumb = [
     ),
     title: 'FAQs',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-80-main',
+    classNameTitle: 'body2-regular__mb !text-greyscaletext-80-main',
   },
 ];
 
@@ -53,6 +55,8 @@ export default function FAQ() {
       <FAQBanner urlTitle={'/images/alltour/title.png'} />
       <Breadcrumb data={dataBreadcrumb} />
       <FAQQuestion />
+      <OurTeam secondary />
+      <Explore className={'pb-16 max-md:pb-12'} />
     </div>
   );
 }

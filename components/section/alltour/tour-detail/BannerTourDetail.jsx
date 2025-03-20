@@ -60,8 +60,7 @@ export default function BannerTourDetail() {
             <div className="top-time-oclock flex items-center gap-1.5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                className="h-6 w-6"
                 viewBox="0 0 24 24"
                 fill="none"
               >
@@ -95,8 +94,7 @@ export default function BannerTourDetail() {
               <div className="mid-special-title flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -153,8 +151,7 @@ export default function BannerTourDetail() {
               <div className="mid-special-title flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  className="h-6 w-6"
                   viewBox="0 0 20 20"
                   fill="none"
                 >
@@ -209,8 +206,7 @@ export default function BannerTourDetail() {
               <div className="mid-accomodation-title flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="20"
+                  className="h-6 w-6"
                   viewBox="0 0 22 20"
                   fill="none"
                 >
@@ -263,8 +259,7 @@ export default function BannerTourDetail() {
               <div className="mid-accomodation-title flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="18"
+                  className="h-6 w-6"
                   viewBox="0 0 24 18"
                   fill="none"
                 >
@@ -332,7 +327,7 @@ export default function BannerTourDetail() {
       </div>
       <div
         ref={logo}
-        className="tourdetail-banner-xoay absolute bottom-0 left-[53%] z-10 h-[9.375rem] w-[9.375rem] -translate-x-1/2 translate-y-32 transform opacity-0 max-md:hidden"
+        className="tourdetail-banner-xoay absolute bottom-0 left-1/2 z-10 h-[9.375rem] w-[9.375rem] -translate-x-1/2 translate-y-32 transform opacity-0 max-md:hidden"
       >
         <div className="logo-xoay absolute top-[41.5%] left-1/2 h-[7.5rem] w-[9.375rem] -translate-x-1/2 -translate-y-1/2 transform">
           <Image src={'/images/alltour/detail/logo-xoay.png'} alt="" fill />
@@ -342,7 +337,7 @@ export default function BannerTourDetail() {
         </div>
       </div>
 
-      <div className="map absolute top-[20%] right-[18rem] h-[24.75rem] w-[24.4375rem] max-md:hidden">
+      <div className="map absolute top-[14%] right-[18rem] h-[24.75rem] w-[24.4375rem] max-md:hidden">
         <Image
           src={'/images/alltour/map.png'}
           alt="map"
@@ -352,7 +347,7 @@ export default function BannerTourDetail() {
       </div>
       <div
         ref={inf}
-        className="absolute right-[4.75rem] translate-x-32 transform opacity-0 max-md:hidden"
+        className="absolute top-0 right-[4.75rem] bottom-0 translate-x-32 transform opacity-0 max-md:hidden"
       >
         <InfinitySlide />
       </div>

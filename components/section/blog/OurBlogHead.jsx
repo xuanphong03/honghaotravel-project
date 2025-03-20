@@ -1,11 +1,48 @@
-import React from 'react';
+'use client';
+import React, { useRef } from 'react';
 import './OurBlog.css';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Separator } from '@/components/ui/separator';
 
-export default function OurBlogHead() {
+gsap.registerPlugin(useGSAP);
+
+export default function OurBlogHead({ ref }) {
+  const text1 = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '12.5% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+
+    tl.to(
+      text1.current,
+      {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+      },
+      's',
+    );
+  });
   return (
-    <div className="relative flex flex-col items-center gap-3">
+    <div
+      ref={text1}
+      className="relative flex translate-y-20 transform flex-col items-center gap-3 opacity-0"
+    >
       <div className="gap-[0.6rem] max-md:flex max-md:w-full max-md:items-center max-md:justify-center">
-        <div className="hr border-gray-scale-5 h-[0.0395rem] flex-1 border-b-[1px] border-solid md:hidden"></div>
+        <Separator
+          className={'hr border-gray-scale-5 flex-1 border-solid md:hidden'}
+        />
         <div className="star md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +76,9 @@ export default function OurBlogHead() {
             />
           </svg>
         </div>
-        <div className="hr border-gray-scale-5 h-[0.0395rem] flex-1 border-b-[1px] border-solid md:hidden"></div>
+        <Separator
+          className={'hr border-gray-scale-5 flex-1 border-solid md:hidden'}
+        />
       </div>
       <div className="our-blog-title mx-auto flex max-w-[87.5rem] items-center gap-7">
         <div className="hr border-gray-scale-5 h-[0.0625rem] w-[14.25813rem] border-b-[1px] border-solid max-md:hidden"></div>
@@ -59,7 +98,7 @@ export default function OurBlogHead() {
             />
           </svg>
         </div>
-        <h2 className="title h2-bold !text-greyscaletext-70 relative z-[1] text-center opacity-80 max-md:!text-[1.5rem]">
+        <h2 className="title h2-bold__mb h2-bold !text-greyscaletext-70 relative z-[1] text-center opacity-80 max-md:!text-[1.5rem]">
           STORIES ABOUT JOURNEYS OF JOY
         </h2>
         <div className="star max-md:hidden">

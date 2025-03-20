@@ -1,8 +1,14 @@
+'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import BlogPostItem from './BlogPostItem';
 import { Button } from '@/components/ui/button';
 import { PaginationCus } from './PaginationCus';
+import { Separator } from '@/components/ui/separator';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 const arrPaginate = [
   {
@@ -47,14 +53,93 @@ const arrPost = [
   },
 ];
 
-export default function OurBlogPost() {
+export default function OurBlogPost({ ref }) {
+  const text1 = useRef(null);
+  const text2 = useRef(null);
+  const text3 = useRef(null);
+  const text4 = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '13.5% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '15.5% center',
+        end: '70% center',
+        end: false,
+        markers: false,
+        once: true, // Hiệu ứng chỉ chạy một lần
+        scrub: false,
+      },
+    });
+
+    tl.to(
+      text1.current,
+      {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+      },
+      'a',
+    ).to(
+      text2.current,
+      {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'power2.out',
+      },
+      'a',
+    );
+    tl2
+      .to(
+        text3.current,
+        {
+          duration: 1.5,
+          opacity: 1,
+          y: 0,
+          ease: 'power2.out',
+        },
+        's',
+      )
+      .to(
+        text4.current,
+        {
+          duration: 1.5,
+          opacity: 1,
+          y: 0,
+          ease: 'power2.out',
+        },
+        's',
+      );
+  });
   return (
-    <div className="our-blog-post md:border-gray-scale-5 max-md:px-5 md:mt-[2.81rem] md:border-t-[1px] md:border-solid">
+    <div className="our-blog-post max-md:px-3 md:mt-[2.81rem]">
+      <Separator
+        ref={text1}
+        className={
+          'border-gray-scale-5 h-[1px] translate-y-20 transform border-solid opacity-0 max-md:hidden'
+        }
+      />
       <div className="mx-auto max-w-[89.9375rem]">
-        <div className="our-blog-post-pagination no-scrollbar mt-6 flex w-full items-center justify-center gap-[0.62rem] overflow-x-scroll md:mt-3 md:mb-[3.94rem] md:gap-[0.94rem]">
+        <div
+          ref={text2}
+          className="our-blog-post-pagination no-scrollbar mt-6 flex w-full translate-y-20 items-center gap-[0.62rem] opacity-0 max-md:overflow-x-scroll md:mt-3 md:mb-[3.94rem] md:transform md:justify-center md:gap-[0.94rem]"
+        >
           {arrPaginate.map((item) => (
             <Button
-              className={`our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer max-md:!px-8 max-md:!py-[0.69rem]`}
+              className={`our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer max-md:!px-8 max-md:!py-[0.9rem]`}
               key={item.id}
             >
               <span
@@ -65,7 +150,10 @@ export default function OurBlogPost() {
             </Button>
           ))}
         </div>
-        <div className="our-blog-post-banner relative z-0 flex h-[43.6875rem] w-full items-end overflow-hidden rounded-[0.375rem] hover:cursor-pointer max-md:hidden">
+        <div
+          ref={text3}
+          className="our-blog-post-banner relative z-0 flex h-[43.6875rem] w-full translate-y-20 transform items-end overflow-hidden rounded-[0.375rem] opacity-0 hover:cursor-pointer max-md:hidden"
+        >
           <Image
             src={'/images/alltour/banner.jpeg'}
             alt="anh2"
@@ -85,7 +173,10 @@ export default function OurBlogPost() {
             </div>
           </article>
         </div>
-        <div className="our-blog-posts mt-5 grid grid-cols-2 gap-4 md:mt-[2.62rem] md:gap-[1.44rem]">
+        <div
+          ref={text4}
+          className="our-blog-posts mt-5 grid translate-y-20 transform grid-cols-2 gap-4 opacity-0 md:mt-[2.62rem] md:gap-[1.44rem]"
+        >
           {arrPost.map((item) => (
             <BlogPostItem key={item.id} data={item} />
           ))}

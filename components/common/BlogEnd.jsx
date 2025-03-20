@@ -1,13 +1,13 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 export default function BlogEnd() {
   return (
-    <div className="blogend flex justify-between max-md:pt-[4.37rem] max-md:min-h-[26.3125rem] md:items-center relative md:py-[6.25rem]">
-      <div className="blogend-rotate w-[5.51563rem] h-[5.51563rem] md:w-48 md:h-48 absolute -top-[2.757815rem] right-[1.42rem] md:top-0 md:left-0 z-10  animate-spin-slow">
+    <div className="blogend relative flex justify-between max-md:min-h-[26.3125rem] max-md:pt-[4.37rem] md:items-center md:py-[6.25rem]">
+      <div className="blogend-rotate animate-spin-slow absolute -top-[2.757815rem] right-[1.42rem] z-10 h-[5.51563rem] w-[5.51563rem] max-md:hidden md:top-0 md:left-0 md:h-48 md:w-48">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="h-full w-full"
           viewBox="0 0 191 192"
           fill="none"
         >
@@ -120,40 +120,40 @@ export default function BlogEnd() {
           </defs>
         </svg>
       </div>
-      <div className="blogend-bg absolute w-full md:w-[80%] h-full top-0  right-0 bottom-0 -z-10">
-        <div className="bg bg-[#FCF8F7]  absolute top-0 left-0 right-0 bottom-0 -z-20"></div>
-        <div className="absolute w-full right-0 bottom-0 -z-10 h-[14.206rem] md:h-[31.19331rem] max-h-full">
-          <Image src={"/images/blog/bg-nui.png"} alt="nui" fill className="" />
+      <div className="blogend-bg absolute top-0 right-0 bottom-0 z-0 h-full w-full md:w-[80%]">
+        <div className="bg absolute top-0 right-0 bottom-0 left-0 -z-20 bg-[#FCF8F7]"></div>
+        <div className="absolute right-0 bottom-0 z-0 h-[14.206rem] max-h-full w-full md:h-[31.19331rem]">
+          <Image src={'/images/blog/bg-nui.png'} alt="nui" fill className="" />
         </div>
       </div>
-      <div className="blogend-content max-md:h-fit w-full max-w-[87.5rem] mx-auto flex items-center justify-between">
-        <div className="w-[59.625rem] h-[36.375rem] rounded-3xl  flex items-center relative max-md:hidden">
+      <div className="blogend-content mx-auto flex w-full max-w-[87.5rem] items-center justify-between max-md:h-fit">
+        <div className="relative flex h-[36.375rem] w-[66%] items-center rounded-3xl max-md:hidden">
           <Image
-            src={"/images/blog/blogend-img.jpeg"}
+            src={'/images/blog/blogend-img.jpeg'}
             alt="blogend"
-            className="rounded-3xl "
+            className="rounded-3xl"
             fill
           />
         </div>
-        <div className="blogend-cont flex flex-col items-center gap-8 md:gap-[2.06rem] max-md:px-[1.12rem] w-[27.5rem]">
-          <h2 className=" md:w-[27.5rem] md:h-[7.75rem] h5-bold-pc h2-bold !text-greyscale-70 md:!font-normal text-center">
+        <div className="blogend-cont relative z-10 flex w-full flex-col items-center gap-8 max-md:px-[1.12rem] md:w-[30%] md:gap-[2.06rem]">
+          <h2 className="h5-bold-pc h2-bold !text-greyscale-70 text-center md:h-[7.75rem] md:w-[27.5rem] md:!font-normal">
             Start planning your journey of joy
           </h2>
-          <p className="md:w-[20.3125rem] sub2-regular md:body1-regular !text-greyscaletext-30 md:!text-greyscale-10  text-center">
+          <p className="sub2-regular__mb body1-regular !text-greyscaletext-30 md:!text-greyscale-10 text-center md:w-[20.3125rem]">
             Experience the raw beauty of Hà Giang with our immersive travel
             adventu a truly unique and authentic experience.
           </p>
-          <div className=" flex items-center gap-4 ">
-            <button className="flex items-center justify-center gap-2 btn-size-m md:btn-size-l btn-bold btn-line-orange !text-orange-normal hover:bg-[#f2531c] hover:!text-white duration-500 ease-in-out cursor-pointer !font-bold ">
+          <div className="flex items-center gap-4">
+            <button className="btn-size-m__mb btn-size-l btn-bold__mb btn-bold btn-line-orange__mb btn-line-orange !text-orange-normal flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:bg-[#f2531c] hover:!text-white">
               <span>ALL TOUR</span>
             </button>
-            <button className="flex items-center justify-center gap-2 btn-size-m md:btn-size-l btn-default btn-bold !text-greyscaletext-0 !font-bold">
+            <button className="group btn-size-m__mb btn-size-l btn-default__mb btn-default btn-bold__mb btn-bold !text-greyscaletext-0 flex items-center justify-center gap-2 !font-bold">
               <span>CALL US</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 12 12"
                 fill="none"
-                className="w-4 h-4 px-[0.125rem] py-[0.17188rem]"
+                className="h-4 w-4 px-[0.125rem] py-[0.17188rem] duration-500 ease-in-out group-hover:translate-x-[0.3rem] group-hover:scale-110 group-hover:transform"
               >
                 <path
                   d="M10.125 6H0"

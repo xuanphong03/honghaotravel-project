@@ -90,7 +90,7 @@ export default function OurTour() {
     >
       <div className="relative mx-auto hidden flex-col items-center md:flex md:max-w-[100rem]">
         <div className="mx-auto inline-flex flex-col items-center gap-[1.8125rem]">
-          <h2 className="sub2-bold text-center !text-white opacity-90 md:!text-[1.75rem] lg:!text-[0.875rem]">
+          <h2 className="sub2-bold__mb text-center !text-white opacity-90 md:!text-[1.75rem] lg:!text-[0.875rem]">
             EXPLORE YOUR JOURNEY WITH US
           </h2>
           <button className="trigger-motorbike-button">

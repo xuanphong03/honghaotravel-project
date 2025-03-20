@@ -5,6 +5,8 @@ import Schedule from './Schedule';
 import ImediateMb from './ImediateMb';
 import BookTour from './BookTour';
 import FAQAboutTrip from './FAQAboutTrip';
+import OurTeam from '../../ourteam/OurTeam';
+import Explore from '../../../common/Explore';
 
 const dataBreadcrumb = [
   {
@@ -24,7 +26,7 @@ const dataBreadcrumb = [
     ),
     title: 'Home',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb !text-greyscaletext-10',
   },
   {
     id: 2,
@@ -47,7 +49,7 @@ const dataBreadcrumb = [
     ),
     title: 'Tour',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-10',
+    classNameTitle: 'body2-regular__mb body2-regular !text-greyscaletext-10',
   },
   {
     id: 3,
@@ -69,18 +71,21 @@ const dataBreadcrumb = [
     ),
     title: 'Ha Giang Loop tour: Itinerary in 3 Days 4 Nights',
     url: '',
-    classNameTitle: 'body2-regular !text-greyscaletext-80-main',
+    classNameTitle:
+      'body2-regular__mb body2-regular !text-greyscaletext-80-main',
   },
 ];
 export default function TourDetail() {
   return (
     <div className="tourdetail">
       <BannerTourDetail />
-      <ImediateMb />
       <Breadcrumb data={dataBreadcrumb} />
+      <ImediateMb />
       <Schedule />
       <BookTour />
       <FAQAboutTrip />
+      <OurTeam secondary />
+      <Explore className={'pb-12 md:pb-16'} />
     </div>
   );
 }

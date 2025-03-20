@@ -1,12 +1,17 @@
-import React from 'react'
-import OurBlogHead from './OurBlogHead'
-import OurBlogPost from './OurBlogPost'
+'use client';
+import React, { useRef } from 'react';
+import OurBlogHead from './OurBlogHead';
+import OurBlogPost from './OurBlogPost';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
+gsap.registerPlugin(useGSAP);
 export default function OurBlog() {
+  const container = useRef(null);
   return (
-    <div className='pt-[2.44rem] pb-24 md:pt-[4.38rem] md:pb-28 '>
-      <OurBlogHead />
-      <OurBlogPost/>
+    <div ref={container} className="py-[2.44rem] md:pt-[4.38rem] md:pb-28">
+      <OurBlogHead ref={container} />
+      <OurBlogPost ref={container} />
     </div>
-  )
+  );
 }

@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollToTopButton() {
-  gsap.registerPlugin(ScrollTrigger);
   const circleRef = useRef(null);
 
   useGSAP(() => {

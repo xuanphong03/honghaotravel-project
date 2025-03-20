@@ -1,8 +1,24 @@
+'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import OverlayAnimate from './OverlayAnimate';
 
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
+
 export default function FAQBanner({ urlTitle }) {
+  const text = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(text.current, {
+      duration: 0.75,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+    });
+  });
   return (
     <div className="alltour relative flex items-center justify-center py-[7.25rem] ps-[1.25rem] md:min-h-[45.5rem] md:py-[6.19rem] md:ps-[8.13rem] md:pe-16">
       <OverlayAnimate />
@@ -21,7 +37,10 @@ export default function FAQBanner({ urlTitle }) {
             'linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #122718 100%)',
         }}
       ></div>
-      <div className="title relative h-[7.42925rem] w-[19.1605rem] md:h-[19.6875rem] md:w-[52.1105rem]">
+      <div
+        ref={text}
+        className="title relative h-[7.42925rem] w-[19.1605rem] translate-y-12 transform opacity-0 md:h-[19.6875rem] md:w-[52.1105rem]"
+      >
         <Image src={urlTitle} alt="title" fill className="object-contain" />
       </div>
     </div>
