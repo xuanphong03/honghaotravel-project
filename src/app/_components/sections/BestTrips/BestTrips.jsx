@@ -7,6 +7,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function BestTrips() {
   const TRIPS = [
     {
@@ -53,7 +55,6 @@ function BestTrips() {
   useGSAP(
     () => {
       if (!tripListRef.current) return;
-      gsap.registerPlugin(ScrollTrigger);
       const tripItems = gsap.utils.toArray('.trip-item', tripListRef.current);
       tripItems.forEach((item, index) => {
         ScrollTrigger.create({
