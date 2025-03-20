@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import './BlogPlanning.scss';
-
-export default function BlogPlanning() {
+import './style.scss';
+export default function JourneyPlan() {
   return (
-    <section id="blog-planning" className="relative">
+    <section id="journey_plan" className="journey_plan relative">
       <div className="relative mt-[3rem] w-full md:h-[48.875rem]">
         <Image
           width={2000}
@@ -46,10 +45,10 @@ export default function BlogPlanning() {
                 adventu a truly unique and authentic experience.
               </div>
               <div className="inline-flex w-full items-start justify-center gap-x-[0.5625rem] max-md:px-[1rem]">
-                <button className="blog_planning_btn blog_planning_btn-primary">
+                <button className="journey_plan_btn journey_plan_btn-primary">
                   Our tours
                 </button>
-                <button className="blog_planning_btn blog_planning_btn-secondary group">
+                <button className="journey_plan_btn journey_plan_btn-secondary group">
                   <span>Call us</span>
                   <Image
                     alt="Hong Hao Travel"

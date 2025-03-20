@@ -1,6 +1,5 @@
-import { notFound } from 'next/navigation';
+import JourneyPlan from '@/components/common/journey-plan/journey-plan';
 import BlogDetail from './_components/BlogDetail/BlogDetail';
-import BlogPlanning from './_components/BlogPlanning/BlogPlanning';
 import BlogRelated from './_components/BlogRelated/BlogRelated';
 import BlogTitle from './_components/BlogTitle/BlogTitle';
 
@@ -16,21 +15,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function getBlogData() {
-  return false;
-}
-
 export default async function BlogDetailPage() {
-  // const blogData = await getBlogData();
-  // if (!blogData) {
-  //   return notFound();
-  // }
-
   return (
     <>
       <BlogTitle />
       <BlogDetail />
-      <BlogPlanning />
+      <JourneyPlan />
       <BlogRelated />
     </>
   );
