@@ -1647,7 +1647,7 @@ export default function Commitment() {
           >
             {list.map((item, index) => (
               <li key={index} className="flex h-6 gap-2 md:items-center">
-                <div className="icon h-full w-fit max-md:flex max-md:items-center max-md:justify-center">
+                <div className="icon flex h-full w-fit items-center justify-center">
                   {item.icon}
                 </div>
                 <div className="text body1-bold !text-greyscaletext-5 max-md:!text-left max-md:!text-[0.875rem] max-md:!font-extrabold max-md:!normal-case">

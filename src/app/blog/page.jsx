@@ -17,12 +17,6 @@ export const metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'Hong Hao Travel Logo',
-    title: 'Blog - Hong Hao Travel',
-    description: 'Hong Hao Travel',
-    images: ['/images/about/logo-metadata.png'],
-  },
   icons: {
     icon: '/images/about/logo-metadata.ico',
   },
