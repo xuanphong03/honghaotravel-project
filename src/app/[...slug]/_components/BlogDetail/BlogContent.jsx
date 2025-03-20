@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
+import CopyBtn from '../Button/CopyBtn';
+import ShareBtn from '../Button/ShareBtn';
 
 export default function BlogContent() {
   return (
@@ -127,34 +129,10 @@ export default function BlogContent() {
             </div>
             <ul className="flex shrink-0 items-center gap-[0.25rem]">
               <li className="flex size-[2rem] shrink-0 items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="33"
-                  viewBox="0 0 32 33"
-                  fill="none"
-                  className="h-auto w-full"
-                >
-                  <path
-                    d="M30 16.5898C30 23.7898 24.6 29.6898 17.7 30.4898V19.6898H21L21.5 15.8898H17.8V13.5898C17.8 12.4898 18.1 11.7898 19.7 11.7898H21.7V8.28984C20.7 8.18984 19.8 8.18984 18.8 8.18984C15.9 8.18984 13.9 9.98984 13.9 13.1898V15.9898H10.6V19.7898H13.9V30.4898C7.1 29.3898 2 23.5898 2 16.5898C2 8.88984 8.3 2.58984 16 2.58984C23.7 2.58984 30 8.88984 30 16.5898Z"
-                    fill="#454545"
-                  />
-                </svg>
+                <ShareBtn />
               </li>
               <li className="flex size-[2rem] shrink-0 items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="33"
-                  viewBox="0 0 32 33"
-                  fill="none"
-                  className="h-auto w-full"
-                >
-                  <path
-                    d="M30 16.5898C30 23.7898 24.6 29.6898 17.7 30.4898V19.6898H21L21.5 15.8898H17.8V13.5898C17.8 12.4898 18.1 11.7898 19.7 11.7898H21.7V8.28984C20.7 8.18984 19.8 8.18984 18.8 8.18984C15.9 8.18984 13.9 9.98984 13.9 13.1898V15.9898H10.6V19.7898H13.9V30.4898C7.1 29.3898 2 23.5898 2 16.5898C2 8.88984 8.3 2.58984 16 2.58984C23.7 2.58984 30 8.88984 30 16.5898Z"
-                    fill="#454545"
-                  />
-                </svg>
+                <CopyBtn />
               </li>
             </ul>
           </div>
