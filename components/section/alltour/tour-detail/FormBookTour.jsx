@@ -200,7 +200,7 @@ export default function TourBookingForm({ defaultValues = null }) {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
-          className="relative flex max-h-fit w-full max-md:flex-wrap max-md:gap-y-12 md:flex md:max-h-[85vh] md:justify-between"
+          className="relative flex max-h-fit w-full max-md:flex-wrap max-md:gap-y-12 md:flex md:max-h-full md:justify-between"
         >
           <div
             ref={text}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export default function AboutL({ ref }) {
@@ -16,7 +17,10 @@ export default function AboutL({ ref }) {
           journey through some of Vietnam's most awe-inspiring landscapes.
         </p>
         <div className="flex items-center gap-4 max-md:hidden">
-          <button className="group btn-size-m__mb btn-size-l btn-default__mb btn-default btn-bold__mb btn-bold !text-greyscaletext-0 flex cursor-pointer items-center justify-center gap-2 !font-bold">
+          <Link
+            href={'/tours'}
+            className="group btn-size-m__mb btn-size-l btn-default__mb btn-default btn-bold__mb btn-bold !text-greyscaletext-0 flex cursor-pointer items-center justify-center gap-2 !font-bold"
+          >
             <span>BOOK TOUR</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +90,11 @@ export default function AboutL({ ref }) {
                 </linearGradient>
               </defs>
             </svg>
-          </button>
-          <button className="group btn-size-m__mb btn-size-l btn-line-white__mb btn-line-white btn-bold__mb btn-bold !text-greyscaletext-0 hover:!bg-orange-normal__hover hover:!border-orange-normal__hover flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:text-white hover:!opacity-100">
+          </Link>
+          <Link
+            href={'/tours'}
+            className="group btn-size-m__mb btn-size-l btn-line-white__mb btn-line-white btn-bold__mb btn-bold !text-greyscaletext-0 hover:!bg-orange-normal__hover hover:!border-orange-normal__hover flex cursor-pointer items-center justify-center gap-2 !font-bold duration-500 ease-in-out hover:text-white hover:!opacity-100"
+          >
             <span>ALL TOUR</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +164,7 @@ export default function AboutL({ ref }) {
                 </linearGradient>
               </defs>
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

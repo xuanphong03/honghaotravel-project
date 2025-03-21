@@ -7,6 +7,8 @@ import { PaginationCus } from './PaginationCus';
 import { Separator } from '@/components/ui/separator';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 gsap.registerPlugin(useGSAP);
 
@@ -14,18 +16,22 @@ const arrPaginate = [
   {
     id: 1,
     content: 'All',
+    link: '/blog',
   },
   {
     id: 2,
     content: 'Article',
+    link: '/blog/article',
   },
   {
     id: 3,
     content: 'Destination',
+    link: '/blog/destination',
   },
   {
     id: 4,
     content: 'Travel',
+    link: '/blog/travel',
   },
 ];
 
@@ -54,6 +60,8 @@ const arrPost = [
 ];
 
 export default function OurBlogPost({ ref }) {
+  const pathname = usePathname();
+
   const text1 = useRef(null);
   const text2 = useRef(null);
   const text3 = useRef(null);
@@ -138,16 +146,17 @@ export default function OurBlogPost({ ref }) {
           className="our-blog-post-pagination no-scrollbar mt-6 flex w-full translate-y-20 items-center gap-[0.62rem] opacity-0 max-md:overflow-x-scroll md:mt-3 md:mb-[3.94rem] md:transform md:justify-center md:gap-[0.94rem]"
         >
           {arrPaginate.map((item) => (
-            <Button
-              className={`our-blog__mb our-blog group ${item.id === 1 ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer`}
+            <Link
+              href={item.link}
+              className={`our-blog__mb our-blog group ${item.link === pathname ? '!bg-orange-normal__hover' : ''} hover:!bg-orange-normal__hover !font-bold transition-colors duration-500 ease-in-out hover:cursor-pointer`}
               key={item.id}
             >
               <span
-                className={`text-blog-bold__mb text-blog-bold ${item.id === 1 ? '!text-greyscaletext-0' : ''} group-hover:!text-greyscaletext-0 max-md:!text-[0.75rem]`}
+                className={`text-blog-bold__mb text-blog-bold ${item.link === pathname ? '!text-greyscaletext-0' : ''} group-hover:!text-greyscaletext-0 max-md:!text-[0.75rem]`}
               >
                 {item.content}
               </span>
-            </Button>
+            </Link>
           ))}
         </div>
         <div
