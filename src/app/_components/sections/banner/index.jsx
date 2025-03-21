@@ -1,10 +1,8 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
 import Image from 'next/image';
 import { useMemo, useRef, useState } from 'react';
-import styles from './banner.module.css';
-
+import gsap from 'gsap';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -16,6 +14,7 @@ import BannerSlide from './banner-slide';
 import { ScrollTrigger } from 'gsap/all';
 import { cn } from '@/lib/utils';
 import FilterTour from '../filter-tour';
+import styles from './banner.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,7 +155,7 @@ export default function Banner() {
       ref={container}
       className="home_banner relative h-[100vh] w-full overflow-hidden"
     >
-      <div className="absolute top-0 left-0 hidden h-full w-full xl:block">
+      <div className="absolute top-0 left-0 hidden h-full w-full lg:block">
         <div className="relative size-full">
           <div className="bg-green-normal__hover absolute z-[1] h-full w-full shrink-0"></div>
           <Image
@@ -209,7 +208,7 @@ export default function Banner() {
         <FilterTour />
       </div>
 
-      <div className="absolute inset-0 !z-50 hidden xl:block">
+      <div className="absolute inset-0 !z-50 hidden size-full lg:block">
         <div className="slide-animation relative z-[10] size-full translate-y-full scale-0">
           <BannerSlide data={SlideList} onChange={handleSlideChange} />
         </div>
@@ -236,7 +235,7 @@ export default function Banner() {
         </div>
       </div>
 
-      <div className="absolute inset-0 !z-50 xl:hidden">
+      <div className="absolute inset-0 !z-50 lg:hidden">
         <BannerSlide data={SlideList} onChange={handleSlideChange} />
       </div>
     </section>
