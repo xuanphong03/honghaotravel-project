@@ -13,10 +13,10 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-[87.5rem]">
         <div className="footer-logo relative z-10 mt-[2.62rem] h-[2.772rem] w-[7.8845rem] -translate-x-3 md:mt-[3.37rem] md:h-[4.875rem] md:w-[13.875rem] md:-translate-x-[1.4rem]">
           <Image
-            src="/images/footer/logo-footer.png"
+            src="/images/footer/logo-footer.webp"
             fill
             alt="no-img"
-            className="object-cover object-center"
+            className="object-contain object-center"
           />
         </div>
         <div className="footer-inf mt-[2.62rem] flex w-full gap-[2.62rem] max-md:flex-col-reverse md:mt-[2.81rem] md:gap-[7.5rem]">
