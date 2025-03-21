@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import OurTeam from '../../components/section/ourteam/OurTeam';
-import Banner from './_components/sections/Banner/Banner';
-import BestTrips from './_components/sections/BestTrips/BestTrips';
-import Feedback from './_components/sections/Feedback/Feedback';
-import AboutUs from './_components/sections/IntroContainer/AboutUs';
-import Introduction from './_components/sections/IntroContainer/Introduction';
-import OurTour from './_components/sections/IntroContainer/OurTour';
-import Welcome from './_components/sections/IntroContainer/Welcome';
-import Moment from './_components/sections/Moment/Moment';
-import Weather from './_components/sections/Weather/Weather';
+import Banner from './_components/sections/banner/banner';
+import BestTrips from './_components/sections/best-trips/best-trips';
+import Feedback from './_components/sections/feedback/feedback';
+import AboutUs from './_components/sections/intro-container/about-us/about-us';
+import Introduction from './_components/sections/intro-container/intro-container';
+import OurTour from './_components/sections/intro-container/our-tour/our-tour';
+import Welcome from './_components/sections/intro-container/welcome/welcome';
+import Moment from './_components/sections/moment/moment';
+import Weather from './_components/sections/weather/weather';
 
 export const metadata = {
   title: 'Homepage - Hong Hao Travel',

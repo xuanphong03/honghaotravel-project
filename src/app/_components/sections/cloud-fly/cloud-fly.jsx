@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import './CloudFly.scss';
+import styles from './cloud-fly.module.css';
+import { cn } from '@/lib/utils';
 
 export default function CloudFly() {
   return (
@@ -12,7 +13,10 @@ export default function CloudFly() {
         height={1080}
         alt="Hong Hao Travel"
         src="/images/home/weather/cloud1.png"
-        className="animation_cloud1 min-w-[108vw] object-cover object-top"
+        className={cn(
+          styles.animationCloud1,
+          'min-w-[108vw] object-cover object-top',
+        )}
       />
       <div
         className="absolute bottom-0 left-0 z-20 h-6 w-full md:h-[6rem]"
@@ -25,14 +29,20 @@ export default function CloudFly() {
         width={1920}
         height={1080}
         alt="Hong Hao Travel"
-        className="animation_cloud2 absolute -top-4 left-0 z-10 w-[50rem] object-cover md:-top-6 md:left-[10%]"
+        className={cn(
+          styles.animationCloud2,
+          'absolute -top-4 left-0 z-10 w-[50rem] object-cover md:-top-6 md:left-[10%]',
+        )}
         src="/images/home/weather/cloud2.png"
       />
       <Image
         width={1920}
         height={1080}
         alt="Hong Hao Travel"
-        className="animation_cloud3 absolute top-0 right-0 z-10 w-[50rem] object-cover md:top-5"
+        className={cn(
+          styles.animationCloud3,
+          'absolute top-0 right-0 z-10 w-[50rem] object-cover md:top-5',
+        )}
         src="/images/home/weather/cloud3.png"
       />
       <Image
@@ -40,7 +50,10 @@ export default function CloudFly() {
         height={1080}
         alt="Hong Hao Travel"
         src="/images/home/weather/cloud4.png"
-        className="animation_cloud4 absolute top-0 right-0 z-10 w-[50rem] object-cover md:top-4 md:right-[30%]"
+        className={cn(
+          styles.animationCloud4,
+          'absolute top-0 right-0 z-10 w-[50rem] object-cover md:top-4 md:right-[30%]',
+        )}
       />
     </div>
   );

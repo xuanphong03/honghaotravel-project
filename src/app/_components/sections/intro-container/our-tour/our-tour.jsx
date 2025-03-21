@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/all';
 import Image from 'next/image';
 import { useRef } from 'react';
+import styles from './our-tour.module.css';
+import { cn } from '@/lib/utils';
 
 export default function OurTour() {
   const TOUR_DESC = [
@@ -114,7 +116,10 @@ export default function OurTour() {
             height={500}
             alt="Hong Hao Travel"
             src="/images/home/our-tour/cloud.png"
-            className="animation_cloud1 absolute top-[1rem] left-1/2 z-[1] opacity-30 delay-300"
+            className={cn(
+              styles.cloudFly1,
+              'absolute top-[1rem] left-1/2 z-[1] opacity-30 delay-300',
+            )}
           />
           <Image
             width={500}
@@ -128,7 +133,7 @@ export default function OurTour() {
             width={500}
             height={500}
             src="/images/home/our-tour/cloud2.png"
-            className="animation_cloud2 absolute top-[2rem] left-1/2"
+            className={cn(styles.cloudFly2, 'absolute top-[2rem] left-1/2')}
           />
         </div>
         <div className="relative z-[2] w-full md:w-[38.8125rem]">

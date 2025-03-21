@@ -1,0 +1,57 @@
+.animationCloud1 {
+  animation: cloudFlyAnimation1 60s linear infinite;
+}
+.animationCloud2 {
+  animation: cloudFlyAnimation2 60s linear infinite;
+}
+.animationCloud3 {
+  animation: cloudFlyAnimation3 60s linear infinite;
+}
+.animationCloud4 {
+  animation: cloudFlyAnimation 60s linear infinite;
+}
+@keyframes cloudFlyAnimation1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-8%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes cloudFlyAnimation2 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes cloudFlyAnimation3 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes cloudFlyAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
