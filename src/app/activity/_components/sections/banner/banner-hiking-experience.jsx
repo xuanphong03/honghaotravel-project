@@ -1,5 +1,5 @@
-import Image from 'next/image';
-
+import { cn } from '@/lib/utils';
+import styles from './banner.module.css';
 export default function HikingExperience() {
   const HIKING_EXPERIENCE = [
     'Thủy điện Nho Quế 3',
@@ -22,14 +22,24 @@ export default function HikingExperience() {
   return (
     <div className="relative">
       <div className="mb-[0.75rem] md:mb-[2.82rem]">
-        <h3 className="text-gradient relative text-[6.25rem] leading-none font-bold uppercase max-md:text-[2.94194rem]">
+        <h3
+          className={cn(
+            styles.textLinearGradient,
+            'relative text-[6.25rem] leading-none font-bold uppercase max-md:text-[2.94194rem]',
+          )}
+        >
           HIKING
         </h3>
         <div className="z-[500] flex w-fit flex-col items-start gap-4 rounded-3xl bg-[rgba(255,255,255,0.15)] bg-clip-border px-3 py-1.5 text-lg leading-[120%] font-bold text-white not-italic backdrop-blur-lg max-md:px-[0.353rem] max-md:py-[0.1765rem] max-md:text-[0.52956rem] md:mt-[0.3rem]">
           Experience
         </div>
       </div>
-      <ul className="activity_scrollbar_custom mb-[1rem] flex max-h-[8rem] w-[13.6875rem] flex-wrap content-start items-start gap-[0.5rem] overflow-y-auto text-[0.75rem] font-medium text-white uppercase max-md:max-h-[8rem] max-md:pr-4 md:max-h-[18rem] md:w-[28.6875rem] md:text-[0.78906rem]">
+      <ul
+        className={cn(
+          styles.activityScrollbarCustom,
+          'mb-[1rem] flex max-h-[8rem] w-[13.6875rem] flex-wrap content-start items-start gap-[0.5rem] overflow-y-auto text-[0.75rem] font-medium text-white uppercase max-md:max-h-[8rem] max-md:pr-4 md:max-h-[18rem] md:w-[28.6875rem] md:text-[0.78906rem]',
+        )}
+      >
         {HIKING_EXPERIENCE.map((tour, index) => (
           <li
             key={index}

@@ -1,18 +1,10 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import required modules
-import { Pagination } from 'swiper/modules';
-import AlbumItem from './AlbumItem';
-
-// Import Swiper styles
-import './Album.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import AlbumItem from './album-drawer';
 
 export default function Album() {
   return (
