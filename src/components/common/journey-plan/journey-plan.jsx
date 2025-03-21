@@ -1,7 +1,7 @@
 import Image from 'next/image';
-// import './style.scss';
 import styles from './journey-plan.module.css';
 import { cn } from '@/lib/utils';
+
 export default function JourneyPlan() {
   return (
     <section id="journey_plan" className={cn('relative', styles.journeyPlan)}>

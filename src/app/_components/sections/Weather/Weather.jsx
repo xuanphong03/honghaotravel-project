@@ -1,5 +1,5 @@
-import CloudFly from '../CloudFly/CloudFly';
-import WeatherSlide from './WeatherSlide';
+import CloudFly from '../cloud-fly/cloud-fly';
+import WeatherSlide from './weather-slide';
 
 export default function Weather() {
   return (

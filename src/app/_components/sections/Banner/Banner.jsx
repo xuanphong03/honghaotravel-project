@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { useMemo, useRef, useState } from 'react';
-import './Banner.scss';
+import styles from './banner.module.css';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,9 +12,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // import required modules
-import FilterTour from '../FilterTour/FilterTour';
-import BannerSlide from './BannerSlide';
+import FilterTour from '../filter-tour/filter-tour';
+import BannerSlide from './banner-slide';
 import { ScrollTrigger } from 'gsap/all';
+import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,7 +188,12 @@ export default function Banner() {
             </div>
           </div>
 
-          <div className="heading-animation text_linear_gradient absolute top-1/2 left-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 uppercase">
+          <div
+            className={cn(
+              'heading-animation absolute top-1/2 left-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 uppercase',
+              styles.textLinearGradient,
+            )}
+          >
             <p className="mb-[0.75rem] text-center text-[1.125rem] leading-none font-extrabold text-white/40">
               Get ready
             </p>

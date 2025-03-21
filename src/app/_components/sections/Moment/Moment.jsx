@@ -2,10 +2,10 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import Carousel from './_components/carousel/Carousel';
-import CarouselMobile from './_components/carousel/CarouselMobile';
-import CarouselMobileItem from './_components/carousel/CarouselMobileItem';
-import CarouselMobileLogo from './_components/carousel/CarouselMobileLogo';
+import Carousel from './_components/carousel/carousel';
+import CarouselMobile from './_components/carousel/carousel-mobile';
+import CarouselMobileItem from './_components/carousel/carousel-mobile-item';
+import CarouselMobileLogo from './_components/carousel/carousel-mobile-ogo';
 
 export default function Moment() {
   return (

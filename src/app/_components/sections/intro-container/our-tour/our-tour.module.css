@@ -1,0 +1,31 @@
+.cloudFly1 {
+  animation: cloudFlyAnimation1 10s linear infinite;
+}
+
+.cloudFly2 {
+  animation: cloudFlyAnimation2 10s linear infinite;
+}
+
+@keyframes cloudFlyAnimation1 {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes cloudFlyAnimation2 {
+  0% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(10px) translateY(-10px);
+  }
+}

@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import MomentSlideItem from './CarouselItem';
+import MomentSlideItem from './carousel-item';
 
 export default function Carousel() {
   const slideContainerRef = useRef(null);

@@ -1,17 +1,12 @@
 'use client';
 import React, { useMemo, useRef, useState } from 'react';
-// Import Swiper React components
+import { cn } from '@/lib/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
+import Image from 'next/image';
+import PrevButton from '@/components/common/button/prev-button';
+import NextButton from '@/components/common/button/next-button';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-// import required modules
-import Image from 'next/image';
-import ButtonPrev from '../../../../../components/common/Button/ButtonPrev';
-import ButtonNext from '../../../../../components/common/Button/ButtonNext';
-import { cn } from '@/lib/utils';
 
 export default function WeatherSlide() {
   const swiperRef = useRef(null);
@@ -86,17 +81,11 @@ export default function WeatherSlide() {
             9/3
           </p>
         </div>
-        <div
-          onClick={handleClickPrevButton}
-          className="hover:bg-orange-normal__hover absolute top-1/2 left-[5rem] !z-50 hidden size-[2.5rem] cursor-pointer rounded-full transition-colors md:block"
-        >
-          <ButtonPrev />
+        <div className="absolute top-1/2 left-[5rem] !z-50 hidden md:block">
+          <PrevButton onClick={handleClickPrevButton} />
         </div>
-        <div
-          onClick={handleClickNextButton}
-          className="hover:bg-orange-normal__hover absolute top-1/2 right-[5rem] !z-50 hidden size-[2.5rem] cursor-pointer rounded-full transition-colors md:block"
-        >
-          <ButtonNext />
+        <div className="absolute top-1/2 right-[5rem] !z-50 hidden md:block">
+          <NextButton onClick={handleClickNextButton} />
         </div>
         <div className="absolute right-0 bottom-0 left-0 !z-50 hidden w-full px-[2.5rem] md:block">
           <div className="mx-auto inline-flex w-[82.5rem] justify-between border-t border-solid border-white py-[2rem]">

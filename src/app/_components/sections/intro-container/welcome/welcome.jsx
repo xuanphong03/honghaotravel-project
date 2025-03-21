@@ -10,9 +10,9 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import required modules
+import NextButton from '@/components/common/button/next-button';
+import PrevButton from '@/components/common/button/prev-button';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
-import ButtonPrev from '../../../../../components/common/Button/ButtonPrev';
-import ButtonNext from '../../../../../components/common/Button/ButtonNext';
 export default function Welcome() {
   const container = useRef(null);
   const swiperRef = useRef(null);
@@ -111,17 +111,11 @@ export default function Welcome() {
             ></video>
           </SwiperSlide>
 
-          <div
-            onClick={handleClickPrevButton}
-            className="hover:bg-orange-normal__hover absolute top-1/2 left-[1.5rem] !z-50 size-[2.5rem] -translate-y-1/2 cursor-pointer rounded-full transition-colors md:left-[5rem]"
-          >
-            <ButtonPrev />
+          <div className="absolute top-1/2 left-[1.5rem] !z-50 -translate-y-1/2 md:left-[5rem]">
+            <PrevButton onClick={handleClickPrevButton} />
           </div>
-          <div
-            onClick={handleClickNextButton}
-            className="hover:bg-orange-normal__hover absolute top-1/2 right-[1.5rem] !z-50 size-[2.5rem] -translate-y-1/2 cursor-pointer rounded-full transition-colors md:right-[5rem]"
-          >
-            <ButtonNext />
+          <div className="absolute top-1/2 right-[1.5rem] !z-50 -translate-y-1/2 md:right-[5rem]">
+            <NextButton onClick={handleClickNextButton} />
           </div>
         </Swiper>
       </div>

@@ -2,10 +2,10 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useState } from 'react';
-import FeedbackItem from './FeedbackItem';
-import FeedbackSlide from './FeedbackSlide';
-import SiteList from './SiteList';
-import './Feedback.scss';
+import FeedbackItem from './feedback-item';
+import FeedbackSlide from './feedback-mobile';
+import SiteList from './site-list';
+import styles from './feedback.module.css';
 
 export default function Feedback() {
   const Maps = [
@@ -25,7 +25,12 @@ export default function Feedback() {
           className="h-full w-full object-cover max-md:absolute max-md:inset-0"
           src="/images/home/clients-say/bg-clients-say.jpeg"
         />
-        <div className="custom-bg-gradient absolute inset-0 z-[1] h-full w-full"></div>
+        <div
+          className={cn(
+            styles.backgroundLinearGradient,
+            'absolute inset-0 z-[1] h-full w-full',
+          )}
+        ></div>
         <div className="relative inset-0 z-[2] px-[1rem] pt-[4.54rem] md:absolute md:p-0">
           <h5 className="mb-3 text-[0.875rem] leading-[1.2] font-extrabold text-white/40 uppercase md:hidden">
             Read what our recent
