@@ -148,7 +148,7 @@ export default function Banner() {
         },
       });
     },
-    { scope: container, dependencies: [] },
+    { scope: container },
   );
 
   return (
