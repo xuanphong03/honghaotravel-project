@@ -1,4 +1,4 @@
-import CloudFly from '../cloud-fly/cloud-fly';
+import CloudFly from '../cloud-fly';
 import WeatherSlide from './weather-slide';
 
 export default function Weather() {

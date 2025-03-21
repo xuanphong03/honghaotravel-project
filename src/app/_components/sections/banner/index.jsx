@@ -12,10 +12,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // import required modules
-import FilterTour from '../filter-tour/filter-tour';
 import BannerSlide from './banner-slide';
 import { ScrollTrigger } from 'gsap/all';
 import { cn } from '@/lib/utils';
+import FilterTour from '../filter-tour';
 
 gsap.registerPlugin(ScrollTrigger);
 
