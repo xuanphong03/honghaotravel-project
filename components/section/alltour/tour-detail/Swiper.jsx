@@ -16,7 +16,7 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
         modules={[Mousewheel]}
         slidesPerView={2}
         spaceBetween={0}
-        className="max-h-[32rem] rounded-lg bg-transparent"
+        className="max-h-[32rem] !overflow-visible rounded-lg bg-transparent"
         onSlideChange={handleSlideChange}
       >
         {arrTest.map((_, index) => (
@@ -25,10 +25,34 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
             className="swiper-slide swiper-slide-active mb-14 flex h-fit w-full cursor-pointer"
           >
             <div className="relative flex space-x-[7.87rem]">
-              <div className="relative ms-6 w-[2rem]">
+              <div className="caicot relative ms-[4.5rem] w-[2rem]">
                 <div
-                  className={`bg-greyscaletext-10 absolute left-1/2 z-[5] h-full w-[0.2rem] transition-all duration-1000`}
-                ></div>
+                  className={`bg-greyscaletext-10 ${activeIndex === 5 && 'bg-transparent'} absolute left-1/2 z-[5] h-full w-[0.2rem] transition-all duration-1000`}
+                >
+                  <div
+                    className={`absolute -bottom-6 left-4 flex flex-col items-start`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        opacity="1"
+                        d="M17.1849 7.04134C16.3099 3.19134 12.9515 1.45801 10.0015 1.45801C10.0015 1.45801 10.0015 1.45801 9.99321 1.45801C7.05154 1.45801 3.68488 3.18301 2.80988 7.03301C1.83488 11.333 4.46821 14.9747 6.85154 17.2663C7.73488 18.1163 8.86821 18.5413 10.0015 18.5413C11.1349 18.5413 12.2682 18.1163 13.1432 17.2663C15.5265 14.9747 18.1599 11.3413 17.1849 7.04134Z"
+                        fill={`${activeIndex > index ? '#E64827' : '#c5c5c5'}`}
+                      />
+                      <path
+                        d="M10 11.2168C11.4497 11.2168 12.625 10.0415 12.625 8.5918C12.625 7.14205 11.4497 5.9668 10 5.9668C8.55025 5.9668 7.375 7.14205 7.375 8.5918C7.375 10.0415 8.55025 11.2168 10 11.2168Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <span className="body2-bold !text-greyscaletext-10 w-28 text-ellipsis">
+                      Tp.Ha Noi
+                    </span>
+                  </div>
+                </div>
                 <div
                   className={` ${activeIndex > index ? 'bg-green-normal__active h-full' : 'bg-greyscaletext-10'} absolute left-1/2 z-[5] h-0 w-[0.2rem] transition-all duration-1000`}
                 ></div>
@@ -67,10 +91,10 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
           </SwiperSlide>
         ))}
         <SwiperSlide
-          className="swiper-slide tablet:left-[-4rem] !absolute left-12 !transition-all !duration-1000"
+          className="swiper-slide !absolute top-0 !transition-all !duration-1000"
           style={{ top: `${activeIndex * 19}rem` }}
         >
-          <div className="relative h-[3.125rem] w-[2.9375rem]">
+          <div className="relative top-0 left-8 h-[3.125rem] w-[2.9375rem]">
             <Image
               src={'/images/alltour/detail/schedule-moto.png'}
               alt=""

@@ -25,7 +25,7 @@ export default function BannerAbout() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: about.current,
-        start: '50% center',
+        start: '55% center',
         end: '70% center',
         end: false,
         markers: false,

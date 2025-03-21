@@ -1555,7 +1555,7 @@ export default function Commitment() {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
-        start: 'top center',
+        start: '10% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1566,7 +1566,7 @@ export default function Commitment() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
-        start: '10% center',
+        start: '30% center',
         end: '70% center',
         end: false,
         markers: false,

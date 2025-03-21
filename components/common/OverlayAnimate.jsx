@@ -8,9 +8,8 @@ export default function OverlayAnimate() {
   useGSAP(() => {
     gsap.to(ab.current, {
       duration: 1, // Thời gian hiệu ứng (2 giây)
-      backgroundColor: 'transparent', // Màu nền biến mất
       ease: 'power2.out',
-      zIndex: 0,
+      zIndex: -99,
       opacity: 0,
     });
   });

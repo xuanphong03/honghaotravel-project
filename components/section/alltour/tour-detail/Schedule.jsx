@@ -142,9 +142,9 @@ export default function Schedule() {
       </div>
       <div
         ref={scheduleR}
-        className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] translate-y-28 transform overflow-hidden rounded-4xl py-10 ps-[3.2rem] pe-20 opacity-0"
+        className="schedule-right shadow-schedule h-[49.25rem] w-[63.5rem] translate-y-28 transform overflow-hidden rounded-4xl py-10 pe-20 opacity-0"
       >
-        <div className="head flex items-center justify-between">
+        <div className="head flex items-center justify-between ps-[3.2rem]">
           <div className="title flex flex-col gap-3">
             <div className="time flex items-center gap-7">
               <div className="time-icon flex items-center gap-[0.6rem]">
@@ -195,7 +195,7 @@ export default function Schedule() {
           </div>
         </div>
         <div className="pick">
-          <div className="pick-text mt-9 flex flex-col gap-2">
+          <div className="pick-text mt-9 flex flex-col gap-2 ps-[3.2rem]">
             <span className="sub1-bold !text-greyscaletext-80-main">
               Pick up at :
             </span>
@@ -203,10 +203,11 @@ export default function Schedule() {
               Ha Noi, Noi Bai
             </span>
           </div>
-          <div className="pick-action mt-8 h-fit max-h-[35rem]">
+          <div className="pick-action mt-8 h-fit max-h-[35rem] overflow-hidden">
             <MousewheelSwiper
               handleSlideChange={handleSlideChange}
               activeIndex={activeIndex}
+              className=""
             />
           </div>
         </div>
