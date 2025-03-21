@@ -17,7 +17,7 @@ export default function BannerAbout() {
   const about = useRef(null);
   const abd1 = useRef(null);
   const abd2 = useRef(null);
-  const abd3 = useRef(null);
+  const map = useRef(null);
 
   const aboutL = useRef(null);
 
@@ -60,7 +60,13 @@ export default function BannerAbout() {
     );
 
     gsap.to(aboutL.current, {
-      duration: 1,
+      duration: 1.5,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+    });
+    gsap.to(map.current, {
+      duration: 1.5,
       opacity: 1,
       y: 0,
       ease: 'power2.out',
@@ -73,7 +79,13 @@ export default function BannerAbout() {
     >
       <OverlayAnimate />
       <div className="absolute top-0 right-0 left-0 h-full w-full">
-        <div className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-[linear-gradient(180deg,rgba(18,39,24,0.00)_0%,#122718_100%)] bg-cover bg-no-repeat opacity-100"></div>
+        <div
+          className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-cover bg-no-repeat"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(18, 39, 24, 0.3) 0%, #122718 100%)',
+          }}
+        ></div>
         <Image
           src="/images/about/about-banner.png"
           alt="banner"
@@ -91,7 +103,10 @@ export default function BannerAbout() {
       </div>
 
       <div className="relative z-10 mx-4 h-full max-w-[87.5rem] md:mx-auto">
-        <div className="absolute -bottom-[16.5rem] -left-[5.5rem] h-[55.90219rem] w-[27.522rem] md:bottom-0 md:left-[33%] md:h-[82rem] md:w-[57rem]">
+        <div
+          ref={map}
+          className="absolute -bottom-[16.5rem] -left-[5.5rem] h-[55.90219rem] w-[27.522rem] translate-y-16 transform opacity-0 md:bottom-0 md:left-[33%] md:h-[82rem] md:w-[57rem]"
+        >
           <Image
             src="/images/about/map.png"
             fill
@@ -157,7 +172,7 @@ export default function BannerAbout() {
         />
 
         <AboutL ref={aboutL} />
-        <div className="absolute top-[70%] z-10 flex w-full justify-end max-md:hidden">
+        <div className="absolute top-[68.75%] z-10 flex w-full justify-end max-md:hidden">
           <AboutR />
         </div>
       </div>

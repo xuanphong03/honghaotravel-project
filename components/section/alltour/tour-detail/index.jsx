@@ -7,6 +7,7 @@ import BookTour from './BookTour';
 import FAQAboutTrip from './FAQAboutTrip';
 import OurTeam from '../../ourteam/OurTeam';
 import Explore from '../../../common/Explore';
+import InfinitySlideMobile from '../../../common/InfinitySlide/InfinitySlideMobile';
 
 const dataBreadcrumb = [
   {
@@ -77,15 +78,19 @@ const dataBreadcrumb = [
 ];
 export default function TourDetail() {
   return (
-    <div className="tourdetail">
+    <div className="tourdetail max-md:overflow-hidden">
       <BannerTourDetail />
+      <InfinitySlideMobile />
       <Breadcrumb data={dataBreadcrumb} />
       <ImediateMb />
       <Schedule />
       <BookTour />
       <FAQAboutTrip />
       <OurTeam secondary className={'relative z-10 bg-white'} />
-      <Explore className={'pb-12 md:pb-16'} />
+      <Explore
+        className={'pb-12 md:pb-16'}
+        textColor={'!text-green-normal__hover'}
+      />
     </div>
   );
 }

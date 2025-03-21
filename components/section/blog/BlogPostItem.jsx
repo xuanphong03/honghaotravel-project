@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import OverlayAnimate from '../../common/OverlayAnimate';
 
 export default function BlogPostItem({ data }) {
   return (
@@ -18,7 +17,7 @@ export default function BlogPostItem({ data }) {
             'linear-gradient(180deg, rgba(18, 39, 24, 0.00) 0%, #000 100%)',
         }}
       ></div>
-      <div className="post-btn__mb post-btn sub2-regular__mb sub2-regular !text-greyscaletext-80-main relative z-10 !w-fit uppercase max-md:!px-[1.19rem] max-md:!py-[0.62rem] max-md:!text-[0.75rem]">
+      <div className="post-btn__mb post-btn sub2-regular__mb sub2-regular !text-greyscaletext-80-main relative z-10 !w-fit max-md:!px-[1.19rem] max-md:!py-[0.62rem] max-md:!text-[0.75rem]">
         {data.tag}
       </div>
       <div className="relative z-10 flex flex-col gap-[0.31rem]">

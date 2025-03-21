@@ -7,7 +7,7 @@ import CardVertical from '@/components/common/card/CardVertical';
 
 gsap.registerPlugin(useGSAP);
 
-export default function Explore({ className }) {
+export default function Explore({ className, textColor }) {
   const text = useRef(null);
   const explore = useRef(null);
 
@@ -24,9 +24,9 @@ export default function Explore({ className }) {
       },
     });
     tl.to(text.current, {
-      opacity: 0.4,
+      opacity: 1,
       y: 0,
-      duration: 0.5,
+      duration: 0.7,
     });
   });
   return (
@@ -41,7 +41,7 @@ export default function Explore({ className }) {
         >
           EXPLORE
         </p>
-        <h2 className="h3-bold__mb h2-bold !text-greyscaletext-80-main">
+        <h2 className={`h3-bold__mb h2-bold ${textColor}`}>
           BEST TRIPS FOR YOU
         </h2>
       </div>

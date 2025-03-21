@@ -24,7 +24,7 @@ const TestM = ({ commit }) => {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: commit.current,
-            start: '-40% center',
+            start: '-70% center',
             end: '70% center',
             end: false,
             markers: false,

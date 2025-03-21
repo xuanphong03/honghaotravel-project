@@ -26,7 +26,7 @@ export default function OurBlogHead({ ref }) {
     tl.to(
       text1.current,
       {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         y: 0,
         ease: 'power2.out',
@@ -100,7 +100,7 @@ export default function OurBlogHead({ ref }) {
             />
           </svg>
         </div>
-        <h2 className="title h2-bold__mb h2-bold !text-greyscaletext-70 relative z-[1] text-center opacity-80 max-md:!text-[1.5rem]">
+        <h2 className="title h2-bold__mb h2-bold !text-greyscaletext-80-main relative z-[1] text-center opacity-90 max-md:!text-[1.5rem]">
           STORIES ABOUT JOURNEYS OF JOY
         </h2>
         <div className="star max-md:hidden">

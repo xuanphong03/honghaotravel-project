@@ -75,13 +75,13 @@ export default function Share() {
     tl.to(text.current, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 1.5,
     });
   });
   return (
     <div
       ref={share}
-      className="about-share relative min-h-[31.78rem] md:min-h-[49.0625rem]"
+      className="about-share relative min-h-[31.78rem] bg-white md:min-h-[49.0625rem]"
     >
       <div className="bg absolute top-0 right-0 bottom-0 left-0 h-full w-full">
         <Image
@@ -119,9 +119,9 @@ export default function Share() {
         </div>
         <div
           ref={text}
-          className="inf flex w-full max-w-full translate-y-[4.6875rem] justify-center px-[1.7rem] opacity-0 md:w-[65.8125rem] md:px-0"
+          className="inf flex w-full max-w-full translate-y-16 justify-center px-[1.7rem] opacity-0 md:w-[65.8125rem] md:px-0"
         >
-          <p className="h2-bold__mb h2-bold mt-24 text-center !text-[#122618] opacity-80 max-md:!text-[1.5rem] max-md:leading-[120%] max-md:tracking-[0.00375rem] md:mt-[6.87rem] md:text-left md:!font-normal">
+          <p className="h2-bold__mb h2-bold mt-24 text-center !text-[#122618] opacity-100 max-md:!text-[1.5rem] max-md:leading-[120%] max-md:tracking-[0.00375rem] md:mt-[6.87rem] md:text-left md:!font-normal">
             Hong Hao Travel is a travel company in Ha Giang, we specialize in
             organizing unforgettable tours to explore Ha Giang loop but still
             focus on the pristine nature of nature.

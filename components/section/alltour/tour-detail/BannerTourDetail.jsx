@@ -337,7 +337,7 @@ export default function BannerTourDetail() {
         </div>
       </div>
 
-      <div className="map absolute top-[14%] right-[18rem] h-[24.75rem] w-[24.4375rem] max-md:hidden">
+      <div className="map absolute top-[19%] right-[18rem] h-[24.75rem] w-[24.4375rem] max-md:hidden">
         <Image
           src={'/images/alltour/map.png'}
           alt="map"

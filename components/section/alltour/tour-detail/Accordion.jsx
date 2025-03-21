@@ -50,18 +50,18 @@ export function AccordionDemo() {
     <Accordion
       type="single"
       collapsible
-      className="flex w-full flex-col md:w-[42.8125rem] md:gap-5"
+      className="flex w-full flex-col md:w-[42.8125rem] md:gap-2"
     >
       {arrAccordion.map((item) => (
         <AccordionItem key={item.id} value={item.id}>
           <AccordionTriggerCustom
-            className={`body2-bold sub1-bold__mb !text-greyscaletext-30`}
+            className={`body1-bold sub1-bold__mb !text-greyscaletext-30`}
           >
             {item.title}
           </AccordionTriggerCustom>
           <AccordionContentCustom
             className={
-              'body2-regular sub1-regular__mb !text-greyscaletext-40 !duration-1000 ease-in-out'
+              'body1-regular sub1-regular__mb !text-greyscaletext-40 !duration-1000 ease-in-out'
             }
           >
             {item.content}
