@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function AboutL({ ref }) {
   return (
-    <div ref={ref} className="about-l relative z-20 translate-y-12 opacity-0">
+    <div ref={ref} className="about-l relative z-20 translate-y-16 opacity-0">
       <div className="relative z-10 h-[7.42925rem] w-[20.098rem] shrink-0 md:h-[22.1875rem] md:w-[58.19256rem]">
         <Image src={'/images/about/h1.png'} alt="" fill />
       </div>

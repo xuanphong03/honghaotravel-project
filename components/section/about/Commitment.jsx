@@ -1544,7 +1544,7 @@ export default function Commitment() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
-        start: '-10% center',
+        start: '-40% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1555,7 +1555,7 @@ export default function Commitment() {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
-        start: '10% center',
+        start: '5% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1566,7 +1566,7 @@ export default function Commitment() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: commit.current,
-        start: '30% center',
+        start: '35% center',
         end: '70% center',
         end: false,
         markers: false,
@@ -1579,7 +1579,7 @@ export default function Commitment() {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 1.5,
       },
       's',
     );
@@ -1588,19 +1588,19 @@ export default function Commitment() {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 1.5,
       },
       's',
     );
     tl2.to(a2.current, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 1.5,
     });
     tl3.to(a3.current, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 1.5,
     });
   });
 

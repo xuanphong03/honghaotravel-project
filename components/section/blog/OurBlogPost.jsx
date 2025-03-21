@@ -94,7 +94,7 @@ export default function OurBlogPost({ ref }) {
     tl.to(
       text1.current,
       {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         y: 0,
         ease: 'power2.out',
@@ -103,7 +103,7 @@ export default function OurBlogPost({ ref }) {
     ).to(
       text2.current,
       {
-        duration: 1,
+        duration: 1.5,
         opacity: 1,
         y: 0,
         ease: 'power2.out',

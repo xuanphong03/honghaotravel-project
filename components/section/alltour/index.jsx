@@ -54,7 +54,10 @@ export default function Tours() {
     <div className="tours">
       <BannerTours />
       <Breadcrumb data={dataBreadcrumbTour} />
-      <Explore className={'py-12 md:py-16'} />
+      <Explore
+        className={'py-12 md:py-16'}
+        textColor={'!text-greyscaletext-80-main'}
+      />
       <Type />
     </div>
   );

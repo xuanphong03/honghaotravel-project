@@ -463,6 +463,18 @@ body::-webkit-scrollbar-thumb {
     line-height: 120%; /* 1.8rem */
   }
 
+  .h5-bold {
+    color: var(--Orange-Normal, #e64827);
+    text-align: right;
+
+    /* WEB/H5/M */
+    font-family: 'tripsan-bold';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 1.8rem */
+  }
+
   /* h6 */
   .h6-regular {
     color: #000;
@@ -991,6 +1003,17 @@ input[type='number'] {
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
+    line-height: 120%; /* 1.8rem */
+  }
+  .h5-bold__mb {
+    color: var(--Orange-Normal, #e64827);
+    text-align: right;
+
+    /* WEB/H5/M */
+    font-family: 'tripsan-bold';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
     line-height: 120%; /* 1.8rem */
   }
 

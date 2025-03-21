@@ -29,7 +29,7 @@ export default function BannerTours() {
           className="object-contain"
         />
       </div>
-      <div className="map absolute right-0 h-[24.75rem] w-[24.4375rem] max-md:hidden md:right-16">
+      <div className="map absolute right-0 h-[22.75rem] w-[22.4375rem] max-md:hidden md:right-16">
         <Image
           src={'/images/alltour/map.png'}
           alt="map"

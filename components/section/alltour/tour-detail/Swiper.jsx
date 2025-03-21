@@ -61,10 +61,10 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
                 ></div>
               </div>
               <article className="scrollbar-popup-tour-detail relative mb-[2rem] max-h-[25rem] min-h-[17.875rem] flex-1 overflow-hidden rounded-[1.5rem] border-[3px] border-transparent bg-[#F5F5F5] p-[1.88rem] transition-all duration-1000 ease-out">
-                <h3 className="!text-greyscaletext-50 h6-semibold font-extrabold md:w-[30rem]">
+                <h3 className="!text-greyscaletext-80-main h6-bold font-extrabold md:w-[30rem]">
                   Night 1 : Hanoi – Ha Giang city.
                 </h3>
-                <div className="detail_sched !text-greyscaletext-50 body1-regular mt-[1.12rem]">
+                <div className="detail_sched !text-greyscaletext-40 body1-regular mt-[1.12rem]">
                   <p>
                     The bus pick up from your hotel/hostel in Hanoi between
                     7:30pm and 8:00pm, you will arrive to Ha Giang City around
@@ -79,11 +79,11 @@ const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
                     few hours before starting the tour.
                   </p>
                 </div>
-                <div className="text-greyscale-50 absolute top-[1rem] right-[1rem] flex h-[1.625rem] w-[4.625rem] items-center justify-center rounded-[1.5rem] bg-[#E6E6E6] text-[0.75rem] leading-[1.2] font-normal tracking-[0.00375rem] md:h-[2.5rem] md:w-[8rem] md:text-[1.3rem]">
+                <div className="text-greyscaletext-40 absolute top-[1rem] right-[1rem] flex h-[1.625rem] w-[4.625rem] items-center justify-center rounded-[1.5rem] bg-[#E6E6E6] text-[0.75rem] leading-[1.2] font-normal tracking-[0.00375rem] md:h-[2.5rem] md:w-[8rem] md:text-[1.3rem]">
                   300 km
                 </div>
                 <div className="!text-orange-normal sub1-bold absolute right-[1rem] bottom-[1rem] z-[10000] !text-[0.875rem] !font-bold !uppercase">
-                  Xem them
+                  Xem thêm
                 </div>
                 <div className="pointer-events-none absolute bottom-0 left-0 h-[4rem] w-full bg-gradient-to-t from-white to-transparent"></div>
               </article>

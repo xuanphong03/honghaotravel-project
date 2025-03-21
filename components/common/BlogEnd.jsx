@@ -137,7 +137,7 @@ export default function BlogEnd() {
           />
         </div>
         <div className="blogend-cont relative z-10 flex w-full flex-col items-center gap-8 max-md:px-[1.12rem] md:w-[30%] md:gap-[2.06rem]">
-          <h2 className="h5-bold-pc h2-bold !text-greyscaletext-70 text-center md:h-[7.75rem] md:w-[27.5rem] md:!font-normal">
+          <h2 className="h5-bold-pc h2-bold !text-greyscaletext-80-main text-center opacity-90 md:h-[7.75rem] md:w-[27.5rem] md:!font-normal">
             Start planning your journey of joy
           </h2>
           <p className="sub2-regular__mb body1-regular !text-greyscaletext-30 md:!text-greyscale-10 text-center md:w-[20.3125rem]">

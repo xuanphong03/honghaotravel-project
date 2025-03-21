@@ -39,7 +39,7 @@ export default function FAQBanner({ urlTitle }) {
       ></div>
       <div
         ref={text}
-        className="title relative h-[7.42925rem] w-[19.1605rem] translate-y-12 transform opacity-0 md:h-[19.6875rem] md:w-[52.1105rem]"
+        className="title relative h-[6.42925rem] w-[19.1605rem] translate-y-12 transform opacity-0 md:h-[15.6875rem] md:w-[48.1105rem]"
       >
         <Image src={urlTitle} alt="title" fill className="object-contain" />
       </div>

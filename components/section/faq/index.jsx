@@ -57,7 +57,10 @@ export default function FAQ() {
       <Breadcrumb data={dataBreadcrumb} />
       <FAQQuestion />
       <OurTeam secondary />
-      <Explore className={'pb-16 max-md:pb-12'} />
+      <Explore
+        className={'pb-16 max-md:pb-12'}
+        textColor={'!text-green-normal__hover'}
+      />
     </div>
   );
 }
