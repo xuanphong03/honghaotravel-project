@@ -1,7 +1,7 @@
 import BreadcrumbCustom from '@/components/common/breadcrumb/BreadcrumbCustom';
 import OurTeam from '../../../components/section/ourteam/OurTeam';
-import Activity from './_components/sections/activity/activity';
-import Banner from './_components/sections/banner/banner';
+import Activity from './_components/sections/activity';
+import Banner from './_components/sections/banner';
 
 export const metadata = {
   title: 'Activity - Hong Hao Travel',

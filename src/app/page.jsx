@@ -1,14 +1,14 @@
 import Image from 'next/image';
-import Banner from './_components/sections/banner/banner';
+import Banner from './_components/sections/banner_temp/banner';
 import BestTrips from './_components/sections/best-trips/best-trips';
-import Feedback from './_components/sections/feedback/feedback';
+import Feedback from './_components/sections/feedback_temp/feedback';
 import AboutUs from './_components/sections/intro-container/about-us/about-us';
 import Introduction from './_components/sections/intro-container/intro-container';
 import OurTour from './_components/sections/intro-container/our-tour/our-tour';
 import Welcome from './_components/sections/intro-container/welcome/welcome';
-import Moment from './_components/sections/moment/moment';
+import Moment from './_components/sections/moment_temp/moment';
 import OurTeam from '../../components/section/ourteam/OurTeam';
-import Weather from './_components/sections/weather/weather';
+import Weather from './_components/sections/weather_temp/weather';
 
 export const metadata = {
   title: 'Homepage - Hong Hao Travel',
