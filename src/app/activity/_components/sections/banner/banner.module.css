@@ -1,0 +1,63 @@
+.buttonDefault {
+  @apply flex h-[3.5rem] cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.875rem] uppercase;
+}
+.textLinearGradient {
+  background: linear-gradient(
+    180deg,
+    #fff 37.06%,
+    rgba(255, 255, 255, 0) 107.22%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.backgroundOverlay {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 39, 24, 0) 13.77%,
+    #122718 78.44%
+  );
+}
+
+.circle {
+  animation: activityCircleZoom 1.5s linear infinite;
+}
+
+.activityScrollbarCustom::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.activityScrollbarCustom::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.activityScrollbarCustom::-webkit-scrollbar-thumb {
+  background-color: #19543a;
+}
+
+@keyframes activityCircleZoom {
+  from {
+    scale: 0.75;
+  }
+  50% {
+    scale: 1;
+  }
+  to {
+    scale: 0.75;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .activityScrollbarCustom::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .buttonDefault {
+    flex: 1;
+    height: 3rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

@@ -1,20 +1,20 @@
 'use client';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import Image from 'next/image';
-import LocationPoint from './LocationPoint';
-import MotorbikeTour from './MotorbikeTour';
-import HikingExperience from './HikingExperience';
-import './Banner.scss';
-import { useRef } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import Image from 'next/image';
+import { useRef } from 'react';
+import HikingExperience from './banner-hiking-experience';
+import LocationPoint from './banner-location-point';
+import MotorbikeTour from './banner-motorbike-tour';
+import styles from './banner.module.css';
+import { cn } from '@/lib/utils';
 
 export default function Banner() {
   const container = useRef(null);
@@ -55,7 +55,12 @@ export default function Banner() {
           src="/images/activity/banner-mb.svg"
           className="size-full object-cover md:hidden"
         />
-        <div className="bg-overlay absolute right-0 bottom-0 left-0 h-[120.9375rem] w-full"></div>
+        <div
+          className={cn(
+            styles.backgroundOverlay,
+            'absolute right-0 bottom-0 left-0 h-[120.9375rem] w-full',
+          )}
+        ></div>
       </div>
       <div className="absolute right-0 bottom-0 left-0">
         <Image
@@ -134,7 +139,12 @@ export default function Banner() {
             data-aos="fade-up"
             className="mt-[2.06rem] flex items-center gap-[1rem] font-bold text-white"
           >
-            <button className="group button_default bg-orange-normal border-orange-normal__hover border border-solid">
+            <button
+              className={cn(
+                styles.buttonDefault,
+                'group bg-orange-normal border-orange-normal__hover border border-solid',
+              )}
+            >
               <span>Book now</span>
               <Image
                 width={10}
@@ -144,7 +154,12 @@ export default function Banner() {
                 className="size-[0.625rem] object-contain duration-200 ease-linear group-hover:translate-x-[0.5rem]"
               />
             </button>
-            <button className="group button_default hover:bg-orange-normal hover:border-orange-normal border border-solid border-white bg-transparent opacity-60 duration-300 ease-linear hover:opacity-100">
+            <button
+              className={cn(
+                styles.buttonDefault,
+                'group hover:bg-orange-normal hover:border-orange-normal border border-solid border-white bg-transparent opacity-60 duration-300 ease-linear hover:opacity-100',
+              )}
+            >
               <span>All tour</span>
               <Image
                 alt="Hong Hao Travel"

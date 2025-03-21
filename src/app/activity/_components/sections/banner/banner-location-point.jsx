@@ -8,9 +8,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog-v2';
-import Image from 'next/image';
-import SlideImage from './SlideImage';
 import { X } from 'lucide-react';
+import Image from 'next/image';
+import SlideImage from './banner-slide-image';
+import { cn } from '@/lib/utils';
+import styles from './banner.module.css';
 
 export default function LocationPoint() {
   return (
@@ -42,7 +44,7 @@ export default function LocationPoint() {
         </DialogContent>
       </Dialog>
       <svg
-        className="circle mr-[0.95rem] size-[2.25rem]"
+        className={cn(styles.circle, 'mr-[0.95rem] size-[2.25rem]')}
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
