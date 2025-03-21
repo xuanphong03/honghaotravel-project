@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import OurTeam from '../../components/section/ourteam/OurTeam';
 import Banner from './_components/sections/banner';
 import BestTrips from './_components/sections/best-trips';
