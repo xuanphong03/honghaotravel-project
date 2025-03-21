@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import OurTeam from '../../components/section/ourteam/OurTeam';
 import Banner from './_components/sections/banner/banner';
 import BestTrips from './_components/sections/best-trips/best-trips';
 import Feedback from './_components/sections/feedback/feedback';
@@ -8,6 +7,7 @@ import Introduction from './_components/sections/intro-container/intro-container
 import OurTour from './_components/sections/intro-container/our-tour/our-tour';
 import Welcome from './_components/sections/intro-container/welcome/welcome';
 import Moment from './_components/sections/moment/moment';
+import OurTeam from '../../components/section/ourteam/OurTeam';
 import Weather from './_components/sections/weather/weather';
 
 export const metadata = {
