@@ -1605,7 +1605,7 @@ export default function Commitment() {
   });
 
   return (
-    <div
+    <section
       ref={commit}
       className="commitment commitment relative h-fit w-full max-md:pt-5 md:mt-[6rem] md:bg-[rgb(19,52,28)] md:pb-0"
     >
@@ -1673,6 +1673,6 @@ export default function Commitment() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

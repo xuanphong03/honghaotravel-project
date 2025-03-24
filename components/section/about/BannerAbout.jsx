@@ -73,7 +73,7 @@ export default function BannerAbout() {
     });
   });
   return (
-    <div
+    <section
       ref={about}
       className="about relative h-[49.375rem] overflow-hidden pt-[7.25rem] md:h-[101rem] md:pt-[9rem]"
     >
@@ -176,6 +176,6 @@ export default function BannerAbout() {
           <AboutR />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -125,7 +125,7 @@ export default function Schedule() {
   });
 
   return (
-    <div
+    <section
       ref={schedule}
       className="schedule mx-auto flex max-w-[87.5rem] items-center justify-between gap-12 pt-16 pb-12 max-md:hidden"
     >
@@ -212,6 +212,6 @@ export default function Schedule() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

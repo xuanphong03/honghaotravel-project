@@ -26,7 +26,10 @@ export default function InfinitySlideMobile() {
   };
 
   return (
-    <div id="infinity_slide" className="relative h-full w-full pt-2 md:hidden">
+    <section
+      id="infinity_slide"
+      className="relative h-full w-full pt-2 md:hidden"
+    >
       <div className="milestone absolute top-[60%] right-full -translate-y-1/2">
         <div className="banner-arrow flex size-[3.375rem] items-center justify-center">
           <svg
@@ -80,6 +83,6 @@ export default function InfinitySlideMobile() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }

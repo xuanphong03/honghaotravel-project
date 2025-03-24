@@ -20,7 +20,7 @@ export default function FAQBanner({ urlTitle }) {
     });
   });
   return (
-    <div className="alltour relative flex items-center justify-center py-[7.25rem] ps-[1.25rem] md:min-h-[45.5rem] md:py-[6.19rem] md:ps-[8.13rem] md:pe-16">
+    <section className="alltour relative flex items-center justify-center py-[7.25rem] ps-[1.25rem] md:min-h-[45.5rem] md:py-[6.19rem] md:ps-[8.13rem] md:pe-16">
       <OverlayAnimate />
       <div className="bg absolute top-0 right-0 bottom-0 left-0 z-0">
         <Image
@@ -43,6 +43,6 @@ export default function FAQBanner({ urlTitle }) {
       >
         <Image src={urlTitle} alt="title" fill className="object-contain" />
       </div>
-    </div>
+    </section>
   );
 }

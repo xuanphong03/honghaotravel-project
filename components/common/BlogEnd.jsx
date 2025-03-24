@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function BlogEnd() {
   return (
-    <div className="blogend relative flex justify-between max-md:min-h-[26.3125rem] max-md:pt-[4.37rem] md:items-center md:py-[6.25rem]">
+    <section className="blogend relative flex justify-between max-md:min-h-[26.3125rem] max-md:pt-[4.37rem] md:items-center md:py-[6.25rem]">
       <div className="blogend-bg absolute top-0 right-0 bottom-0 z-0 h-full w-full md:w-[80%] md:max-w-[100rem]">
         <div className="bg absolute top-0 right-0 bottom-0 left-0 -z-20 bg-[#FCF8F7]"></div>
         <div className="absolute right-0 bottom-0 z-0 h-[14.206rem] max-h-full w-full md:h-[31.19331rem]">
@@ -228,6 +228,6 @@ export default function BlogEnd() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

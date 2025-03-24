@@ -79,7 +79,7 @@ export default function Share() {
     });
   });
   return (
-    <div
+    <section
       ref={share}
       className="about-share relative min-h-[31.78rem] bg-white md:min-h-[49.0625rem]"
     >
@@ -128,6 +128,6 @@ export default function Share() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

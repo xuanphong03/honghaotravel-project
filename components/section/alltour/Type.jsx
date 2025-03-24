@@ -4,7 +4,7 @@ import CardVertical from '@/components/common/card/CardVertical';
 
 export default function Type() {
   return (
-    <div className="type md:bg-bg-elevation-30 rounded-3xl pb-12 max-md:px-3 md:py-[4.19rem]">
+    <section className="type md:bg-bg-elevation-30 rounded-3xl pb-12 max-md:px-3 md:py-[4.19rem]">
       <div className="mx-auto flex max-w-[87.5rem] justify-between max-md:flex-col">
         <div className="type-box relative w-full max-md:hidden md:w-[22%]">
           <div
@@ -35,6 +35,6 @@ export default function Type() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

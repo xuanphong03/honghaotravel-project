@@ -46,7 +46,7 @@ export default function FAQAboutTrip() {
     );
   });
   return (
-    <div
+    <section
       ref={container}
       className="mx-auto max-w-[87.5rem] py-[5.62remm] max-md:hidden"
     >
@@ -67,6 +67,6 @@ export default function FAQAboutTrip() {
           <DialogDemo />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

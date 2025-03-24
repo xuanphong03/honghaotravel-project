@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ImediateMb() {
   return (
-    <div className="relative px-3 py-5 md:hidden">
+    <section className="relative px-3 py-5 md:hidden">
       <div className="tourdetail-banner-cont w-full md:hidden">
         <div className="top flex flex-col gap-3">
           <div className="top-time flex items-center gap-6">
@@ -295,6 +295,6 @@ export default function ImediateMb() {
           <Image src={'/images/alltour/detail/chu-xoay2.svg'} alt="" fill />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

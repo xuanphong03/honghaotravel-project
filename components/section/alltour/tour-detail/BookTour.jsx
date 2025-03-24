@@ -13,7 +13,7 @@ export default function BookTour() {
     console.log(data); // Handle form data
   };
   return (
-    <div className="h-fit w-full overflow-hidden md:mb-16">
+    <section className="h-fit w-full overflow-hidden md:mb-16">
       <div
         ref={commit}
         className="relative h-fit w-full max-md:px-3 max-md:pt-[3.18rem] md:mt-[20rem] md:bg-[rgb(19,52,28)] md:pb-28"
@@ -26,6 +26,6 @@ export default function BookTour() {
           <FormBookTour />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

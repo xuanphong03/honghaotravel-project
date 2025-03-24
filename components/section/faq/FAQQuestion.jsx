@@ -117,7 +117,7 @@ export default function FAQQuestion() {
     });
   });
   return (
-    <div ref={container} className="relative max-md:pt-8 md:py-16">
+    <section ref={container} className="relative max-md:pt-8 md:py-16">
       <div className="absolute -top-[16rem] right-0 left-0 h-[42.5rem] md:top-6 md:left-4">
         <Image
           src={'/images/faq/bg-nui.png'}
@@ -228,6 +228,6 @@ export default function FAQQuestion() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

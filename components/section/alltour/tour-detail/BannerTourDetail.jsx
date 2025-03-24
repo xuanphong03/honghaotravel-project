@@ -34,7 +34,7 @@ export default function BannerTourDetail() {
     });
   });
   return (
-    <div className="tourdetail-banner relative flex min-h-[20.93544rem] items-end max-md:ps-[1.25rem] md:min-h-[49.25rem]">
+    <section className="tourdetail-banner relative flex min-h-[20.93544rem] items-end max-md:ps-[1.25rem] md:min-h-[49.25rem]">
       <OverlayAnimate />
       <div className="bg absolute top-0 right-0 bottom-0 left-0 z-0">
         <Image
@@ -351,6 +351,6 @@ export default function BannerTourDetail() {
       >
         <InfinitySlide />
       </div>
-    </div>
+    </section>
   );
 }

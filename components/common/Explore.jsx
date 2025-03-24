@@ -30,7 +30,7 @@ export default function Explore({ className, textColor }) {
     });
   });
   return (
-    <div
+    <section
       ref={explore}
       className={`explore mx-auto flex max-w-[87.5rem] flex-col gap-4 max-md:px-3 md:gap-[3.56rem] ${className}`}
     >
@@ -55,6 +55,6 @@ export default function Explore({ className, textColor }) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
