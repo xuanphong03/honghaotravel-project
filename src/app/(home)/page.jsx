@@ -1,14 +1,14 @@
+import Banner from '@/app/(home)/_sections/banner';
+import BestTrips from '@/app/(home)/_sections/best-trips';
+import Feedback from '@/app/(home)/_sections/feedback';
+import Introduction from '@/app/(home)/_sections/intro-container';
+import AboutUs from '@/app/(home)/_sections/intro-container/about-us';
+import OurTour from '@/app/(home)/_sections/intro-container/our-tour';
+import Welcome from '@/app/(home)/_sections/intro-container/welcome';
+import Moment from '@/app/(home)/_sections/moment';
 import Image from 'next/image';
-import OurTeam from '../../components/section/ourteam/OurTeam';
-import Banner from './_components/sections/banner';
-import BestTrips from './_components/sections/best-trips';
-import Feedback from './_components/sections/feedback';
-import Introduction from './_components/sections/intro-container';
-import AboutUs from './_components/sections/intro-container/about-us';
-import OurTour from './_components/sections/intro-container/our-tour';
-import Welcome from './_components/sections/intro-container/welcome';
-import Moment from './_components/sections/moment';
-import Weather from './_components/sections/weather';
+import OurTeam from '../../../components/section/ourteam/OurTeam';
+import Weather from '@/app/(home)/_sections/weather';
 
 export const metadata = {
   title: 'Homepage - Hong Hao Travel',

@@ -11,13 +11,13 @@ import {
 import { Form } from '@/components/ui/form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import ComboboxField from '../../form-controls/ComboboxField';
-import NumberField from '../../form-controls/NumberField';
-import TourBookingForm from '../../common/form/TourBookingForm';
 import { QUICK_TOUR_BOOKING_FORM } from '@/constants/schema';
 import { useEffect, useState } from 'react';
 import TourData from '@/app/services/tour.json';
 import { v4 as uuidv4 } from 'uuid';
+import TourBookingForm from '@/app/_components/common/form/TourBookingForm';
+import ComboboxField from '@/app/_components/form-controls/ComboboxField';
+import NumberField from '@/app/_components/form-controls/NumberField';
 
 export default function FilterTour() {
   const form = useForm({
