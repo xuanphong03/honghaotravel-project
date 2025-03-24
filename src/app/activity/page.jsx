@@ -4,8 +4,7 @@ import Activity from './_components/sections/activity';
 import Banner from './_components/sections/banner';
 
 export const metadata = {
-  title: 'Activity - Hong Hao Travel',
-  description: '',
+  title: 'Activity',
 };
 
 export default function ActivityPage() {

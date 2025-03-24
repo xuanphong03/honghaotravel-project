@@ -1,11 +1,10 @@
-import React from "react";
-import Banner from "./_components/section/Banner/Banner";
-import ContactInfo from "./_components/section/ContactInfo/ContactInfo";
-import ContactForm from "./_components/section/ContactForm/ContactForm";
+import React from 'react';
+import Banner from './_components/section/Banner/Banner';
+import ContactInfo from './_components/section/ContactInfo/ContactInfo';
+import ContactForm from './_components/section/ContactForm/ContactForm';
 
 export const metadata = {
-  title: "Contact us - Hong Hao Travel",
-  description: "",
+  title: 'Contact us',
 };
 
 export default function ContactUsPage() {

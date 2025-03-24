@@ -8,6 +8,14 @@ import { tripSansFont } from '../../public/fonts/font-family';
 import { Toaster } from 'sonner';
 import '@/global/global.css';
 
+export const metadata = {
+  title: {
+    template: '%s - Hong Hao Travel',
+    default: 'Hong Hao Travel',
+  },
+  description: 'Hong Hao Travel website tour hàng đầu',
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
