@@ -78,7 +78,7 @@ const dataBreadcrumb = [
 ];
 export default function TourDetail() {
   return (
-    <div className="tourdetail max-md:overflow-hidden">
+    <section id="tour-detail" className="tourdetail max-md:overflow-hidden">
       <BannerTourDetail />
       <InfinitySlideMobile />
       <Breadcrumb data={dataBreadcrumb} />
@@ -91,6 +91,6 @@ export default function TourDetail() {
         className={'pb-12 md:pb-16'}
         textColor={'!text-green-normal__hover'}
       />
-    </div>
+    </section>
   );
 }

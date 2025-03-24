@@ -51,7 +51,7 @@ const dataBreadcrumbTour = [
 
 export default function Tours() {
   return (
-    <div className="tours">
+    <section id="tours" className="tours">
       <BannerTours />
       <Breadcrumb data={dataBreadcrumbTour} />
       <Explore
@@ -59,6 +59,6 @@ export default function Tours() {
         textColor={'!text-greyscaletext-80-main'}
       />
       <Type />
-    </div>
+    </section>
   );
 }

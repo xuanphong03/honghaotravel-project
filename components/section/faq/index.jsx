@@ -52,7 +52,7 @@ const dataBreadcrumb = [
 
 export default function FAQ() {
   return (
-    <div>
+    <section id="faq">
       <FAQBanner urlTitle={'/images/alltour/title.png'} />
       <Breadcrumb data={dataBreadcrumb} />
       <FAQQuestion />
@@ -61,6 +61,6 @@ export default function FAQ() {
         className={'pb-16 max-md:pb-12'}
         textColor={'!text-green-normal__hover'}
       />
-    </div>
+    </section>
   );
 }

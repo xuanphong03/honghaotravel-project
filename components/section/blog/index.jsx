@@ -50,13 +50,13 @@ const dataBreadcrumb = [
 
 export default function Blog() {
   return (
-    <div className="">
+    <section id="blog" className="">
       <FAQBanner urlTitle={'/images/blog/blog-title.png'} />
       <div className="max-md:hidden">
         <Breadcrumb data={dataBreadcrumb} />
       </div>
       <OurBlog />
       <BlogEnd />
-    </div>
+    </section>
   );
 }

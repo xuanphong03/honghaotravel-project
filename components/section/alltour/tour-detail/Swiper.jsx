@@ -1,40 +1,53 @@
-// components/MousewheelSwiper.js
+'use client';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel } from 'swiper/modules'; // Import từ swiper/modules
-import 'swiper/css'; // Import CSS cơ bản của Swiper
+import { Mousewheel } from 'swiper/modules';
+import 'swiper/css';
 import Image from 'next/image';
 
 const arrTest = [0, 1, 2, 3, 4, 5];
 
 const MousewheelSwiper = ({ handleSlideChange, activeIndex }) => {
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  const handleReachEnd = () => {
+    if (swiperInstance) {
+      swiperInstance.mousewheel.disable();
+    }
+  };
+
   return (
-    <div className="container mx-auto">
+    <div
+      className="container mx-auto overflow-hidden"
+      onMouseEnter={() => swiperInstance.mousewheel.enable()}
+    >
       <Swiper
         direction="vertical"
         mousewheel={true}
         modules={[Mousewheel]}
         slidesPerView={2}
         spaceBetween={0}
-        className="max-h-[32rem] !overflow-visible rounded-lg bg-transparent"
+        className="mb-8 h-[33rem] !overflow-visible rounded-lg bg-transparent"
         onSlideChange={handleSlideChange}
+        onReachEnd={handleReachEnd}
+        onSwiper={(swiper) => setSwiperInstance(swiper)} // Store the Swiper instance
       >
         {arrTest.map((_, index) => (
           <SwiperSlide
             key={index}
-            className="swiper-slide swiper-slide-active mb-14 flex h-fit w-full cursor-pointer"
+            className="swiper-slide swiper-slide-active mb-12 flex h-fit w-full cursor-pointer"
           >
             <div className="relative flex space-x-[7.87rem]">
               <div className="caicot relative ms-[4.5rem] w-[2rem]">
                 <div
-                  className={`bg-greyscaletext-10 ${activeIndex === 5 && 'bg-transparent'} absolute left-1/2 z-[5] h-full w-[0.2rem] transition-all duration-1000`}
+                  className={`bg-greyscaletext-10 ${index === 5 && 'hidden'} absolute left-1/2 z-[5] h-full w-[0.2rem] transition-all duration-1000`}
                 >
                   <div
                     className={`absolute -bottom-6 left-4 flex flex-col items-start`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
+                      className={`h-6 w-6`}
                       viewBox="0 0 20 20"
                       fill="none"
                     >

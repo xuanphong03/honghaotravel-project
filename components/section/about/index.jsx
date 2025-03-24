@@ -6,11 +6,11 @@ import OurTeam from '../ourteam/OurTeam';
 
 export default function About() {
   return (
-    <div>
+    <section id="about">
       <BannerAbout />
       <Share />
       <Commitment />
       <OurTeam secondary className={'relative z-10 bg-white'} />
-    </div>
+    </section>
   );
 }
